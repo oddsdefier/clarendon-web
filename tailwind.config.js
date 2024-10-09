@@ -55,6 +55,11 @@ export default {
 					'3': 'hsl(var(--chart-3))',
 					'4': 'hsl(var(--chart-4))',
 					'5': 'hsl(var(--chart-5))'
+				},
+				clarc: {
+					'blue': '#15335f',
+					'gold': '#c9b163',
+					'white': '#0504aa'
 				}
 			}
 		}
