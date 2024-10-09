@@ -1,6 +1,8 @@
 import { Search, Menu, MapPin } from "lucide-react";
-import { CarouselPlugin } from "./Carousel";
-function App() {
+import CarouselPlugin from "./Carousel";
+import React from "react";
+
+const App: React.FC = () => {
 	return (
 		<div className="font-inter min-h-screen">
 			<header>
@@ -127,6 +129,6 @@ function App() {
 			<footer></footer>
 		</div>
 	);
-}
+};
 
 export default App;
