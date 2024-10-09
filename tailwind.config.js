@@ -10,6 +10,9 @@ export default {
 	],
 	theme: {
 		extend: {
+			fontFamily: {
+				astralaga: ['Astralaga', 'sans-serif'],
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',

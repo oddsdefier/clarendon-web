@@ -39,7 +39,7 @@ export default function Component() {
 			return;
 		}
 
-		setCount(api.scrollSnapList().length);
+		setCount(videos.length);
 		setCurrent(api.selectedScrollSnap() + 1);
 
 		api.on("select", () => {
@@ -51,7 +51,7 @@ export default function Component() {
 		<div className="container mx-auto my-16 px-4">
 			<div className="text-center mb-10">
 				<h3 className="uppercase text-sm font-medium text-gray-600 mb-2">Our Videos</h3>
-				<h1 className="text-3xl md:text-4xl font-serif font-semibold text-gray-900">Experience Clarendon through these videos</h1>
+				<h1 className="text-3xl md:text-4xl font-astralaga font-semibold text-gray-900">Experience Clarendon through these videos</h1>
 			</div>
 
 			<Carousel setApi={setApi} className="w-full max-w-5xl mx-auto">

@@ -67,28 +67,35 @@
 
 @font-face {
 	font-family: "Astralaga";
-	src: url("/fonts/astralaga_regular.ttf") format("truetype");
-	font-weight: 400;
+	src: url("/fonts/astralaga_light.ttf") format("truetype");
+	font-weight: 300; /* Light */
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Astralaga";
-	src: url("/fonts/astralaga_bold.ttf") format("truetype");
-	font-weight: 700;
-	font-style: bold;
-}
-
-@font-face {
-	font-family: "Astralaga";
 	src: url("/fonts/astralaga_regular.ttf") format("truetype");
-	font-weight: 400;
+	font-weight: 400; /* Regular */
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Astralaga";
 	src: url("/fonts/astralaga_medium.ttf") format("truetype");
-	font-weight: 700;
-	font-style: medium;
+	font-weight: 500; /* Medium */
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Astralaga";
+	src: url("/fonts/astralaga_semibold.ttf") format("truetype");
+	font-weight: 600; /* Semibold */
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Astralaga";
+	src: url("/fonts/astralaga_bold.ttf") format("truetype");
+	font-weight: 700; /* Bold */
+	font-style: normal;
 }
