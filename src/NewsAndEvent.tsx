@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ArrowRight, Calendar } from "lucide-react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-import { useCarousel } from "@/components/ui/carousel";
 
 interface NewsItem {
 	category: string;
@@ -44,7 +43,7 @@ const newsItems: NewsItem[] = [
 ];
 
 const NewsAndEventsSection: React.FC = () => {
-	const [api, setApi] = useState<ReturnType<typeof useCarousel>>();
+	const [api, setApi] = useState<CarouselApi>();
 	const [current, setCurrent] = useState(0);
 
 	useEffect(() => {

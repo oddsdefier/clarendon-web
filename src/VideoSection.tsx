@@ -98,7 +98,7 @@ export default function Component() {
 			</div>
 
 			<div className="mt-10 flex justify-center">
-				<button className="rounded-full bg-blue-600 px-5 py-3 text-sm text-white font-semibold hover:bg-blue-700 transition-colors duration-300">View More Videos</button>
+				<button className="rounded-full bg-clarc-blue px-5 py-3 text-sm text-white font-semibold hover:bg-blue-800 transition-colors duration-300">View More Videos</button>
 			</div>
 		</div>
 	);
