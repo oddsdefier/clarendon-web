@@ -1,4 +1,4 @@
-import { ExternalLink, Facebook, Linkedin } from "lucide-react";
+import { ExternalLink, Facebook, Linkedin, Youtube, Twitter } from "lucide-react";
 import { InstagramLogoIcon } from "@radix-ui/react-icons";
 import { motion } from "framer-motion";
 
@@ -31,6 +31,22 @@ export default function Footer() {
 							<p className="text-sm text-clarc-gold/90 font-semibold">&copy; {new Date().getFullYear()} Clarendon College</p>
 							<p className="ml-3.5 text-sm text-clarc-gold/80 font-semibold">All rights reserved.</p>
 						</div>
+					</div>
+				</div>
+				<div>
+					<h3 className={helperTitleClass}>Socials</h3>
+					<div className="flex gap-3">
+						{[
+							{ Component: Facebook, href: "https://facebook.com" },
+							{ Component: InstagramLogoIcon, href: "https://instagram.com" },
+							{ Component: Linkedin, href: "https://linkedin.com" },
+							{ Component: Youtube, href: "https://linkedin.com" },
+							{ Component: Twitter, href: "https://linkedin.com" },
+						].map(({ Component, href }, index) => (
+							<motion.a key={index} href={href} whileTap={{ scale: [0.9, 1] }} whileHover={{ scale: [0.9, 1] }}>
+								<Component className={socialsLogo} />
+							</motion.a>
+						))}
 					</div>
 				</div>
 				<div>
@@ -78,20 +94,6 @@ export default function Footer() {
 							</a>
 						</li>
 					</ul>
-				</div>
-				<div>
-					<h3 className={helperTitleClass}>Socials</h3>
-					<div className="flex gap-2">
-						{[
-							{ Component: Facebook, href: "https://facebook.com" },
-							{ Component: InstagramLogoIcon, href: "https://instagram.com" },
-							{ Component: Linkedin, href: "https://linkedin.com" },
-						].map(({ Component, href }, index) => (
-							<motion.a key={index} href={href} whileTap={{ scale: [0.9, 1] }} whileHover={{ scale: [0.9, 1] }}>
-								<Component className={socialsLogo} />
-							</motion.a>
-						))}
-					</div>
 				</div>
 			</div>
 			<div className="flex lg:hidden gap-1 flex-col px-4 py-5 mt-10 z-10 relative container mx-auto justify-start lg:justify-center items-start lg:items-center ">
