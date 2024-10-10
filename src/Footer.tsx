@@ -11,7 +11,7 @@ const listElWrapperClass = "not-italic text-indigo-200 text-sm lg:text-md space-
 const socialsLogo = "w-5 h-5 text-indigo-200 hover:text-clarc-gold transition transition-colors duration-200";
 export default function Footer() {
 	return (
-		<footer className="relative  text-white pt-20 pb-32 px-4 lg:px-0">
+		<footer className="relative  text-white pt-16 pb-24 px-4 lg:px-0">
 			<BackgroundImage url={bgImgUrl} className="opacity-100" />
 			<div className="container mx-auto px-4 flex flex-col lg:flex-row justify-evenly  gap-8 z-10 relative">
 				<div className="flex flex-col items-start">
@@ -81,8 +81,9 @@ export default function Footer() {
 					</div>
 				</div>
 			</div>
-			<div className="py-5 mt-10 z-10 relative container mx-auto flex justify-center items-center ">
-				<p className="text-sm text-clarc-gold font-semibold">&copy; {new Date().getFullYear()} Clarendon. All rights reserved.</p>
+			<div className="flex gap-1 flex-col px-4 py-5 mt-10 z-10 relative container mx-auto justify-start lg:justify-center items-start lg:items-center ">
+				<p className="text-sm text-clarc-gold font-semibold">&copy; {new Date().getFullYear()} Clarendon College</p>
+				<p className="text-sm text-clarc-gold/80 font-semibold">All rights reserved.</p>
 			</div>
 		</footer>
 	);
