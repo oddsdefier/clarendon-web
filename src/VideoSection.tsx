@@ -10,24 +10,28 @@ const videos = [
 		id: 1,
 		title: "Teacher (51) Nainlove sa (15) Year Old Student 💀 Balitangina",
 		thumbnail: "https://i.ytimg.com/vi/YKJMGQ0BwG8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBO8odRfTqOC9AoAodj0h-VjBPtBQ",
+		link: "/",
 	},
 	{
 		id: 2,
 		title: "Rick Astley - Never Gonna Give You Up (Official Music Video)",
 		thumbnail: "https://i.ytimg.com/vi/dQw4w9WgXcQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDRxusbm2_TGTnDWEIhBTYW2cUQkw",
+		link: "/",
 	},
 	{
 		id: 3,
 		title: "C Programming Full Course for free ⚙️",
 		thumbnail: "https://i.ytimg.com/vi/87SH2Cn0s9A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA8BjfQxpjZcbPOrtNFzED7xyY3Dw",
+		link: "/",
 	},
 	{
 		id: 4,
 		title: "Go in 100 Seconds",
 		thumbnail: "https://i.ytimg.com/vi/446E-r0rXHI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBuyU5skZOHGjSWGyjpN-zroIOwXQ",
+		link: "/",
 	},
 ];
-
+const bgImgUrl = "https://scontent.fmnl3-3.fna.fbcdn.net/v/t1.6435-9/87552206_109185400685458_8773993985245970432_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeFO4Mchm6htvMg3jfpS88muV7IgrR-L65lXsiCtH4vrmbjZ8WFU0JAn-9mlwAyPhTmA3SH4R7N9-RgW0S0GkGW2&_nc_ohc=IDqxNCm7-KUQ7kNvgEF9FhL&_nc_ht=scontent.fmnl3-3.fna&_nc_gid=A5VdmLMMKAhdBxXSNnq4UGb&oh=00_AYC3SJL1bVCLptcCij-ssMAGnZCLpTWeVLiYOmDDHC2img&oe=672F3CA6";
 export default function Component() {
 	const [api, setApi] = React.useState<CarouselApi>();
 	const [current, setCurrent] = React.useState(0);
@@ -45,58 +49,67 @@ export default function Component() {
 	}, [api]);
 
 	return (
-		<div className="container mx-auto my-16 px-4">
-			<div className="text-center mb-10">
-				<h3 className="uppercase text-xl font-semibold text-gray-500 mb-2">Our Videos</h3>
-				<h1 className="text-3xl md:text-4xl font-astralaga font-semibold text-clarc-blue">Experience Clarendon through these videos</h1>
-			</div>
+		<div className=" bg-clarc-gold/10 relative">
+			<div
+				className={`absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-10`}
+				style={{
+					backgroundImage: `url(${bgImgUrl})`,
+				}}></div>
+			<div className="-z-10 absolute inset-0 bg-gradient-to-t from-clarc-gold to-transparent opacity-100"></div>
+			<div className="container mx-auto px-4 py-16">
+				<div className="text-center mb-16">
+					<h3 className="uppercase text-xl font-semibold text-clarc-blue/70 mb-4">Our Videos</h3>
+					<h1 className="text-2xl md:text-3xl font-astralaga font-semibold text-clarc-blue">Experience Clarendon through these videos</h1>
+				</div>
 
-			<Carousel setApi={setApi} className="w-full  mx-auto">
-				<CarouselContent>
-					{videos.map((video, index) => (
-						<CarouselItem key={video.id} className="md:basis-1/2 lg:basis-1/3">
-							<Card className="border-none shadow-none">
-								<CardContent className="p-0">
-									<motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }}>
-										<figure className="relative w-full rounded-lg overflow-hidden shadow-lg aspect-video">
-											<img src={video.thumbnail} alt={`${video.title} Thumbnail`} className="w-full h-full object-cover" />
-											<div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 transition-opacity duration-300 hover:bg-opacity-50" onMouseEnter={() => setHoveredId(video.id)} onMouseLeave={() => setHoveredId(null)}>
-												<motion.div className="relative" initial={{ scale: 1 }} animate={{ scale: hoveredId === video.id ? 1.1 : 1 }} transition={{ duration: 0.3 }}>
-													<motion.div
-														className="absolute inset-0 bg-white rounded-full opacity-25"
-														initial={{ scale: 0.8, opacity: 0 }}
-														animate={{
-															scale: hoveredId === video.id ? 1.5 : 0.8,
-															opacity: hoveredId === video.id ? 0.5 : 0,
-														}}
-														transition={{ duration: 1, repeat: Infinity }}
-													/>
-													<motion.button className="w-16 h-16 grid place-items-center rounded-full bg-white text-primary shadow-lg" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} aria-label={`Play ${video.title} video`}>
-														<Play className="w-7 h-7 text-gray-700" />
-													</motion.button>
-												</motion.div>
+				<Carousel setApi={setApi} className="w-full  mx-auto">
+					<CarouselContent>
+						{videos.map((video, index) => (
+							<CarouselItem key={video.id} className="md:basis-1/2 lg:basis-1/3">
+								<Card className="border-none shadow-none bg-transparent">
+									<CardContent className="p-0">
+										<motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }}>
+											<figure className="relative w-full rounded-lg overflow-hidden shadow-lg aspect-video">
+												<div className="absolute inset-0 bg-gradient-to-tr from-black/80 to-transparent opacity-95"></div>
+												<img src={video.thumbnail} alt={`${video.title} Thumbnail`} className="w-full h-full object-cover" />
+												<div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 transition-opacity duration-300 hover:bg-opacity-50" onMouseEnter={() => setHoveredId(video.id)} onMouseLeave={() => setHoveredId(null)}>
+													<motion.div className="relative" initial={{ scale: 1 }} animate={{ scale: hoveredId === video.id ? 1.1 : 1 }} transition={{ duration: 0.3 }}>
+														<motion.div
+															className="absolute inset-0 bg-white rounded-full opacity-25 -z-10"
+															initial={{ scale: 0.8, opacity: 0 }}
+															animate={{
+																scale: hoveredId === video.id ? 1.5 : 0.8,
+																opacity: hoveredId === video.id ? 0.5 : 0,
+															}}
+															transition={{ duration: 1, repeat: Infinity }}
+														/>
+														<motion.a href={video.link} className="w-10 h-10 z-10 grid place-items-center rounded-full bg-transparent border border-white text-primary shadow-lg" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} aria-label={`Play ${video.title} video`}>
+															<Play className="w-4 h-4 text-white" />
+														</motion.a>
+													</motion.div>
+												</div>
+											</figure>
+											<div className="mt-4">
+												<h2 className="text-left text-base w-3/4 font-medium text-gray-700">{video.title}</h2>
 											</div>
-										</figure>
-										<div className="mt-4">
-											<h2 className="text-center text-lg uppercase font-medium text-gray-800">{video.title}</h2>
-										</div>
-									</motion.div>
-								</CardContent>
-							</Card>
-						</CarouselItem>
+										</motion.div>
+									</CardContent>
+								</Card>
+							</CarouselItem>
+						))}
+					</CarouselContent>
+					<CarouselPrevious className="hidden md:flex md:-left-12" />
+					<CarouselNext className="hidden md:flex md:-right-12" />
+				</Carousel>
+				<div className="flex justify-center my-8">
+					{videos.map((_, index) => (
+						<button key={index} className={`z-20 w-1 h-1 md:w-2 md:h-2 aspect-square rounded-full mx-1 transition-colors duration-200 ${index === current ? "bg-clarc-blue" : "bg-clarc-blue/30"}`} onClick={() => api?.scrollTo(index)} aria-label={`Go to slide ${index + 1}`} />
 					))}
-				</CarouselContent>
-				<CarouselPrevious className="hidden md:flex md:-left-12" />
-				<CarouselNext className="hidden md:flex md:-right-12" />
-			</Carousel>
-			<div className="flex justify-center my-4">
-				{videos.map((_, index) => (
-					<button key={index} className={`w-2 h-2 aspect-square rounded-full mx-1 transition-colors duration-200 ${index === current ? "bg-clarc-gold" : "bg-gray-300"}`} onClick={() => api?.scrollTo(index)} aria-label={`Go to slide ${index + 1}`} />
-				))}
-			</div>
+				</div>
 
-			<div className="mt-10 flex justify-center">
-				<button className="rounded-full bg-clarc-blue px-5 py-3 text-sm text-white font-semibold hover:bg-blue-800 transition-colors duration-300">View More Videos</button>
+				<div className="mt-10 flex justify-center">
+					<a className="cursor-pointer rounded-full z-20 text-sm text-clarc-blue font-semibold hover:text-clarc-blue/70 transition-colors duration-300">View More Videos →</a>
+				</div>
 			</div>
 		</div>
 	);
