@@ -8,38 +8,35 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 const videos = [
 	{
 		id: 1,
-		title: "HIGHLIGHTS: 2024 Commencement Exercises",
-		thumbnail: "https://img.youtube.com/vi/5XuRNRzQjro/sddefault.jpg",
+		title: "Teacher (51) Nainlove sa (15) Year Old Student 💀 Balitangina",
+		thumbnail: "https://i.ytimg.com/vi/YKJMGQ0BwG8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBO8odRfTqOC9AoAodj0h-VjBPtBQ",
 	},
 	{
 		id: 2,
-		title: "Campus Tour 2024",
-		thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/sddefault.jpg",
+		title: "Rick Astley - Never Gonna Give You Up (Official Music Video)",
+		thumbnail: "https://i.ytimg.com/vi/dQw4w9WgXcQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDRxusbm2_TGTnDWEIhBTYW2cUQkw",
 	},
 	{
 		id: 3,
-		title: "Student Life at Clarendon",
-		thumbnail: "https://img.youtube.com/vi/jNQXAC9IVRw/sddefault.jpg",
+		title: "C Programming Full Course for free ⚙️",
+		thumbnail: "https://i.ytimg.com/vi/87SH2Cn0s9A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA8BjfQxpjZcbPOrtNFzED7xyY3Dw",
 	},
 	{
 		id: 4,
-		title: "Research Spotlight: AI in Education",
-		thumbnail: "https://img.youtube.com/vi/M7lc1UVf-VE/sddefault.jpg",
+		title: "Go in 100 Seconds",
+		thumbnail: "https://i.ytimg.com/vi/446E-r0rXHI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBuyU5skZOHGjSWGyjpN-zroIOwXQ",
 	},
 ];
 
 export default function Component() {
 	const [api, setApi] = React.useState<CarouselApi>();
 	const [current, setCurrent] = React.useState(0);
-	const [count, setCount] = React.useState(0);
 	const [hoveredId, setHoveredId] = React.useState<number | null>(null);
 
 	React.useEffect(() => {
 		if (!api) {
 			return;
 		}
-
-		setCount(videos.length);
 		setCurrent(api.selectedScrollSnap() + 1);
 
 		api.on("select", () => {
@@ -92,9 +89,10 @@ export default function Component() {
 				<CarouselPrevious className="hidden md:flex md:-left-12" />
 				<CarouselNext className="hidden md:flex md:-right-12" />
 			</Carousel>
-
-			<div className="mt-4 text-center text-sm text-muted-foreground">
-				Video {current} of {count}
+			<div className="flex justify-center my-4">
+				{videos.map((_, index) => (
+					<button key={index} className={`w-2 h-2 aspect-square rounded-full mx-1 transition-colors duration-200 ${index === current ? "bg-clarc-gold" : "bg-gray-300"}`} onClick={() => api?.scrollTo(index)} aria-label={`Go to slide ${index + 1}`} />
+				))}
 			</div>
 
 			<div className="mt-10 flex justify-center">
