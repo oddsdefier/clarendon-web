@@ -31,27 +31,57 @@ const videos = [
 		link: "/",
 	},
 ];
+
 const bgImgUrl = "https://scontent.fmnl3-3.fna.fbcdn.net/v/t1.6435-9/87552206_109185400685458_8773993985245970432_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeFO4Mchm6htvMg3jfpS88muV7IgrR-L65lXsiCtH4vrmbjZ8WFU0JAn-9mlwAyPhTmA3SH4R7N9-RgW0S0GkGW2&_nc_ohc=IDqxNCm7-KUQ7kNvgEF9FhL&_nc_ht=scontent.fmnl3-3.fna&_nc_gid=A5VdmLMMKAhdBxXSNnq4UGb&oh=00_AYC3SJL1bVCLptcCij-ssMAGnZCLpTWeVLiYOmDDHC2img&oe=672F3CA6";
+
 export default function Component() {
 	const [api, setApi] = React.useState<CarouselApi>();
 	const [current, setCurrent] = React.useState(0);
 	const [hoveredId, setHoveredId] = React.useState<number | null>(null);
+	const [slidesPerView, setSlidesPerView] = React.useState(1);
+	const [totalPages, setTotalPages] = React.useState(1);
 
 	React.useEffect(() => {
-		if (!api) {
-			return;
-		}
-		setCurrent(api.selectedScrollSnap() + 1);
+		const updateSlidesPerView = () => {
+			if (window.innerWidth >= 1024) {
+				setSlidesPerView(3);
+			} else if (window.innerWidth >= 768) {
+				setSlidesPerView(2);
+			} else {
+				setSlidesPerView(1);
+			}
+		};
 
-		api.on("select", () => {
-			setCurrent(api.selectedScrollSnap() + 1);
-		});
-	}, [api]);
+		updateSlidesPerView();
+		window.addEventListener("resize", updateSlidesPerView);
+
+		return () => window.removeEventListener("resize", updateSlidesPerView);
+	}, []);
+
+	React.useEffect(() => {
+		if (!api) return;
+
+		const totalSlides = videos.length;
+		const pages = Math.ceil(totalSlides / slidesPerView);
+		setTotalPages(pages);
+
+		const updateCurrent = () => {
+			const currentIndex = api.selectedScrollSnap();
+			setCurrent(Math.floor(currentIndex));
+		};
+
+		updateCurrent();
+		api.on("select", updateCurrent);
+
+		return () => {
+			api.off("select", updateCurrent);
+		};
+	}, [api, slidesPerView]);
 
 	return (
-		<div className=" bg-clarc-gold/10 relative">
+		<div className="bg-clarc-gold/10 relative">
 			<div
-				className={`absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-10`}
+				className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-10"
 				style={{
 					backgroundImage: `url(${bgImgUrl})`,
 				}}></div>
@@ -59,13 +89,22 @@ export default function Component() {
 			<div className="container mx-auto px-4 py-16">
 				<div className="text-center mb-16">
 					<h3 className="uppercase text-xl font-semibold text-clarc-blue/70 mb-4">Our Videos</h3>
-					<h1 className="text-2xl md:text-3xl font-astralaga font-semibold text-clarc-blue">Experience Clarendon through these videos</h1>
+					<h1 className="text-2xl md:text-3xl font-astralaga font-semibold text-clarc-blue">
+						Experience <span className="text-clarc-gold text-[2.1rem]">Clarendon</span> through these videos
+					</h1>
 				</div>
 
-				<Carousel setApi={setApi} className="w-full  mx-auto">
+				<Carousel
+					setApi={setApi}
+					className="w-full mx-auto"
+					opts={{
+						align: "start",
+						slidesToScroll: slidesPerView,
+						// slidesPerView: slidesPerView,
+					}}>
 					<CarouselContent>
 						{videos.map((video, index) => (
-							<CarouselItem key={video.id} className="md:basis-1/2 lg:basis-1/3">
+							<CarouselItem key={video.id} className="md:basis-1/2 lg:basis-1/3 py-2">
 								<Card className="border-none shadow-none bg-transparent">
 									<CardContent className="p-0">
 										<motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }}>
@@ -91,6 +130,7 @@ export default function Component() {
 											</figure>
 											<div className="mt-4">
 												<h2 className="text-left text-base w-3/4 font-medium text-gray-700">{video.title}</h2>
+												<p className="mt-1 text-xs text-left font-normal text-gray-700/70">Sanctus duo accusam eos clita aliquyam eos stet diam stet stet. Sed labore elitr diam invidunt ipsum et, est at.</p>
 											</div>
 										</motion.div>
 									</CardContent>
@@ -102,8 +142,8 @@ export default function Component() {
 					<CarouselNext className="hidden md:flex md:-right-12" />
 				</Carousel>
 				<div className="flex justify-center my-8">
-					{videos.map((_, index) => (
-						<button key={index} className={`z-20 w-1 h-1 md:w-2 md:h-2 aspect-square rounded-full mx-1 transition-colors duration-200 ${index === current ? "bg-clarc-blue" : "bg-clarc-blue/30"}`} onClick={() => api?.scrollTo(index)} aria-label={`Go to slide ${index + 1}`} />
+					{Array.from({ length: totalPages }).map((_, index) => (
+						<button key={index} className={`z-20 w-1 h-1 md:w-2 md:h-2 aspect-square rounded-full mx-1 transition-colors duration-200 ${index === current ? "bg-clarc-blue" : "bg-clarc-blue/30"}`} onClick={() => api?.scrollTo(index * slidesPerView)} aria-label={`Go to slide ${index + 1}`} />
 					))}
 				</div>
 
