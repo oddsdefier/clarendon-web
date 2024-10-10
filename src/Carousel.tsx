@@ -51,7 +51,7 @@ export default function CarouselPlugin() {
 			</Carousel>
 			<div className="flex justify-center my-4">
 				{imgLinks.map((_, index) => (
-					<button key={index} className={`w-2 h-2 aspect-square rounded-full mx-1 transition-colors duration-200 ${index === current ? "bg-clarc-gold" : "bg-gray-300"}`} onClick={() => api?.scrollTo(index)} aria-label={`Go to slide ${index + 1}`} />
+					<button key={index} className={`w-1 h-1 md:w-2 md:h-2 aspect-square rounded-full mx-1 transition-colors duration-200 ${index === current ? "bg-clarc-gold" : "bg-gray-300"}`} onClick={() => api?.scrollTo(index)} aria-label={`Go to slide ${index + 1}`} />
 				))}
 			</div>
 		</div>
