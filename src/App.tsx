@@ -7,6 +7,7 @@ import ApplicationSection from "./ApplicationSection";
 import NewsAndEventsSection from "./NewsAndEvent";
 import VideoSection from "./VideoSection";
 import Footer from "./Footer";
+
 const App: React.FC = () => {
 	return (
 		<div className="font-inter min-h-screen">
@@ -18,7 +19,6 @@ const App: React.FC = () => {
 					<FutureReadingSection />
 					<ApplicationSection />
 					<NewsAndEventsSection />
-
 					<VideoSection />
 				</main>
 			</section>

@@ -50,11 +50,11 @@ export default function Component() {
 	return (
 		<div className="container mx-auto my-16 px-4">
 			<div className="text-center mb-10">
-				<h3 className="uppercase text-sm font-medium text-gray-600 mb-2">Our Videos</h3>
-				<h1 className="text-3xl md:text-4xl font-astralaga font-semibold text-gray-900">Experience Clarendon through these videos</h1>
+				<h3 className="uppercase text-xl font-semibold text-gray-500 mb-2">Our Videos</h3>
+				<h1 className="text-3xl md:text-4xl font-astralaga font-semibold text-clarc-blue">Experience Clarendon through these videos</h1>
 			</div>
 
-			<Carousel setApi={setApi} className="w-full max-w-5xl mx-auto">
+			<Carousel setApi={setApi} className="w-full  mx-auto">
 				<CarouselContent>
 					{videos.map((video, index) => (
 						<CarouselItem key={video.id} className="md:basis-1/2 lg:basis-1/3">
@@ -89,8 +89,8 @@ export default function Component() {
 						</CarouselItem>
 					))}
 				</CarouselContent>
-				<CarouselPrevious className="hidden md:flex" />
-				<CarouselNext className="hidden md:flex" />
+				<CarouselPrevious className="hidden md:flex md:-left-12" />
+				<CarouselNext className="hidden md:flex md:-right-12" />
 			</Carousel>
 
 			<div className="mt-4 text-center text-sm text-muted-foreground">

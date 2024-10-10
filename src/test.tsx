@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
-import { ArrowRight, Calendar } from "lucide-react";
+
 import React, { useEffect, useState } from "react";
 
 interface NewsItem {
@@ -42,7 +42,7 @@ const newsItems: NewsItem[] = [
 	},
 ];
 
-const NewsAndEventsSection: React.FC = () => {
+const TEST: React.FC = () => {
 	const [api, setApi] = useState<CarouselApi>();
 	const [current, setCurrent] = useState<number | null>(0);
 
@@ -61,12 +61,9 @@ const NewsAndEventsSection: React.FC = () => {
 	return (
 		<section className="py-12">
 			<div className="container mx-auto px-4">
-				<div className="flex flex-col sm:flex-row justify-between items-center mb-10">
-					<h1 className="font-astralaga text-3xl md:text-4xl font-semibold text-clarc-blue mb-4 sm:mb-0">College News and Events</h1>
-					<button className="flex items-center space-x-2 bg-clarc-blue hover:bg-indigo-800 text-white font-semibold py-4 px-6 rounded-full transition duration-300">
-						<span className="text-md">View All News</span>
-						<ArrowRight size={20} />
-					</button>
+				<div className="text-center mb-10">
+					<h3 className="uppercase text-sm font-medium text-gray-600 mb-2">Our Videos</h3>
+					<h1 className="text-3xl md:text-4xl font-astralaga font-semibold text-gray-900">Experience Clarendon through these videos</h1>
 				</div>
 				<Carousel
 					setApi={setApi}
@@ -79,7 +76,7 @@ const NewsAndEventsSection: React.FC = () => {
 						{newsItems.map((item, index) => (
 							<CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
 								<div className="p-1">
-									<Card className="overflow-hidden shadow-none outline-none border-none transition duration-300 transform ">
+									<Card className="overflow-hidden shadow-none outline-none border-none transition duration-300 transform hover:-translate-y-1">
 										<a href={item.link} className="block relative group">
 											<div className=" overflow-hidden">
 												<img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
@@ -95,7 +92,6 @@ const NewsAndEventsSection: React.FC = () => {
 											</h4>
 											<h2 className="font-astralaga text-xl font-bold text-gray-800 mb-3 line-clamp-2">{item.title}</h2>
 											<div className="flex justify-start items-center gap-2">
-												<Calendar className="w-4 h-4 text-gray-500" />
 												<p className="text-sm text-gray-500 font-semibold">{item.date}</p>
 											</div>
 										</CardContent>
@@ -104,8 +100,8 @@ const NewsAndEventsSection: React.FC = () => {
 							</CarouselItem>
 						))}
 					</CarouselContent>
-					<CarouselPrevious className="hidden md:flex md:-left-12" />
-					<CarouselNext className="hidden md:flex md:-right-12" />
+					<CarouselPrevious className="md:-left-12" />
+					<CarouselNext className="md:-right-12" />
 				</Carousel>
 				<div className="flex justify-center my-6">
 					{/**
@@ -121,4 +117,4 @@ const NewsAndEventsSection: React.FC = () => {
 	);
 };
 
-export default NewsAndEventsSection;
+export default TEST;

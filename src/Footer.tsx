@@ -16,9 +16,9 @@ const Footer: React.FC = () => {
 
 				<div className="flex flex-col gap-1 justify-start items-start text-md text-gray-200 space-y-1">
 					<h3 className="font-semibold text-lg text-white">Get In Touch</h3>
-					<p>1234 University Ave</p>
-					<p>City, State, 56789</p>
-					<p>Email: info@clarendon.edu</p>
+					<p>Bayanihan St., Odiong</p>
+					<p>Roxas, Oriental Mindoro</p>
+					<p>Email: clarendoncollege@edu.ph</p>
 					<p>Phone: (123) 456-7890</p>
 				</div>
 
