@@ -71,7 +71,7 @@ const ApplicationSection: React.FC = () => {
 
 					<p className="text-sm md:text-xl leading-10 max-w-2xl mx-auto lg:mx-0 text-white/70">SPACE is Clarendon's admissions portal. Senior high school graduates who wish to apply may start the admissions process by uploading their personal information here. Be Brave, be an OWL, and Make it Clarendon!</p>
 
-					<motion.button className="shadow-lg shadow-clarc-blue group w-auto flex items-center justify-center  gap-2 mt-4 px-6 py-4 text-sm lg:text-base font-semibold text-indigo-100 border border-indigo-50 rounded-full hover:bg-clarc-blue hover:border-white hover:text-white transition-colors duration-300 focus:outline-none active:bg-clarc-gold/90" whileHover={{ scale: [0.95, 1] }} transition={{ duration: 400 }}>
+					<motion.button className="shadow-lg shadow-clarc-blue group w-auto flex items-center justify-center  gap-2 mt-4 px-6 py-4 text-sm lg:text-base font-semibold text-indigo-100 border border-indigo-50 rounded-full hover:bg-clarc-blue hover:border-white hover:text-white transition-colors duration-300 focus:outline-none active:bg-clarc-blue" whileTap={{ scale: [0.95, 1] }} whileHover={{ scale: [1, 0.95, 1] }} transition={{ duration: 400 }}>
 						<p>Start your CLARC journey here</p>
 						<Sparkles className="w-5 h-5 group-hover:rotate-6 group-hover:scale-125 transition-all duration-300 group-hover:text-clarc-gold " />
 					</motion.button>

@@ -2,7 +2,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 import { ArrowRight, Calendar, CircleChevronRight } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { Reveal } from "./Reveal";
 import { motion } from "framer-motion";
 interface NewsItem {
 	category: string;
@@ -100,9 +99,8 @@ const NewsAndEventsSection: React.FC = () => {
 			<div className="-z-10 absolute inset-0 bg-gradient-to-t from-white to-transparent opacity-100"></div>
 			<div className="container mx-auto px-4">
 				<div className="flex flex-col sm:flex-row justify-between items-start lg:items-center mb-10 gap-5">
-					<Reveal>
-						<h1 className="text-[1.65rem] md:text-3xl font-astralaga font-semibold text-clarc-blue">College News and Events</h1>
-					</Reveal>
+					<h1 className="text-[1.65rem] md:text-3xl font-astralaga font-semibold text-clarc-blue">College News and Events</h1>
+
 					<motion.button className="focus:outline-none flex items-center space-x-2 bg-clarc-blue hover:bg-clarc-gold text-white font-semibold  px-5 py-4 lg:px-6 rounded-full transition duration-300 group" whileTap={{ scale: [0.8, 1] }} whileHover={{ scale: [0.7, 1] }}>
 						<span className="text-sm lg:text-base text-clarc-gold group-hover:text-clarc-blue">View All News</span>
 						<ArrowRight className="w-5 h-5 text-clarc-gold group-hover:text-clarc-blue" />
