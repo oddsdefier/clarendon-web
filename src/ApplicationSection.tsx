@@ -1,5 +1,6 @@
 import React from "react";
 import BackgroundImage from "./BackgroundImage";
+import { Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
 const bgImgUrl = "https://lh3.googleusercontent.com/p/AF1QipPHx6N8IUwzWj67sVKPKpIsHM9ifsP6XW9q6Pn1=s680-w680-h510";
