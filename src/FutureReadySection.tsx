@@ -17,13 +17,13 @@ const FutureReadySection: React.FC = () => {
 					</div>
 				</div>
 				<div className="relative max-h-[80%] mt-8 lg:mt-0 hidden md:flex">
-					<div className="-z-10 absolute top-0 left-0 translate-x-10 translate-y-20 opacity-85">
-						<img src="/public/polka-pattern.png" alt="Future-ready learning at Clarendon" className="w-full h-auto max-w-lg mx-auto rounded-lg" style={{ filter: "hue-rotate(10deg)" }} />
+					<div className="-z-10 absolute top-0 left-0 translate-x-10 translate-y-5 opacity-85">
+						<img src="/polka-pattern.png" alt="Future-ready learning at Clarendon" className="w-full h-auto max-w-lg mx-auto rounded-lg" style={{ filter: "hue-rotate(10deg)" }} />
 					</div>
 					<div className="-z-10 absolute top-0 left-0 -translate-x-7 -translate-y-10 opacity-60">
-						<img src="/public/polka-pattern.png" alt="Future-ready learning at Clarendon" className="w-full h-auto max-w-lg mx-auto rounded-lg" />
+						<img src="/polka-pattern.png" alt="Future-ready learning at Clarendon" className="w-full h-auto max-w-lg mx-auto rounded-lg" />
 					</div>
-					<img src="https://scontent.fmnl17-2.fna.fbcdn.net/v/t39.30808-6/450367226_997865209006520_3537389735030025530_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEIQ_Y3inUC4G476qPmwhKJh3_PHo1c6nmHf88ejVzqeaOlOfwmgcto5c03c9llQSctfSJLdV_YpsDiSyivcn30&_nc_ohc=XLYtrWZawHIQ7kNvgGpvC-6&_nc_ht=scontent.fmnl17-2.fna&_nc_gid=AFT0hLQpsGvJNHBRL3dJxUb&oh=00_AYAuPvzOaFX4ZgdUOVBx7d46uUrtixj-ZVndfaV4k5_vHg&oe=670EBA71" alt="Future-ready learning at Clarendon" className="w-full h-auto max-w-lg mx-auto rounded-lg" />
+					<img src="https://www.travelorientalmindoro.ph/Content/img/uploads/7831a26b-917d-494a-8ee5-20d06dce76f9.jpg" alt="Future-ready learning at Clarendon" className="w-full h-auto max-w-lg mx-auto rounded-lg" />
 				</div>
 			</div>
 		</section>

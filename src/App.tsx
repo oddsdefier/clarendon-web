@@ -10,7 +10,7 @@ import Footer from "./Footer";
 
 const App: React.FC = () => {
 	return (
-		<div className="font-inter min-h-screen">
+		<div className="font-inter min-h-screen overflow-x-hidden">
 			<Header />
 			<section className="">
 				<main>

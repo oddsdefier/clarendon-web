@@ -35,10 +35,10 @@ const newsItems: NewsItem[] = [
 		link: "/news/national-competition-win",
 	},
 	{
-		category: "Research Spotlight",
-		title: "Breakthrough in Renewable Energy",
+		category: "Culture",
+		title: "Clarendon Cultural Center",
 		date: "July 30, 2024",
-		image: "https://www.feu.edu.ph/wp-content/uploads/2024/10/462133588_1107903954235527_7937138906334353410_n.jpg",
+		image: "https://www.travelorientalmindoro.ph/Content/img/uploads/7831a26b-917d-494a-8ee5-20d06dce76f9.jpg",
 		link: "/news/renewable-energy-breakthrough",
 	},
 ];
@@ -118,16 +118,17 @@ const NewsAndEventsSection: React.FC = () => {
 						{newsItems.map((item, index) => (
 							<CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
 								<div className="p-1">
-									<Card className="overflow-hidden shadow-none outline-none border-none transition duration-300 transform rounded-none bg-transparent">
+									<Card className="hover:bg-clarc-gold/10 overflow-hidden shadow-none outline-none border-none transition duration-300 transform rounded-none bg-transparent">
 										<a href={item.link} className="block relative group">
-											<div className=" overflow-hidden">
-												<img src={item.image} alt={item.title} className="rounded-sm w-full h-52 object-cover transition-transform duration-300 group-hover:scale-110" />
+											<div className=" overflow-hidden relative">
+												<img src={item.image} alt={item.title} className="rounded-sm w-full h-52 object-contain transition-transform duration-300 group-hover:scale-110" />
+												<img src={item.image} alt={item.title} className="absolute top-0 left-0 -z-10 rounded-sm w-full h-52 object-cover opacity-10" />
 												<div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 													<span className="text-white font-semibold text-base">Read More</span>
 												</div>
 											</div>
 										</a>
-										<CardContent className="p-4 space-y-2 mt-8">
+										<CardContent className=" p-4 space-y-2 pt-8">
 											<h4 className="uppercase text-[0.89rem] font-semibold text-clarc-blue/80 mb-6">
 												{"— "}
 												{item.category}

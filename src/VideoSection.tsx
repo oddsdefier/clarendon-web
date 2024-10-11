@@ -87,7 +87,7 @@ const VideoSection: React.FC = () => {
 
 	return (
 		<div className="bg-clarc-gold/10 relative">
-			<Youtube className="hidden lg:flex absolute rotate-12 top-0 lg:-top-12 lg:-right-10 lg:translate-x-16 translate-y-0 lg:translate-y-8 w-1/2 h-1/2 square text-white -z-[9] opacity-60" />
+			<Youtube className="hidden lg:flex absolute rotate-12 top-0 lg:-top-12 lg:right-5 lg:translate-x-8 translate-y-0 lg:translate-y-8 w-1/2 h-1/2 square text-white -z-[9] opacity-40" />
 			<div
 				className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-10"
 				style={{
@@ -156,7 +156,7 @@ const VideoSection: React.FC = () => {
 				</div>
 
 				<div className="mt-10 flex justify-center">
-					<a href="/" target="_blank" className="hover:underline hover:decoration-clarc-blue/70 hover:underline-offset-2 cursor-pointer rounded-full z-20 text-sm text-clarc-blue font-semibold hover:text-clarc-blue/70 transition-colors duration-300">
+					<a href="/" target="_blank" className="hover:underline hover:decoration-clarc-blue/70 hover:underline-offset-2 cursor-pointer rounded-full z-20 lg:text-base text-sm text-clarc-blue font-semibold hover:text-clarc-blue/70 transition-colors duration-300">
 						View More Videos →
 					</a>
 				</div>
