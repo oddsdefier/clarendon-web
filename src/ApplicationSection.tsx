@@ -20,7 +20,7 @@ const ApplicationSection: React.FC = () => {
 			<div className="container mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-16 relative z-10">
 				<div className="w-full lg:w-1/2">
 					<div className="aspect-square max-w-xs lg:max-w-md mx-auto">
-						<motion.img src="https://scontent.fmnl8-2.fna.fbcdn.net/v/t39.30808-6/431946606_915179940608381_6879013593159267845_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeHcnIjh2HXMi9SLzaMsO_7BpDgxLiTrlUikODEuJOuVSNyuzrYtFGFYcBMRdsjHMz-oUA3MhMhpyoeMeJ2rj-GX&_nc_ohc=tRW-9mTQNFMQ7kNvgHHlIUq&_nc_ht=scontent.fmnl8-2.fna&_nc_gid=AlnkLOh6eLoztj8B9q3ONph&oh=00_AYAgDA2IAPiG5NMVTxp9OFQADXot0Nnfz7Clpx5ASztkow&oe=670AC468" alt="Application image" className="w-full h-full object-cover rounded-lg lg:-rotate-2 -rotate-0 hover:rotate-0 transition-all duration-150" drag />
+						<motion.img src="https://scontent.fmnl8-2.fna.fbcdn.net/v/t39.30808-6/431946606_915179940608381_6879013593159267845_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeHcnIjh2HXMi9SLzaMsO_7BpDgxLiTrlUikODEuJOuVSNyuzrYtFGFYcBMRdsjHMz-oUA3MhMhpyoeMeJ2rj-GX&_nc_ohc=tRW-9mTQNFMQ7kNvgHHlIUq&_nc_ht=scontent.fmnl8-2.fna&_nc_gid=AlnkLOh6eLoztj8B9q3ONph&oh=00_AYAgDA2IAPiG5NMVTxp9OFQADXot0Nnfz7Clpx5ASztkow&oe=670AC468" alt="Application image" className="w-full h-full object-cover rounded-lg lg:-rotate-2 -rotate-0 hover:rotate-0 transition-all duration-150" whileInView={{ scale: [1, 0.85, 1], rotate: [0, -12, 0] }} />
 					</div>
 				</div>
 				<div className="px-4 lg:px-0 w-full flex flex-col justify-center items-center lg:items-start lg:w-1/2 space-y-6 text-center lg:text-left text-indigo-50 max-w-sm lg:max-w-xl">
