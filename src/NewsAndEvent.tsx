@@ -90,7 +90,7 @@ const NewsAndEventsSection: React.FC = () => {
 	}, [api, slidesPerView]);
 
 	return (
-		<section className="py-20 bg-clarc-gold/10 relative">
+		<section className="py-20 bg-clarc-white/10 relative">
 			<div
 				className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-10"
 				style={{
