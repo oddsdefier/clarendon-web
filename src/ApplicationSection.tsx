@@ -6,9 +6,17 @@ import { motion } from "framer-motion";
 const bgImgUrl = "https://lh3.googleusercontent.com/p/AF1QipPHx6N8IUwzWj67sVKPKpIsHM9ifsP6XW9q6Pn1=s680-w680-h510";
 const ApplicationSection: React.FC = () => {
 	return (
-		<section className="px-4 py-20 lg:py-24 relative bg-clarc-blue/50">
+		<section className="px-4 py-20 lg:py-24 relative bg-clarc-blue/10">
 			<BackgroundImage url={bgImgUrl} />
-			<div className="-z-10 absolute inset-0 bg-gradient-to-t from-white to-transparent opacity-100"></div>
+			{/* <div className="absolute inset-0 bg-gradient-to-l from-clarc-blue to-transparent opacity-100"></div> */}
+			{/* <div className=" absolute inset-0 bg-gradient-to-t from-clarc-blue to-transparent opacity-100"></div> */}
+			<div
+				style={{
+					backgroundImage: "linear-gradient(#c9b163 1px, transparent 1px), linear-gradient(to right, #c9b163 1px, transparent 1px)",
+					backgroundSize: "30px 30px",
+				}}
+				className="absolute inset-0 opacity-20"></div>
+
 			<div className="container mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-16 relative z-10">
 				<div className="w-full lg:w-1/2">
 					<div className="aspect-square max-w-xs lg:max-w-md mx-auto">
