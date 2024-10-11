@@ -45,19 +45,6 @@ const ApplicationSection: React.FC = () => {
 							<Sparkle className=" text-white absolute -rotate-[45deg] scale-110 top-0 -left-2 -translate-x-1 -translate-y-0 w-[0.5rem] h-[0.5rem] transition-all duration-500" />
 						</motion.span>
 						<motion.span
-							className="absolute left-3"
-							animate={{
-								scale: [1, 1.2, 1],
-								opacity: [1, 0.8, 1],
-							}}
-							transition={{
-								duration: 1,
-								repeat: Infinity,
-								repeatType: "loop",
-							}}>
-							<Sparkles className=" text-white absolute -rotate-[19deg] scale-110 top-0 -left-2 -translate-x-1 -translate-y-4 w-[0.9rem] h-[0.9rem] transition-all duration-500" />
-						</motion.span>
-						<motion.span
 							className="absolute right-2"
 							animate={{
 								scale: [1, 1.2, 1],
@@ -70,34 +57,6 @@ const ApplicationSection: React.FC = () => {
 							}}>
 							<Sparkle className=" text-white absolute -rotate-[19deg] scale-110 top-0 -left-2 -translate-x-1 -translate-y-1 w-[0.55rem] h-[0.55rem] transition-all duration-500" />
 						</motion.span>
-						<motion.span
-							className="absolute -bottom-2 -right-1"
-							animate={{
-								scale: [1, 1.2, 1],
-								opacity: [1, 0.8, 1],
-							}}
-							transition={{
-								duration: 1,
-								repeat: Infinity,
-								repeatType: "loop",
-							}}>
-							<Sparkle className=" text-white absolute -rotate-[119deg] scale-110 top-0 -left-2 -translate-x-1 -translate-y-3 w-[0.55rem] h-[0.55rem] transition-all duration-500" />
-						</motion.span>
-						<motion.span
-							className="absolute left-2 -bottom-3"
-							animate={{
-								scale: [1, 1.2, 1],
-								opacity: [1, 0.8, 1],
-							}}
-							transition={{
-								duration: 1,
-								repeat: Infinity,
-								repeatType: "loop",
-							}}>
-							<Sparkle className=" text-white absolute -rotate-[136deg] scale-110 top-0 -left-2 -translate-x-1 -translate-y-4 w-[0.7rem] h-[0.7rem] transition-all duration-500" />
-						</motion.span>
-
-						{/* <Sparkles className=" absolute -rotate-45 scale-105 top-0 -right-2 -translate-x-[5.3rem] -translate-y-3 w-4 h-4   transition-all duration-500  " /> */}
 					</h1>
 
 					<h2 className="text-base md:text-xl font-medium text-white/90">Student Placement Admission to College Education</h2>
