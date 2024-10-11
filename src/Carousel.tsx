@@ -33,14 +33,17 @@ export default function CarouselPlugin() {
 
 	const handleMouseEnter = useCallback(() => setAutoplay(false), []);
 	const handleMouseLeave = useCallback(() => setAutoplay(true), []);
-
 	return (
-		<div className="w-full mx-auto" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+		<div className="w-full mx-auto bg-clarc-blue" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
 			<Carousel setApi={setApi} className="w-full">
 				<CarouselContent>
 					{imgLinks.map((imgLink, index) => (
 						<CarouselItem key={index}>
-							<div className="aspect-video flex items-center justify-center">
+							<div className="relative aspect-video flex items-center justify-center w-full">
+								<div className="z-10 absolute inset-0 flex items-center justify-center">
+									<h1 className="text-white text-lg lg:text-9xl">sample text</h1>
+								</div>
+								<div className="absolute inset-0 bg-gradient-to-t from-clarc-blue to-transparent opacity-50"></div>
 								<img src={imgLink} alt={`Image ${index + 1}`} className="object-cover w-full h-full" />
 							</div>
 						</CarouselItem>
@@ -49,7 +52,7 @@ export default function CarouselPlugin() {
 				<CarouselPrevious className="hidden md:flex md:left-12" />
 				<CarouselNext className="hidden md:flex md:right-12" />
 			</Carousel>
-			<div className="flex justify-center my-4">
+			<div className="z-90 flex justify-center py-4 bg-white">
 				{imgLinks.map((_, index) => (
 					<button key={index} className={`z-20 w-1 h-1 md:w-2 md:h-2 aspect-square rounded-full mx-1 transition-colors duration-200 ${index === current ? "bg-clarc-blue" : "bg-clarc-blue/30"}`} onClick={() => api?.scrollTo(index)} aria-label={`Go to slide ${index + 1}`} />
 				))}

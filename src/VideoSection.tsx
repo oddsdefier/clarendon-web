@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Play } from "lucide-react";
+import { Play, Youtube } from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
@@ -87,15 +87,16 @@ const VideoSection: React.FC = () => {
 
 	return (
 		<div className="bg-clarc-gold/10 relative">
+			<Youtube className="hidden lg:flex absolute rotate-12 top-0 lg:-top-12 lg:-right-10 lg:translate-x-16 translate-y-0 lg:translate-y-8 w-1/2 h-1/2 square text-white -z-[9] opacity-60" />
 			<div
 				className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-10"
 				style={{
 					backgroundImage: `url(${bgImgUrl})`,
 				}}></div>
 			<div className="-z-10 absolute inset-0 bg-gradient-to-t from-clarc-gold to-transparent opacity-100"></div>
-			<div className="container mx-auto px-4 py-20">
-				<div className="text-center mb-16">
-					<h3 className="uppercase text-xl font-semibold text-clarc-blue/70 mb-4">Our Videos</h3>
+			<div className="container mx-auto px-4 py-16">
+				<div className="text-center mb-10">
+					<h3 className="uppercase text-lg lg:text-xl font-semibold text-clarc-blue/70 mb-4">Our Videos</h3>
 					<h1 className="text-2xl md:text-3xl font-astralaga font-semibold text-clarc-blue">
 						Experience <span className="text-clarc-gold lg:text-[2.1rem]">Clarendon</span> through these videos
 					</h1>
@@ -136,7 +137,7 @@ const VideoSection: React.FC = () => {
 												</div>
 											</figure>
 											<div className="mt-4">
-												<h2 className="text-left text-base w-3/4 font-medium text-gray-700">{video.title}</h2>
+												<h2 className="text-left text-base lg:text-lg w-3/4 font-semibold text-gray-700">{video.title}</h2>
 												<p className="mt-1 text-xs text-left font-normal text-gray-700/70">Sanctus duo accusam eos clita aliquyam eos stet diam stet stet. Sed labore elitr diam invidunt ipsum et, est at.</p>
 											</div>
 										</motion.div>
@@ -155,7 +156,7 @@ const VideoSection: React.FC = () => {
 				</div>
 
 				<div className="mt-10 flex justify-center">
-					<a href="/" target="_blank" className="cursor-pointer rounded-full z-20 text-sm text-clarc-blue font-semibold hover:text-clarc-blue/70 transition-colors duration-300">
+					<a href="/" target="_blank" className="hover:underline hover:decoration-clarc-blue/70 hover:underline-offset-2 cursor-pointer rounded-full z-20 text-sm text-clarc-blue font-semibold hover:text-clarc-blue/70 transition-colors duration-300">
 						View More Videos →
 					</a>
 				</div>

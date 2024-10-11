@@ -3,7 +3,7 @@ import { Search, Menu, MapPin } from "lucide-react";
 import { ClarendonNavigationMenu } from "./NavigationMenu";
 const Header: React.FC = () => {
 	return (
-		<header>
+		<header className="bg-white">
 			<nav className="flex flex-col">
 				<div className="hidden md:flex p-3 text-indigo-50 bg-clarc-blue">
 					<div className="flex justify-between container mx-auto px-2 text-sm sm:text-base sm:px-4 md:px6 h-8">

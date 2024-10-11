@@ -15,8 +15,8 @@ const ApplicationSection: React.FC = () => {
 					backgroundImage: "linear-gradient(#c9b163 1px, transparent 1px), linear-gradient(to right, #c9b163 1px, transparent 1px)",
 					backgroundSize: "30px 30px",
 				}}
-				className="absolute inset-0 opacity-20"></div>
-
+				className="absolute inset-0 opacity-40"></div>
+			<div className="z-0 absolute inset-0 bg-gradient-to-t from-clarc-blue to-transparent opacity-100"></div>
 			<div className="container mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-16 relative z-10">
 				<div className="w-full lg:w-1/2">
 					<div className="aspect-square max-w-xs lg:max-w-md mx-auto">
