@@ -3,7 +3,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { ArrowRight, Calendar } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { Reveal } from "./Reveal";
-
+import { motion } from "framer-motion";
 interface NewsItem {
 	category: string;
 	title: string;
@@ -42,52 +42,89 @@ const newsItems: NewsItem[] = [
 		link: "/news/renewable-energy-breakthrough",
 	},
 ];
-
+const bgImgUrl = "https://scontent.fmnl8-1.fna.fbcdn.net/v/t39.30808-6/451300567_1003303658462675_6725677853035530200_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGGSZJPy1VsRQczE9PnBJAMDjZ22N7BhKIONnbY3sGEoutRECPzsYoyQmjQugfhwy072jB9Lo_3dqGgv95tHVsb&_nc_ohc=mntr7S7mqgIQ7kNvgEQmmt0&_nc_ht=scontent.fmnl8-1.fna&_nc_gid=AwzqxoOIcFfVSqkdYvGvWHr&oh=00_AYDjau1dy0Z8hothutILewVhrsC6Tu3rML54jIKMGYy-2Q&oe=670D7C85";
 const NewsAndEventsSection: React.FC = () => {
 	const [api, setApi] = useState<CarouselApi>();
 	const [current, setCurrent] = useState<number | null>(0);
+	const [slidesPerView, setSlidesPerView] = useState<number>(1);
+	const [totalPages, setTotalPages] = useState<number>(1);
 
+	useEffect(() => {
+		const updateSlidesPerView = () => {
+			if (window.innerWidth >= 1024) {
+				console.log("1024");
+				setSlidesPerView(3);
+			} else if (window.innerWidth >= 768) {
+				console.log("768");
+				setSlidesPerView(2);
+			} else {
+				console.log("smol width");
+				setSlidesPerView(1);
+			}
+		};
+		updateSlidesPerView();
+		window.addEventListener("resize", updateSlidesPerView);
+		return () => window.removeEventListener("resize", updateSlidesPerView);
+	});
 	useEffect(() => {
 		if (!api) {
 			return;
 		}
 
+		const totalSlides = newsItems.length;
+		const pages = Math.ceil(totalSlides / slidesPerView);
+		setTotalPages(pages);
+
+		const updateCurrent = () => {
+			const currentIndex = api.selectedScrollSnap();
+			setCurrent(currentIndex);
+		};
+		updateCurrent();
 		setCurrent(api.selectedScrollSnap());
 
-		api.on("select", () => {
-			setCurrent(api.selectedScrollSnap());
-		});
-	}, [api]);
+		api.on("select", updateCurrent);
+
+		return () => {
+			api.off("select", updateCurrent);
+		};
+	}, [api, slidesPerView]);
 
 	return (
-		<section className="py-12">
+		<section className="py-20 bg-clarc-gold/10 relative">
+			<div
+				className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-10"
+				style={{
+					backgroundImage: `url(${bgImgUrl})`,
+				}}></div>
+			<div className="-z-10 absolute inset-0 bg-gradient-to-t from-white to-transparent opacity-100"></div>
+			<div className="-z-10 absolute inset-0 bg-gradient-to-t from-white to-transparent opacity-100"></div>
 			<div className="container mx-auto px-4">
-				<div className="flex flex-col sm:flex-row justify-between items-center mb-10">
+				<div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-5">
 					<Reveal>
-						<h1 className="font-astralaga text-3xl md:text-4xl font-semibold text-clarc-blue mb-4 sm:mb-0">College News and Events</h1>
+						<h1 className="text-2xl md:text-3xl font-astralaga font-semibold text-clarc-blue">College News and Events</h1>
 					</Reveal>
-					<button className="flex items-center space-x-2 bg-clarc-blue hover:bg-indigo-800 text-white font-semibold py-4 px-6 rounded-full transition duration-300">
-						<span className="text-md">View All News</span>
-						<ArrowRight size={20} />
-					</button>
+					<motion.button className="focus:outline-none flex items-center space-x-2 bg-clarc-blue hover:bg-clarc-gold text-white font-semibold py-4 px-6 rounded-full transition duration-300 group" whileTap={{ scale: [0.8, 1] }} whileHover={{ scale: [0.7, 1] }}>
+						<span className="text-base text-clarc-gold group-hover:text-clarc-blue">View All News</span>
+						<ArrowRight className="w-5 h-5 text-clarc-gold group-hover:text-clarc-blue" />
+					</motion.button>
 				</div>
 				<Carousel
 					setApi={setApi}
 					opts={{
 						align: "start",
-						loop: true,
+						slidesToScroll: slidesPerView,
 					}}
 					className="w-full">
 					<CarouselContent>
 						{newsItems.map((item, index) => (
 							<CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
 								<div className="p-1">
-									<Card className="overflow-hidden shadow-none outline-none border-none transition duration-300 transform ">
+									<Card className="overflow-hidden shadow-none outline-none border-none transition duration-300 transform rounded-none bg-transparent">
 										<a href={item.link} className="block relative group">
 											<div className=" overflow-hidden">
 												<img src={item.image} alt={item.title} className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110" />
 												<div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-													<span className="text-white font-semibold text-lg">Read More</span>
+													<span className="text-white font-semibold text-base">Read More</span>
 												</div>
 											</div>
 										</a>
@@ -96,7 +133,7 @@ const NewsAndEventsSection: React.FC = () => {
 												{"— "}
 												{item.category}
 											</h4>
-											<h2 className="font-astralaga text-xl font-bold text-gray-800 mb-3 line-clamp-2">{item.title}</h2>
+											<h2 className="font-astralaga text-xl font-bold text-clarc-blue mb-3 line-clamp-2">{item.title}</h2>
 											<div className="flex justify-start items-center gap-2">
 												<Calendar className="w-4 h-4 text-gray-500" />
 												<p className="text-sm text-gray-500 font-semibold">{item.date}</p>
@@ -107,16 +144,12 @@ const NewsAndEventsSection: React.FC = () => {
 							</CarouselItem>
 						))}
 					</CarouselContent>
-					<CarouselPrevious className="hidden md:flex md:-left-12" />
-					<CarouselNext className="hidden md:flex md:-right-12" />
+					<CarouselPrevious className="hidden md:flex md:-left-10" />
+					<CarouselNext className="hidden md:flex md:-right-10" />
 				</Carousel>
-				<div className="flex justify-center my-6">
-					{/**
-					 * TODO: Fix the logic when clicking the circle it does not go to the right card
-					 *
-					 */}
-					{newsItems.map((_, index) => (
-						<button key={index} className={`w-2 h-2 aspect-square rounded-full mx-1 transition-colors duration-200 ${index === current ? "bg-clarc-gold" : "bg-gray-300"}`} onClick={() => api?.scrollTo(index)} aria-label={`Go to slide ${index + 1}`} />
+				<div className="flex justify-center my-8">
+					{Array.from({ length: totalPages }).map((_, index) => (
+						<button key={index} className={`z-20 w-1 h-1 md:w-2 md:h-2 aspect-square rounded-full mx-1 transition-colors duration-200 ${index === current ? "bg-clarc-blue" : "bg-clarc-blue/30"}`} onClick={() => api?.scrollTo(index * slidesPerView)} aria-label={`Go to slide ${index + 1}`} />
 					))}
 				</div>
 			</div>

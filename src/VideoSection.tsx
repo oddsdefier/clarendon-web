@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 
@@ -30,18 +30,24 @@ const videos = [
 		thumbnail: "https://i.ytimg.com/vi/446E-r0rXHI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBuyU5skZOHGjSWGyjpN-zroIOwXQ",
 		link: "/",
 	},
+	{
+		id: 5,
+		title: "Go in 100 Seconds",
+		thumbnail: "https://i.ytimg.com/vi/446E-r0rXHI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBuyU5skZOHGjSWGyjpN-zroIOwXQ",
+		link: "/",
+	},
 ];
 
 const bgImgUrl = "https://scontent.fmnl3-3.fna.fbcdn.net/v/t1.6435-9/87552206_109185400685458_8773993985245970432_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeFO4Mchm6htvMg3jfpS88muV7IgrR-L65lXsiCtH4vrmbjZ8WFU0JAn-9mlwAyPhTmA3SH4R7N9-RgW0S0GkGW2&_nc_ohc=IDqxNCm7-KUQ7kNvgEF9FhL&_nc_ht=scontent.fmnl3-3.fna&_nc_gid=A5VdmLMMKAhdBxXSNnq4UGb&oh=00_AYC3SJL1bVCLptcCij-ssMAGnZCLpTWeVLiYOmDDHC2img&oe=672F3CA6";
 
-export default function Component() {
-	const [api, setApi] = React.useState<CarouselApi>();
-	const [current, setCurrent] = React.useState(0);
-	const [hoveredId, setHoveredId] = React.useState<number | null>(null);
-	const [slidesPerView, setSlidesPerView] = React.useState(1);
-	const [totalPages, setTotalPages] = React.useState(1);
+const VideoSection: React.FC = () => {
+	const [api, setApi] = useState<CarouselApi>();
+	const [current, setCurrent] = useState<number | null>(0);
+	const [hoveredId, setHoveredId] = useState<number | null>(null);
+	const [slidesPerView, setSlidesPerView] = useState<number>(1);
+	const [totalPages, setTotalPages] = useState<number>(1);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		const updateSlidesPerView = () => {
 			if (window.innerWidth >= 1024) {
 				setSlidesPerView(3);
@@ -58,11 +64,11 @@ export default function Component() {
 		return () => window.removeEventListener("resize", updateSlidesPerView);
 	}, []);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		if (!api) return;
 
-		const totalSlides = videos.length;
-		const pages = Math.ceil(totalSlides / slidesPerView);
+		const totalSlides: number = videos.length;
+		const pages: number = Math.ceil(totalSlides / slidesPerView);
 		setTotalPages(pages);
 
 		const updateCurrent = () => {
@@ -71,6 +77,7 @@ export default function Component() {
 		};
 
 		updateCurrent();
+
 		api.on("select", updateCurrent);
 
 		return () => {
@@ -86,11 +93,11 @@ export default function Component() {
 					backgroundImage: `url(${bgImgUrl})`,
 				}}></div>
 			<div className="-z-10 absolute inset-0 bg-gradient-to-t from-clarc-gold to-transparent opacity-100"></div>
-			<div className="container mx-auto px-4 py-16">
+			<div className="container mx-auto px-4 py-20">
 				<div className="text-center mb-16">
 					<h3 className="uppercase text-xl font-semibold text-clarc-blue/70 mb-4">Our Videos</h3>
 					<h1 className="text-2xl md:text-3xl font-astralaga font-semibold text-clarc-blue">
-						Experience <span className="text-clarc-gold text-[2.1rem]">Clarendon</span> through these videos
+						Experience <span className="text-clarc-gold lg:text-[2.1rem]">Clarendon</span> through these videos
 					</h1>
 				</div>
 
@@ -138,8 +145,8 @@ export default function Component() {
 							</CarouselItem>
 						))}
 					</CarouselContent>
-					<CarouselPrevious className="hidden md:flex md:-left-12" />
-					<CarouselNext className="hidden md:flex md:-right-12" />
+					<CarouselPrevious className="hidden md:flex md:-left-10" />
+					<CarouselNext className="hidden md:flex md:-right-10" />
 				</Carousel>
 				<div className="flex justify-center my-8">
 					{Array.from({ length: totalPages }).map((_, index) => (
@@ -148,9 +155,13 @@ export default function Component() {
 				</div>
 
 				<div className="mt-10 flex justify-center">
-					<a className="cursor-pointer rounded-full z-20 text-sm text-clarc-blue font-semibold hover:text-clarc-blue/70 transition-colors duration-300">View More Videos →</a>
+					<a href="/" target="_blank" className="cursor-pointer rounded-full z-20 text-sm text-clarc-blue font-semibold hover:text-clarc-blue/70 transition-colors duration-300">
+						View More Videos →
+					</a>
 				</div>
 			</div>
 		</div>
 	);
-}
+};
+
+export default VideoSection;
