@@ -1,12 +1,12 @@
-import CarouselPlugin from "./Carousel";
 import React from "react";
-import Header from "./Header";
+import Header from "./layouts/Header";
 import ResourceButtons from "./ResourceButtons";
-import FutureReadingSection from "./FutureReadySection";
+import FutureReadingSection from "./CarpeDiem";
 import ApplicationSection from "./ApplicationSection";
 import NewsAndEventsSection from "./NewsAndEvent";
 import VideoSection from "./VideoSection";
-import Footer from "./Footer";
+import Footer from "./layouts/Footer";
+import CarouselHero from "./CarouselHero";
 
 const App: React.FC = () => {
 	return (
@@ -14,7 +14,7 @@ const App: React.FC = () => {
 			<Header />
 			<section className="">
 				<main>
-					<CarouselPlugin />
+					<CarouselHero />
 					<ResourceButtons />
 					<FutureReadingSection />
 					<ApplicationSection />

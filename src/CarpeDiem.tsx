@@ -4,8 +4,8 @@ const FutureReadySection: React.FC = () => {
 	return (
 		<section className="container mx-auto px-4 py-12 md:py-16 lg:py-24">
 			<div className="grid grid-cols-1 lg:grid-cols-2 lg:px-16 gap-8 lg:gap-16 items-center">
-				<div className="space-y-6 px-4 lg:px-0">
-					<h2 className="text-2xl md:text-3xl lg:text-4xl font-astralaga font-bold text-clarc-blue uppercase leading-relaxed">Carpe Diem</h2>
+				<div className="space-y-6 px-4 lg:px-0 order-last lg:order-first">
+					<h2 className="text-2xl md:text-3xl lg:text-4xl font-astralaga font-bold text-clarc-blue uppercase leading-relaxed">Seize the Day</h2>
 
 					<p className="text-sm lg:text-base max-w-sm lg:max-w-xl md:text-lg text-gray-600/90 leading-7">At Clarendon College, we embrace the philosophy of "Carpe Diem" - Seize the Day. Our commitment is to provide an environment where students can maximize their potential, take advantage of every opportunity, and prepare themselves for a future filled with promise and success.</p>
 
@@ -16,12 +16,12 @@ const FutureReadySection: React.FC = () => {
 						<button className="max-w-fit px-6 py-3 text-sm md:text-base font-semibold text-indigo-900 border-2 border-indigo-900 rounded-full hover:border-clarc-gold hover:bg-clarc-gold/20 hover:text-clarc-gold transition-colors duration-300">Awards and Recognition</button>
 					</div>
 				</div>
-				<div className="relative max-h-[80%] mt-8 lg:mt-0 hidden md:flex">
-					<div className="-z-10 absolute top-0 left-0 translate-x-10 translate-y-5 opacity-85">
+				<div className="relative max-h-[80%] mt-8 lg:mt-0 md:flex my-10 lg:my-0 pointer-events-none order-first lg:order-last">
+					<div className="-z-10 absolute bottom-0 right-0 translate-x-7 translate-y-10 opacity-85">
 						<img src="/polka-pattern.png" alt="Future-ready learning at Clarendon" className="w-full h-auto max-w-lg mx-auto rounded-lg" style={{ filter: "hue-rotate(10deg)" }} />
 					</div>
-					<div className="-z-10 absolute top-0 left-0 -translate-x-7 -translate-y-10 opacity-60">
-						<img src="/polka-pattern.png" alt="Future-ready learning at Clarendon" className="w-full h-auto max-w-lg mx-auto rounded-lg" />
+					<div className="-z-10 absolute top-0 left-0 -translate-x-7 -translate-y-10 opacity-85">
+						<img src="/polka-pattern.png" alt="Future-ready learning at Clarendon" className="w-full h-auto max-w-lg mx-auto rounded-lg" style={{ filter: "hue-rotate(10deg)" }} />
 					</div>
 					<img src="https://www.travelorientalmindoro.ph/Content/img/uploads/7831a26b-917d-494a-8ee5-20d06dce76f9.jpg" alt="Future-ready learning at Clarendon" className="w-full h-auto max-w-lg mx-auto rounded-lg" />
 				</div>

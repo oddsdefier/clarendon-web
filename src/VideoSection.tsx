@@ -95,6 +95,7 @@ const VideoSection: React.FC = () => {
 				}}></div>
 			<div className="-z-10 absolute inset-0 bg-gradient-to-t from-clarc-gold to-transparent opacity-100"></div>
 			<div className="container mx-auto px-4 py-16">
+				
 				<div className="text-center mb-10">
 					<h3 className="uppercase text-lg lg:text-xl font-semibold text-clarc-blue/70 mb-4">Our Videos</h3>
 					<h1 className="text-2xl md:text-3xl font-astralaga font-semibold text-clarc-blue">
@@ -108,7 +109,6 @@ const VideoSection: React.FC = () => {
 					opts={{
 						align: "start",
 						slidesToScroll: slidesPerView,
-						// slidesPerView: slidesPerView,
 					}}>
 					<CarouselContent>
 						{videos.map((video, index) => (

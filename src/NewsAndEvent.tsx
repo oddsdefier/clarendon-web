@@ -43,7 +43,7 @@ const newsItems: NewsItem[] = [
 	},
 ];
 const bgImgUrl = newsItems[Math.floor(Math.random() * newsItems.length)].image;
-console.log(bgImgUrl);
+
 const NewsAndEventsSection: React.FC = () => {
 	const [api, setApi] = useState<CarouselApi>();
 	const [current, setCurrent] = useState<number | null>(0);
