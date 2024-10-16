@@ -120,14 +120,14 @@ export default function MobileNavigation() {
 			<Accordion type="single" collapsible className="w-full">
 				{navigationData.map((category) => (
 					<AccordionItem key={category.title} value={category.title.toLowerCase().replace(/\s+/g, "-")}>
-						<AccordionTrigger className="text-sm font-medium focus:outline-none">{category.title}</AccordionTrigger>
+						<AccordionTrigger className="text-sm font-medium focus:outline-none outline outline-none">{category.title}</AccordionTrigger>
 						<AccordionContent>
 							<ul className="space-y-2">
 								{category.items.map((item) => (
 									<li key={item.title}>
 										<a href={item.href} className="text-sm block p-2 hover:bg-accent rounded-md">
 											<span className="font-medium">{item.title}</span>
-											<p className="text-sm text-muted-foreground">{item.description}</p>
+											{/* <p className="text-sm text-muted-foreground">{item.description}</p> */}
 										</a>
 									</li>
 								))}
