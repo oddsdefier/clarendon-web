@@ -12,7 +12,7 @@ const FutureReadySection: React.FC = () => {
 					<p className="text-sm lg:text-base max-w-sm lg:max-w-xl md:text-lg text-gray-600/90 leading-7">Clarendon is one of the leading private colleges in the Philippines offering accessible, quality, and future-ready education. We aim to develop well-rounded students who are intellectually curious, creative problem solvers, critical thinkers, responsible digital citizens, professionals, and contributing members of society. Clarendon graduates are globally competitive and exhibit the core values of fortitude, excellence, and uprightness.</p>
 
 					<div className="flex flex-col sm:flex-row gap-2 lg:gap-4 py-2 justify-start items-start">
-						<button className="max-w-fit px-6 py-3 text-sm md:text-base focus:outline-none flex justify-center items-center space-x-2 bg-clarc-blue hover:bg-clarc-gold hover:text-clarc-blue text-white font-semibold lg:px-6 rounded-full transition duration-300 group">Philosophy of Education</button>
+						<button className="max-w-fit px-6 py-3 text-sm md:text-base focus:outline-none flex justify-center items-center space-x-2 text-clarc-gold bg-clarc-blue hover:bg-clarc-gold hover:text-clarc-blue font-semibold lg:px-6 rounded-full transition duration-300 group">Philosophy of Education</button>
 						<button className="max-w-fit px-6 py-3 text-sm md:text-base font-semibold text-indigo-900 border-2 border-indigo-900 rounded-full hover:border-clarc-gold hover:bg-clarc-gold/20 hover:text-clarc-gold transition-colors duration-300">Awards and Recognition</button>
 					</div>
 				</div>

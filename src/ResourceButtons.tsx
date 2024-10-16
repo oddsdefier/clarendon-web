@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 
 const resourceButtons = [
-	{ label: "Online Resources", href: "#online-resources" },
+	{ label: "News and Events", href: "#news-and-events" },
 	{ label: "International", href: "#international" },
 	{ label: "Arts and Culture", href: "#arts-and-culture" },
 	{ label: "Alumni", href: "#alumni" },

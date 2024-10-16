@@ -62,7 +62,7 @@ export default {
 				clarc: {
 					'blue': '#15335f',
 					'gold': '#c9b163',
-					'white': '#0504aa'
+					'white': '#fcfaee'
 				}
 			}
 		}
