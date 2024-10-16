@@ -1,44 +1,49 @@
-import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Play, Youtube } from "lucide-react";
+import React, { useCallback, useEffect, useState } from "react";
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 
-const videos = [
-	{
-		id: 1,
-		title: "Teacher (51) Nainlove sa (15) Year Old Student 💀 Balitangina",
-		thumbnail: "https://i.ytimg.com/vi/YKJMGQ0BwG8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBO8odRfTqOC9AoAodj0h-VjBPtBQ",
-		link: "/",
-	},
-	{
-		id: 2,
-		title: "Rick Astley - Never Gonna Give You Up (Official Music Video)",
-		thumbnail: "https://i.ytimg.com/vi/dQw4w9WgXcQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDRxusbm2_TGTnDWEIhBTYW2cUQkw",
-		link: "/",
-	},
-	{
-		id: 3,
-		title: "C Programming Full Course for free ⚙️",
-		thumbnail: "https://i.ytimg.com/vi/87SH2Cn0s9A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA8BjfQxpjZcbPOrtNFzED7xyY3Dw",
-		link: "/",
-	},
-	{
-		id: 4,
-		title: "Go in 100 Seconds",
-		thumbnail: "https://i.ytimg.com/vi/446E-r0rXHI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBuyU5skZOHGjSWGyjpN-zroIOwXQ",
-		link: "/",
-	},
-	{
-		id: 5,
-		title: "Go in 100 Seconds",
-		thumbnail: "https://i.ytimg.com/vi/446E-r0rXHI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBuyU5skZOHGjSWGyjpN-zroIOwXQ",
-		link: "/",
-	},
-];
+import CarouselItemAnim from "./components/CarouselItemAnim";
+
+import { videoItem, videos } from "./utils/get_video_data";
+import ViewAllBtn from "./components/ViewAllBtn";
 
 const bgImgUrl = "https://scontent.fmnl3-3.fna.fbcdn.net/v/t1.6435-9/87552206_109185400685458_8773993985245970432_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeFO4Mchm6htvMg3jfpS88muV7IgrR-L65lXsiCtH4vrmbjZ8WFU0JAn-9mlwAyPhTmA3SH4R7N9-RgW0S0GkGW2&_nc_ohc=IDqxNCm7-KUQ7kNvgEF9FhL&_nc_ht=scontent.fmnl3-3.fna&_nc_gid=A5VdmLMMKAhdBxXSNnq4UGb&oh=00_AYC3SJL1bVCLptcCij-ssMAGnZCLpTWeVLiYOmDDHC2img&oe=672F3CA6";
+
+const VideoCard = React.memo(({ video, index, hoveredId, setHoveredId }: { video: videoItem; index: number; hoveredId: number | null; setHoveredId: (id: number | null) => void }) => (
+	<Card className="border-none shadow-none bg-transparent">
+		<CardContent className="p-0">
+			<CarouselItemAnim index={index}>
+				<figure className="relative w-full rounded-lg overflow-hidden shadow-lg aspect-video">
+					<div className="absolute inset-0 bg-gradient-to-tr from-black/80 to-transparent opacity-95"></div>
+					<img src={video.thumbnail} alt={`${video.title} Thumbnail`} className="w-full h-full object-cover" />
+					<div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 transition-opacity duration-300 hover:bg-opacity-50" onMouseEnter={() => setHoveredId(video.id)} onMouseLeave={() => setHoveredId(null)}>
+						<motion.div className="relative" initial={{ scale: 1 }} animate={{ scale: hoveredId === video.id ? 1.1 : 1 }} transition={{ duration: 0.3 }}>
+							<motion.div
+								className="absolute inset-0 bg-white rounded-full opacity-25 -z-10"
+								initial={{ scale: 0.8, opacity: 0 }}
+								animate={{
+									scale: hoveredId === video.id ? 1.5 : 0.8,
+									opacity: hoveredId === video.id ? 0.5 : 0,
+								}}
+								transition={{ duration: 1, repeat: Infinity }}
+							/>
+							<motion.a href={video.link} className="w-10 h-10 z-10 grid place-items-center rounded-full bg-transparent border border-white text-primary shadow-lg" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} aria-label={`Play ${video.title} video`}>
+								<Play className="w-4 h-4 text-white" />
+							</motion.a>
+						</motion.div>
+					</div>
+				</figure>
+				<div className="mt-4">
+					<h2 className="text-left text-base lg:text-lg w-3/4 font-semibold text-gray-700">{video.title}</h2>
+					<p className="mt-1 text-xs text-left font-normal text-gray-700/70">Sanctus duo accusam eos clita aliquyam eos stet diam stet stet. Sed labore elitr diam invidunt ipsum et, est at.</p>
+				</div>
+			</CarouselItemAnim>
+		</CardContent>
+	</Card>
+));
 
 const VideoSection: React.FC = () => {
 	const [api, setApi] = useState<CarouselApi>();
@@ -85,6 +90,10 @@ const VideoSection: React.FC = () => {
 		};
 	}, [api, slidesPerView]);
 
+	const setHoveredIdCallback = useCallback((id: number | null) => {
+		setHoveredId(id);
+	}, []);
+
 	return (
 		<div className="bg-clarc-gold/10 relative">
 			<Youtube className="hidden lg:flex absolute rotate-12 top-0 lg:-top-12 lg:right-5 lg:translate-x-8 translate-y-0 lg:translate-y-8 w-1/2 h-1/2 square text-white -z-[9] opacity-40" />
@@ -95,7 +104,6 @@ const VideoSection: React.FC = () => {
 				}}></div>
 			<div className="-z-10 absolute inset-0 bg-gradient-to-t from-clarc-gold to-transparent opacity-100"></div>
 			<div className="container mx-auto px-4 py-16">
-				
 				<div className="text-center mb-10">
 					<h3 className="uppercase text-lg lg:text-xl font-semibold text-clarc-blue/70 mb-4">Our Videos</h3>
 					<h1 className="text-2xl md:text-3xl font-astralaga font-semibold text-clarc-blue">
@@ -113,36 +121,7 @@ const VideoSection: React.FC = () => {
 					<CarouselContent>
 						{videos.map((video, index) => (
 							<CarouselItem key={video.id} className="md:basis-1/2 lg:basis-1/3 py-2">
-								<Card className="border-none shadow-none bg-transparent">
-									<CardContent className="p-0">
-										<motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }}>
-											<figure className="relative w-full rounded-lg overflow-hidden shadow-lg aspect-video">
-												<div className="absolute inset-0 bg-gradient-to-tr from-black/80 to-transparent opacity-95"></div>
-												<img src={video.thumbnail} alt={`${video.title} Thumbnail`} className="w-full h-full object-cover" />
-												<div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 transition-opacity duration-300 hover:bg-opacity-50" onMouseEnter={() => setHoveredId(video.id)} onMouseLeave={() => setHoveredId(null)}>
-													<motion.div className="relative" initial={{ scale: 1 }} animate={{ scale: hoveredId === video.id ? 1.1 : 1 }} transition={{ duration: 0.3 }}>
-														<motion.div
-															className="absolute inset-0 bg-white rounded-full opacity-25 -z-10"
-															initial={{ scale: 0.8, opacity: 0 }}
-															animate={{
-																scale: hoveredId === video.id ? 1.5 : 0.8,
-																opacity: hoveredId === video.id ? 0.5 : 0,
-															}}
-															transition={{ duration: 1, repeat: Infinity }}
-														/>
-														<motion.a href={video.link} className="w-10 h-10 z-10 grid place-items-center rounded-full bg-transparent border border-white text-primary shadow-lg" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} aria-label={`Play ${video.title} video`}>
-															<Play className="w-4 h-4 text-white" />
-														</motion.a>
-													</motion.div>
-												</div>
-											</figure>
-											<div className="mt-4">
-												<h2 className="text-left text-base lg:text-lg w-3/4 font-semibold text-gray-700">{video.title}</h2>
-												<p className="mt-1 text-xs text-left font-normal text-gray-700/70">Sanctus duo accusam eos clita aliquyam eos stet diam stet stet. Sed labore elitr diam invidunt ipsum et, est at.</p>
-											</div>
-										</motion.div>
-									</CardContent>
-								</Card>
+								<VideoCard video={video} index={index} hoveredId={hoveredId} setHoveredId={setHoveredIdCallback} />
 							</CarouselItem>
 						))}
 					</CarouselContent>
@@ -156,9 +135,7 @@ const VideoSection: React.FC = () => {
 				</div>
 
 				<div className="mt-10 flex justify-center">
-					<a href="/" target="_blank" className="hover:underline hover:decoration-clarc-blue/70 hover:underline-offset-2 cursor-pointer rounded-full z-20 lg:text-base text-sm text-clarc-blue font-semibold hover:text-clarc-blue/70 transition-colors duration-300">
-						View More Videos →
-					</a>
+					<ViewAllBtn children={"View All Videos"} link={"/"} />
 				</div>
 			</div>
 		</div>
