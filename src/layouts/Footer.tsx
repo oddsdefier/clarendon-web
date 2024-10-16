@@ -8,7 +8,7 @@ const helperTitleClass = "text-md lg:text-base font-semibold mb-4 text-indigo-10
 const listElWrapperClass = "not-italic text-indigo-200/90 text-sm lg:text-md space-y-3";
 
 const socialsLogo = "w-5 h-5 text-indigo-200 hover:text-clarc-gold transition transition-colors duration-200";
-export default function Footer() {
+const Footer: React.FC = () => {
 	return (
 		<footer className="relative bg-clarc-blue/10  text-white pt-16 pb-24 px-4 lg:px-0">
 			<div
@@ -16,16 +16,15 @@ export default function Footer() {
 				style={{
 					backgroundImage: `url(${bgImgUrl})`,
 				}}></div>
-			<div className="-z-10 absolute inset-0 bg-clarc-blue opacity-50"></div>
-
+			<div className="-z-10 absolute inset-0 bg-clarc-blue opacity-70"></div>
 			<div className="-z-10 absolute inset-0 bg-gradient-to-b from-clarc-blue to-transparent opacity-100"></div>
 
 			<div className="container mx-auto px-4 flex flex-col lg:flex-row justify-evenly  gap-8 z-10 relative">
 				<div className="flex gap-2">
-					<img src="https://scontent.fmnl9-5.fna.fbcdn.net/v/t39.30808-6/431963925_915159387277103_632830678809030111_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=EG0nO6DtNlYQ7kNvgGBPwd9&_nc_ht=scontent.fmnl9-5.fna&_nc_gid=AEcQme1MIs51qwFd-o7TM8N&oh=00_AYAN25wnEJSKQiSwwuTSzcMWrls6yLD9t6dhTMwjjfYwFQ&oe=670AA4CA" alt="Clarendon College Logo" className="square rounded-full w-8 h-8 lg:w-[2.3rem] lg:h-[2.3rem]" />
+					<img src="/clarc-logo.png" alt="Clarendon College Logo" className="square rounded-full w-8 h-8 lg:w-[2.4rem] lg:h-[2.4rem]" />
 					<div>
 						<div className="flex items-center gap-1 mb-4 row-span-1 col-span-1">
-							<span className="text-2xl lg:text-3xl font-semibold font-astralaga text-clarc-gold">Clarendon College</span>
+							<span className="text-2xl lg:text-2xl font-semibold font-universal_serif text-clarc-gold">Clarendon College</span>
 						</div>
 						<div className="hidden lg:flex gap-1 flex-col mt-0 z-10 relative container mx-auto justify-start  items-start row-span-2">
 							<p className="text-sm text-clarc-gold/90 font-semibold">&copy; {new Date().getFullYear()} Clarendon College</p>
@@ -102,4 +101,6 @@ export default function Footer() {
 			</div>
 		</footer>
 	);
-}
+};
+
+export default Footer;

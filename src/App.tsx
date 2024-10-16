@@ -1,21 +1,22 @@
+import Footer from "@/layouts/Footer";
+import Header from "@/layouts/Header";
+import ResourceButtons from "@/sections/ResourceButtons";
+import ApplicationSection from "@/sections/ApplicationSection";
+import CarouselHero from "@/sections/CarouselHero";
+import FutureReadingSection from "@/sections/CarpeDiem";
+import NewsAndEventsSection from "@/sections/NewsAndEvent";
+import VideoSection from "@/sections/VideoSection";
 import React from "react";
-import Header from "./layouts/Header";
-import ResourceButtons from "./ResourceButtons";
-import FutureReadingSection from "./CarpeDiem";
-import ApplicationSection from "./ApplicationSection";
-import NewsAndEventsSection from "./NewsAndEvent";
-import VideoSection from "./VideoSection";
-import Footer from "./layouts/Footer";
-import CarouselHero from "./CarouselHero";
 
 const App: React.FC = () => {
 	return (
 		<div className="font-inter min-h-screen overflow-x-hidden">
 			<Header />
-			<section className="">
+			<section>
 				<main>
 					<CarouselHero />
 					<ResourceButtons />
+
 					<FutureReadingSection />
 					<ApplicationSection />
 					<NewsAndEventsSection />

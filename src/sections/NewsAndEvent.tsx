@@ -1,11 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 import { Calendar, CircleChevronRight } from "lucide-react";
-import React, { useEffect, useState, useCallback, useMemo } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 
-import { NewsItem, newsItems } from "./utils/get_news_and_events_data";
-import CarouselItemAnim from "./components/CarouselItemAnim";
-import ViewAllBtn from "./components/ViewAllBtn";
+import CarouselItemAnim from "@/components/CarouselItemAnim";
+import ViewAllBtn from "@/components/ViewAllBtn";
+import { NewsItem, newsItems } from "@/utils/get_news_and_events_data";
 
 const headingTitle = "text-[1.65rem] md:text-3xl font-astralaga font-semibold text-clarc-blue";
 
@@ -56,7 +56,7 @@ const NewsAndEventsSection: React.FC = () => {
 	}, [api, slidesPerView]);
 
 	const NewsCard = React.memo(({ item, index }: { item: NewsItem; index: number }) => (
-		<Card className="hover:bg-clarc-gold/10 overflow-hidden shadow-none outline-none border-none transition duration-300 transform rounded-none bg-transparent">
+		<Card className="hover:bg-clarc-gold/20 overflow-hidden shadow-none outline-none border-none transition duration-300 transform rounded-none bg-transparent">
 			<CarouselItemAnim index={index}>
 				<a href={item.link} className="block relative group">
 					<div className="overflow-hidden relative">
@@ -89,7 +89,7 @@ const NewsAndEventsSection: React.FC = () => {
 	));
 
 	return (
-		<section className="py-16 bg-white/10 relative" id="news-and-events">
+		<section className="py-16 bg-white/10 relative lg:min-h-screen" id="news-and-events">
 			<div
 				className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-10"
 				style={{
@@ -118,8 +118,8 @@ const NewsAndEventsSection: React.FC = () => {
 							</CarouselItem>
 						))}
 					</CarouselContent>
-					<CarouselPrevious className="hidden md:flex md:-left-10" />
-					<CarouselNext className="hidden md:flex md:-right-10" />
+					<CarouselPrevious className="w-10 h-10 hidden md:flex md:-left-14 -translate-y-5" />
+					<CarouselNext className="w-10 h-10 hidden md:flex md:-right-14 -translate-y-5" />
 				</Carousel>
 				<div className="flex justify-center my-8">
 					{Array.from({ length: totalPages }).map((_, index) => (

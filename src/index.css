@@ -99,3 +99,8 @@
 	font-weight: 700; /* Bold */
 	font-style: normal;
 }
+
+@font-face {
+	font-family: "Universal Serif";
+	src: url("/fonts/universal_serif.ttf") format("truetype");
+}

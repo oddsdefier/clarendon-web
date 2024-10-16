@@ -7,7 +7,7 @@ export interface videoItem {
 export const videos: videoItem[] = [
 	{
 		id: 1,
-		title: "Teacher (51) Nainlove sa (15) Year Old Student 💀 Balitangina",
+		title: "Seelen was freundliche ach wie mein mein euch nicht noch.",
 		thumbnail: "https://i.ytimg.com/vi/YKJMGQ0BwG8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBO8odRfTqOC9AoAodj0h-VjBPtBQ",
 		link: "/",
 	},
@@ -25,7 +25,7 @@ export const videos: videoItem[] = [
 	},
 	{
 		id: 4,
-		title: "Go in 100 Seconds",
+		title: "Go in 100 SecondsIpsum at aliquyam gubergren stet et justo et, eos vero.",
 		thumbnail: "https://i.ytimg.com/vi/446E-r0rXHI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBuyU5skZOHGjSWGyjpN-zroIOwXQ",
 		link: "/",
 	},

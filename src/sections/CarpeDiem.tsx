@@ -1,8 +1,8 @@
 import React from "react";
 
-const FutureReadySection: React.FC = () => {
+const CarpeDiemSection: React.FC = () => {
 	return (
-		<section className="container mx-auto px-4 py-12 md:py-16 lg:py-24">
+		<section className="container mx-auto px-4 py-12 md:py-16 lg:py-20 lg:min-h-screen">
 			<div className="grid grid-cols-1 lg:grid-cols-2 lg:px-16 gap-8 lg:gap-16 items-center">
 				<div className="space-y-6 px-4 lg:px-0 order-last lg:order-first">
 					<h2 className="text-2xl md:text-3xl lg:text-4xl font-astralaga font-bold text-clarc-blue uppercase leading-relaxed">Seize the Day</h2>
@@ -30,4 +30,4 @@ const FutureReadySection: React.FC = () => {
 	);
 };
 
-export default FutureReadySection;
+export default CarpeDiemSection;

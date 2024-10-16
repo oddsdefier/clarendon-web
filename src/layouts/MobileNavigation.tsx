@@ -114,9 +114,10 @@ const navigationData: NavCategory[] = [
 	},
 ];
 
-export default function MobileNavigation() {
+const MobileNavigation: React.FC = () => {
+	const date = new Date();
 	return (
-		<nav className="bg-background p-4">
+		<nav className="bg-background p-4 flex flex-col justify-between h-full">
 			<Accordion type="single" collapsible className="w-full">
 				{navigationData.map((category) => (
 					<AccordionItem key={category.title} value={category.title.toLowerCase().replace(/\s+/g, "-")}>
@@ -127,7 +128,7 @@ export default function MobileNavigation() {
 									<li key={item.title}>
 										<a href={item.href} className="text-sm block p-2 hover:bg-accent rounded-md">
 											<span className="font-medium">{item.title}</span>
-											{/* <p className="text-sm text-muted-foreground">{item.description}</p> */}
+											<p className="text-xs text-muted-foreground">{item.description}</p>
 										</a>
 									</li>
 								))}
@@ -136,6 +137,10 @@ export default function MobileNavigation() {
 					</AccordionItem>
 				))}
 			</Accordion>
+			<div>
+				<p className="font-medium text-sm text-gray-800/60">{date.getFullYear()}</p>
+			</div>
 		</nav>
 	);
-}
+};
+export default MobileNavigation;

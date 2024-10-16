@@ -12,7 +12,7 @@ const BackgroundImage: React.FC<BgImageProps> = ({ url, className }) => {
 				style={{
 					backgroundImage: `url(${url})`,
 				}}>
-				<div className="absolute inset-0 bg-clarc-blue opacity-90"></div>
+				<div className="absolute inset-0 bg-clarc-blue opacity-80"></div>
 			</div>
 			<div
 				style={{

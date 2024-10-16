@@ -5,10 +5,9 @@ import React, { useCallback, useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 
-import CarouselItemAnim from "./components/CarouselItemAnim";
-
-import { videoItem, videos } from "./utils/get_video_data";
-import ViewAllBtn from "./components/ViewAllBtn";
+import CarouselItemAnim from "@/components/CarouselItemAnim";
+import ViewAllBtn from "@/components/ViewAllBtn";
+import { videoItem, videos } from "@/utils/get_video_data";
 
 const bgImgUrl = "https://scontent.fmnl3-3.fna.fbcdn.net/v/t1.6435-9/87552206_109185400685458_8773993985245970432_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeFO4Mchm6htvMg3jfpS88muV7IgrR-L65lXsiCtH4vrmbjZ8WFU0JAn-9mlwAyPhTmA3SH4R7N9-RgW0S0GkGW2&_nc_ohc=IDqxNCm7-KUQ7kNvgEF9FhL&_nc_ht=scontent.fmnl3-3.fna&_nc_gid=A5VdmLMMKAhdBxXSNnq4UGb&oh=00_AYC3SJL1bVCLptcCij-ssMAGnZCLpTWeVLiYOmDDHC2img&oe=672F3CA6";
 
@@ -95,7 +94,7 @@ const VideoSection: React.FC = () => {
 	}, []);
 
 	return (
-		<div className="bg-clarc-gold/10 relative">
+		<div className="bg-clarc-gold/10 relative lg:min-h-screen" id="videos-section">
 			<Youtube className="hidden lg:flex absolute rotate-12 top-0 lg:-top-12 lg:right-5 lg:translate-x-8 translate-y-0 lg:translate-y-8 w-1/2 h-1/2 square text-white -z-[9] opacity-40" />
 			<div
 				className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-10"
@@ -103,8 +102,8 @@ const VideoSection: React.FC = () => {
 					backgroundImage: `url(${bgImgUrl})`,
 				}}></div>
 			<div className="-z-10 absolute inset-0 bg-gradient-to-t from-clarc-gold to-transparent opacity-100"></div>
-			<div className="container mx-auto px-4 py-16">
-				<div className="text-center mb-10">
+			<div className="container mx-auto px-4 py-8">
+				<div className="text-center mb-8">
 					<h3 className="uppercase text-lg lg:text-xl font-semibold text-clarc-blue/70 mb-4">Our Videos</h3>
 					<h1 className="text-2xl md:text-3xl font-astralaga font-semibold text-clarc-blue">
 						Experience <span className="text-clarc-gold lg:text-[2.1rem]">Clarendon</span> through these videos
@@ -125,16 +124,16 @@ const VideoSection: React.FC = () => {
 							</CarouselItem>
 						))}
 					</CarouselContent>
-					<CarouselPrevious className="hidden md:flex md:-left-10" />
-					<CarouselNext className="hidden md:flex md:-right-10" />
+					<CarouselPrevious className="w-10 h-10 hidden md:flex md:-left-14 opacity-45 -translate-y-[5.5rem]" />
+					<CarouselNext className="w-10 h-10 hidden md:flex md:-right-14 opacity-45 -translate-y-[5.5rem]" />
 				</Carousel>
-				<div className="flex justify-center my-8">
+				<div className="flex justify-center my-4">
 					{Array.from({ length: totalPages }).map((_, index) => (
 						<button key={index} className={`z-20 w-1 h-1 md:w-2 md:h-2 aspect-square rounded-full mx-1 transition-colors duration-200 ${index === current ? "bg-clarc-blue" : "bg-clarc-blue/30"}`} onClick={() => api?.scrollTo(index * slidesPerView)} aria-label={`Go to slide ${index + 1}`} />
 					))}
 				</div>
 
-				<div className="mt-10 flex justify-center">
+				<div className="mt-8 flex justify-center">
 					<ViewAllBtn children={"View All Videos"} link={"/"} />
 				</div>
 			</div>
