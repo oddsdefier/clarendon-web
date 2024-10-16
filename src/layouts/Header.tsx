@@ -1,7 +1,42 @@
-import React from "react";
-import { Search, Menu, MapPin } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Search, Menu, X, MapPin } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ClarendonNavigationMenu } from "./NavigationMenu";
-const Header: React.FC = () => {
+import MobileNavigation from "./MobileNavigation";
+
+interface ToggleMenuBtnProps {
+	toggleMenu: () => void;
+	isMenuOpen: boolean;
+	className?: string;
+}
+
+const ToggleMenuBtn = ({ toggleMenu, isMenuOpen, className }: ToggleMenuBtnProps) => {
+	return (
+		<button onClick={toggleMenu} className={`focus:outline-none ${className}`}>
+			<motion.div initial={false} animate={{ rotate: isMenuOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
+				{isMenuOpen ? <X className="w-5 h-5 lg:w-6 lg:h-6 text-gray-600" /> : <Menu className="w-5 h-5 lg:w-6 lg:h-6 text-gray-600" />}
+			</motion.div>
+		</button>
+	);
+};
+
+export default function Header() {
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+	const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+	useEffect(() => {
+		if (isMenuOpen) {
+			document.body.style.overflow = "hidden";
+		} else {
+			document.body.style.overflow = "unset";
+		}
+
+		return () => {
+			document.body.style.overflow = "unset";
+		};
+	}, [isMenuOpen]);
+
 	return (
 		<header className="bg-white">
 			<nav className="flex flex-col">
@@ -24,12 +59,24 @@ const Header: React.FC = () => {
 						</div>
 						<div className="flex gap-3 justify-center items-center">
 							<Search className="w-4 h-4 lg:w-5 lg:h-5 text-gray-600" />
-							<Menu className="flex w-5 h-5 lg:w-6 lg:h-6 text-gray-600" />
+							<ToggleMenuBtn toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} className={"flex md:hidden"} />
 						</div>
 					</div>
 				</div>
 			</nav>
+			<AnimatePresence>
+				{isMenuOpen && (
+					<>
+						<motion.div initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }} transition={{ type: "tween", duration: 0.3 }} className="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-lg z-50 overflow-y-auto">
+							<div className="p-4 h-full">
+								<ToggleMenuBtn toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
+								<MobileNavigation />
+							</div>
+						</motion.div>
+						<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }} className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={toggleMenu} />
+					</>
+				)}
+			</AnimatePresence>
 		</header>
 	);
-};
-export default Header;
+}

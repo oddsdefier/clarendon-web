@@ -3,7 +3,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 
-const components: { title: string; href: string; description: string }[] = [
+const admissions: { title: string; href: string; description: string }[] = [
 	{
 		title: "Admission Requirements",
 		href: "/docs/primitives/alert-dialog",
@@ -115,7 +115,7 @@ export function ClarendonNavigationMenu() {
 					<NavigationMenuTrigger className={nav_trigger_style}>Admissions</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-							{components.map((component) => (
+							{admissions.map((component) => (
 								<ListItem key={component.title} title={component.title} href={component.href}>
 									{component.description}
 								</ListItem>
