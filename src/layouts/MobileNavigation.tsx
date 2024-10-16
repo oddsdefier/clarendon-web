@@ -116,13 +116,13 @@ const navigationData: NavCategory[] = [
 
 export default function MobileNavigation() {
 	return (
-		<nav className="bg-background">
+		<nav className="bg-background p-4">
 			<Accordion type="single" collapsible className="w-full">
 				{navigationData.map((category) => (
 					<AccordionItem key={category.title} value={category.title.toLowerCase().replace(/\s+/g, "-")}>
 						<AccordionTrigger className="text-sm font-medium focus:outline-none outline outline-none">{category.title}</AccordionTrigger>
 						<AccordionContent>
-							<ul className="space-y-2">
+							<ul className="space-y-1">
 								{category.items.map((item) => (
 									<li key={item.title}>
 										<a href={item.href} className="text-sm block p-2 hover:bg-accent rounded-md">
