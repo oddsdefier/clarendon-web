@@ -1,11 +1,14 @@
 import { ExternalLink, Facebook, Linkedin, Youtube, Twitter } from "lucide-react";
 import { InstagramLogoIcon } from "@radix-ui/react-icons";
 import { motion } from "framer-motion";
+import { clarcAssets } from "@/utils/img_links";
+
+const clarcLogo = clarcAssets.primary_logo;
 
 const bgImgUrl = "https://scontent.fmnl3-3.fna.fbcdn.net/v/t1.6435-9/87552206_109185400685458_8773993985245970432_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeFO4Mchm6htvMg3jfpS88muV7IgrR-L65lXsiCtH4vrmbjZ8WFU0JAn-9mlwAyPhTmA3SH4R7N9-RgW0S0GkGW2&_nc_ohc=IDqxNCm7-KUQ7kNvgEF9FhL&_nc_ht=scontent.fmnl3-3.fna&_nc_gid=A5VdmLMMKAhdBxXSNnq4UGb&oh=00_AYC3SJL1bVCLptcCij-ssMAGnZCLpTWeVLiYOmDDHC2img&oe=672F3CA6";
 
-const helperTitleClass = "text-md lg:text-base font-semibold mb-4 text-indigo-100/95";
-const listElWrapperClass = "not-italic text-indigo-200/90 text-sm lg:text-md space-y-3";
+const helperTitleStyle = "text-md lg:text-base font-semibold mb-4 text-indigo-100/95";
+const listElWrapperStyle = "not-italic text-indigo-200/90 text-sm lg:text-md space-y-3";
 
 const socialsLogo = "w-5 h-5 text-indigo-200 hover:text-clarc-gold transition transition-colors duration-200";
 const Footer: React.FC = () => {
@@ -21,10 +24,10 @@ const Footer: React.FC = () => {
 
 			<div className="container mx-auto px-4 flex flex-col lg:flex-row justify-evenly  gap-8 z-10 relative">
 				<div className="flex gap-2">
-					<img src="/clarc-logo.png" alt="Clarendon College Logo" className="square rounded-full w-8 h-8 lg:w-[2.4rem] lg:h-[2.4rem]" />
+					<img src={clarcLogo} alt="Clarendon College Logo" className="square rounded-full w-8 h-8 lg:w-[2.4rem] lg:h-[2.4rem]" />
 					<div>
 						<div className="flex items-center gap-1 mb-4 row-span-1 col-span-1">
-							<span className="text-2xl lg:text-2xl font-semibold font-universal_serif text-clarc-gold tracking-wider">Clarendon College</span>
+							<span className="text-2xl lg:text-xl font-semibold font-universal_serif text-clarc-gold tracking-wider">Clarendon College</span>
 						</div>
 						<div className="hidden lg:flex gap-1 flex-col mt-0 z-10 relative container mx-auto justify-start  items-start row-span-2">
 							<p className="text-sm text-clarc-gold/90 font-semibold">&copy; {new Date().getFullYear()} Clarendon College</p>
@@ -33,7 +36,7 @@ const Footer: React.FC = () => {
 					</div>
 				</div>
 				<div>
-					<h3 className={helperTitleClass}>Socials</h3>
+					<h3 className={helperTitleStyle}>Socials</h3>
 					<div className="flex gap-3">
 						{[
 							{ Component: Facebook, href: "https://facebook.com" },
@@ -49,8 +52,8 @@ const Footer: React.FC = () => {
 					</div>
 				</div>
 				<div>
-					<h3 className={helperTitleClass}>Get In Touch</h3>
-					<address className={listElWrapperClass}>
+					<h3 className={helperTitleStyle}>Get In Touch</h3>
+					<address className={listElWrapperStyle}>
 						<p>Bayanihan St., Odiong</p>
 						<p>Roxas, Oriental Mindoro</p>
 						<p>
@@ -69,8 +72,8 @@ const Footer: React.FC = () => {
 				</div>
 
 				<div>
-					<h3 className={helperTitleClass}>Learn More</h3>
-					<ul className={listElWrapperClass}>
+					<h3 className={helperTitleStyle}>Learn More</h3>
+					<ul className={listElWrapperStyle}>
 						<li>
 							<a href="#" className="hover:underline">
 								About Us

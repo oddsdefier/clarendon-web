@@ -1,10 +1,10 @@
 import Footer from "@/layouts/Footer";
 import Header from "@/layouts/Header";
-import ResourceButtons from "@/sections/ResourceButtons";
 import ApplicationSection from "@/sections/ApplicationSection";
 import CarouselHero from "@/sections/CarouselHero";
 import FutureReadingSection from "@/sections/CarpeDiem";
 import NewsAndEventsSection from "@/sections/NewsAndEvent";
+import ResourceButtons from "@/sections/ResourceButtons";
 import VideoSection from "@/sections/VideoSection";
 import React from "react";
 

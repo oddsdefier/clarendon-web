@@ -1,3 +1,4 @@
+
 export const clarcAssets = {
 	mascot: {
 		1: "https://res.cloudinary.com/dfntpqzza/image/upload/v1729127072/Clarendon_College_Mascot_Owl-04_dr2t66.png",
