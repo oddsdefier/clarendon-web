@@ -3,26 +3,28 @@ import { motion, useTransform, useScroll } from "framer-motion";
 import { Sparkle, Sparkles } from "lucide-react";
 import BackgroundImage from "@/components/BackgroundImage";
 
-const bgImgUrl = "https://lh3.googleusercontent.com/p/AF1QipPHx6N8IUwzWj67sVKPKpIsHM9ifsP6XW9q6Pn1=s680-w680-h510";
-const owlImgUrl = "https://scontent.fmnl8-2.fna.fbcdn.net/v/t39.30808-6/431946606_915179940608381_6879013593159267845_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeHcnIjh2HXMi9SLzaMsO_7BpDgxLiTrlUikODEuJOuVSNyuzrYtFGFYcBMRdsjHMz-oUA3MhMhpyoeMeJ2rj-GX&_nc_ohc=tRW-9mTQNFMQ7kNvgHHlIUq&_nc_ht=scontent.fmnl8-2.fna&_nc_gid=AlnkLOh6eLoztj8B9q3ONph&oh=00_AYAgDA2IAPiG5NMVTxp9OFQADXot0Nnfz7Clpx5ASztkow&oe=670AC468";
+import { clarcAssets } from "@/utils/img_links";
+
+const bgImgUrl = clarcAssets.images["old_pic"];
+const owlImgUrl = clarcAssets.mascot[3];
 
 const ApplicationSection: React.FC = () => {
 	const { scrollYProgress } = useScroll();
 
-	const rotate = useTransform(scrollYProgress, [0, 1], [-20, 20]);
-	const scale = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
+	const rotateProgress = useTransform(scrollYProgress, [0, 1], [-20, 20]);
+	const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
 
 	return (
 		<section className="px-4 py-20 lg:py-16 relative bg-clarc-blue/10 lg:min-h-screen" id="application-section">
 			<BackgroundImage url={bgImgUrl} />
 			<div className="container mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-16 relative z-[99]">
 				<div className="w-full lg:w-1/2">
-					<div className="aspect-square max-w-xs lg:max-w-md mx-auto">
-						<motion.img src={owlImgUrl} alt="Application image" className="w-full h-full object-cover rounded-lg" style={{ rotate, scale }} whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} />
+					<div className="aspect-square max-w-xs lg:max-w-6xl mx-auto">
+						<motion.img src={owlImgUrl} alt="Application image" className="w-full h-full object-cover rounded-lg" style={{ rotate: rotateProgress, scale: scaleProgress }} />
 					</div>
 				</div>
-				<div className="px-4 lg:px-0 w-full flex flex-col justify-center items-center lg:items-start lg:w-1/2 space-y-6 text-center lg:text-left text-indigo-50 max-w-sm lg:max-w-xl">
-					<h1 className="font-universal_serif text-lg md:text-2xl lg:text-3xl font-semibold text-clarc-gold relative">
+				<div className="px-4 lg:px-0 w-full flex flex-col justify-center items-center lg:items-start lg:w-1/2 space-y-5 text-center lg:text-left text-indigo-50 max-w-sm lg:max-w-xl">
+					<h1 className="font-universal_serif tracking-wider text-lg md:text-2xl lg:text-4xl font-semibold text-clarc-gold relative">
 						<span className="z-10">Applications Are Open</span>
 						<div className="-z-10 w-full absolute top-0 left-0 right-0 bg-clarc-blue h-14 -translate-y-2 blur-lg" />
 						<motion.span
@@ -66,9 +68,9 @@ const ApplicationSection: React.FC = () => {
 						</motion.span>
 					</h1>
 
-					<h2 className="text-base md:text-xl font-medium text-white/90">Student Placement Admission to College Education</h2>
+					<h2 className="text-base md:text-2xl font-medium text-white/90">Student Placement Admission to College Education</h2>
 
-					<p className="text-sm md:text-xl leading-10 max-w-2xl mx-auto lg:mx-0 text-white/70">SPACE is Clarendon's admissions portal. Senior high school graduates who wish to apply may start the admissions process by uploading their personal information here. Be Brave, be an OWL, and Make it Clarendon!</p>
+					<p className="text-sm md:text-xl leading-loose max-w-3xl mx-auto lg:mx-0 text-white/70">SPACE is Clarendon's admissions portal. Senior high school graduates who wish to apply may start the admissions process by uploading their personal information here. Be Brave, be an OWL, and Make it Clarendon!</p>
 
 					<button className="shadow-lg shadow-clarc-blue group w-auto flex items-center justify-center gap-2 mt-4 px-6 py-4 text-sm lg:text-base font-semibold text-indigo-100 border border-indigo-50/40 rounded-full hover:bg-clarc-blue hover:border-white hover:text-white transition-colors duration-300 focus:outline-none active:bg-clarc-blue">
 						<p>Start your CLARC journey here</p>

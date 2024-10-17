@@ -7,7 +7,7 @@ import CarouselItemAnim from "@/components/CarouselItemAnim";
 import ViewAllBtn from "@/components/ViewAllBtn";
 import { NewsItem, newsItems } from "@/utils/get_news_and_events_data";
 
-const headingTitle = "text-[1.65rem] md:text-3xl font-astralaga font-semibold text-clarc-blue";
+const headingTitle = "text-[1.65rem] md:text-3xl font-universal_serif tracking-wider font-semibold text-clarc-blue";
 
 const NewsAndEventsSection: React.FC = () => {
 	const [api, setApi] = useState<CarouselApi>();
@@ -72,7 +72,7 @@ const NewsAndEventsSection: React.FC = () => {
 						{"— "}
 						{item.category}
 					</h4>
-					<h2 className="font-astralaga text-lg font-bold text-clarc-blue line-clamp-2">{item.title}</h2>
+					<h2 className="font-inter text-lg font-bold text-clarc-blue line-clamp-2">{item.title}</h2>
 					<div className="flex justify-start items-center gap-1">
 						<Calendar className="w-4 h-4 text-gray-800/70" />
 						<p className="text-sm text-gray-800/60 font-semibold">{item.date}</p>
@@ -99,7 +99,7 @@ const NewsAndEventsSection: React.FC = () => {
 			<div className="-z-10 absolute inset-0 bg-gradient-to-t from-white to-transparent opacity-100" />
 			<div className="container mx-auto px-4">
 				<div className="flex flex-col sm:flex-row justify-between items-start lg:items-center mb-10 gap-5">
-					<h1 className={headingTitle}>College News and Events</h1>
+					<h1 className={headingTitle}>News and Events</h1>
 					<ViewAllBtn children={"View All News"} link={"/"} />
 				</div>
 				<Carousel

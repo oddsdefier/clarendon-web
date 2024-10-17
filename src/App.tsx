@@ -16,7 +16,6 @@ const App: React.FC = () => {
 				<main>
 					<CarouselHero />
 					<ResourceButtons />
-
 					<FutureReadingSection />
 					<ApplicationSection />
 					<NewsAndEventsSection />

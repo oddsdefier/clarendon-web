@@ -4,7 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ClarendonNavigationMenu } from "./NavigationMenu";
 import MobileNavigation from "./MobileNavigation";
 
-const logoLink = "/clarc-logo.png";
+import { clarcAssets } from "@/utils/img_links";
+
+const logoLink = clarcAssets.primary_logo;
 
 const Header: React.FC = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,7 +40,7 @@ const Header: React.FC = () => {
 					<div className="relative container mx-auto flex justify-between items-center p-3 px-4">
 						<div className="flex gap-1 justify-center items-center">
 							<img src={logoLink} alt="Clarendon College Logo" className="square w-6 h-6 lg:w-[2.3rem] lg:h-[2.3rem]" />
-							<h1 className="font-universal_serif text-base md:text-2xl text-clarc-blue font-semibold">Carpe Diem</h1>
+							<h1 className="font-universal_serif tracking-wider text-base md:text-2xl text-clarc-blue font-semibold">Carpe Diem</h1>
 						</div>
 						<div className="absolute hidden lg:flex w-[99%] gap-10 items-center justify-center">
 							<ClarendonNavigationMenu />

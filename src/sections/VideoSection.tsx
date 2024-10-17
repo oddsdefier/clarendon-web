@@ -105,7 +105,7 @@ const VideoSection: React.FC = () => {
 			<div className="container mx-auto px-4 py-8">
 				<div className="text-center mb-8">
 					<h3 className="uppercase text-lg lg:text-xl font-semibold text-clarc-blue/70 mb-4">Our Videos</h3>
-					<h1 className="text-2xl md:text-3xl font-astralaga font-semibold text-clarc-blue">
+					<h1 className="text-2xl md:text-3xl font-semibold text-clarc-blue">
 						Experience <span className="text-clarc-gold lg:text-[2.1rem]">Clarendon</span> through these videos
 					</h1>
 				</div>
