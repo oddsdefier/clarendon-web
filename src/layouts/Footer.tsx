@@ -23,11 +23,11 @@ const Footer: React.FC = () => {
 			<div className="-z-10 absolute inset-0 bg-gradient-to-b from-clarc-blue to-transparent opacity-100"></div>
 
 			<div className="container mx-auto px-4 flex flex-col lg:flex-row justify-evenly  gap-8 z-10 relative">
-				<div className="flex gap-2">
-					<img src={clarcLogo} alt="Clarendon College Logo" className="square rounded-full w-8 h-8 lg:w-[2.4rem] lg:h-[2.4rem]" />
+				<div className="flex gap-1 lg:gap-2">
+					<img src={clarcLogo} alt="Clarendon College Logo" className="square rounded-full w-8 h-8 lg:w-[2.4rem] lg:h-[2.4rem] aspect-square" />
 					<div>
 						<div className="flex items-center gap-1 mb-4 row-span-1 col-span-1">
-							<span className="text-2xl lg:text-xl font-semibold font-universal_serif text-clarc-gold tracking-wider">Clarendon College</span>
+							<span className="text-xl font-semibold font-universal_serif text-clarc-gold tracking-wider">Clarendon College</span>
 						</div>
 						<div className="hidden lg:flex gap-1 flex-col mt-0 z-10 relative container mx-auto justify-start  items-start row-span-2">
 							<p className="text-sm text-clarc-gold/90 font-semibold">&copy; {new Date().getFullYear()} Clarendon College</p>
