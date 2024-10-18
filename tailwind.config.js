@@ -12,7 +12,8 @@ export default {
 		extend: {
 			fontFamily: {
 				pt_serif: ['PT Serif', 'sans-serif'],
-				astralaga: ['Astralaga', 'sans-serif'],
+				dm_serif: ['DM Serif Display', 'serif'],
+				// astralaga: ['Astralaga', 'sans-serif'],
 				universal_serif: ['Universal Serif', 'sans-serif'],
 				manrope: ['Manrope', 'sans-serif']
 			},
