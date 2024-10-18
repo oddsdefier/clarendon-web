@@ -37,12 +37,12 @@ const CarouselHero = () => {
 				<CarouselContent>
 					{imgLinks.map((imgLink, index) => (
 						<CarouselItem key={index}>
-							<div className="relative aspect-video flex items-center justify-center w-full">
+							<div className="relative lg:aspect-video flex items-center justify-center w-full">
 								{/* <div className="z-10 absolute inset-0 flex items-center justify-center">
 									<h1 className="text-white text-lg lg:text-9xl">sample text</h1>
 								</div> */}
 								<div className="absolute inset-0 bg-gradient-to-t from-clarc-blue to-transparent opacity-40" />
-								<img src={imgLink} alt={`Image ${index + 1}`} className="object-cover w-full h-full" />
+								<img src={imgLink} alt={`Image ${index + 1}`} className="w-full h-96 object-cover" />
 							</div>
 						</CarouselItem>
 					))}
