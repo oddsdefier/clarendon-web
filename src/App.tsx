@@ -1,5 +1,5 @@
-import React, { Suspense, lazy } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { Suspense, lazy, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Header from "@/layouts/Header";
 import Footer from "@/layouts/Footer";
 
@@ -39,9 +39,20 @@ const NotFound = () => (
 	</div>
 );
 
+const ScrollToTop: React.FC = () => {
+	const { pathname } = useLocation();
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [pathname]);
+
+	return null;
+};
+
 const App: React.FC = () => {
 	return (
 		<Router>
+			<ScrollToTop />
 			<div className="font-manrope min-h-screen overflow-x-hidden">
 				<Header />
 				<main>

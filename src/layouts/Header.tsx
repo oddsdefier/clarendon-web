@@ -5,7 +5,7 @@ import { ClarendonNavigationMenu } from "./NavigationMenu";
 import MobileNavigation from "./MobileNavigation";
 import { Link } from "react-router-dom";
 import { clarcAssets } from "@/utils/img_links";
-
+import { useLocation } from "react-router-dom";
 const logoLink = clarcAssets.primary_logo;
 
 const Header: React.FC = () => {
@@ -25,17 +25,22 @@ const Header: React.FC = () => {
 		};
 	}, [isMenuOpen]);
 
+	const location = useLocation();
 	return (
 		<header className="bg-white">
 			<nav className="flex flex-col">
-				<div className="hidden md:flex p-3 text-indigo-50 bg-clarc-blue">
-					<div className="flex justify-between container mx-auto px-2 text-sm sm:text-base sm:px-4 md:px6 h-8">
-						<div className="w-full flex justify-end items-center gap-1 text-clarc-gold">
-							<MapPin className="w-5 h-5" />
-							<h1 className="text-sm lg:text-[0.95rem]">Bayanihan, Odiong, Roxas Oriental Mindoro</h1>
+				{location.pathname === "/" ? (
+					<div className="hidden md:flex p-3 text-indigo-50 bg-clarc-blue">
+						<div className="flex justify-between container mx-auto px-2 text-sm sm:text-base sm:px-4 md:px6 h-8">
+							<div className="w-full flex justify-end items-center gap-1 text-clarc-gold">
+								<MapPin className="w-5 h-5" />
+								<h1 className="text-sm lg:text-[0.95rem]">Bayanihan, Odiong, Roxas Oriental Mindoro</h1>
+							</div>
 						</div>
 					</div>
-				</div>
+				) : (
+					""
+				)}
 				<div>
 					<div className="relative container mx-auto flex justify-between items-center p-3 px-4">
 						<Link to={"/"} className="flex gap-1 justify-center items-center z-10">
