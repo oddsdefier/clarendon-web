@@ -1,7 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { InstagramLogoIcon } from "@radix-ui/react-icons";
 import { motion } from "framer-motion";
-import { Facebook, Linkedin, Youtube, Twitter } from "lucide-react";
+import { Facebook, Linkedin, Youtube, Twitter, MoveUpRight } from "lucide-react";
 interface NavItem {
 	title: string;
 	href: string;
@@ -123,14 +123,14 @@ const MobileNavigation: React.FC = () => {
 			<Accordion type="single" collapsible className="w-full">
 				{navigationData.map((category) => (
 					<AccordionItem key={category.title} value={category.title.toLowerCase().replace(/\s+/g, "-")}>
-						<AccordionTrigger className="uppercase text-base text-gray-800/80 font-medium focus:outline-none outline outline-none">{category.title}</AccordionTrigger>
+						<AccordionTrigger className="uppercase font-semibold text-lg text-clarc-blue focus:outline-none outline outline-none">{category.title}</AccordionTrigger>
 						<AccordionContent>
 							<ul className="space-y-1">
 								{category.items.map((item) => (
 									<li key={item.title}>
-										<a href={item.href} className="text-base block p-2 hover:bg-accent rounded-md">
-											<span className="font-medium text-gray-700/80">{item.title}</span>
-											<p className="text-xs text-muted-foreground">{item.description}</p>
+										<a href={item.href} className="flex justify-between text-base p-2 hover:bg-accent rounded-md">
+											<span className="font-normal text-gray-700/80">{item.title}</span>
+											<MoveUpRight className="w-3 h-3 aspect-square text-clarc-blue/80" />
 										</a>
 									</li>
 								))}

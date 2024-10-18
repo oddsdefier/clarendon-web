@@ -42,7 +42,7 @@ const CarouselHero = () => {
 									<h1 className="text-white text-lg lg:text-9xl">sample text</h1>
 								</div> */}
 								<div className="absolute inset-0 bg-gradient-to-t from-clarc-blue to-transparent opacity-40" />
-								<img src={imgLink} alt={`Image ${index + 1}`} className="w-full h-96 object-cover" />
+								<img src={imgLink} alt={`Image ${index + 1}`} className="w-full h-96 lg:h-full object-cover" />
 							</div>
 						</CarouselItem>
 					))}
