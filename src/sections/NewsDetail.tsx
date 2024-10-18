@@ -73,7 +73,7 @@ export default function NewsDetail() {
 					</header>
 					<img src={newsItem.image || "/placeholder.svg?height=400&width=800"} alt={newsItem.title} className="container w-full h-96 object-cover" />
 					<div className="py-8 lg:py-16">
-						<div className="prose prose-lg max-w-none leading-10 text-gray-900/90 text-sm lg:text-base" dangerouslySetInnerHTML={{ __html: newsItem.fullContent || "" }} />
+						<div className="prose prose-lg max-w-none leading-5 lg:leading-10 text-gray-900/90 text-sm lg:text-base" dangerouslySetInnerHTML={{ __html: newsItem.fullContent || "" }} />
 					</div>
 				</article>
 				<div>
