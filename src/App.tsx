@@ -53,7 +53,7 @@ const App: React.FC = () => {
 	return (
 		<Router>
 			<ScrollToTop />
-			<div className="font-manrope min-h-screen overflow-x-hidden">
+			<div className="font-inter min-h-screen overflow-x-hidden">
 				<Header />
 				<main>
 					<Routes>
