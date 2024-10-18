@@ -69,7 +69,7 @@ const ApplicationSection: React.FC = () => {
 						</motion.span>
 					</h1>
 
-					<h2 className="text-base md:text-2xl font-medium text-white/90">Student Placement Admission to College Education</h2>
+					{/* <h2 className="text-base md:text-2xl font-medium text-white/90">Student Placement Admission to College Education</h2> */}
 
 					<p className="text-base md:text-xl leading-loose max-w-3xl mx-auto lg:mx-0 text-white/70">SPACE is Clarendon's admissions portal. Senior high school graduates who wish to apply may start the admissions process by uploading their personal information here. Be Brave, be an OWL, and Make it Clarendon!</p>
 

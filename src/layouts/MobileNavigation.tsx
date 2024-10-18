@@ -1,5 +1,5 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-
+import { Link } from "react-router-dom";
 interface NavItem {
 	title: string;
 	href: string;
@@ -121,15 +121,15 @@ const MobileNavigation: React.FC = () => {
 			<Accordion type="single" collapsible className="w-full">
 				{navigationData.map((category) => (
 					<AccordionItem key={category.title} value={category.title.toLowerCase().replace(/\s+/g, "-")}>
-						<AccordionTrigger className="text-sm font-medium focus:outline-none outline outline-none">{category.title}</AccordionTrigger>
+						<AccordionTrigger className="uppercase text-base text-gray-800/90 font-medium focus:outline-none outline outline-none">{category.title}</AccordionTrigger>
 						<AccordionContent>
 							<ul className="space-y-1">
 								{category.items.map((item) => (
 									<li key={item.title}>
-										<a href={item.href} className="text-sm block p-2 hover:bg-accent rounded-md">
+										<Link to={item.href} className="text-base block p-2 hover:bg-accent rounded-md">
 											<span className="font-medium">{item.title}</span>
 											<p className="text-xs text-muted-foreground">{item.description}</p>
-										</a>
+										</Link>
 									</li>
 								))}
 							</ul>
