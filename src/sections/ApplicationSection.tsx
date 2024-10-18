@@ -12,19 +12,20 @@ const ApplicationSection: React.FC = () => {
 	const { scrollYProgress } = useScroll();
 
 	const rotateProgress = useTransform(scrollYProgress, [0, 1], [-20, 20]);
-	const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
+	const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1.1]);
 
 	return (
 		<section className="px-4 py-16 lg:py-16 relative bg-clarc-blue/10 lg:min-h-screen" id="application-section">
 			<BackgroundImage url={bgImgUrl} />
-			<div className="container mx-auto flex flex-col lg:flex-row gap-6 items-center relative z-[99]">
+			<div className="container mx-auto flex flex-col lg:flex-row gap-3 items-center relative z-[99]">
 				<div className="w-full lg:w-1/2">
-					<div className="aspect-square max-w-6xl lg:max-w-6xl mx-auto">
-						<motion.img src={owlImgUrl} alt="Application image" className="w-full h-full object-cover rounded-lg" style={{ rotate: rotateProgress, scale: scaleProgress }} />
+					<div className="relative aspect-square max-w-6xl lg:max-w-6xl mx-auto flex justify-center items-center">
+						<motion.img src={owlImgUrl} alt="Application image" className="bg-white max-w-sm lg:max-w-lg rounded-xl" style={{ rotate: rotateProgress, scale: scaleProgress }} />
+						<div className="absolute w-3/4 h-3/4 bg-clarc-white opacity-10 rounded-3xl -rotate-1 -z-10"></div>
 					</div>
 				</div>
 				<div className="px-4 lg:px-0 w-full flex flex-col justify-center items-center lg:items-start lg:w-1/2 space-y-5 text-center lg:text-left text-indigo-50 max-w-sm lg:max-w-xl">
-					<h1 className="font-astralaga tracking-wider text-lg md:text-2xl lg:text-4xl font-semibold text-clarc-gold relative">
+					<h1 className="font-universal_serif tracking-wider text-lg md:text-2xl lg:text-4xl font-semibold text-clarc-gold relative">
 						<span className="z-10">Applications Are Open</span>
 						<div className="-z-10 w-full absolute top-0 left-0 right-0 bg-clarc-blue h-14 -translate-y-2 blur-lg" />
 						<motion.span
