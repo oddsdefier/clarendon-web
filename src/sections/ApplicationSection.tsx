@@ -71,9 +71,9 @@ const ApplicationSection: React.FC = () => {
 
 					<h2 className="text-base md:text-2xl font-medium text-white/90">Student Placement Admission to College Education</h2>
 
-					<p className="text-sm md:text-xl leading-loose max-w-3xl mx-auto lg:mx-0 text-white/70">SPACE is Clarendon's admissions portal. Senior high school graduates who wish to apply may start the admissions process by uploading their personal information here. Be Brave, be an OWL, and Make it Clarendon!</p>
+					<p className="text-base md:text-xl leading-loose max-w-3xl mx-auto lg:mx-0 text-white/70">SPACE is Clarendon's admissions portal. Senior high school graduates who wish to apply may start the admissions process by uploading their personal information here. Be Brave, be an OWL, and Make it Clarendon!</p>
 
-					<button className="shadow-lg shadow-clarc-blue group w-auto flex items-center justify-center gap-2 mt-4 px-6 py-4 text-sm lg:text-base font-semibold text-indigo-100 border border-indigo-50/40 rounded-full hover:bg-clarc-blue hover:border-white hover:text-white transition-colors duration-300 focus:outline-none active:bg-clarc-blue">
+					<button className="shadow-lg shadow-clarc-blue group w-auto flex items-center justify-center gap-2 mt-4 px-6 py-4 text-base lg:text-base font-semibold text-indigo-100/90 border border-indigo-50/40 rounded-full hover:bg-clarc-blue hover:border-white hover:text-white transition-colors duration-300 focus:outline-none active:bg-clarc-blue">
 						<p>Start your CLARC journey here</p>
 						<Sparkles className="w-5 h-5 group-hover:rotate-6 group-hover:scale-125 transition-all duration-300 group-hover:text-clarc-gold" />
 					</button>

@@ -11,9 +11,7 @@ const CarpeDiemSection: React.FC = () => {
 				<div className="grid grid-cols-1 lg:grid-cols-2 lg:px-16 gap-8 lg:gap-16 items-center">
 					<div className="space-y-6 px-4 lg:px-0 order-last lg:order-first">
 						<h2 className="text-2xl md:text-3xl lg:text-4xl font-astralaga tracking-wider font-bold text-clarc-blue uppercase leading-relaxed">Seize the Day</h2>
-						<p className="text-sm lg:text-lg max-w-sm lg:max-w-xl md:text-lg text-gray-600/90 leading-7">At Clarendon College, we embrace the philosophy of "Carpe Diem" - Seize the Day. Our commitment is to provide an environment where students can maximize their potential, take advantage of every opportunity, and prepare themselves for a future filled with promise and success.</p>
-
-						<p className="text-sm lg:text-lg max-w-sm lg:max-w-xl md:text-lg text-gray-600/90 leading-7">Clarendon is one of the leading private colleges in the Philippines offering accessible, quality, and future-ready education. We aim to develop well-rounded students who are intellectually curious, creative problem solvers, critical thinkers, responsible digital citizens, professionals, and contributing members of society. Clarendon graduates are globally competitive and exhibit the core values of fortitude, excellence, and uprightness.</p>
+						<p className="text-base lg:text-lg max-w-sm lg:max-w-xl md:text-lg text-gray-600/90 leading-7">At Clarendon College, we embrace the philosophy of "Carpe Diem" - Seize the Day. Our commitment is to provide an environment where students can maximize their potential, take advantage of every opportunity, and prepare themselves for a future filled with promise and success.</p>
 
 						<div className="flex flex-col sm:flex-row gap-2 lg:gap-4 py-2 justify-start items-start">
 							<button className="max-w-fit px-6 py-3 text-sm md:text-base focus:outline-none flex justify-center items-center space-x-2 text-clarc-gold bg-clarc-blue hover:bg-clarc-gold hover:text-clarc-blue font-semibold lg:px-6 rounded-full transition duration-300 group">Philosophy of Education</button>
