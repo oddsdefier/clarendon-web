@@ -1,4 +1,3 @@
-
 export const clarcAssets = {
 	mascot: {
 		1: "https://res.cloudinary.com/dfntpqzza/image/upload/v1729127072/Clarendon_College_Mascot_Owl-04_dr2t66.png",
@@ -46,6 +45,12 @@ export const clarcAssets = {
 	images: {
 		old_pic: "https://res.cloudinary.com/dfntpqzza/image/upload/v1729131287/AF1QipPHx6N8IUwzWj67sVKPKpIsHM9ifsP6XW9q6Pn1_s680-w680-h510_gfce6r.jpg",
 		cultural_center: "https://res.cloudinary.com/dfntpqzza/image/upload/v1729131682/7831a26b-917d-494a-8ee5-20d06dce76f9_hvfgte.jpg",
+		logo_creator: "https://res.cloudinary.com/dfntpqzza/image/upload/v1729228651/88068698_109186920685306_1317485422820982784_n.jpg_f7m4is.jpg",
+		stem_12: "https://res.cloudinary.com/dfntpqzza/image/upload/v1729228619/88073025_109186070685391_782872426668097536_n.jpg_ptqwjv.jpg",
+		foundation: "https://res.cloudinary.com/dfntpqzza/image/upload/v1729228669/87552206_109185400685458_8773993985245970432_n.jpg_pzlg2v.jpg",
+		tourism: "https://res.cloudinary.com/dfntpqzza/image/upload/v1729228487/462489344_1065119515614422_7635874021848328696_n.jpg_u2vocy.jpg",
+		prisaa: "https://res.cloudinary.com/dfntpqzza/image/upload/v1729228709/451300567_1003303658462675_6725677853035530200_n.jpg_iozjrd.jpg",
+		new_building: "https://res.cloudinary.com/dfntpqzza/image/upload/v1729228784/410282251_853897020070007_4156709952716535615_n.jpg_olvlys.jpg",
 	},
 	assets: {
 		polka_pattern: "https://res.cloudinary.com/dfntpqzza/image/upload/v1729131919/polka-pattern_qdpgeg.png",

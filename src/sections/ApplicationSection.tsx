@@ -25,7 +25,7 @@ const ApplicationSection: React.FC = () => {
 					</div>
 				</div>
 				<div className="px-4 lg:px-0 w-full flex flex-col justify-center items-center lg:items-start lg:w-1/2 space-y-5 text-center lg:text-left text-indigo-50 max-w-sm lg:max-w-xl">
-					<h1 className="font-dm_serif uppercase tracking-wider text-lg md:text-2xl lg:text-4xl font-semibold text-clarc-gold relative">
+					<h1 className="font-astralaga uppercase text-lg md:text-2xl lg:text-4xl font-semibold text-clarc-gold relative">
 						<span className="z-10">Applications Are Open</span>
 						<div className="-z-10 w-full absolute top-0 left-0 right-0 bg-clarc-blue h-14 -translate-y-2 blur-lg" />
 						<motion.span

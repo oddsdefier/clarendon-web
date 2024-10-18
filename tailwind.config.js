@@ -11,9 +11,9 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				pt_serif: ['PT Serif', 'sans-serif'],
-				dm_serif: ['DM Serif Display', 'serif'],
-				// astralaga: ['Astralaga', 'sans-serif'],
+				// pt_serif: ['PT Serif', 'sans-serif'],
+				// dm_serif: ['DM Serif Display', 'serif'],
+				astralaga: ['Astralaga', 'sans-serif'],
 				universal_serif: ['Universal Serif', 'sans-serif'],
 				manrope: ['Manrope', 'sans-serif']
 			},

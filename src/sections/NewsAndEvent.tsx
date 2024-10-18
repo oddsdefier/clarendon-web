@@ -8,7 +8,7 @@ import ViewAllBtn from "@/components/ViewAllBtn";
 import { NewsItem, newsItems } from "@/utils/get_news_and_events_data";
 import { Link } from "react-router-dom";
 
-const headingTitle = "text-[1.65rem] md:text-4xl font-dm_serif font-medium text-clarc-blue";
+const headingTitle = "text-[1.65rem] md:text-3xl font-astralaga font-semibold text-clarc-blue";
 
 const NewsAndEventsSection: React.FC = () => {
 	const [api, setApi] = useState<CarouselApi>();
@@ -69,13 +69,13 @@ const NewsAndEventsSection: React.FC = () => {
 					</div>
 				</Link>
 				<CardContent className="p-4 space-y-2 pt-8">
-					<h4 className="uppercase text-[0.89rem] font-semibold text-clarc-blue/80 mb-6">
+					<h4 className="uppercase text-sm tracking-wider font-semibold text-clarc-blue/80 mb-6">
 						{"— "}
 						{item.category}
 					</h4>
-					<h2 className="font-dm_serif text-lg lg:text-xl font-normal text-clarc-blue line-clamp-2">{item.title}</h2>
+					<h2 className="font-astralaga text-lg lg:text-lg font-bold text-clarc-blue line-clamp-2">{item.title}</h2>
 					<div className="flex justify-start items-center gap-1">
-						<Calendar className="w-4 h-4 text-gray-800/70" />
+						<Calendar className="w-4 h-4 text-gray-800/60" />
 						<p className="text-sm text-gray-800/60 font-semibold">{item.date}</p>
 					</div>
 					<div className="pt-5">
