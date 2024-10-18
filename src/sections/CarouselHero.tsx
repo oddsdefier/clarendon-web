@@ -49,7 +49,7 @@ const CarouselHero = () => {
 				</CarouselContent>
 				<CarouselPrevious className="w-10 h-10 hidden md:flex md:left-12 opacity-65" />
 				<CarouselNext className="w-10 h-10 hidden md:flex md:right-12 opacity-65" />
-				<div className="absolute bottom-0 left-0 right-0 bg-transparent z-100 flex justify-center py-6">
+				<div className="absolute bottom-0 left-0 right-0 bg-transparent z-100 flex justify-center py-3 lg:py-6">
 					{imgLinks.map((_, index) => (
 						<button key={index} className={`z-20 w-1 h-1 md:w-2 md:h-2 aspect-square rounded-full mx-1 transition-colors duration-200 ${index === current ? "bg-clarc-gold" : "bg-clarc-white/80"}`} onClick={() => api?.scrollTo(index)} aria-label={`Go to slide ${index + 1}`} />
 					))}
