@@ -73,7 +73,7 @@ const NewsAndEventsSection: React.FC = () => {
 						{"— "}
 						{item.category}
 					</h4>
-					<h2 className="font-astralaga text-lg font-bold text-clarc-blue line-clamp-2">{item.title}</h2>
+					<h2 className="font-pt_serif text-lg font-bold text-clarc-blue line-clamp-2">{item.title}</h2>
 					<div className="flex justify-start items-center gap-1">
 						<Calendar className="w-4 h-4 text-gray-800/70" />
 						<p className="text-sm text-gray-800/60 font-semibold">{item.date}</p>

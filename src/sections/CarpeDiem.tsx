@@ -7,7 +7,7 @@ const clarcLogoBg = clarcAssets.vertical_logo[1];
 
 const CarpeDiemSection: React.FC = () => {
 	return (
-		<section className=" lg:min-h-screen bg-clarc-blue/10">
+		<section className="min-h-svh lg:min-h-screen">
 			<div className="relative container mx-auto px-4 py-12 md:py-16 lg:py-20">
 				<div
 					className="absolute inset-0 -z-10 bg-contain bg-center bg-no-repeat opacity-10"
