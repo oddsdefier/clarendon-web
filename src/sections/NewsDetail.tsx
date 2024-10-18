@@ -53,7 +53,7 @@ export default function NewsDetail() {
 
 	return (
 		<div className=" min-h-screen py-6 lg:py-12 font-manrope">
-			<main className="container mx-auto px-6 sm:px-6 lg:px-16">
+			<main className="container mx-auto px-6 sm:px-6 lg:px-16 pb-16">
 				{/* <Link to="/" className="inline-flex items-center text-clarc-blue hover:underline mb-8">
 					<ArrowLeft className="mr-2 h-4 w-4" />
 					Back to News List
@@ -73,7 +73,7 @@ export default function NewsDetail() {
 					</header>
 					<img src={newsItem.image || "/placeholder.svg?height=400&width=800"} alt={newsItem.title} className="container w-full h-96 object-cover" />
 					<div className="py-8 lg:py-16">
-						<div className="prose prose-lg max-w-none leading-5 lg:leading-10 text-gray-900/90 text-sm lg:text-base" dangerouslySetInnerHTML={{ __html: newsItem.fullContent || "" }} />
+						<div className="prose prose-lg max-w-none leading-7 lg:leading-10 text-gray-900/90 text-sm lg:text-base" dangerouslySetInnerHTML={{ __html: newsItem.fullContent || "" }} />
 					</div>
 				</article>
 				<div>
