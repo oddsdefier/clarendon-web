@@ -64,7 +64,7 @@ export default function NewsDetail() {
 							{"— "}
 							{newsItem.category}
 						</p>
-						<h1 className="text-3xl font-pt_serif sm:text-4xl leading-tight font-bold text-clarc-blue mb-2 lg:mb-4">{newsItem.title}</h1>
+						<h1 className="text-2xl font-pt_serif sm:text-4xl leading-tight font-bold text-clarc-blue mb-2 lg:mb-4">{newsItem.title}</h1>
 						<div className="flex gap-1 items-center text-gray-600/90 font-medium text-xs">
 							<p>{"Jeffry Paner"}</p>
 							<p>{"•"}</p>
@@ -73,7 +73,7 @@ export default function NewsDetail() {
 					</header>
 					<img src={newsItem.image || "/placeholder.svg?height=400&width=800"} alt={newsItem.title} className="container w-full h-96 object-cover" />
 					<div className="py-8 lg:py-16">
-						<div className="prose prose-lg max-w-none leading-8 text-gray-900/90" dangerouslySetInnerHTML={{ __html: newsItem.fullContent || "" }} />
+						<div className="prose prose-lg max-w-none leading-10 text-gray-900/90 text-sm lg:text-base" dangerouslySetInnerHTML={{ __html: newsItem.fullContent || "" }} />
 					</div>
 				</article>
 				<div>
