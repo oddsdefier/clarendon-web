@@ -60,7 +60,10 @@ export default function NewsDetail() {
 				</Link> */}
 				<article className="overflow-hidden">
 					<header className="mb-4 lg:mb-8">
-						<p className="text-clarc-gold font-semibold text-xs mb-1 lg:mb-2 uppercase tracking-wider">{newsItem.category}</p>
+						<p className="text-clarc-gold font-semibold text-xs mb-1 lg:mb-2 uppercase tracking-wider">
+							{"— "}
+							{newsItem.category}
+						</p>
 						<h1 className="text-3xl font-astralaga font-semibold lg:text-4xl leading-tight text-clarc-blue mb-1 lg:mb-4">{newsItem.title}</h1>
 						<div className="flex gap-1 mt-2 items-center text-gray-500/90 font-medium text-xs">
 							<p>{"Jeffry Paner"}</p>

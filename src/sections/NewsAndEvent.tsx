@@ -8,7 +8,7 @@ import ViewAllBtn from "@/components/ViewAllBtn";
 import { NewsItem, newsItems } from "@/utils/get_news_and_events_data";
 import { Link } from "react-router-dom";
 
-const headingTitle = "text-[1.65rem] md:text-3xl font-astralaga font-semibold text-clarc-blue";
+const headingTitle = "text-[1.7rem] md:text-4xl font-astralaga font-semibold text-clarc-blue";
 
 const NewsAndEventsSection: React.FC = () => {
 	const [api, setApi] = useState<CarouselApi>();
@@ -57,7 +57,7 @@ const NewsAndEventsSection: React.FC = () => {
 	}, [api, slidesPerView]);
 
 	const NewsCard = React.memo(({ item, index }: { item: NewsItem; index: number }) => (
-		<Card className="hover:bg-clarc-gold/20 overflow-hidden shadow-none outline-none border-none transition duration-300 transform rounded-none bg-transparent">
+		<Card className="bg-clarc-gold/10 hover:bg-clarc-gold/20 overflow-hidden shadow-none outline-none border-none transition duration-300 transform rounded-none ">
 			<CarouselItemAnim index={index}>
 				<Link to={`/news/${item.slug}`} className="block relative group">
 					<div className="overflow-hidden relative">
@@ -69,14 +69,14 @@ const NewsAndEventsSection: React.FC = () => {
 					</div>
 				</Link>
 				<CardContent className="p-4 space-y-2 pt-8">
-					<h4 className="uppercase text-sm tracking-wider font-semibold text-clarc-blue/80 mb-6">
+					<h4 className="uppercase text-sm tracking-wider font-medium text-clarc-gold mb-6">
 						{"— "}
 						{item.category}
 					</h4>
 					<h2 className="font-astralaga text-lg lg:text-lg font-bold text-clarc-blue line-clamp-2">{item.title}</h2>
 					<div className="flex justify-start items-center gap-1">
 						<Calendar className="w-4 h-4 text-gray-800/60" />
-						<p className="text-sm text-gray-800/60 font-semibold">{item.date}</p>
+						<p className="text-sm text-gray-800/60 font-medium">{item.date}</p>
 					</div>
 					<div className="pt-5">
 						<Link to={`/news/${item.slug}`} className="flex w-full items-center justify-start gap-1">
