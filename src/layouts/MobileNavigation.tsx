@@ -128,7 +128,7 @@ const MobileNavigation: React.FC = () => {
 							<ul className="space-y-1">
 								{category.items.map((item) => (
 									<li key={item.title}>
-										<a href={item.href} className="flex justify-between text-base p-2 hover:bg-accent rounded-md">
+										<a href={item.href} className="flex justify-between items-center text-base p-2 hover:bg-accent rounded-md">
 											<span className="font-normal text-gray-700/80">{item.title}</span>
 											<MoveUpRight className="w-3 h-3 aspect-square text-clarc-blue/80" />
 										</a>

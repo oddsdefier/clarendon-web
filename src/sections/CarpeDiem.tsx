@@ -6,7 +6,7 @@ const polkaPattern = clarcAssets.assets["polka_pattern"];
 
 const CarpeDiemSection: React.FC = () => {
 	return (
-		<section className="min-h-svh lg:min-h-screen">
+		<section className="min-h-svh lg:min-h-screen flex justify-center items-center">
 			<div className="relative container mx-auto px-4 py-12 md:py-16 lg:py-20">
 				<div className="grid grid-cols-1 lg:grid-cols-2 lg:px-16 gap-8 lg:gap-16 items-center">
 					<div className="space-y-6 px-4 lg:px-0 order-last lg:order-first">
@@ -18,11 +18,11 @@ const CarpeDiemSection: React.FC = () => {
 							<button className="max-w-fit px-6 py-3 text-sm md:text-base font-semibold text-indigo-900 border-2 border-indigo-900 rounded-full hover:border-clarc-gold hover:bg-clarc-gold/20 hover:text-clarc-gold transition-colors duration-300">Awards and Recognition</button>
 						</div>
 					</div>
-					<div className="relative max-h-[80%] mt-8 lg:mt-0 md:flex my-10 lg:my-0 pointer-events-none order-first lg:order-last">
-						<div className="-z-10 absolute bottom-0 right-0 translate-x-7 translate-y-10 opacity-85">
+					<div className="relative max-h-[90%] mt-8 lg:mt-0 md:flex my-10 lg:my-0 pointer-events-none order-first lg:order-last">
+						<div className="-z-10 absolute bottom-0 right-0 translate-x-5 translate-y-10 opacity-65">
 							<img src={polkaPattern} alt="Future-ready learning at Clarendon" className="w-full h-auto max-w-lg mx-auto rounded-lg" style={{ filter: "hue-rotate(10deg)" }} />
 						</div>
-						<div className="-z-10 absolute top-0 left-0 -translate-x-7 -translate-y-10 opacity-85">
+						<div className="-z-10 absolute top-0 left-0 -translate-x-5 -translate-y-10 opacity-65">
 							<img src={polkaPattern} alt="Future-ready learning at Clarendon" className="w-full h-auto max-w-lg mx-auto rounded-lg" style={{ filter: "hue-rotate(10deg)" }} />
 						</div>
 						<img src={culturalCenterImg} alt="Cultural Center" className="w-full h-auto max-w-lg mx-auto rounded-lg" />
