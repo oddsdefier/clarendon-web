@@ -1,5 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Link } from "react-router-dom";
+import { InstagramLogoIcon } from "@radix-ui/react-icons";
+import { motion } from "framer-motion";
+import { Facebook, Linkedin, Youtube, Twitter } from "lucide-react";
 interface NavItem {
 	title: string;
 	href: string;
@@ -115,7 +117,7 @@ const navigationData: NavCategory[] = [
 ];
 
 const MobileNavigation: React.FC = () => {
-	const date = new Date();
+	const socialsLogo = "w-5 h-5 text-gray-500/60 hover:text-clarc-gold transition transition-colors duration-200";
 	return (
 		<nav className="bg-background p-4 flex flex-col justify-between h-full">
 			<Accordion type="single" collapsible className="w-full">
@@ -138,7 +140,19 @@ const MobileNavigation: React.FC = () => {
 				))}
 			</Accordion>
 			<div>
-				<p className="font-medium text-sm text-gray-800/60">{date.getFullYear()}</p>
+				<div className="flex gap-3 w-full justify-start py-3">
+					{[
+						{ Component: Facebook, href: "https://facebook.com" },
+						{ Component: InstagramLogoIcon, href: "https://instagram.com" },
+						{ Component: Linkedin, href: "https://linkedin.com" },
+						{ Component: Youtube, href: "https://linkedin.com" },
+						{ Component: Twitter, href: "https://linkedin.com" },
+					].map(({ Component, href }, index) => (
+						<motion.a key={index} href={href} whileTap={{ scale: [0.9, 1] }} whileHover={{ scale: [0.9, 1] }}>
+							<Component className={socialsLogo} />
+						</motion.a>
+					))}
+				</div>
 			</div>
 		</nav>
 	);
