@@ -6,8 +6,9 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import CarouselItemAnim from "@/components/CarouselItemAnim";
 import ViewAllBtn from "@/components/ViewAllBtn";
 import { NewsItem, newsItems } from "@/utils/get_news_and_events_data";
+import { Link } from "react-router-dom";
 
-const headingTitle = "text-[1.65rem] md:text-3xl font-universal_serif tracking-wider font-semibold text-clarc-blue";
+const headingTitle = "text-[1.65rem] md:text-4xl font-astralaga font-bold tracking-wider font-semibold text-clarc-blue";
 
 const NewsAndEventsSection: React.FC = () => {
 	const [api, setApi] = useState<CarouselApi>();
@@ -58,7 +59,7 @@ const NewsAndEventsSection: React.FC = () => {
 	const NewsCard = React.memo(({ item, index }: { item: NewsItem; index: number }) => (
 		<Card className="hover:bg-clarc-gold/20 overflow-hidden shadow-none outline-none border-none transition duration-300 transform rounded-none bg-transparent">
 			<CarouselItemAnim index={index}>
-				<a href={item.link} className="block relative group">
+				<Link to={`/news/${item.slug}`} className="block relative group">
 					<div className="overflow-hidden relative">
 						<img src={item.image} alt={item.title} className="rounded-sm w-full h-52 object-contain transition-transform duration-300 group-hover:scale-110" loading="lazy" />
 						<img src={item.image} alt="" className="absolute top-0 left-0 -z-10 rounded-sm w-full h-52 object-cover opacity-10" loading="lazy" />
@@ -66,22 +67,22 @@ const NewsAndEventsSection: React.FC = () => {
 							<span className="text-white font-semibold text-base">Read More</span>
 						</div>
 					</div>
-				</a>
+				</Link>
 				<CardContent className="p-4 space-y-2 pt-8">
 					<h4 className="uppercase text-[0.89rem] font-semibold text-clarc-blue/80 mb-6">
 						{"— "}
 						{item.category}
 					</h4>
-					<h2 className="font-inter text-lg font-bold text-clarc-blue line-clamp-2">{item.title}</h2>
+					<h2 className="font-astralaga text-lg font-bold text-clarc-blue line-clamp-2">{item.title}</h2>
 					<div className="flex justify-start items-center gap-1">
 						<Calendar className="w-4 h-4 text-gray-800/70" />
 						<p className="text-sm text-gray-800/60 font-semibold">{item.date}</p>
 					</div>
 					<div className="pt-5">
-						<a href="./" className="flex w-full items-center justify-start gap-1">
+						<Link to={`/news/${item.slug}`} className="flex w-full items-center justify-start gap-1">
 							<CircleChevronRight className="w-4 h-4 text-gray-800/70" />
 							<p className="text-gray-800/80 text-sm">Read More</p>
-						</a>
+						</Link>
 					</div>
 				</CardContent>
 			</CarouselItemAnim>

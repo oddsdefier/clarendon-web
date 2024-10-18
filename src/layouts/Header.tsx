@@ -3,7 +3,7 @@ import { Search, Menu, MapPin, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ClarendonNavigationMenu } from "./NavigationMenu";
 import MobileNavigation from "./MobileNavigation";
-
+import { Link } from "react-router-dom";
 import { clarcAssets } from "@/utils/img_links";
 
 const logoLink = clarcAssets.primary_logo;
@@ -38,10 +38,10 @@ const Header: React.FC = () => {
 				</div>
 				<div>
 					<div className="relative container mx-auto flex justify-between items-center p-3 px-4">
-						<div className="flex gap-1 justify-center items-center">
+						<Link to={"/"} className="flex gap-1 justify-center items-center z-10">
 							<img src={logoLink} alt="Clarendon College Logo" className="square w-6 h-6 lg:w-[2.3rem] lg:h-[2.3rem]" />
 							<h1 className="font-universal_serif tracking-wider text-base md:text-2xl text-clarc-blue font-semibold">Carpe Diem</h1>
-						</div>
+						</Link>
 						<div className="absolute hidden lg:flex w-[99%] gap-10 items-center justify-center">
 							<ClarendonNavigationMenu />
 						</div>

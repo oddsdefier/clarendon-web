@@ -13,7 +13,8 @@ export default {
 			fontFamily: {
 				pt_serif: ['PT Serif', 'sans-serif'],
 				astralaga: ['Astralaga', 'sans-serif'],
-				universal_serif: ['Universal Serif', 'sans-serif']
+				universal_serif: ['Universal Serif', 'sans-serif'],
+				manrope: ['Manrope', 'sans-serif']
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -92,6 +93,7 @@ export default {
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
-	plugins: [require('tailwindcss-font-inter')]
+	plugins: [require('tailwindcss-font-inter')],
+	plugins: [require('@tailwindcss/typography')]
 }
 
