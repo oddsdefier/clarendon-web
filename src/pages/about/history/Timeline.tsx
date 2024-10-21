@@ -48,10 +48,10 @@ const Timeline: React.FC = () => {
 
 	return (
 		<>
-			<header className="text-center py-10">
+			{/* <header className="text-center py-10">
 				<h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-clarc-blue mb-2">The Timeline of Clarendon College</h1>
 				<p className="text-base sm:text-lg md:text-xl text-clarc-gold">A Legacy of Excellence in Education Since 1996</p>
-			</header>
+			</header> */}
 			<div ref={containerRef} className="relative container mx-auto px-4 md:px-6">
 				<div className="absolute hidden md:flex md:left-1/2 top-0 bottom-0 w-0.5 bg-clarc-gold md:transform md:-translate-x-1/2" />
 				<div className="py-8 md:py-16 px-4">
