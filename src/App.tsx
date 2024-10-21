@@ -12,7 +12,17 @@ import NewsAndEventsSection from "@/sections/NewsAndEvent";
 import VideoSection from "@/sections/VideoSection";
 
 // Lazy load only the NewsDetail component
-const NewsDetail = lazy(() => import("@/sections/NewsDetail"));
+const NewsDetail = lazy(() => import("@/pages/NewsDetail"));
+
+//Pages
+import NotFound from "@/pages/NotFoundPage";
+
+//About Page
+import History from "@/pages/about/history/History";
+import PhilosophyOfEducation from "./pages/about/PhilosophyOfEducation";
+import CoreValues from "./pages/about/CoreValues";
+import SchoolEmblem from "./pages/about/SchoolEmblem";
+import VisionMission from "./pages/about/VisionMission";
 
 // Loading component
 const Loading = () => <div className="text-center p-4">Loading...</div>;
@@ -30,15 +40,6 @@ const MainPage: React.FC = () => {
 	);
 };
 
-const NotFound = () => (
-	<div className="text-center p-8 min-h-screen flex justify-center mx-auto items-center ">
-		<div className="container">
-			<h1 className="text-lg text-red-500 lg:text-3xl font-bold">404 - Page Not Found</h1>
-			<p className="text-sm font-medium text-gray-800/60 lg:text-base">The page you are looking for does not exist.</p>
-		</div>
-	</div>
-);
-
 const ScrollToTop: React.FC = () => {
 	const { pathname } = useLocation();
 
@@ -53,11 +54,11 @@ const App: React.FC = () => {
 	return (
 		<Router>
 			<ScrollToTop />
-			<div className="font-inter min-h-screen overflow-x-hidden">
+			<div className="font-geist min-h-screen overflow-x-hidden">
 				<Header />
 				<main>
 					<Routes>
-						<Route path="/" element={<MainPage />} />
+						<Route path="/" element={<MainPage />} errorElement={<NotFound />} />
 						<Route
 							path="/news/:slug"
 							element={
@@ -66,6 +67,11 @@ const App: React.FC = () => {
 								</Suspense>
 							}
 						/>
+						<Route path="/about/history" element={<History />} />
+						<Route path="/about/philosophy-of-education" element={<PhilosophyOfEducation />} />
+						<Route path="/about/core-values" element={<CoreValues />} />
+						<Route path="/about/school-emblem" element={<SchoolEmblem />} />
+						<Route path="/about/vision-and-mission" element={<VisionMission />} />
 						<Route path="*" element={<NotFound />} />
 					</Routes>
 				</main>

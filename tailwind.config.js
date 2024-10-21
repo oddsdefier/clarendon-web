@@ -15,7 +15,8 @@ export default {
 				// dm_serif: ['DM Serif Display', 'serif'],
 				astralaga: ['Astralaga', 'sans-serif'],
 				universal_serif: ['Universal Serif', 'sans-serif'],
-				manrope: ['Manrope', 'sans-serif']
+				manrope: ['Manrope', 'sans-serif'],
+				geist: ['Geist Sans', 'sans-serif']
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -94,7 +95,6 @@ export default {
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
-	plugins: [require('tailwindcss-font-inter')],
 	plugins: [require('@tailwindcss/typography')]
 }
 

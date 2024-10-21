@@ -21,7 +21,7 @@ const ApplicationSection: React.FC = () => {
 				<div className="w-full lg:w-1/2">
 					<div className="relative aspect-square max-w-6xl lg:max-w-6xl mx-auto flex justify-center items-center">
 						<motion.img src={owlImgUrl} alt="Application image" className="bg-white max-w-sm lg:max-w-lg rounded-xl" style={{ rotate: rotateProgress, scale: scaleProgress }} />
-						<div className="absolute w-3/4 h-3/4 bg-clarc-white opacity-10 rounded-3xl -rotate-1 -z-10"></div>
+						<div className="absolute w-3/4 h-3/4 bg-clarc-white opacity-10 rounded-3xl -rotate-1 -z-10" />
 					</div>
 				</div>
 				<div className="px-4 lg:px-0 w-full flex flex-col justify-center items-center lg:items-start lg:w-1/2 space-y-5 text-center lg:text-left text-indigo-50 max-w-sm lg:max-w-xl">

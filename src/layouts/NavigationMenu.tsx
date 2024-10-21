@@ -1,168 +1,158 @@
 import * as React from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 
-const admissions: { title: string; href: string; description: string }[] = [
+type MenuItem = {
+	title: string;
+	href: string;
+	description: string;
+};
+
+type MenuSection = {
+	title: string;
+	items: MenuItem[];
+};
+
+const menuConfig: MenuSection[] = [
 	{
-		title: "Admission Requirements",
-		href: "/docs/primitives/alert-dialog",
-		description: "Admission criteria for Clarendon College.",
+		title: "About",
+		items: [
+			{
+				title: "History",
+				href: "/about/history",
+				description: "Explore the history of Clarendon College.",
+			},
+			{
+				title: "School Emblem",
+				href: "/about/school-emblem",
+				description: "Explore the meaning behind the Clarendon College school emblem.",
+			},
+			{
+				title: "Vision and Mission",
+				href: "/about/vision-and-mission",
+				description: "Explore the vision and mission of Clarendon College.",
+			},
+			{
+				title: "Philosophy of Education",
+				href: "/about/philosophy-of-education",
+				description: "Discover the philosophy of education at Clarendon College.",
+			},
+			{
+				title: "Core Values",
+				href: "/about/core-values",
+				description: "Learn about the core values that guide Clarendon College.",
+			},
+		],
 	},
 	{
-		title: "Enrollment Procedures",
-		href: "/docs/primitives/hover-card",
-		description: "Steps for enrolling at Clarendon College.",
+		title: "Admissions",
+		items: [
+			{
+				title: "Admission Requirements",
+				href: "/admissions/requirements",
+				description: "Admission criteria for Clarendon College.",
+			},
+			{
+				title: "Enrollment Procedures",
+				href: "/admissions/enrollment",
+				description: "Steps for enrolling at Clarendon College.",
+			},
+			{
+				title: "Fees, Payments, and Discounts",
+				href: "/admissions/fees",
+				description: "Details on tuition, payments, and discounts.",
+			},
+			{
+				title: "Student Withdrawal or Transfer",
+				href: "/admissions/withdrawal-transfer",
+				description: "Guidelines for withdrawing or transferring.",
+			},
+			{
+				title: "Scholarships",
+				href: "/admissions/scholarships",
+				description: "Available scholarships at Clarendon College.",
+			},
+		],
 	},
 	{
-		title: "Fees, Payments, and Discounts",
-		href: "/docs/primitives/progress",
-		description: "Details on tuition, payments, and discounts.",
+		title: "Academics",
+		items: [
+			{
+				title: "High School",
+				href: "/academics/high-school",
+				description: "Overview of Clarendon College's high school programs.",
+			},
+			{
+				title: "Senior High School",
+				href: "/academics/senior-high",
+				description: "Details about Clarendon College's senior high school curriculum.",
+			},
+			{
+				title: "College",
+				href: "/academics/college",
+				description: "Information on degree programs at Clarendon College.",
+			},
+		],
 	},
 	{
-		title: "Student Withdrawal or Transfer",
-		href: "/docs/primitives/scroll-area",
-		description: "Guidelines for withdrawing or transferring.",
-	},
-	{
-		title: "Scholarships",
-		href: "/docs/primitives/tabs",
-		description: "Available scholarships at Clarendon College.",
+		title: "Campus Life",
+		items: [
+			{
+				title: "The Student Body",
+				href: "/campus-life/student-body",
+				description: "Learn about the diverse student community at Clarendon College.",
+			},
+			{
+				title: "Holistic Wellbeing",
+				href: "/campus-life/wellbeing",
+				description: "Discover our approach to student health and wellness.",
+			},
+			{
+				title: "Learning Enrichment",
+				href: "/campus-life/enrichment",
+				description: "Explore extracurricular and enrichment opportunities.",
+			},
+		],
 	},
 ];
 
-const about: { title: string; href: string; description: string }[] = [
-	{
-		title: "History",
-		href: "/docs/primitives/tabs",
-		description: "Explore the history of Clarendon College.",
-	},
-	{
-		title: "School Emblem",
-		href: "/docs/primitives/tabs",
-		description: "Explore the meaning behind the Clarendon College school emblem.",
-	},
-	{
-		title: "Philosophy of Education",
-		href: "/docs/primitives/tabs",
-		description: "Discover the philosophy of education at Clarendon College.",
-	},
-	{
-		title: "Vision and Mission",
-		href: "/docs/primitives/tabs",
-		description: "Explore the vision and mission of Clarendon College.",
-	},
-	{
-		title: "Core Values",
-		href: "/docs/primitives/tabs",
-		description: "Learn about the core values that guide Clarendon College.",
-	},
-];
-const academics: { title: string; href: string; description: string }[] = [
-	{
-		title: "High School",
-		href: "/docs/primitives/tabs",
-		description: "Overview of Clarendon College's high school programs.",
-	},
-	{
-		title: "Senior High School",
-		href: "/docs/primitives/tabs",
-		description: "Details about Clarendon College's senior high school curriculum.",
-	},
-	{
-		title: "College",
-		href: "/docs/primitives/tabs",
-		description: "Information on degree programs at Clarendon College.",
-	},
-];
-const campus_life: { title: string; href: string; description: string }[] = [
-	{
-		title: "The Student Body",
-		href: "/docs/primitives/tabs",
-		description: "Overview of Clarendon College's high school programs.",
-	},
-	{
-		title: "Holistic Wellbeing",
-		href: "/docs/primitives/tabs",
-		description: "Details about Clarendon College's senior high school curriculum.",
-	},
-	{
-		title: "Learning Enrichment",
-		href: "/docs/primitives/tabs",
-		description: "Information on degree programs at Clarendon College.",
-	},
-];
-
-const nav_trigger_style: string = "text-clarc-blue hover:text-clarc-blue/90";
+const navTriggerStyle = "text-clarc-blue hover:text-clarc-blue/90";
 
 export function ClarendonNavigationMenu() {
 	return (
-		<NavigationMenu>
+		<NavigationMenu className="z-50">
 			<NavigationMenuList>
-				<NavigationMenuItem>
-					<NavigationMenuTrigger className={nav_trigger_style}>About</NavigationMenuTrigger>
-					<NavigationMenuContent>
-						<ul className="text-lg grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-							{about.map((component) => (
-								<ListItem key={component.title} title={component.title} to={component.href}>
-									{component.description}
-								</ListItem>
-							))}
-						</ul>
-					</NavigationMenuContent>
-				</NavigationMenuItem>
-				<NavigationMenuItem>
-					<NavigationMenuTrigger className={nav_trigger_style}>Admissions</NavigationMenuTrigger>
-					<NavigationMenuContent>
-						<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-							{admissions.map((component) => (
-								<ListItem key={component.title} title={component.title} to={component.href}>
-									{component.description}
-								</ListItem>
-							))}
-						</ul>
-					</NavigationMenuContent>
-				</NavigationMenuItem>
-				<NavigationMenuItem>
-					<NavigationMenuTrigger className={nav_trigger_style}>Academics</NavigationMenuTrigger>
-					<NavigationMenuContent>
-						<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-							{academics.map((component) => (
-								<ListItem key={component.title} title={component.title} to={component.href}>
-									{component.description}
-								</ListItem>
-							))}
-						</ul>
-					</NavigationMenuContent>
-				</NavigationMenuItem>
-				<NavigationMenuItem>
-					<NavigationMenuTrigger className={nav_trigger_style}>Campus Life</NavigationMenuTrigger>
-					<NavigationMenuContent>
-						<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-							{campus_life.map((component) => (
-								<ListItem key={component.title} title={component.title} to={component.href}>
-									{component.description}
-								</ListItem>
-							))}
-						</ul>
-					</NavigationMenuContent>
-				</NavigationMenuItem>
+				{menuConfig.map((section) => (
+					<NavigationMenuItem key={section.title}>
+						<NavigationMenuTrigger className={navTriggerStyle}>{section.title}</NavigationMenuTrigger>
+						<NavigationMenuContent>
+							<ul className="grid gap-3 p-4 md:w-[400px] lg:w-[600px] lg:grid-cols-[.75fr_1fr]">
+								{section.items.map((item) => (
+									<ListItem key={item.title} title={item.title} to={item.href}>
+										{item.description}
+									</ListItem>
+								))}
+							</ul>
+						</NavigationMenuContent>
+					</NavigationMenuItem>
+				))}
 			</NavigationMenuList>
 		</NavigationMenu>
 	);
 }
 
-// ListItem Component using Link from react-router-dom
 const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<typeof Link>>(({ className, title, children, ...props }, ref) => {
 	return (
 		<li>
 			<NavigationMenuLink asChild>
-				<Link ref={ref} className={cn("block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground", className)} {...props}>
+				<Link ref={ref} className={cn("block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground", className)} {...props}>
 					<div className="text-sm font-medium leading-none">{title}</div>
-					<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{children}</p>
+					<p className="line-clamp-2 text-sm leading-snug text-muted-foreground opacity-75">{children}</p>
 				</Link>
 			</NavigationMenuLink>
 		</li>
 	);
 });
+
 ListItem.displayName = "ListItem";
