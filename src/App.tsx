@@ -19,10 +19,10 @@ import NotFound from "@/pages/NotFoundPage";
 
 //About Page
 import History from "@/pages/about/history/History";
-import PhilosophyOfEducation from "./pages/about/PhilosophyOfEducation";
-import CoreValues from "./pages/about/CoreValues";
-import SchoolEmblem from "./pages/about/SchoolEmblem";
+// import PhilosophyOfEducation from "./pages/about/PhilosophyOfEducation";
+// import SchoolEmblem from "./pages/about/SchoolEmblem";
 import VisionMission from "./pages/about/VisionMission";
+import CoreValues from "./pages/about/CoreValues";
 
 // Loading component
 const Loading = () => <div className="text-center p-4">Loading...</div>;
@@ -68,10 +68,10 @@ const App: React.FC = () => {
 							}
 						/>
 						<Route path="/about/history" element={<History />} />
-						<Route path="/about/philosophy-of-education" element={<PhilosophyOfEducation />} />
+						<Route path="/about/philosophy-of-education" element={<CoreValues />} />
 						<Route path="/about/core-values" element={<CoreValues />} />
-						<Route path="/about/school-emblem" element={<SchoolEmblem />} />
 						<Route path="/about/vision-and-mission" element={<VisionMission />} />
+						{/* <Route path="/about/school-emblem" element={<VisionMission />} /> */}
 						<Route path="*" element={<NotFound />} />
 					</Routes>
 				</main>
