@@ -10,7 +10,7 @@ export default function ClarendonHistory() {
 			<div className="relative container mx-auto px-4 sm:px-6 max-w-4xl py-8 sm:py-12 space-y-8 bg-background text-foreground">
 				<header className="text-center">
 					<h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-clarc-blue mb-2">The History of Clarendon College</h1>
-					<p className="text-sm sm:text-lg md:text-xl text-clarc-gold">A Legacy of Excellence in Education Since 1996</p>
+					<p className="text-sm sm:text-lg md:text-xl text-clarc-blue/70">A Legacy of Excellence in Education Since 1996</p>
 				</header>
 
 				<Separator className="py-0 my-0" />
@@ -48,13 +48,13 @@ export default function ClarendonHistory() {
 						<h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 text-clarc-blue">Recent Achievements</h2>
 						<ul className="space-y-4">
 							<li className="flex flex-col sm:flex-row items-start space-y-2 sm:space-y-0 sm:space-x-3">
-								<Badge variant="secondary" className="mt-1 flex-shrink-0 bg-clarc-blue text-clarc-gold">
+								<Badge variant="secondary" className="mt-1 flex-shrink-0 bg-clarc-blue text-clarc-gold hover:bg-clarc-blue/90">
 									2018
 								</Badge>
 								<p className="text-sm sm:text-base text-muted-foreground leading-relaxed">Became the region's only provider of the Bachelor's of Culture and Arts Education (BCAED)</p>
 							</li>
 							<li className="flex flex-col sm:flex-row items-start space-y-2 sm:space-y-0 sm:space-x-3">
-								<Badge variant="secondary" className="mt-1 flex-shrink-0 bg-clarc-blue text-clarc-gold">
+								<Badge variant="secondary" className="mt-1 flex-shrink-0 bg-clarc-blue text-clarc-gold hover:bg-clarc-blue/90">
 									2021
 								</Badge>
 								<p className="text-sm sm:text-base text-muted-foreground leading-relaxed">Qualified for an innovation grant to open a cultural center, the first of its kind opened by a Private School in the region</p>
