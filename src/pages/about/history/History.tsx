@@ -15,7 +15,7 @@ const History: React.FC = () => {
 				}}>
 				<div className="absolute inset-0 bg-gradient-to-t from-clarc-blue to-transparent opacity-60" />
 				<div className="container mx-auto z-10 px-6 flex justify-center">
-					<h1 className="text-lg lg:text-[2rem] font-semibold text-white font-astralaga">
+					<h1 className="text-xl lg:text-[2rem] font-semibold text-white font-astralaga">
 						Nurturing minds, Shaping
 						<span className="text-clarc-gold"> futures</span> since 1996
 					</h1>

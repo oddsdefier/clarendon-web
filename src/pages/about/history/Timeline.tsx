@@ -14,7 +14,7 @@ const TimelineEvent: React.FC<{ event: { year: string; title: string; descriptio
 	};
 
 	return (
-		<motion.div ref={ref} {...animationProps} className={`mb-8 md:mb-16 flex flex-col md:flex-row md:justify-between md:items-center w-full ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
+		<motion.div ref={ref} {...animationProps} className={`mb-4 md:mb-16 flex flex-col md:flex-row md:justify-between md:items-center w-full ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
 			<div className="md:w-5/12 order-2 md:order-none bg-clarc-blue"></div>
 			<div className="z-20 flex items-center md:flex-col mb-4 md:mb-0">
 				<div className="text-white/65 bg-white flex items-center justify-center p-1 mr-4 md:mr-0 md:mb-2">
