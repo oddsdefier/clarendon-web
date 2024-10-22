@@ -54,10 +54,10 @@ const Timeline: React.FC = () => {
 	];
 
 	return (
-		<main className="container mx-auto gap-12 flex py-5" id="timeline">
-			<div className="flex-1 border-r border-dotted border-gray-200">
+		<main className="container mx-auto lg:flex gap-12 lg:py-5 px-4 lg:px-0" id="timeline">
+			<div className="flex-1 lg:border-r lg:border-dotted lg:border-gray-200">
 				{/* <Separator className="bg-clarc-gold/50 w-1/4 h-1" /> */}
-				<header className="text-center p-8 mx-10 rounded-md mb-10 bg-clarc-blue/100">
+				<header className="text-center p-5 lg:p-8 lg:mx-10 lg:rounded-sm mb-5 lg:mb-10  bg-clarc-blue/100">
 					<h1 className="text-2xl sm:text-3xl md:text-3xl font-bold text-clarc-gold mb-2">The Timeline of Clarendon College</h1>
 					<p className="text-sm sm:text-lg md:text-lg text-clarc-gold/70">A Legacy of Excellence in Education Since 1996</p>
 				</header>
