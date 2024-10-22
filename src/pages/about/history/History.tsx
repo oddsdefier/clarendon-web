@@ -1,9 +1,9 @@
-import React from "react";
 import { clarcAssets } from "@/utils/img_links";
-import Timeline from "./Timeline";
+import React from "react";
 import ClarendonHistory from "./ClarendonHistory";
+import Timeline from "./Timeline";
 
-const img = clarcAssets.images.cultural_center;
+const img = clarcAssets.images.old_pic;
 const logo = clarcAssets.primary_logo;
 const History: React.FC = () => {
 	return (
@@ -12,6 +12,9 @@ const History: React.FC = () => {
 				className="relative opacity-90 h-56 bg-primary overflow-hidden flex items-center"
 				style={{
 					backgroundImage: `url(${img})`,
+					backgroundRepeat: "no-repeat",
+					backgroundPosition: "top",
+					backgroundSize: "cover",
 				}}>
 				<div className="absolute inset-0 bg-gradient-to-t from-clarc-blue to-transparent opacity-60" />
 				<div className="container mx-auto z-10 px-6 flex justify-center">

@@ -1,6 +1,7 @@
-import { Separator } from "@/components/ui/separator";
-import { User, University, ChartSpline, Flame, Trophy } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+import { ChartSpline, Flame, Trophy, University, User } from "lucide-react";
+
 
 export default function ClarendonHistory() {
 	const iconStyle = "w-6 h-6 aspect-square mt-1 flex-shrink-0 text-clarc-blue";
