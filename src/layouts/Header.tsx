@@ -10,7 +10,7 @@ const logoLink = clarcAssets.primary_logo;
 
 const Header: React.FC = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+	const location = useLocation();
 	const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
 	useEffect(() => {
@@ -25,7 +25,10 @@ const Header: React.FC = () => {
 		};
 	}, [isMenuOpen]);
 
-	const location = useLocation();
+	useEffect(() => {
+		setIsMenuOpen(false);
+	}, [location]);
+
 	return (
 		<header className="bg-white ">
 			<nav className="flex flex-col">
