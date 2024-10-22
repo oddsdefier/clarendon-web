@@ -30,7 +30,7 @@ const menuConfig: MenuSection[] = [
 			},
 			{
 				title: "Vision and Mission",
-				href: "/about/vision-and-mission",
+				href: "/about/mission-vision",
 				description: "Explore the vision and mission of Clarendon College.",
 			},
 			{

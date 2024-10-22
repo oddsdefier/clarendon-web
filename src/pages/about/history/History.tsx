@@ -1,37 +1,48 @@
-import { clarcAssets } from "@/utils/img_links";
-import React from "react";
+import { useEffect } from "react";
+// import { clarcAssets } from "@/utils/img_links";
 import ClarendonHistory from "./ClarendonHistory";
 import Timeline from "./Timeline";
 
-const img = clarcAssets.images.old_pic;
-const logo = clarcAssets.primary_logo;
-const History: React.FC = () => {
+export default function History() {
+	useEffect(() => {
+		const handleScroll = (event: Event) => {
+			event.preventDefault();
+			const target = event.target as HTMLAnchorElement;
+			const id = target.getAttribute("href");
+			if (id) {
+				const element = document.querySelector(id);
+				if (element) {
+					const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+					const offsetPosition = elementPosition - window.innerHeight / 3;
+
+					window.scrollTo({
+						top: offsetPosition,
+						behavior: "smooth",
+					});
+				}
+			}
+		};
+
+		const links = document.querySelectorAll('a[href^="#"]');
+		links.forEach((link) => {
+			link.addEventListener("click", handleScroll);
+		});
+
+		return () => {
+			links.forEach((link) => {
+				link.removeEventListener("click", handleScroll);
+			});
+		};
+	}, []);
+
 	return (
-		<div className="history min-h-screen w-full bg-white">
-			<div
-				className="relative opacity-90 h-56 bg-primary overflow-hidden flex items-center"
-				style={{
-					backgroundImage: `url(${img})`,
-					backgroundRepeat: "no-repeat",
-					backgroundPosition: "top",
-					backgroundSize: "cover",
-				}}>
-				<div className="absolute inset-0 bg-gradient-to-t from-clarc-blue to-transparent opacity-60" />
-				<div className="container mx-auto z-10 px-6 flex justify-center">
-					<h1 className="text-xl lg:text-[2rem] font-semibold text-white font-astralaga">
-						Nurturing minds, Shaping
-						<span className="text-clarc-gold"> futures</span> since 1996
-					</h1>
+		<div className="w-full bg-white pt-8">
+			<main className="container mx-auto flex gap-12">
+				<div className="flex-1">
+					<ClarendonHistory />
+					<Timeline />
 				</div>
-			</div>
-			<div>
-				<Timeline />
-				<div className="container mx-auto flex justify-center items-center pt-5">
-					<img src={logo} alt="Clarendon Logo" className="w-48 h-48 aspect-square" />
-				</div>
-				<ClarendonHistory />
-			</div>
+			</main>
 		</div>
 	);
-};
-export default History;
+}

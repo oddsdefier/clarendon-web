@@ -1,7 +1,6 @@
-"use client";
-
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { Separator } from "@radix-ui/react-separator";
 
 const TimelineEvent: React.FC<{ event: { year: string; title: string; description: string }; index: number }> = ({ event, index }) => {
 	const ref = useRef(null);
@@ -45,22 +44,52 @@ const Timeline: React.FC = () => {
 	];
 
 	const containerRef = useRef(null);
+	const navItems = [
+		{ href: "#history-clarendon", label: "History of Clarendon College" },
+		{ href: "#founder", label: "Founder", indent: true },
+		{ href: "#birth-of-clarendon", label: "Birth Of Clarendon", indent: true },
+		{ href: "#growth-and-evolution", label: "Growth And Evolution", indent: true },
+		{ href: "#recent-achievements", label: "Recent Achievements", indent: true },
+		{ href: "#our-ongoing-mission", label: "Our Ongoing Mission", indent: true },
+	];
 
 	return (
-		<>
-			{/* <header className="text-center py-10">
-				<h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-clarc-blue mb-2">The Timeline of Clarendon College</h1>
-				<p className="text-base sm:text-lg md:text-xl text-clarc-gold">A Legacy of Excellence in Education Since 1996</p>
-			</header> */}
-			<div ref={containerRef} className="relative container mx-auto px-4 md:px-6">
-				<div className="absolute hidden md:flex md:left-1/2 top-0 bottom-0 w-0.5 bg-clarc-gold md:transform md:-translate-x-1/2" />
-				<div className="py-8 md:py-16 px-4">
-					{timelineEvents.map((event, index) => (
-						<TimelineEvent key={index} event={event} index={index} />
-					))}
+		<main className="container mx-auto gap-12 flex py-5" id="timeline">
+			<div className="flex-1 border-r border-dotted border-gray-200">
+				{/* <Separator className="bg-clarc-gold/50 w-1/4 h-1" /> */}
+				<header className="text-center p-8 mx-10 rounded-md mb-10 bg-clarc-blue/100">
+					<h1 className="text-2xl sm:text-3xl md:text-3xl font-bold text-clarc-gold mb-2">The Timeline of Clarendon College</h1>
+					<p className="text-sm sm:text-lg md:text-lg text-clarc-gold/70">A Legacy of Excellence in Education Since 1996</p>
+				</header>
+
+				<div ref={containerRef} className="relative container mx-auto max-w-4xl">
+					<div className="absolute hidden md:flex md:left-1/2 top-0 bottom-0 w-0.5 bg-clarc-gold md:transform md:-translate-x-1/2" />
+					<div className="py-8 md:py-16">
+						{timelineEvents.map((event, index) => (
+							<TimelineEvent key={index} event={event} index={index} />
+						))}
+					</div>
 				</div>
 			</div>
-		</>
+
+			<aside className="w-64 hidden lg:block">
+				<div className="mb-5 pt-5">
+					<h2 className="text-lg font-semibold text-clarc-blue">On This Page</h2>
+					<Separator className="bg-clarc-gold/50 w-1/4 my-3 h-1" />
+					<nav aria-label="Table of contents">
+						<ul className="space-y-2">
+							{navItems.map((item, index) => (
+								<li key={index} className={item.indent ? "mb-3 ml-2" : "mb-3"}>
+									<a href={item.href} className="flex items-center text-base transition-colors text-muted-foreground hover:text-clarc-blue">
+										{item.label}
+									</a>
+								</li>
+							))}
+						</ul>
+					</nav>
+				</div>
+			</aside>
+		</main>
 	);
 };
 

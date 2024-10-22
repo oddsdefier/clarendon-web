@@ -2,25 +2,33 @@ import React from "react";
 import { staticContent } from "@/utils/static_content";
 import { clarcAssets } from "@/utils/img_links";
 import Header from "./components/Header";
+import { Separator } from "@radix-ui/react-separator";
+import AboutUs from "./components/AboutUs";
 
 const philosophyOfEducation: React.FC = () => {
-	const philosophy_of_education = staticContent.philosophyOfEducation;
+	const sections = [staticContent.philosophyOfEducation];
 	const img = clarcAssets.images.tourism;
-	const title = "Philosophy of Education";
+	const title = ""; //made this empty so i can avoid redundancy
 
 	return (
-		<div className="min-h-screen w-full bg-white flex flex-col">
+		<div className="min-h-screen w-full bg-white">
 			<Header img={img} title={title} />
-			<div className="container mx-auto px-4 sm:px-6 max-w-4xl py-8">
-				{[philosophy_of_education].map((section) => (
-					<div key={section.id} id={section.id} className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4 mt-8 pb-10">
-						<div>
-							{/* <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-2 text-clarc-blue">{section.title}</h2> */}
-							<p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">{section.text}</p>
+			<main className="container mx-auto flex gap-12 py-10" id="mission-vision">
+				<div className="relative container mx-auto max-w-4xl">
+					{sections.map((section) => (
+						<div key={section.id} id={section.id} className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4 mt-0 pb-10">
+							<div>
+								<h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-clarc-blue">{section.title}</h2>
+								<Separator className="bg-clarc-gold/80 w-1/4 my-3 h-1" />
+								<p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">{section.text}</p>
+							</div>
 						</div>
-					</div>
-				))}
-			</div>
+					))}
+				</div>
+				<aside className="w-64">
+					<AboutUs />
+				</aside>
+			</main>
 		</div>
 	);
 };

@@ -27,7 +27,7 @@ const Header: React.FC = () => {
 
 	const location = useLocation();
 	return (
-		<header className="bg-white">
+		<header className="bg-white ">
 			<nav className="flex flex-col">
 				{location.pathname === "/" ? (
 					<div className="hidden md:flex p-3 text-indigo-50 bg-clarc-blue">
@@ -42,7 +42,7 @@ const Header: React.FC = () => {
 					""
 				)}
 				<div>
-					<div className="relative container mx-auto flex justify-between items-center p-3 px-4">
+					<div className="relative container mx-auto border-b border-clarc-blue/10 flex justify-between items-center p-3 px-4">
 						<Link to={"/"} className="flex gap-1 justify-center items-center z-10">
 							<img src={logoLink} alt="Clarendon College Logo" className="square w-6 h-6 lg:w-[2.3rem] lg:h-[2.3rem]" />
 							<h1 className="font-universal_serif tracking-wider text-base md:text-2xl text-clarc-blue font-semibold">Carpe Diem</h1>
