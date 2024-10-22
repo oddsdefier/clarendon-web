@@ -10,9 +10,9 @@ const VisionMission: React.FC = () => {
 	const title = "Mission and Vision";
 	const img = clarcAssets.images.tourism;
 	return (
-		<div className="min-h-screen w-full bg-white">
+		<div className="w-full bg-white">
 			<Header img={img} title={title} />
-			<main className="container mx-auto flex gap-12 py-10" id="mission-vision">
+			<main className="container mx-auto lg:flex lg:gap-12 py-5 px-4 lg:py-10" id="mission-vision">
 				<div className="relative container mx-auto max-w-4xl">
 					{sections.map((section) => (
 						<div key={section.id} id={section.id} className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4 mt-0 pb-10">
@@ -24,7 +24,7 @@ const VisionMission: React.FC = () => {
 						</div>
 					))}
 				</div>
-				<aside className="w-64">
+				<aside className="w-64 hidden lg:block">
 					<AboutUs />
 				</aside>
 			</main>
