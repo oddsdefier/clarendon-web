@@ -57,7 +57,7 @@ const NewsAndEventsSection: React.FC = () => {
 	}, [api, slidesPerView]);
 
 	const NewsCard = React.memo(({ item, index }: { item: NewsItem; index: number }) => (
-		<Card className="shadow-sm pb-3 hover:bg-clarc-gold/20 overflow-hidden outline-none transition duration-300 transform rounded-none ">
+		<Card className="shadow-md pb-3 bg-clarc-gold/10 hover:bg-clarc-gold/20 overflow-hidden outline-none transition duration-300 transform rounded-none ">
 			<CarouselItemAnim index={index}>
 				<Link to={`/news/${item.slug}`} className="block relative group">
 					<div className="overflow-hidden relative">
@@ -90,7 +90,7 @@ const NewsAndEventsSection: React.FC = () => {
 	));
 
 	return (
-		<section className="py-16 bg-white/10 relative lg:min-h-screen" id="news-and-events">
+		<section className="py-8 sm:py-12 lg:py-16 bg-clarc-white/10 relative" id="news-and-events">
 			<div
 				className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-10"
 				style={{

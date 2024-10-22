@@ -94,7 +94,7 @@ const VideoSection: React.FC = () => {
 	}, []);
 
 	return (
-		<div className="bg-clarc-gold/10 relative lg:min-h-screen" id="videos-section">
+		<div className="py-8 sm:py-12 lg:py-16 bg-clarc-white/10 relative" id="videos-section">
 			<Youtube className="hidden lg:flex absolute rotate-12 top-0 lg:-top-12 lg:right-5 lg:translate-x-8 translate-y-0 lg:translate-y-8 w-1/2 h-1/2 square text-white -z-[9] opacity-40" />
 			<div
 				className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-10"

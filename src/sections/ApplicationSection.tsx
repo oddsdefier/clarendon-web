@@ -15,7 +15,7 @@ const ApplicationSection: React.FC = () => {
 	const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1.1]);
 
 	return (
-		<section className="px-4 py-16 lg:py-16 relative bg-clarc-blue/10 lg:min-h-screen" id="application-section">
+		<section className="px-4 py-16 lg:py-16 relative bg-clarc-blue/10" id="application-section">
 			<BackgroundImage url={bgImgUrl} />
 			<div className="container mx-auto flex flex-col lg:flex-row gap-3 items-center relative z-[99]">
 				<div className="w-full lg:w-1/2">

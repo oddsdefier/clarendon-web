@@ -20,7 +20,6 @@ import NotFound from "@/pages/NotFoundPage";
 //About Page
 import History from "@/pages/about/history/History";
 import PhilosophyOfEducation from "./pages/about/PhilosophyOfEducation";
-// import SchoolEmblem from "./pages/about/SchoolEmblem";
 import VisionMission from "./pages/about/VisionMission";
 import CoreValues from "./pages/about/CoreValues";
 import SchoolEmblem from "./pages/about/SchoolEmblem";

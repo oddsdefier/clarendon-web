@@ -32,7 +32,7 @@ const CarouselHero = () => {
 	const handleMouseEnter = useCallback(() => setAutoplay(false), []);
 	const handleMouseLeave = useCallback(() => setAutoplay(true), []);
 	return (
-		<div className="w-full mx-auto bg-clarc-blue lg:min-h-screen" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+		<div className="w-full mx-auto bg-clarc-blue h-dvh lg:h-lvh" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
 			<Carousel setApi={setApi} className="w-full">
 				<CarouselContent>
 					{imgLinks.map((imgLink, index) => (
