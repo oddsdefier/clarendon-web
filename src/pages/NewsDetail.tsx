@@ -80,20 +80,14 @@ export default function NewsDetail() {
 				author: "Jeffry Paner",
 				authorImage: "/placeholder.svg?height=50&width=50",
 				content: `
-          <p>Clarendon College (CLARC) is proud to announce its expansion into the global education market. This groundbreaking move marks a significant milestone in the institution's history and opens up new opportunities for students worldwide.</p>
-          <h2>Global Partnerships</h2>
-          <p>CLARC has established partnerships with renowned universities across Europe, Asia, and North America. These collaborations will facilitate student exchange programs, joint research initiatives, and shared academic resources.</p>
-          <h2>Online Learning Platform</h2>
-          <p>To support its global outreach, CLARC has launched a state-of-the-art online learning platform. This platform will offer a wide range of courses to international students, allowing them to experience CLARC's high-quality education from anywhere in the world.</p>
-          <h2>Cultural Exchange Programs</h2>
-          <p>As part of its global initiative, CLARC will be introducing various cultural exchange programs. These programs aim to foster cross-cultural understanding and prepare students for the increasingly interconnected global job market.</p>
-          <h2>Impact on Local Community</h2>
-          <p>While expanding globally, CLARC remains committed to its local community. The global initiative is expected to bring diverse perspectives to the campus, enriching the educational experience for all students.</p>
-          <h2>Future Plans</h2>
-          <p>Looking ahead, CLARC plans to establish satellite campuses in key international locations. This expansion will further solidify its position as a global educational institution and provide more opportunities for students to gain international exposure.</p>
-          <h2>Conclusion</h2>
-          <p>CLARC's global expansion represents a bold step forward in its mission to provide world-class education. As the college embarks on this exciting journey, it remains dedicated to its core values of academic excellence, innovation, and inclusivity.</p>
-        `,
+		  <p style="font-size: 1rem">Clarendon College (CLARC) is proud to announce its expansion into the global education market. This groundbreaking move marks a significant milestone in the institution's history and opens up new opportunities for students worldwide.</p>
+		  <p>CLARC has established partnerships with renowned universities across Europe, Asia, and North America. These collaborations will facilitate student exchange programs, joint research initiatives, and shared academic resources.</p>
+		  <p>To support its global outreach, CLARC has launched a state-of-the-art online learning platform. This platform will offer a wide range of courses to international students, allowing them to experience CLARC's high-quality education from anywhere in the world.</p>
+		  <p>As part of its global initiative, CLARC will be introducing various cultural exchange programs. These programs aim to foster cross-cultural understanding and prepare students for the increasingly interconnected global job market.</p>
+		  <p>While expanding globally, CLARC remains committed to its local community. The global initiative is expected to bring diverse perspectives to the campus, enriching the educational experience for all students.</p>
+		  <p>Looking ahead, CLARC plans to establish satellite campuses in key international locations. This expansion will further solidify its position as a global educational institution and provide more opportunities for students to gain international exposure.</p>
+		  <p>CLARC's global expansion represents a bold step forward in its mission to provide world-class education. As the college embarks on this exciting journey, it remains dedicated to its core values of academic excellence, innovation, and inclusivity.</p>
+		`,
 			});
 		}
 		// Get related articles (excluding the current article)
@@ -148,20 +142,20 @@ export default function NewsDetail() {
 
 	return (
 		<div className="min-h-screen bg-background font-geist">
-			<main className="container mx-auto px-4 py-8">
-				<Link to="/" className="inline-flex items-center text-primary hover:underline mb-8">
-					<ArrowLeft className="mr-2 h-4 w-4" />
+			<main className="container mx-auto px-4 lg:px-6 py-8 lg:pb-16">
+				<Link to="/" className="inline-flex text-sm items-center text-primary/60 hover:primary mb-8">
+					<ArrowLeft className="mr-1 lg:mr-2 h-4 w-4" />
 					Back to News List
 				</Link>
 				<article className="max-w-4xl mx-auto">
 					<header className="mb-8">
 						<p className="text-clarc-blue/70 font-medium text-sm mb-2 uppercase tracking-wider">{newsItem.category}</p>
-						<h1 className="text-4xl font-bold text-clarc-blue mb-4">{newsItem.title}</h1>
-						<div className="flex items-center space-x-4 text-muted-foreground">
+						<h1 className="text-2xl lg:text-4xl font-bold text-clarc-blue mb-4">{newsItem.title}</h1>
+						<div className="flex items-center space-x-4 text-sm text-muted-foreground outline-none">
 							<div className="flex items-center">
-								<Avatar className="h-10 w-10 mr-2">
+								<Avatar className="w-6 h-6 lg:h-8 lg:w-8 mr-2 ">
 									<AvatarImage src={newsItem.authorImage} alt={newsItem.author} />
-									<AvatarFallback>{newsItem.author?.charAt(0)}</AvatarFallback>
+									<AvatarFallback className="bg-clarc-gold/30	 text-clarc-blue">{newsItem.author?.charAt(0)}</AvatarFallback>
 								</Avatar>
 								<span>{newsItem.author}</span>
 							</div>
@@ -175,13 +169,13 @@ export default function NewsDetail() {
 					<div className="prose prose-lg max-w-none text-foreground mb-8" dangerouslySetInnerHTML={{ __html: newsItem.content || "" }} />
 					<footer className="mt-8 pt-8 border-t border-border">
 						<div className="flex flex-wrap items-center justify-between">
-							<div className="flex flex-wrap items-center space-x-2 mb-4 sm:mb-0">
-								<Tag className="h-5 w-5 text-primary" />
-								<Button variant="outline" size="sm">
+							<div className="flex flex-wrap justify-center items-center space-x-2 sm:mb-0">
+								<Tag className="h-5 w-5 text-clarc-blue" />
+								<Button variant="outline" size="sm" className="text-clarc-blue">
 									{newsItem.category}
 								</Button>
 							</div>
-							<Button variant="outline" size="sm" onClick={handleShare}>
+							<Button variant="outline" size="sm" onClick={handleShare} className="bg-clarc-blue text-clarc-gold hover:bg-clarc-gold hover:text-clarc-blue transition-colors duration-200">
 								<Share2 className="mr-2 h-4 w-4" />
 								Share
 							</Button>
@@ -189,7 +183,7 @@ export default function NewsDetail() {
 					</footer>
 				</article>
 				<section className="mt-16">
-					<h2 className="text-2xl font-bold mb-6">Related Articles</h2>
+					<h2 className="text-lg lg:text-2xl font-bold mb-4 lg:mb-6 text-clarc-blue">Related Articles</h2>
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 						{relatedArticles.map((article, index) => (
 							<NewsCard key={article.id} item={article} index={index} />
