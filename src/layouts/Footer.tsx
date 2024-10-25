@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
 	const listElWrapperStyle = "not-italic text-indigo-200/90 text-sm lg:text-md space-y-3";
 	const socialsLogo = "w-5 h-5 text-indigo-200 hover:text-clarc-gold transition transition-colors duration-200";
 	return (
-		<footer className="relative bg-clarc-blue/10  text-white pt-8 pb-12 lg:pt-16 lg:pb-24 px-4 lg:px-0">
+		<footer className="relative bg-clarc-blue/10  text-white pt-8 pb-12 lg:pt-16 lg:pb-24 px-2 lg:px-0">
 			<div
 				className={`absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-20`}
 				style={{

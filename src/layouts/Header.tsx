@@ -44,9 +44,9 @@ const Header: React.FC = () => {
 					""
 				)}
 				<div>
-					<div className="relative container mx-auto border-b border-clarc-blue/10 flex justify-between items-center p-3 px-4">
+					<div className="relative container mx-auto border-b border-clarc-blue/10 flex justify-between items-center p-4 lg:p-3 px-4">
 						<Link to={"/"} className="flex gap-1 justify-center items-center z-10">
-							<img src={logoLink} alt="Clarendon College Logo" className="square w-9 h-9 lg:w-10 lg:h-10" />
+							<img src={logoLink} alt="Clarendon College Logo" className="square w-10 h-10" />
 							<h1 className="font-universal_serif tracking-wider text-base md:text-md text-clarc-blue font-semibold" style={{ lineHeight: 1.05 }}>
 								CLARENDON <br></br> COLLEGE
 							</h1>
@@ -55,7 +55,7 @@ const Header: React.FC = () => {
 							<ClarendonNavigationMenu />
 						</div>
 						<div className="flex gap-3 justify-center items-center">
-							<Search className="w-4 h-4 lg:w-5 lg:h-5 text-clarc-blue" />
+							<Search className="w-5 h-5 lg:w-6 lg:h-6 text-clarc-blue" />
 							<button onClick={toggleMenu} className="focus:outline-none">
 								<motion.div initial={false} animate={{ rotate: isMenuOpen ? 180 : 0 }} transition={{ duration: 0.3 }} className="flex md:hidden">
 									{isMenuOpen ? <X className="w-5 h-5 lg:w-6 lg:h-6 text-clarc-blue" /> : <Menu className="w-5 h-5 lg:w-6 lg:h-6 text-clarc-blue" />}
@@ -68,7 +68,7 @@ const Header: React.FC = () => {
 			<AnimatePresence>
 				{isMenuOpen && (
 					<>
-						<motion.div animate={{ opacity: [0, 1] }} exit={{ opacity: 1 }} transition={{ type: "tween", duration: 0.3 }} className="fixed inset-y-0 top-12 left-0 w-full bg-white shadow-lg z-50 overflow-y-auto">
+						<motion.div animate={{ opacity: [0, 1] }} exit={{ opacity: 1 }} transition={{ type: "tween", duration: 0.3 }} className="fixed inset-y-0 top-16 left-0 w-full bg-white shadow-lg z-50 overflow-y-auto">
 							<div className="h-full">
 								<MobileNavigation />
 							</div>

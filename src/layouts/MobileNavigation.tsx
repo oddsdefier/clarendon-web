@@ -14,7 +14,7 @@ const MobileNavigation: React.FC = () => {
 			<Accordion type="single" collapsible className="w-full">
 				{navigationData.map((category) => (
 					<AccordionItem key={category.title} value={category.title.toLowerCase().replace(/\s+/g, "-")}>
-						<AccordionTrigger className="uppercase font-semibold text-lg text-clarc-blue focus:outline-none outline outline-none">{category.title}</AccordionTrigger>
+						<AccordionTrigger className="px-2 uppercase font-bold text-base text-clarc-blue focus:outline-none outline outline-none">{category.title}</AccordionTrigger>
 						<AccordionContent>
 							<ul className="space-y-1">
 								{category.items.map((item) => (
