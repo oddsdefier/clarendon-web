@@ -1,20 +1,75 @@
-import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import { newsItems } from "@/utils/get_news_and_events_data";
+"use client";
 
-interface NewsItem {
+import React, { useEffect, useState } from "react";
+import { ArrowLeft, Calendar, Tag, Share2, CircleChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card, CardContent } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
+import { newsItems } from "@/utils/get_news_and_events_data";
+import { useParams } from "react-router-dom";
+export interface NewsItem {
 	id: string;
 	category: string;
 	title: string;
 	date: string;
 	image: string;
 	slug: string;
-	fullContent?: string;
+	author?: string;
+	authorImage?: string;
+	content?: string;
 }
 
+// // Simulating the useParams hook
+// const useParams = () => ({ slug: "clarc-goes-global" });
+
+// Simulating the Link component
+const Link = ({ to, children, className }: { to: string; children: React.ReactNode; className?: string }) => (
+	<a href={to} className={className}>
+		{children}
+	</a>
+);
+
+// Simulating the CarouselItemAnim component
+const CarouselItemAnim = ({ children }: { children: React.ReactNode; index: number }) => <div>{children}</div>;
+
+const NewsCard = React.memo(({ item, index }: { item: NewsItem; index: number }) => (
+	<Card className="shadow-sm pb-3 bg-clarc-gold/10 hover:bg-clarc-gold/20 overflow-hidden outline-none transition duration-300 transform rounded-none">
+		<CarouselItemAnim index={index}>
+			<Link to={`/news/${item.slug}`} className="block relative group">
+				<div className="overflow-hidden relative">
+					<img src={item.image} alt={item.title} className="rounded-sm w-full h-52 object-contain transition-transform duration-300 group-hover:scale-110" loading="lazy" />
+					<img src={item.image} alt="" className="absolute top-0 left-0 -z-10 rounded-sm w-full h-52 object-cover opacity-10" loading="lazy" />
+					<div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
+						<span className="text-white font-semibold text-base">Read More</span>
+					</div>
+				</div>
+			</Link>
+			<CardContent className="p-4 space-y-2 pt-8">
+				<h4 className="uppercase text-sm tracking-wider font-medium text-clarc-gold mb-6">
+					{"— "}
+					{item.category}
+				</h4>
+				<h2 className="font-astralaga text-lg lg:text-lg font-bold text-clarc-blue line-clamp-2">{item.title}</h2>
+				<div className="flex justify-start items-center gap-1">
+					<Calendar className="w-4 h-4 text-gray-800/60" />
+					<p className="text-sm text-gray-800/60 font-medium">{item.date}</p>
+				</div>
+				<div className="pt-5">
+					<Link to={`/news/${item.slug}`} className="text-primary/80 hover:text-primary flex w-full items-center justify-start gap-1">
+						<CircleChevronRight className="w-4 h-4" />
+						<p className="text-sm">Read More</p>
+					</Link>
+				</div>
+			</CardContent>
+		</CarouselItemAnim>
+	</Card>
+));
+
 export default function NewsDetail() {
-	const { slug } = useParams<{ slug: string }>();
+	const { slug } = useParams();
 	const [newsItem, setNewsItem] = useState<NewsItem | null>(null);
+	const [relatedArticles, setRelatedArticles] = useState<NewsItem[]>([]);
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
@@ -22,20 +77,60 @@ export default function NewsDetail() {
 		if (item) {
 			setNewsItem({
 				...item,
-				fullContent: `
-          <p>This is the full content of the news item with ID ${item.id}. At dolores voluptua et dolor aliquyam. Sed dolores lorem sanctus lorem voluptua ea eos, invidunt magna diam lorem ipsum. Sadipscing et diam diam sadipscing sit, et amet takimata dolor dolores. Sed labore lorem justo accusam rebum et sed lorem. Sit accusam et justo eirmod aliquyam diam gubergren est nonumy. Dolore nonumy gubergren sit duo sit labore eos tempor. Ut sea ea gubergren gubergren elitr. Diam kasd gubergren justo tempor, aliquyam vero sadipscing labore magna dolore rebum sit rebum stet. Clita justo kasd vero diam rebum. Kasd amet labore magna et tempor erat lorem, amet gubergren clita amet sit kasd diam. Ea sed dolores amet vero et sed takimata. Duo dolore kasd amet dolor et elitr vero amet.</p>
-          <p>Voluptua sed clita nonumy eos et clita vero, dolores duo sed lorem et voluptua dolor ut sanctus consetetur. Clita nonumy est magna vero vero stet. Clita duo rebum rebum amet dolores amet, amet sea sit duo consetetur lorem est lorem stet gubergren, ipsum sanctus sanctus sea diam, voluptua voluptua dolores ipsum aliquyam rebum. Consetetur diam duo invidunt no diam. Sadipscing labore ipsum nonumy vero lorem nonumy consetetur. Eirmod et diam et erat sadipscing ipsum amet elitr. Eos takimata est clita est tempor duo. Dico piene procuratore della per da mescolati da da nondimeno sempre, dea della mentre volta divenuti nel che forse manifestamente. Alla tutte quale e pericoli cosí non impetrata le fosse. Ora e tale nel credere sua procuratore alla, niuna ci beato di da. Gli si furon da mortale credere donne pieno, grazia il del esse quale, viviamo donne alcun forse santo purita.</p>
-          <p>Che fa le donne piú e quella di, esser né di medesimi mentre maravigliose volta cosí. Mescolati la credere esso quali siamo benignita di, i suo e che potremmo furono di suo apparire raccontare, forse avvedimento che noi e pericoli impetrata intendo facciamo da. Le da di di noi intendo cose noi. Sua quegli fatica informati dallo noi. Seguendo non manifestamente le prestasse le si dio e mente, principio di e non si, né dico quali la divina, quale alcun piú fuor essilio essilio né in, da quella santo pieno noi nome quali quale prieghi né. Di liberalita coloro quale la novella transitorie a discerniamo. Quella al in intendo si, niuna come alla che sé del quali viviamo al niuna. Intendo porgiamo piaceri fuor ma cose gli alla alcun intendo. Dico transitorie liberalita essaudisce nel esso in di</p>
+				author: "Jeffry Paner",
+				authorImage: "/placeholder.svg?height=50&width=50",
+				content: `
+          <p>Clarendon College (CLARC) is proud to announce its expansion into the global education market. This groundbreaking move marks a significant milestone in the institution's history and opens up new opportunities for students worldwide.</p>
+          <h2>Global Partnerships</h2>
+          <p>CLARC has established partnerships with renowned universities across Europe, Asia, and North America. These collaborations will facilitate student exchange programs, joint research initiatives, and shared academic resources.</p>
+          <h2>Online Learning Platform</h2>
+          <p>To support its global outreach, CLARC has launched a state-of-the-art online learning platform. This platform will offer a wide range of courses to international students, allowing them to experience CLARC's high-quality education from anywhere in the world.</p>
+          <h2>Cultural Exchange Programs</h2>
+          <p>As part of its global initiative, CLARC will be introducing various cultural exchange programs. These programs aim to foster cross-cultural understanding and prepare students for the increasingly interconnected global job market.</p>
+          <h2>Impact on Local Community</h2>
+          <p>While expanding globally, CLARC remains committed to its local community. The global initiative is expected to bring diverse perspectives to the campus, enriching the educational experience for all students.</p>
+          <h2>Future Plans</h2>
+          <p>Looking ahead, CLARC plans to establish satellite campuses in key international locations. This expansion will further solidify its position as a global educational institution and provide more opportunities for students to gain international exposure.</p>
+          <h2>Conclusion</h2>
+          <p>CLARC's global expansion represents a bold step forward in its mission to provide world-class education. As the college embarks on this exciting journey, it remains dedicated to its core values of academic excellence, innovation, and inclusivity.</p>
         `,
 			});
 		}
+		// Get related articles (excluding the current article)
+		const related = newsItems.filter((item) => item.slug !== slug).slice(0, 3);
+		setRelatedArticles(related);
 		setLoading(false);
 	}, [slug]);
 
+	const handleShare = async () => {
+		if (navigator.share && newsItem) {
+			try {
+				await navigator.share({
+					title: newsItem.title,
+					text: `Check out this news article: ${newsItem.title}`,
+					url: window.location.href,
+				});
+			} catch (error) {
+				console.error("Error sharing:", error);
+			}
+		} else {
+			// Fallback for browsers that don't support navigator.share
+			alert("Sharing is not supported on this browser. You can copy the URL to share.");
+		}
+	};
+
 	if (loading) {
 		return (
-			<div className="flex justify-center items-center h-screen">
-				<div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
+			<div className="container mx-auto px-4 py-8">
+				<Skeleton className="h-8 w-64 mb-4" />
+				<Skeleton className="h-12 w-full mb-4" />
+				<Skeleton className="h-6 w-48 mb-8" />
+				<Skeleton className="h-96 w-full mb-8" />
+				<div className="space-y-4">
+					<Skeleton className="h-4 w-full" />
+					<Skeleton className="h-4 w-full" />
+					<Skeleton className="h-4 w-2/3" />
+				</div>
 			</div>
 		);
 	}
@@ -44,7 +139,7 @@ export default function NewsDetail() {
 		return (
 			<div className="flex flex-col justify-center items-center h-screen">
 				<h2 className="text-2xl font-bold mb-4">News item not found.</h2>
-				<Link to="/" className="text-clarc-blue hover:underline">
+				<Link to="/" className="text-primary hover:underline">
 					Return to News List
 				</Link>
 			</div>
@@ -52,37 +147,55 @@ export default function NewsDetail() {
 	}
 
 	return (
-		<div className="min-h-screen py-6 lg:py-12 font-manrope">
-			<main className="container mx-auto px-4 sm:px-6 lg:px-16 pb-16">
-				{/* <Link to="/" className="inline-flex items-center text-clarc-blue hover:underline mb-8">
+		<div className="min-h-screen bg-background font-geist">
+			<main className="container mx-auto px-4 py-8">
+				<Link to="/" className="inline-flex items-center text-primary hover:underline mb-8">
 					<ArrowLeft className="mr-2 h-4 w-4" />
 					Back to News List
-				</Link> */}
-				<article className="overflow-hidden">
-					<header className="mb-4 lg:mb-8">
-						<p className="text-clarc-gold font-semibold text-xs mb-1 lg:mb-2 uppercase tracking-wider">
-							{"— "}
-							{newsItem.category}
-						</p>
-						<h1 className="text-3xl font-astralaga font-semibold lg:text-4xl leading-tight text-clarc-blue mb-1 lg:mb-4">{newsItem.title}</h1>
-						<div className="flex gap-1 mt-2 items-center text-gray-500/90 font-medium text-xs">
-							<p>{"Jeffry Paner"}</p>
-							<p>{"•"}</p>
-							<time dateTime={newsItem.date}>{new Date(newsItem.date).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "2-digit" })}</time>
+				</Link>
+				<article className="max-w-4xl mx-auto">
+					<header className="mb-8">
+						<p className="text-clarc-blue/70 font-medium text-sm mb-2 uppercase tracking-wider">{newsItem.category}</p>
+						<h1 className="text-4xl font-bold text-clarc-blue mb-4">{newsItem.title}</h1>
+						<div className="flex items-center space-x-4 text-muted-foreground">
+							<div className="flex items-center">
+								<Avatar className="h-10 w-10 mr-2">
+									<AvatarImage src={newsItem.authorImage} alt={newsItem.author} />
+									<AvatarFallback>{newsItem.author?.charAt(0)}</AvatarFallback>
+								</Avatar>
+								<span>{newsItem.author}</span>
+							</div>
+							<div className="flex items-center">
+								<Calendar className="mr-2 h-4 w-4" />
+								<time dateTime={newsItem.date}>{newsItem.date}</time>
+							</div>
 						</div>
 					</header>
-					<img src={newsItem.image || "/placeholder.svg?height=400&width=800"} alt={newsItem.title} className="container w-full h-96 object-cover" />
-					<div className="py-8 lg:py-16">
-						<div className="prose prose-lg max-w-none leading-8 lg:leading-10 text-gray-900/90 text-base lg:text-base" dangerouslySetInnerHTML={{ __html: newsItem.fullContent || "" }} />
-					</div>
+					<img src={newsItem.image} alt={newsItem.title} className="w-full h-96 object-cover rounded-lg mb-8" />
+					<div className="prose prose-lg max-w-none text-foreground mb-8" dangerouslySetInnerHTML={{ __html: newsItem.content || "" }} />
+					<footer className="mt-8 pt-8 border-t border-border">
+						<div className="flex flex-wrap items-center justify-between">
+							<div className="flex flex-wrap items-center space-x-2 mb-4 sm:mb-0">
+								<Tag className="h-5 w-5 text-primary" />
+								<Button variant="outline" size="sm">
+									{newsItem.category}
+								</Button>
+							</div>
+							<Button variant="outline" size="sm" onClick={handleShare}>
+								<Share2 className="mr-2 h-4 w-4" />
+								Share
+							</Button>
+						</div>
+					</footer>
 				</article>
-				<div>
-					{["news", "sports", "journalism"].map((item) => (
-						<button disabled className="px-4 py-2 text-xs rounded-3xl bg-clarc-gold text-clarc-blue font-semibold mr-3">
-							{item}
-						</button>
-					))}
-				</div>
+				<section className="mt-16">
+					<h2 className="text-2xl font-bold mb-6">Related Articles</h2>
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+						{relatedArticles.map((article, index) => (
+							<NewsCard key={article.id} item={article} index={index} />
+						))}
+					</div>
+				</section>
 			</main>
 		</div>
 	);
