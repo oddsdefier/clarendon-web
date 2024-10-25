@@ -1,5 +1,5 @@
 import React, { Suspense, lazy, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import Header from "@/layouts/Header";
 import Footer from "@/layouts/Footer";
 
@@ -67,12 +67,14 @@ const App: React.FC = () => {
 								</Suspense>
 							}
 						/>
+
 						<Route path="/about/history" element={<History />} />
 						<Route path="/about/philosophy-of-education" element={<PhilosophyOfEducation />} />
 						<Route path="/about/core-values" element={<CoreValues />} />
 						<Route path="/about/mission-vision" element={<VisionMission />} />
 						<Route path="/about/school-emblem" element={<SchoolEmblem />} />
 						<Route path="*" element={<NotFound />} />
+						<Route path="/about" element={<Navigate to="/about/history" />} />
 					</Routes>
 				</main>
 				<Footer />

@@ -10,9 +10,9 @@ export default function ClarendonHistory() {
 	const contentStyle = "text-sm sm:text-base text-muted-foreground leading-relaxed";
 
 	return (
-		<main className="container mx-auto lg:flex gap-12 lg:py-5 px-4 lg:px-0" id="history-clarendon">
+		<main className="container mx-auto lg:flex gap-12 lg:py-4 px-4 lg:px-0" id="history-clarendon">
 			<div className="flex-1 lg:border-r lg:border-dotted lg:border-gray-200">
-				<header className="text-center p-5 lg:p-8 lg:mx-10 lg:rounded-sm mb-5 lg:mb-10 bg-clarc-gold/100">
+				<header className="text-center p-5 lg:p-8 lg:mx-10 rounded-sm mb-5 lg:mb-10 bg-clarc-gold/100">
 					<h1 className="text-2xl sm:text-3xl md:text-3xl font-bold text-clarc-blue mb-2">The History of Clarendon College</h1>
 					<p className="text-sm sm:text-lg md:text-lg text-clarc-blue">A Legacy of Excellence in Education Since 1996</p>
 				</header>
