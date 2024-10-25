@@ -11,7 +11,7 @@ const philosophyOfEducation: React.FC = () => {
 	const title = ""; //made this empty so i can avoid redundancy
 
 	return (
-		<div className="w-full bg-white">
+		<div className="w-full bg-white min-h-svh lg:min-h-lvh">
 			<Header img={img} title={title} />
 			<main className="container mx-auto lg:flex lg:gap-12 py-5 px-4 lg:py-10" id="philosophy-of-education">
 				<div className="relative container mx-auto max-w-4xl">

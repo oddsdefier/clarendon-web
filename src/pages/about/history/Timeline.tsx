@@ -45,7 +45,7 @@ const Timeline: React.FC = () => {
 
 	const containerRef = useRef(null);
 	const navItems = [
-		{ href: "#history-clarendon", label: "History of Clarendon College" },
+		{ href: "#history-clarendon", label: "History" },
 		{ href: "#founder", label: "Founder", indent: true },
 		{ href: "#birth-of-clarendon", label: "Birth Of Clarendon", indent: true },
 		{ href: "#growth-and-evolution", label: "Growth And Evolution", indent: true },
@@ -73,14 +73,16 @@ const Timeline: React.FC = () => {
 			</div>
 
 			<aside className="w-64 hidden lg:block">
-				<div className="mb-5 pt-5">
+				<div className="mb-5">
 					<h2 className="text-lg font-semibold text-clarc-blue">On This Page</h2>
+
 					<Separator className="bg-clarc-gold/50 w-1/4 my-3 h-1" />
+					<h3 className="text-clarc-blue font-medium mb-2">Timeline</h3>
 					<nav aria-label="Table of contents">
 						<ul className="space-y-2">
 							{navItems.map((item, index) => (
 								<li key={index} className={item.indent ? "mb-3 ml-2" : "mb-3"}>
-									<a href={item.href} className="flex items-center text-base transition-colors text-muted-foreground hover:text-clarc-blue">
+									<a href={item.href} className="flex items-center text-base text-muted-foreground/80 transition-colors hover:text-clarc-blue">
 										{item.label}
 									</a>
 								</li>

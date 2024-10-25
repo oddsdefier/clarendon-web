@@ -6,13 +6,12 @@ import MobileNavigation from "./MobileNavigation";
 import { Link } from "react-router-dom";
 import { clarcAssets } from "@/utils/img_links";
 import { useLocation } from "react-router-dom";
-const logoLink = clarcAssets.primary_logo;
 
 const Header: React.FC = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const location = useLocation();
 	const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
+	const logoLink = clarcAssets.primary_logo;
 	useEffect(() => {
 		if (isMenuOpen) {
 			document.body.style.overflow = "hidden";
@@ -47,17 +46,19 @@ const Header: React.FC = () => {
 				<div>
 					<div className="relative container mx-auto border-b border-clarc-blue/10 flex justify-between items-center p-3 px-4">
 						<Link to={"/"} className="flex gap-1 justify-center items-center z-10">
-							<img src={logoLink} alt="Clarendon College Logo" className="square w-6 h-6 lg:w-[2.3rem] lg:h-[2.3rem]" />
-							<h1 className="font-universal_serif tracking-wider text-base md:text-2xl text-clarc-blue font-semibold">Carpe Diem</h1>
+							<img src={logoLink} alt="Clarendon College Logo" className="square w-9 h-9 lg:w-10 lg:h-10" />
+							<h1 className="font-universal_serif tracking-wider text-base md:text-md text-clarc-blue font-semibold" style={{ lineHeight: 1.05 }}>
+								CLARENDON <br></br> COLLEGE
+							</h1>
 						</Link>
 						<div className="absolute hidden lg:flex w-[99%] gap-10 items-center justify-center">
 							<ClarendonNavigationMenu />
 						</div>
 						<div className="flex gap-3 justify-center items-center">
-							<Search className="w-4 h-4 lg:w-5 lg:h-5 text-gray-600" />
+							<Search className="w-4 h-4 lg:w-5 lg:h-5 text-clarc-blue" />
 							<button onClick={toggleMenu} className="focus:outline-none">
 								<motion.div initial={false} animate={{ rotate: isMenuOpen ? 180 : 0 }} transition={{ duration: 0.3 }} className="flex md:hidden">
-									{isMenuOpen ? <X className="w-5 h-5 lg:w-6 lg:h-6 text-gray-600" /> : <Menu className="w-5 h-5 lg:w-6 lg:h-6 text-gray-600" />}
+									{isMenuOpen ? <X className="w-5 h-5 lg:w-6 lg:h-6 text-clarc-blue" /> : <Menu className="w-5 h-5 lg:w-6 lg:h-6 text-clarc-blue" />}
 								</motion.div>
 							</button>
 						</div>

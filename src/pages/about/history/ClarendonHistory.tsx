@@ -5,7 +5,7 @@ import { ChartSpline, Flame, Trophy, University, User } from "lucide-react";
 import AboutUs from "../components/AboutUs";
 export default function ClarendonHistory() {
 	const iconStyle = "w-6 h-6 aspect-square mt-1 flex-shrink-0 text-clarc-blue hidden lg:flex";
-	const navItems = [{ href: "#timeline", label: "Timeline Of Clarendon College" }];
+	const navItems = [{ href: "#timeline", label: "Timeline" }];
 	const titleStyle = "text-lg sm:text-xl md:text-2xl font-semibold mb-2 text-clarc-blue";
 	const contentStyle = "text-sm sm:text-base text-muted-foreground leading-relaxed";
 
@@ -81,11 +81,12 @@ export default function ClarendonHistory() {
 				<div className="mb-5">
 					<h2 className="text-lg font-semibold text-clarc-blue">On This Page</h2>
 					<Separator className="bg-clarc-gold/50 w-1/4 my-3 h-1" />
+					<h3 className="text-clarc-blue font-medium mb-2">History</h3>
 					<nav aria-label="Table of contents">
 						<ul className="space-y-2">
 							{navItems.map((item, index) => (
 								<li key={index} className="mb-3">
-									<a href={item.href} className="flex items-center text-base transition-colors text-muted-foreground hover:text-clarc-blue">
+									<a href={item.href} className="flex items-center text-base transition-colors text-muted-foreground/80 hover:text-clarc-blue">
 										{item.label}
 									</a>
 								</li>

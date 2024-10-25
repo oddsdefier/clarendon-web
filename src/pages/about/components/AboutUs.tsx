@@ -1,4 +1,5 @@
 import { Separator } from "@radix-ui/react-separator";
+import { ArrowUpRight } from "lucide-react";
 // import { ArrowUpRight } from "lucide-react";
 import React from "react";
 import { NavLink } from "react-router-dom";
@@ -17,13 +18,14 @@ const AboutUs: React.FC = () => {
 		<div className="flex flex-col w-full lg:w-64">
 			<h1 className="text-lg font-semibold text-clarc-blue">About Us</h1>
 			<Separator className="bg-clarc-gold/50 w-1/4 my-3 h-1" />
+			
 			<nav>
 				<ul className="space-y-2">
 					{navItems.map((item) => (
 						<li key={item.to} className="mb-3">
-							<NavLink to={item.to} className={({ isActive }: { isActive: boolean }) => `flex items-center text-base transition-colors ${isActive ? "text-clarc-blue font-medium" : "text-muted-foreground hover:text-clarc-blue"}`}>
+							<NavLink to={item.to} className={({ isActive }: { isActive: boolean }) => `flex items-center text-base transition-colors ${isActive ? "text-clarc-blue font-medium" : "text-muted-foreground/70 hover:text-clarc-blue"}`}>
 								{item.label}
-								{/* <ArrowUpRight className={`ml-2 h-4 w-4 transition-transform ${({ isActive }: { isActive: boolean }) => (isActive ? "rotate-90" : "")}`} /> */}
+								<ArrowUpRight className={`ml-2 h-4 w-4 transition-transform ${({ isActive }: { isActive: boolean }) => (isActive ? "rotate-90" : "")}`} />
 							</NavLink>
 						</li>
 					))}

@@ -3,7 +3,7 @@ import AboutUs from "./components/AboutUs";
 
 const SchoolEmblem: React.FC = () => {
 	return (
-		<div className="min-h-screen w-full bg-white">
+		<div className="w-full bg-white min-h-svh lg:min-h-lvh">
 			<main className="container mx-auto lg:flex lg:gap-12 py-5 px-4 lg:py-10" id="school-emblem">
 				<div className="relative container mx-auto max-w-4xl">
 					<h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-clarc-blue">School Emblem</h2>

@@ -3,17 +3,15 @@ import { InstagramLogoIcon } from "@radix-ui/react-icons";
 import { motion } from "framer-motion";
 import { clarcAssets } from "@/utils/img_links";
 
-const clarcLogo = clarcAssets.primary_logo;
-
-const bgImgUrl = clarcAssets.images.old_pic;
-
-const helperTitleStyle = "text-md lg:text-base font-semibold mb-4 text-indigo-100/95";
-const listElWrapperStyle = "not-italic text-indigo-200/90 text-sm lg:text-md space-y-3";
-
-const socialsLogo = "w-5 h-5 text-indigo-200 hover:text-clarc-gold transition transition-colors duration-200";
 const Footer: React.FC = () => {
+	const clarcLogo = clarcAssets.primary_logo;
+	const bgImgUrl = clarcAssets.images.old_pic;
+
+	const helperTitleStyle = "text-md lg:text-base font-semibold mb-4 text-indigo-100/95";
+	const listElWrapperStyle = "not-italic text-indigo-200/90 text-sm lg:text-md space-y-3";
+	const socialsLogo = "w-5 h-5 text-indigo-200 hover:text-clarc-gold transition transition-colors duration-200";
 	return (
-		<footer className="relative bg-clarc-blue/10  text-white pt-16 pb-24 px-4 lg:px-0">
+		<footer className="relative bg-clarc-blue/10  text-white pt-8 pb-12 lg:pt-16 lg:pb-24 px-4 lg:px-0">
 			<div
 				className={`absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-20`}
 				style={{
@@ -24,7 +22,7 @@ const Footer: React.FC = () => {
 
 			<div className="container mx-auto px-4 flex flex-col lg:flex-row justify-evenly  gap-8 z-10 relative">
 				<div className="flex gap-1 lg:gap-2">
-					<img src={clarcLogo} alt="Clarendon College Logo" className="square rounded-full w-8 h-8 lg:w-[2.4rem] lg:h-[2.4rem] aspect-square" />
+					<img src={clarcLogo} alt="Clarendon College Logo" className="square rounded-full w-8 h-8 lg:w-10 lg:h-10 aspect-square" />
 					<div>
 						<div className="flex items-center gap-1 mb-4 row-span-1 col-span-1">
 							<span className="text-xl font-semibold font-universal_serif text-clarc-gold tracking-wider">Clarendon College</span>

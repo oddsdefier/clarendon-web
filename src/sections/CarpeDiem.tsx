@@ -1,4 +1,5 @@
 import { clarcAssets } from "@/utils/img_links";
+import { Link } from "react-router-dom";
 
 const culturalCenterImg = clarcAssets.images["cultural_center"];
 const polkaPattern = clarcAssets.assets["polka_pattern"];
@@ -12,7 +13,9 @@ export default function CarpeDiemSection() {
 						<h2 className="text-3xl sm:text-4xl lg:text-5xl font-astralaga tracking-wide font-bold text-clarc-blue uppercase leading-tight">Seize the Day</h2>
 						<p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-2xl">At Clarendon College, we embrace the philosophy of "Carpe Diem" - Seize the Day. Our commitment is to provide an environment where students can maximize their potential, take advantage of every opportunity, and prepare themselves for a future filled with promise and success.</p>
 						<div className="flex flex-col sm:flex-row gap-4 pt-4">
-							<button className="max-w-fit px-6 py-3 text-sm md:text-base focus:outline-none flex justify-center items-center space-x-2 text-clarc-gold bg-clarc-blue hover:bg-clarc-gold hover:text-clarc-blue font-semibold lg:px-6 rounded-full transition duration-300 group">Philosophy of Education</button>
+							<Link to={"/about/philosophy-of-education"} className="max-w-fit px-6 py-3 text-sm md:text-base focus:outline-none flex justify-center items-center space-x-2 text-clarc-gold bg-clarc-blue hover:bg-clarc-gold hover:text-clarc-blue font-semibold lg:px-6 rounded-full transition duration-300 group">
+								Philosophy of Education
+							</Link>
 							<button className="max-w-fit px-6 py-3 text-sm md:text-base font-semibold text-indigo-900 border-2 border-indigo-900 rounded-full hover:border-clarc-gold hover:bg-clarc-gold/20 hover:text-clarc-gold transition-colors duration-300">Awards and Recognition</button>
 						</div>
 					</div>

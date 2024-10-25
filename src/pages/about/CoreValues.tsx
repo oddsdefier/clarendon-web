@@ -11,7 +11,7 @@ const CoreValues: React.FC = () => {
 	const title = "Core Values, Inclusivity, Adaptability and Integrity";
 	const img = clarcAssets.images.foundation;
 	return (
-		<div className="w-full bg-white">
+		<div className="w-full bg-white min-h-svh lg:min-h-lvh">
 			<Header img={img} title={title} />
 			<main className="container mx-auto lg:flex lg:gap-12 py-5 px-4 lg:py-10" id="core-values">
 				<div className="relative container mx-auto max-w-4xl">

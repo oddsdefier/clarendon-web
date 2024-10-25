@@ -25,6 +25,7 @@ export const clarcAssets = {
 		6: "https://res.cloudinary.com/dfntpqzza/image/upload/v1729127199/Clarendon_College_Logo-20_regqh3.png",
 		7: "https://res.cloudinary.com/dfntpqzza/image/upload/v1729127198/Clarendon_College_Logo-06_kdilrw.png",
 		8: "https://res.cloudinary.com/dfntpqzza/image/upload/v1729127198/Clarendon_College_Logo-07_clkyye.png",
+		
 	},
 	horizontal_logo_inc: {
 		1: "https://res.cloudinary.com/dfntpqzza/image/upload/v1729127282/Clarendon_College_Logo-25_zdpmtj.png",
