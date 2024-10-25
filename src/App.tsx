@@ -19,10 +19,15 @@ import NotFound from "@/pages/NotFoundPage";
 
 //About Page
 import History from "@/pages/about/history/History";
-import PhilosophyOfEducation from "./pages/about/PhilosophyOfEducation";
-import VisionMission from "./pages/about/VisionMission";
-import CoreValues from "./pages/about/CoreValues";
-import SchoolEmblem from "./pages/about/SchoolEmblem";
+import PhilosophyOfEducation from "@/pages/about/PhilosophyOfEducation";
+import VisionMission from "@/pages/about/VisionMission";
+import CoreValues from "@/pages/about/CoreValues";
+import SchoolEmblem from "@/pages/about/SchoolEmblem";
+
+//Academics Page
+import College from "@/pages/academics/college/College";
+import SeniorHigh from "./pages/academics/senior_high/SeniorHigh";
+import JuniorHigh from "./pages/academics/junior_high/SeniorHigh";
 
 // Loading component
 const Loading = () => <div className="text-center p-4">Loading...</div>;
@@ -67,14 +72,21 @@ const App: React.FC = () => {
 								</Suspense>
 							}
 						/>
-
+						{/* ABOUT */}
 						<Route path="/about/history" element={<History />} />
 						<Route path="/about/philosophy-of-education" element={<PhilosophyOfEducation />} />
 						<Route path="/about/core-values" element={<CoreValues />} />
 						<Route path="/about/mission-vision" element={<VisionMission />} />
 						<Route path="/about/school-emblem" element={<SchoolEmblem />} />
-						<Route path="*" element={<NotFound />} />
 						<Route path="/about" element={<Navigate to="/about/history" />} />
+
+						{/* ACADEMICS */}
+						<Route path="/academics/junior-high" element={<JuniorHigh />} />
+						<Route path="/academics/senior-high" element={<SeniorHigh />} />
+						<Route path="/academics/college" element={<College />} />
+
+						{/* NOT FOUND */}
+						<Route path="*" element={<NotFound />} />
 					</Routes>
 				</main>
 				<Footer />

@@ -74,9 +74,9 @@ export const navigationData: NavCategory[] = [
 		title: "Academics",
 		items: [
 			{
-				title: "High School",
-				href: "/academics/high-school",
-				description: "Overview of Clarendon College's high school programs.",
+				title: "Junior High School",
+				href: "/academics/junior-high",
+				description: "Overview of Clarendon College's junior high school programs.",
 			},
 			{
 				title: "Senior High School",
