@@ -150,17 +150,17 @@ export default function NewsDetail() {
 				<article className="max-w-4xl mx-auto">
 					<header className="mb-8">
 						<p className="text-clarc-blue/70 font-medium text-sm mb-2 uppercase tracking-wider">{newsItem.category}</p>
-						<h1 className="text-2xl lg:text-4xl font-bold text-clarc-blue mb-4">{newsItem.title}</h1>
-						<div className="flex items-center space-x-4 text-sm text-muted-foreground outline-none">
+						<h1 className="text-3xl lg:text-4xl font-bold text-clarc-blue mb-3">{newsItem.title}</h1>
+						<div className="flex items-center space-x-2 lg:space-x-4 text-sm text-muted-foreground outline-none">
 							<div className="flex items-center">
-								<Avatar className="w-6 h-6 lg:h-8 lg:w-8 mr-2 ">
+								<Avatar className="w-6 h-6 lg:h-8 lg:w-8 mr-1 lg:mr-2">
 									<AvatarImage src={newsItem.authorImage} alt={newsItem.author} />
 									<AvatarFallback className="bg-clarc-gold/30	 text-clarc-blue">{newsItem.author?.charAt(0)}</AvatarFallback>
 								</Avatar>
 								<span>{newsItem.author}</span>
 							</div>
 							<div className="flex items-center">
-								<Calendar className="mr-2 h-4 w-4" />
+								<Calendar className="mr-1 lg:mr-2 h-4 w-4" />
 								<time dateTime={newsItem.date}>{newsItem.date}</time>
 							</div>
 						</div>
