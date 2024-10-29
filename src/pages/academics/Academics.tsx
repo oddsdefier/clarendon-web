@@ -24,9 +24,16 @@ const Academics: React.FC = () => {
 		</div>
 	);
 
+	const pageContent = (
+		<div className="parent min-h-svh lg:min-h-lvh">
+			<div>Page Content will be rendered here.</div>
+			<div className="children">Children1</div>
+		</div>
+	);
+
 	return (
 		<AcademicsBody pageSpecificNav={pageSpecificNav} Academics={AcademicsSide}>
-			<p>Academics Overview</p>
+			{pageContent}
 		</AcademicsBody>
 	);
 };

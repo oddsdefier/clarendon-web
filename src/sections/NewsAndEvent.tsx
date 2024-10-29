@@ -5,7 +5,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 
 import CarouselItemAnim from "@/components/CarouselItemAnim";
 import ViewAllBtn from "@/components/ViewAllBtn";
-import { NewsItem, newsItems } from "@/utils/get_news_and_events_data";
+import { NewsItem, newsItems } from "@/utils/news_and_events_data";
 import { Link } from "react-router-dom";
 
 const headingTitle = "text-[1.7rem] md:text-4xl font-astralaga font-semibold text-clarc-blue";

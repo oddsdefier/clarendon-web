@@ -1,0 +1,58 @@
+export const coursesData = [
+	{
+		code: "BSED",
+		title: "Bachelor of Secondary Education",
+		summary: "Focuses on preparing students to become effective secondary school teachers. The program covers educational theories, teaching methodologies, and subject-specific knowledge, equipping graduates with the skills needed to educate and inspire high school students.",
+		programHighlights: ["Academics & Professional Excellence With Classroom Immersion", "High Percentage of Passing the Licensure Examination for Teachers (LET)", "Competent and Research-Oriented Faculty", "Modern Facilities for Teachers Training", "Volunteerism and Community Spirit"],
+		specializations: ["English", "Filipino", "Mathematics"],
+	},
+	{
+		code: "BEED",
+		title: "Bachelor of Elementary Education",
+		summary: "The BEED degree program aims to develop highly motivated and competent teachers specializing in the content and pedagogy for elementary education.",
+		programHighlights: null,
+		specializations: null,
+	},
+	{
+		code: "BCAED",
+		title: "Bachelor of Culture and Arts Education",
+		summary: "The BCAED program focuses on the study and preservation of culture and arts. It aims to develop educators who are knowledgeable in cultural heritage and artistic expression, fostering a strong sense of community and identity.",
+		programHighlights: ["The BCAEd program is an allied discipline of Teacher Education.", "Students conduct researches on the historic culture and arts to create new knowledge and create new art forms from the dynamic and developing culture and community.", "Both culture and arts are two wonderful ways of preserving or strengthening a strong community’s sense of place, forging a personal identity and showing your creativity,"],
+		specializations: null,
+	},
+	{
+		code: "BSBA",
+		title: "Bachelor of Science in Business Administration",
+		summary: "A comprehensive program focused on developing skills in business management, finance, operations, and entrepreneurship. Graduates are equipped to navigate the complexities of the business world, adapt to changing market trends, and drive organizational success.",
+		programHighlights: ["High percentage of employability", "Established On-the-Job Training linkages", "Competitive and qualified faculty"],
+		specializations: ["Financial Management", "Operations Management"],
+	},
+	{
+		code: "BSIS",
+		title: "Bachelor of Science in Information System",
+		summary: "Study of applications and the effects of information technology on organizations, covering components, tools, techniques, strategies, and methodologies. Graduates help organizations use information and technology-enabled business processes as strategic tools to achieve a competitive advantage.",
+		programHighlights: null,
+		specializations: null,
+	},
+	{
+		code: "BSTM",
+		title: "Bachelor of Science in Tourism Management",
+		summary: "Will equip students with competencies that are needed to execute﻿ operational tasks on tourism planning, event planning, transportation services, travel and tour operations, and other emerging sectors of tourism industry.",
+		programHighlights: null,
+		specializations: null,
+	},
+	{
+		code: "BSA",
+		title: "Bachelor of Science in Accountancy",
+		summary: "Accountancy offers diverse career paths across multiple industries, including public accounting, corporate finance, government, non-profits, and consulting. Graduates are essential for managing financial records, preparing tax filings, ensuring regulatory compliance, and supporting strategic financial decisions within organizations.",
+		programHighlights: null,
+		specializations: null,
+	},
+	{
+		code: "BMMA",
+		title: "Bachelor of Multimedia Arts",
+		summary: "The Bachelor of Multimedia Arts program equips students with versatile skills for today’s digital landscape, preparing them for careers in advertising, film production, animation, web design, game development, and more. Students develop their creativity across various mediums—including drawing, graphic design, animation, audio, and video—ensuring they graduate as professionally competitive and innovative multimedia artists.",
+		programHighlights: null,
+		specializations: null,
+	},
+];

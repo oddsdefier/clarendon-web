@@ -4,13 +4,14 @@ import { ChartSpline, Flame, Trophy, University, User } from "lucide-react";
 // import { clarcAssets } from "@/utils/img_links";
 import AboutUs from "../components/AboutUs";
 export default function ClarendonHistory() {
-	const iconStyle = "w-6 h-6 aspect-square mt-1 flex-shrink-0 text-clarc-blue hidden lg:flex";
 	const navItems = [{ href: "#timeline", label: "Timeline" }];
-	const titleStyle = "text-lg sm:text-xl md:text-2xl font-semibold mb-2 text-clarc-blue";
+
+	const iconStyle = "w-4 h-4 aspect-square flex-shrink-0 text-clarc-blue hidden lg:flex opacity-90";
+	const titleStyle = "text-lg font-semibold mb-2 text-clarc-blue leading-[1]";
 	const contentStyle = "text-sm sm:text-base text-muted-foreground leading-relaxed";
 
 	return (
-		<main className="container mx-auto lg:flex gap-12 lg:py-4 px-4 lg:px-0" id="history-clarendon">
+		<main className="container mx-auto lg:flex gap-8 lg:py-4 px-4 lg:px-0" id="history-clarendon">
 			<div className="flex-1 lg:border-r lg:border-dotted lg:border-gray-200">
 				<header className="text-center p-5 lg:p-8 lg:mx-10 rounded-sm mb-5 lg:mb-10 bg-clarc-gold/100">
 					<h1 className="text-2xl sm:text-3xl md:text-3xl font-bold text-clarc-blue mb-2">The History of Clarendon College</h1>
@@ -18,7 +19,7 @@ export default function ClarendonHistory() {
 				</header>
 				<div className="relative container mx-auto max-w-4xl  space-y-8 bg-background text-foreground">
 					<section className="space-y-8">
-						<div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4">
+						<div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-3">
 							<User className={iconStyle} />
 							<div id="founder">
 								<h2 className={titleStyle}>Founder</h2>
@@ -28,15 +29,17 @@ export default function ClarendonHistory() {
 							</div>
 						</div>
 
-						<div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4">
+						<div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-3">
 							<University className={iconStyle} />
 							<div id="birth-of-clarendon">
 								<h2 className={titleStyle}>The Birth of Clarendon</h2>
-								<p className={contentStyle}>Clarendon College was founded as Clarendon Montessori in 1996 under Lucille T. Tesorero. The goal of the Montessori was to provide global quality education for preschoolers that was made accessible to the locale of Roxas, Oriental Mindoro. Along with her two daughters, Lucille Tesorero Bacay and Flerie Tesorero Sucgang, the Montessori flourished with its meagre staff and passionate parents. The parents of the first batch of students strongly encouraged this small Montessori to expand into Primary Education. With this impetus, the President of the Montessori Engr Juanito A. Bacay purchased a lot in Odiong to establish a private elementary school in 1998.</p>
+								<p className={contentStyle}>
+									Clarendon College was founded as <strong>Clarendon Montessori</strong> in 1996 under Lucille T. Tesorero . The goal of the Montessori was to provide global quality education for preschoolers that was made accessible to the locale of Roxas, Oriental Mindoro. Along with her two daughters, Lucille Tesorero Bacay and Flerie Tesorero Sucgang, the Montessori flourished with its meagre staff and passionate parents. The parents of the first batch of students strongly encouraged this small Montessori to expand into Primary Education. With this impetus, the President of the Montessori Engr Juanito A. Bacay purchased a lot in Odiong to establish a private elementary school in 1998.
+								</p>
 							</div>
 						</div>
 
-						<div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4">
+						<div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-3">
 							<ChartSpline className={iconStyle} />
 							<div id="growth-and-evolution">
 								<h2 className={titleStyle}>Growth and Evolution</h2>
@@ -46,7 +49,7 @@ export default function ClarendonHistory() {
 						</div>
 					</section>
 
-					<div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
+					<div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-3 mt-8">
 						<Trophy className={iconStyle} />
 						<div id="recent-achievements">
 							<h2 className={titleStyle}>Recent Achievements</h2>
@@ -67,7 +70,7 @@ export default function ClarendonHistory() {
 						</div>
 					</div>
 
-					<div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4 mt-8 pb-10">
+					<div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-3 mt-8 pb-10">
 						<Flame className={iconStyle} />
 						<div id="our-ongoing-mission">
 							<h2 className={titleStyle}>Our Ongoing Mission</h2>

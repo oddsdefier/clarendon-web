@@ -1,12 +1,10 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
-import { ArrowLeft, Calendar, Tag, Share2, CircleChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { newsItems } from "@/utils/get_news_and_events_data";
+import { newsItems } from "@/utils/news_and_events_data";
+import { ArrowLeft, Calendar, CircleChevronRight, Share2, Tag } from "lucide-react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 export interface NewsItem {
 	id: string;

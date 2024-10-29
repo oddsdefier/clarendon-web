@@ -12,8 +12,8 @@ const VisionMission: React.FC = () => {
 	return (
 		<div className="w-full bg-white min-h-svh lg:min-h-lvh">
 			<Header img={img} title={title} />
-			<main className="container mx-auto lg:flex lg:gap-12 py-5 px-4 lg:py-10" id="mission-vision">
-				<div className="relative container mx-auto max-w-4xl">
+			<main className="container mx-auto lg:flex gap-8 py-5 px-4 lg:py-10" id="mission-vision">
+				<div className="flex-1 lg:border-r lg:border-dotted lg:border-gray-200 pr-8">
 					{sections.map((section) => (
 						<div key={section.id} id={section.id} className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4 mt-0 pb-10">
 							<div>
@@ -24,7 +24,7 @@ const VisionMission: React.FC = () => {
 						</div>
 					))}
 				</div>
-				<aside className="w-64 hidden lg:block">
+				<aside className="w-60 hidden lg:block">
 					<AboutUs />
 				</aside>
 			</main>

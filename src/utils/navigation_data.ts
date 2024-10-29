@@ -80,7 +80,7 @@ export const navigationData: NavCategory[] = [
 		items: [
 			{
 				title: "Overview",
-				href: "/academics/academics",
+				href: "/academics/overview",
 				description: "Get an overview of the academic programs at Clarendon College.",
 			},
 			{

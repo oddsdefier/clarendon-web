@@ -90,7 +90,7 @@ const App: React.FC = () => {
 						<Route path="/about" element={<Navigate to="/about/history" />} />
 
 						{/* ACADEMICS */}
-						<Route path="/academics/academics" element={<Academics />} />
+						<Route path="/academics/overview" element={<Academics />} />
 						<Route path="/academics/junior-high" element={<JuniorHigh />} />
 						<Route path="/academics/senior-high" element={<SeniorHigh />} />
 						<Route path="/academics/college" element={<College />} />
