@@ -74,7 +74,7 @@ const Timeline: React.FC = () => {
 
 			<aside className="w-64 hidden lg:block">
 				<div className="mb-5">
-					<h2 className="text-lg font-semibold text-clarc-blue">On This Page</h2>
+					<h2 className="text-base font-semibold text-clarc-blue">On This Page</h2>
 
 					<Separator className="bg-clarc-gold/50 w-1/4 my-3 h-1" />
 					<h3 className="text-clarc-blue font-medium mb-2">Timeline</h3>
@@ -82,7 +82,7 @@ const Timeline: React.FC = () => {
 						<ul className="space-y-2">
 							{navItems.map((item, index) => (
 								<li key={index} className={item.indent ? "mb-3 ml-2" : "mb-3"}>
-									<a href={item.href} className="flex items-center text-base text-muted-foreground/80 transition-colors hover:text-clarc-blue">
+									<a href={item.href} className="flex items-center text-sm text-muted-foreground/80 transition-colors hover:text-clarc-blue">
 										{item.label}
 									</a>
 								</li>

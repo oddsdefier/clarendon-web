@@ -21,22 +21,22 @@ export const navigationData: NavCategory[] = [
 			{
 				title: "School Emblem",
 				href: "/about/school-emblem",
-				description: "Explore the meaning behind the Clarendon College school emblem.",
+				description: "Learn about the Clarendon College school emblem.",
 			},
 			{
 				title: "Vision and Mission",
 				href: "/about/mission-vision",
-				description: "Explore the vision and mission of Clarendon College.",
+				description: "Understand the vision and mission of Clarendon College.",
 			},
 			{
 				title: "Philosophy of Education",
 				href: "/about/philosophy-of-education",
-				description: "Discover the philosophy of education at Clarendon College.",
+				description: "Discover the educational philosophy at Clarendon College.",
 			},
 			{
 				title: "Core Values",
 				href: "/about/core-values",
-				description: "Learn about the core values that guide Clarendon College.",
+				description: "Learn about the core values of Clarendon College.",
 			},
 		],
 	},
@@ -44,29 +44,34 @@ export const navigationData: NavCategory[] = [
 		title: "Admissions",
 		items: [
 			{
-				title: "Admission Requirements",
+				title: "Overview",
+				href: "/admissions/overview",
+				description: "Get an overview of the admission process at Clarendon College.",
+			},
+			{
+				title: "Requirements",
 				href: "/admissions/requirements",
-				description: "Admission criteria for Clarendon College.",
+				description: "Review the requirements for admission to Clarendon College.",
 			},
 			{
 				title: "Enrollment Procedures",
 				href: "/admissions/enrollment",
-				description: "Steps for enrolling at Clarendon College.",
+				description: "Understand the enrollment procedures at Clarendon College.",
 			},
 			{
 				title: "Fees, Payments, and Discounts",
-				href: "/admissions/fees",
-				description: "Details on tuition, payments, and discounts.",
+				href: "/admissions/fees-payments-discounts",
+				description: "Find information on fees, payments, and discounts.",
 			},
 			{
-				title: "Student Withdrawal or Transfer",
+				title: "Withdrawal or Transfer",
 				href: "/admissions/withdrawal-transfer",
-				description: "Guidelines for withdrawing or transferring.",
+				description: "Learn about the process for student withdrawal or transfer.",
 			},
 			{
 				title: "Scholarships",
 				href: "/admissions/scholarships",
-				description: "Available scholarships at Clarendon College.",
+				description: "Explore scholarship opportunities at Clarendon College.",
 			},
 		],
 	},
@@ -74,19 +79,24 @@ export const navigationData: NavCategory[] = [
 		title: "Academics",
 		items: [
 			{
+				title: "Overview",
+				href: "/academics/academics",
+				description: "Get an overview of the academic programs at Clarendon College.",
+			},
+			{
 				title: "Junior High School",
 				href: "/academics/junior-high",
-				description: "Overview of Clarendon College's junior high school programs.",
+				description: "Learn about the junior high school programs at Clarendon College.",
 			},
 			{
 				title: "Senior High School",
 				href: "/academics/senior-high",
-				description: "Details about Clarendon College's senior high school curriculum.",
+				description: "Discover the senior high school curriculum at Clarendon College.",
 			},
 			{
 				title: "College",
 				href: "/academics/college",
-				description: "Information on degree programs at Clarendon College.",
+				description: "Find information on college degree programs at Clarendon College.",
 			},
 		],
 	},
@@ -96,17 +106,17 @@ export const navigationData: NavCategory[] = [
 			{
 				title: "The Student Body",
 				href: "/campus-life/student-body",
-				description: "Learn about the diverse student community at Clarendon College.",
+				description: "Learn about the student body at Clarendon College.",
 			},
 			{
 				title: "Holistic Wellbeing",
 				href: "/campus-life/wellbeing",
-				description: "Discover our approach to student health and wellness.",
+				description: "Discover our approach to holistic wellbeing.",
 			},
 			{
 				title: "Learning Enrichment",
 				href: "/campus-life/enrichment",
-				description: "Explore extracurricular and enrichment opportunities.",
+				description: "Explore learning enrichment opportunities at Clarendon College.",
 			},
 		],
 	},

@@ -25,9 +25,18 @@ import CoreValues from "@/pages/about/CoreValues";
 import SchoolEmblem from "@/pages/about/SchoolEmblem";
 
 //Academics Page
-import College from "@/pages/academics/college/College";
-import SeniorHigh from "./pages/academics/senior_high/SeniorHigh";
-import JuniorHigh from "./pages/academics/junior_high/SeniorHigh";
+import College from "@/pages/academics/College";
+import SeniorHigh from "@/pages/academics/SeniorHigh";
+import JuniorHigh from "@/pages/academics/JuniorHigh";
+import Academics from "./pages/academics/Academics";
+
+//Admission Page
+import Admission from "@/pages/admissions/Overview";
+import Requirements from "./pages/admissions/Requirements";
+import EnrollmentProcedures from "./pages/admissions/EnrollmentProcedures";
+import FeesPaymentsDiscounts from "./pages/admissions/FeesPaymentsDiscounts";
+import Scholarships from "./pages/admissions/Scholarships";
+import WithdrawalTransfer from "./pages/admissions/WithdrawalTransfer";
 
 // Loading component
 const Loading = () => <div className="text-center p-4">Loading...</div>;
@@ -59,7 +68,7 @@ const App: React.FC = () => {
 	return (
 		<Router>
 			<ScrollToTop />
-			<div className="font-geist min-h-screen overflow-x-hidden">
+			<div className="font-geist min-h-svh lg:min-h-lvh overflow-x-hidden">
 				<Header />
 				<main>
 					<Routes>
@@ -81,9 +90,18 @@ const App: React.FC = () => {
 						<Route path="/about" element={<Navigate to="/about/history" />} />
 
 						{/* ACADEMICS */}
+						<Route path="/academics/academics" element={<Academics />} />
 						<Route path="/academics/junior-high" element={<JuniorHigh />} />
 						<Route path="/academics/senior-high" element={<SeniorHigh />} />
 						<Route path="/academics/college" element={<College />} />
+
+						{/* ADMISSION */}
+						<Route path="/admissions/overview" element={<Admission />} />
+						<Route path="/admissions/requirements" element={<Requirements />} />
+						<Route path="/admissions/enrollment" element={<EnrollmentProcedures />} />
+						<Route path="/admissions/fees-payments-discounts" element={<FeesPaymentsDiscounts />} />
+						<Route path="/admissions/withdrawal-transfer" element={<WithdrawalTransfer />} />
+						<Route path="/admissions/scholarships" element={<Scholarships />} />
 
 						{/* NOT FOUND */}
 						<Route path="*" element={<NotFound />} />

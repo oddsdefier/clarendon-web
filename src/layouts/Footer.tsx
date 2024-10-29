@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
 			<div className="-z-10 absolute inset-0 bg-clarc-blue opacity-70"></div>
 			<div className="-z-10 absolute inset-0 bg-gradient-to-b from-clarc-blue to-transparent opacity-100"></div>
 
-			<div className="container mx-auto px-4 flex flex-col lg:flex-row justify-evenly  gap-8 z-10 relative">
+			<div className="container mx-auto flex flex-col lg:flex-row justify-evenly  gap-8 z-10 relative">
 				<div className="flex gap-1 lg:gap-2">
 					<img src={clarcLogo} alt="Clarendon College Logo" className="square rounded-full w-8 h-8 lg:w-10 lg:h-10 aspect-square" />
 					<div>
