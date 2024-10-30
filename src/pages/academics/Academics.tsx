@@ -4,7 +4,6 @@ import AcademicsSide from "./components/AcademicsSide";
 import { Separator } from "@radix-ui/react-separator";
 const Academics: React.FC = () => {
 	const navItems = [{ href: "#timeline", label: "Timeline" }];
-
 	const pageSpecificNav = (
 		<div className="mb-5">
 			<h2 className="text-base font-semibold text-clarc-blue">On This Page</h2>

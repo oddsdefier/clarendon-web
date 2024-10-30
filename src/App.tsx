@@ -64,51 +64,58 @@ const ScrollToTop: React.FC = () => {
 	return null;
 };
 
+const MainContent: React.FC = () => {
+	const location = useLocation();
+	return (
+		<div className="font-geist min-h-svh lg:min-h-lvh overflow-x-hidden">
+			<Header />
+			<main className={`${location.pathname === "/" ? "mt-32" : "mt-16"} min-h-svh lg:min-h-lvh`}>
+				<Routes>
+					<Route path="/" element={<MainPage />} errorElement={<NotFound />} />
+					<Route
+						path="/news/:slug"
+						element={
+							<Suspense fallback={<Loading />}>
+								<NewsDetail />
+							</Suspense>
+						}
+					/>
+					{/* ABOUT */}
+					<Route path="/about/history" element={<History />} />
+					<Route path="/about/philosophy-of-education" element={<PhilosophyOfEducation />} />
+					<Route path="/about/core-values" element={<CoreValues />} />
+					<Route path="/about/mission-vision" element={<VisionMission />} />
+					<Route path="/about/school-emblem" element={<SchoolEmblem />} />
+					<Route path="/about" element={<Navigate to="/about/history" />} />
+
+					{/* ACADEMICS */}
+					<Route path="/academics/overview" element={<Academics />} />
+					<Route path="/academics/junior-high" element={<JuniorHigh />} />
+					<Route path="/academics/senior-high" element={<SeniorHigh />} />
+					<Route path="/academics/college" element={<College />} />
+
+					{/* ADMISSION */}
+					<Route path="/admissions/overview" element={<Admission />} />
+					<Route path="/admissions/requirements" element={<Requirements />} />
+					<Route path="/admissions/enrollment" element={<EnrollmentProcedures />} />
+					<Route path="/admissions/fees-payments-discounts" element={<FeesPaymentsDiscounts />} />
+					<Route path="/admissions/withdrawal-transfer" element={<WithdrawalTransfer />} />
+					<Route path="/admissions/scholarships" element={<Scholarships />} />
+
+					{/* NOT FOUND */}
+					<Route path="*" element={<NotFound />} />
+				</Routes>
+			</main>
+			<Footer />
+		</div>
+	);
+};
+
 const App: React.FC = () => {
 	return (
 		<Router>
 			<ScrollToTop />
-			<div className="font-geist min-h-svh lg:min-h-lvh overflow-x-hidden">
-				<Header />
-				<main>
-					<Routes>
-						<Route path="/" element={<MainPage />} errorElement={<NotFound />} />
-						<Route
-							path="/news/:slug"
-							element={
-								<Suspense fallback={<Loading />}>
-									<NewsDetail />
-								</Suspense>
-							}
-						/>
-						{/* ABOUT */}
-						<Route path="/about/history" element={<History />} />
-						<Route path="/about/philosophy-of-education" element={<PhilosophyOfEducation />} />
-						<Route path="/about/core-values" element={<CoreValues />} />
-						<Route path="/about/mission-vision" element={<VisionMission />} />
-						<Route path="/about/school-emblem" element={<SchoolEmblem />} />
-						<Route path="/about" element={<Navigate to="/about/history" />} />
-
-						{/* ACADEMICS */}
-						<Route path="/academics/overview" element={<Academics />} />
-						<Route path="/academics/junior-high" element={<JuniorHigh />} />
-						<Route path="/academics/senior-high" element={<SeniorHigh />} />
-						<Route path="/academics/college" element={<College />} />
-
-						{/* ADMISSION */}
-						<Route path="/admissions/overview" element={<Admission />} />
-						<Route path="/admissions/requirements" element={<Requirements />} />
-						<Route path="/admissions/enrollment" element={<EnrollmentProcedures />} />
-						<Route path="/admissions/fees-payments-discounts" element={<FeesPaymentsDiscounts />} />
-						<Route path="/admissions/withdrawal-transfer" element={<WithdrawalTransfer />} />
-						<Route path="/admissions/scholarships" element={<Scholarships />} />
-
-						{/* NOT FOUND */}
-						<Route path="*" element={<NotFound />} />
-					</Routes>
-				</main>
-				<Footer />
-			</div>
+			<MainContent />
 		</Router>
 	);
 };

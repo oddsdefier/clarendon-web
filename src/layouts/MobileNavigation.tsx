@@ -10,7 +10,7 @@ const MobileNavigation: React.FC = () => {
 	const socialsLogo = "w-5 h-5 text-gray-500/60 hover:text-clarc-gold transition transition-colors duration-200";
 
 	return (
-		<nav className="bg-background p-4 flex flex-col justify-between h-full">
+		<nav className="bg-background container mx-auto p-4 flex flex-col justify-between h-full">
 			<Accordion type="single" collapsible className="w-full">
 				{navigationData.map((category) => (
 					<AccordionItem key={category.title} value={category.title.toLowerCase().replace(/\s+/g, "-")}>

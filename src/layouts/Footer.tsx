@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
 	const listElWrapperStyle = "not-italic text-indigo-200/90 text-sm lg:text-md space-y-3";
 	const socialsLogo = "w-5 h-5 text-indigo-200 hover:text-clarc-gold transition transition-colors duration-200";
 	return (
-		<footer className="relative bg-clarc-blue/10  text-white pt-8 pb-12 lg:pt-16 lg:pb-24 px-2 lg:px-0">
+		<footer className="relative bg-clarc-blue/10  text-white pt-8 pb-12 lg:pt-16 lg:pb-24 px-4 sm:px-0 lg:px-0">
 			<div
 				className={`absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-20`}
 				style={{
@@ -21,11 +21,11 @@ const Footer: React.FC = () => {
 			<div className="-z-10 absolute inset-0 bg-gradient-to-b from-clarc-blue to-transparent opacity-100"></div>
 
 			<div className="container mx-auto flex flex-col lg:flex-row justify-evenly  gap-8 z-10 relative">
-				<div className="flex gap-1 lg:gap-2">
-					<img src={clarcLogo} alt="Clarendon College Logo" className="square rounded-full w-8 h-8 lg:w-10 lg:h-10 aspect-square" />
+				<div className="flex items-center lg:items-start gap-1 lg:gap-2">
+					<img src={clarcLogo} alt="Clarendon College Logo" className="square rounded-full w-16 h-16 lg:w-10 lg:h-10 aspect-square" />
 					<div>
-						<div className="flex items-center gap-1 mb-4 row-span-1 col-span-1">
-							<span className="text-xl font-semibold font-universal_serif text-clarc-gold tracking-wider">Clarendon College</span>
+						<div className="flex items-center lg:items-start gap-1 lg:mb-4 row-span-1 col-span-1">
+							<span className="text-xl font-semibold font-universal_serif text-clarc-gold tracking-wider leading-[1.15]">Clarendon College</span>
 						</div>
 						<div className="hidden lg:flex gap-1 flex-col mt-0 z-10 relative container mx-auto justify-start  items-start row-span-2">
 							<p className="text-sm text-clarc-gold/90 font-semibold">&copy; {new Date().getFullYear()} Clarendon College</p>
@@ -96,7 +96,7 @@ const Footer: React.FC = () => {
 					</ul>
 				</div>
 			</div>
-			<div className="flex lg:hidden gap-1 flex-col px-4 py-5 mt-10 z-10 relative container mx-auto justify-start lg:justify-center items-start lg:items-center ">
+			<div className="flex lg:hidden gap-1 flex-col lg:px-4 py-5 mt-10 z-10 relative container mx-auto justify-start lg:justify-center items-start lg:items-center ">
 				<p className="text-sm text-clarc-gold font-semibold">&copy; {new Date().getFullYear()} Clarendon College</p>
 				<p className="text-sm text-clarc-gold/80 font-semibold">All rights reserved.</p>
 			</div>

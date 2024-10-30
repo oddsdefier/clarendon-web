@@ -78,6 +78,7 @@ const NewsAndEventsSection: React.FC = () => {
 						<Calendar className="w-4 h-4 text-gray-800/60" />
 						<p className="text-sm text-gray-800/60 font-medium">{item.date}</p>
 					</div>
+					
 					<div className="pt-5">
 						<Link to={`/news/${item.slug}`} className="text-primary/80 hover:text-primary  flex w-full items-center justify-start gap-1">
 							<CircleChevronRight className="w-4 h-4" />
@@ -112,7 +113,7 @@ const NewsAndEventsSection: React.FC = () => {
 					className="w-full">
 					<CarouselContent>
 						{newsItems.map((item, index) => (
-							<CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+							<CarouselItem key={index} className="sm:basis-1/2 lg:basis-1/3">
 								<div className="p-1">
 									<NewsCard item={item} index={index} />
 								</div>

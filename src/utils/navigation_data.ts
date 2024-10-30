@@ -58,16 +58,16 @@ export const navigationData: NavCategory[] = [
 				href: "/admissions/enrollment",
 				description: "Understand the enrollment procedures at Clarendon College.",
 			},
-			{
-				title: "Fees, Payments, and Discounts",
-				href: "/admissions/fees-payments-discounts",
-				description: "Find information on fees, payments, and discounts.",
-			},
-			{
-				title: "Withdrawal or Transfer",
-				href: "/admissions/withdrawal-transfer",
-				description: "Learn about the process for student withdrawal or transfer.",
-			},
+			// {
+			// 	title: "Fees, Payments, and Discounts",
+			// 	href: "/admissions/fees-payments-discounts",
+			// 	description: "Find information on fees, payments, and discounts.",
+			// },
+			// {
+			// 	title: "Withdrawal or Transfer",
+			// 	href: "/admissions/withdrawal-transfer",
+			// 	description: "Learn about the process for student withdrawal or transfer.",
+			// },
 			{
 				title: "Scholarships",
 				href: "/admissions/scholarships",
@@ -115,6 +115,11 @@ export const navigationData: NavCategory[] = [
 			},
 			{
 				title: "Learning Enrichment",
+				href: "/campus-life/enrichment",
+				description: "Explore learning enrichment opportunities at Clarendon College.",
+			},
+			{
+				title: "News and Events",
 				href: "/campus-life/enrichment",
 				description: "Explore learning enrichment opportunities at Clarendon College.",
 			},
