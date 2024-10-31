@@ -13,10 +13,7 @@ const Overview: React.FC = () => {
   };
 
   const pageContent = (
-    <div
-      className="no-scrollbar flex-grow overflow-y-auto lg:px-16"
-      style={{ height: "calc(100vh - 2rem)" }}
-    >
+    <div className="no-scrollbar flex-grow lg:h-[calc(100vh-2rem)] lg:overflow-y-auto lg:px-16">
       <div>Page Content will be rendered here.</div>
       <div className="children">Overview</div>
     </div>

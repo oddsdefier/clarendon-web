@@ -12,10 +12,7 @@ const philosophyOfEducation: React.FC = () => {
   const title = "Philosophy of Education"; //made this empty so i can avoid redundancy
 
   const pageContent = (
-    <div
-      className="no-scrollbar flex-grow overflow-y-auto pb-72 lg:px-16"
-      style={{ height: "calc(100vh - 2rem)" }}
-    >
+    <div className="no-scrollbar min-h-svh flex-grow lg:h-[calc(100vh-2rem)] lg:overflow-y-auto lg:px-16">
       <Header img={img} title={title} />
       <div className="px-6 md:px-2">
         {sections.map((section) => (

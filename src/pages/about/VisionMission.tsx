@@ -12,10 +12,7 @@ const VisionMission: React.FC = () => {
   const img = clarcAssets.images.new_building;
 
   const pageContent = (
-    <div
-      className="no-scrollbar flex-grow overflow-y-auto pb-32 lg:px-16"
-      style={{ height: "calc(100vh - 2rem)" }}
-    >
+    <div className="no-scrollbar flex-grow lg:h-[calc(100vh-2rem)] lg:overflow-y-auto lg:px-16">
       <Header img={img} title={title} />
       <div className="px-6 md:px-2">
         {sections.map((section) => (

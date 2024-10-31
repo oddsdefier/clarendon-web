@@ -31,8 +31,7 @@ const CoreValues: React.FC = () => {
   const pageContent = (
     <div
       ref={mainContentRef}
-      className="no-scrollbar flex-grow overflow-y-auto pb-72 lg:px-16"
-      style={{ height: "calc(100vh - 2rem)" }}
+      className="no-scrollbar flex-grow lg:h-[calc(100vh-2rem)] lg:overflow-y-auto lg:px-16 lg:pb-72"
     >
       <Header img={img} title={title} />
       <div className="px-6 md:px-2">

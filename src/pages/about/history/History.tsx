@@ -36,11 +36,12 @@ export default function History() {
   const pageContent = (
     <div
       ref={mainContentRef}
-      className="no-scrollbar flex-grow overflow-y-auto lg:px-16"
-      style={{ height: "calc(100vh - 2rem)" }}
+      className="no-scrollbar flex-grow lg:h-[calc(100vh-2rem)] lg:overflow-y-auto lg:px-16"
     >
-      <ClarendonHistory />
-      <Timeline />
+      <div>
+        <ClarendonHistory />
+        <Timeline />
+      </div>
     </div>
   );
   return (
