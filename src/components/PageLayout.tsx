@@ -18,11 +18,12 @@ const PageLayout: React.FC<PageLayoutProps> = ({
       >
         {mainContent}
       </div>
-
+      {/* Main Content */}
       {/* Sidebar */}
       <aside className="sticky top-0 hidden border-l border-dotted border-gray-200 p-5 lg:block lg:w-60 lg:flex-shrink-0">
         <div className="h-full overflow-y-auto">{sidebarContent}</div>
       </aside>
+      {/* Sidebar */}
     </div>
   </section>
 );

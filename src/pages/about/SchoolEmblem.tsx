@@ -1,5 +1,5 @@
 import React from "react";
-import AboutUs from "./components/AboutUs";
+import AboutUs from "./components/AboutUsSide";
 import PageLayout from "@/components/PageLayout";
 
 const SchoolEmblem: React.FC = () => {

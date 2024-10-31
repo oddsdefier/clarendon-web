@@ -3,6 +3,10 @@ interface HeaderProp {
   img: string;
   title: string;
 }
+
+/**
+ * TODO: Adjust the text positioning inside the div, do it on all pages with header
+ */
 const Header: React.FC<HeaderProp> = ({ img, title }) => {
   return (
     <div
@@ -12,8 +16,8 @@ const Header: React.FC<HeaderProp> = ({ img, title }) => {
       }}
     >
       <div className="absolute inset-0 bg-gradient-to-t from-clarc-blue to-transparent opacity-90" />
-      <div className="container z-10 mx-auto flex justify-center px-6">
-        <h1 className="font-astralaga text-xl font-semibold text-white lg:text-4xl">
+      <div className="container z-10 mx-auto flex justify-center px-12 text-center">
+        <h1 className="font-astralaga text-xl font-semibold italic text-white/90 lg:text-4xl">
           {title}
         </h1>
       </div>

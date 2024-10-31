@@ -9,12 +9,17 @@ const Academics: React.FC = () => {
 
   const pageContent = (
     <div
-      className="parent min-h-svh lg:min-h-lvh"
-      id="sample"
       ref={mainContentRef}
+      className="no-scrollbar flex-grow overflow-y-auto pb-72 lg:px-16"
+      style={{ height: "calc(100vh - 2rem)" }}
     >
-      <div>Page Content will be rendered here.</div>
-      <div className="children">Jeff</div>
+      <div>
+        <h2>Overview</h2>
+        <p>
+          Welcome to the Academics section. Here you will find information about
+          our programs, courses, and academic resources.
+        </p>
+      </div>
     </div>
   );
 

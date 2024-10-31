@@ -1,15 +1,15 @@
-import { clarcAssets } from "@/utils/img_links";
-import { staticContent } from "@/utils/static_content";
+import { clarcAssets } from "@/utils/link_images";
+import { staticContent } from "@/utils/data_static_content";
 import { Separator } from "@radix-ui/react-separator";
 import React from "react";
-import AboutUs from "./components/AboutUs";
+import AboutUs from "./components/AboutUsSide";
 import Header from "./components/Header";
 import PageLayout from "@/components/PageLayout";
 
 const philosophyOfEducation: React.FC = () => {
   const sections = [staticContent.philosophyOfEducation];
   const img = clarcAssets.images.tourism;
-  const title = ""; //made this empty so i can avoid redundancy
+  const title = "Philosophy of Education"; //made this empty so i can avoid redundancy
 
   const pageContent = (
     <div

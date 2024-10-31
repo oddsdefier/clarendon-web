@@ -8,9 +8,18 @@ const SeniorHigh: React.FC = () => {
   const mainContentRef = useRef<HTMLDivElement>(null);
 
   const pageContent = (
-    <div className="parent min-h-svh lg:min-h-lvh" id="sample">
-      <div>Page Content will be rendered here.</div>
-      <div className="children">Senior High</div>
+    <div
+      ref={mainContentRef}
+      className="no-scrollbar flex-grow overflow-y-auto pb-72 lg:px-16"
+      style={{ height: "calc(100vh - 2rem)" }}
+    >
+      <div>
+        <h2>Senior High</h2>
+        <p>
+          Welcome to the College section. Here you will find information about
+          our college programs, courses, and academic resources.
+        </p>
+      </div>
     </div>
   );
 

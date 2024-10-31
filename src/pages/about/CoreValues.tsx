@@ -1,9 +1,9 @@
 import OnThisPage from "@/components/OnThisPage";
 import { Separator } from "@/components/ui/separator";
-import { clarcAssets } from "@/utils/img_links";
-import { staticContent } from "@/utils/static_content";
+import { clarcAssets } from "@/utils/link_images";
+import { staticContent } from "@/utils/data_static_content";
 import React, { useRef } from "react";
-import AboutUs from "./components/AboutUs";
+import AboutUs from "./components/AboutUsSide";
 import Header from "./components/Header";
 import PageLayout from "@/components/PageLayout";
 

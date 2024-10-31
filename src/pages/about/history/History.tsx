@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import ClarendonHistory from "./ClarendonHistory";
 import Timeline from "./Timeline";
-import AboutUs from "../components/AboutUs";
+import AboutUs from "../components/AboutUsSide";
 import OnThisPage from "@/components/OnThisPage";
 import PageLayout from "@/components/PageLayout";
 

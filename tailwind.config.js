@@ -16,7 +16,7 @@ export default {
 				astralaga: ['Astralaga', 'sans-serif'],
 				universal_serif: ['Universal Serif', 'sans-serif'],
 				manrope: ['Manrope', 'sans-serif'],
-				geist: ['Geist Sans', 'sans-serif']
+				geist: ['Geist Sans', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
