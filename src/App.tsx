@@ -75,9 +75,7 @@ const MainContent: React.FC = () => {
   return (
     <div className="min-h-svh overflow-x-hidden font-geist lg:min-h-lvh">
       <Header />
-      <main
-        className={`${location.pathname === "/" ? "lg:mt-32" : "lg:mt-16"}`}
-      >
+      <main className={`${location.pathname === "/" ? "lg:mt-32" : "mt-16"}`}>
         <Routes>
           <Route path="/" element={<MainPage />} errorElement={<NotFound />} />
           <Route

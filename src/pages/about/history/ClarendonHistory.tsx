@@ -12,7 +12,7 @@ export default function ClarendonHistory() {
 
   const Header = (
     <div id="history-clarendon">
-      <header className="mb-8 rounded-sm bg-clarc-gold/100 p-5 text-center lg:mb-10 lg:p-10">
+      <header className="mb-4 bg-clarc-gold/100 p-5 text-center md:mb-8 md:rounded-sm lg:mb-10 lg:p-10">
         <h1 className="mb-2 text-2xl font-bold text-clarc-blue sm:text-3xl md:text-4xl">
           The History of Clarendon College
         </h1>
@@ -25,7 +25,7 @@ export default function ClarendonHistory() {
   return (
     <div className="mt-5 flex-1 py-5">
       {Header}
-      <section className="space-y-8 bg-background text-foreground">
+      <section className="space-y-8 bg-background px-6 text-foreground lg:px-2">
         <div className={divStyle}>
           <User className={iconStyle} />
           <div id="founder">
