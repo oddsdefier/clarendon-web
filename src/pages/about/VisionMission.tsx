@@ -29,7 +29,7 @@ const VisionMission: React.FC = () => {
                 {section.title}
               </h2>
               <Separator className="my-3 h-1 w-1/4 bg-clarc-gold/80" />
-              <p className="font-forgetica text-sm leading-relaxed text-muted-foreground sm:text-base lg:text-lg">
+              <p className="text-sm leading-relaxed text-muted-foreground sm:text-base lg:text-lg">
                 {section.text}
               </p>
             </div>
