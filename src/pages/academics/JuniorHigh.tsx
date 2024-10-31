@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import AcademicsSide from "./components/AcademicsSide";
 import OnThisPage from "@/components/OnThisPage";
+import PageLayout from "@/components/PageLayout";
 
 const JuniorHigh: React.FC = () => {
   const navItems = [{ href: "#sample", label: "Sample" }];
@@ -9,7 +10,7 @@ const JuniorHigh: React.FC = () => {
   const pageContent = (
     <div className="parent min-h-svh lg:min-h-lvh" id="sample">
       <div>Page Content will be rendered here.</div>
-      <div className="children">Children1</div>
+      <div className="children">Junior High</div>
     </div>
   );
 
@@ -19,30 +20,19 @@ const JuniorHigh: React.FC = () => {
   };
 
   return (
-    <section className="container relative mx-auto w-full">
-      <div className="relative flex min-h-svh lg:min-h-lvh">
-        {/* Child Element */}
-        <div
-          className="no-scrollbar flex-grow overflow-y-auto lg:px-16"
-          style={{ height: "calc(100vh - 2rem)" }}
-        >
-          {pageContent}
-        </div>
-        {/* Child Element */}
-        <aside className="sticky top-0 hidden border-l border-dotted border-gray-200 p-5 lg:block lg:w-60 lg:flex-shrink-0">
-          <div className="h-full overflow-y-auto">
-            {/* Child Element */}
-            <OnThisPage
-              mainContentRef={mainContentRef}
-              navItems={navItems}
-              observerOptions={observerOptions}
-            />
-            <AcademicsSide />
-            {/* Child Element */}
-          </div>
-        </aside>
-      </div>
-    </section>
+    <PageLayout
+      mainContent={pageContent}
+      sidebarContent={
+        <>
+          <OnThisPage
+            mainContentRef={mainContentRef}
+            navItems={navItems}
+            observerOptions={observerOptions}
+          />
+          <AcademicsSide />
+        </>
+      }
+    />
   );
 };
 
