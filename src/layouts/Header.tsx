@@ -62,7 +62,7 @@ const Header: React.FC = () => {
               CLARENDON <br></br> COLLEGE
             </h1>
           </Link>
-          <div className="absolute hidden w-[99%] items-center justify-center gap-10 lg:flex">
+          <div className="absolute hidden w-full items-center justify-center gap-10 lg:flex">
             <ClarendonNavigationMenu />
           </div>
           <div className="flex items-center justify-center gap-3">
