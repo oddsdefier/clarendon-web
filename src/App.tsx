@@ -1,5 +1,11 @@
 import React, { Suspense, lazy, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+  Navigate,
+} from "react-router-dom";
 import Header from "@/layouts/Header";
 import Footer from "@/layouts/Footer";
 
@@ -39,85 +45,99 @@ import Scholarships from "./pages/admissions/Scholarships";
 import WithdrawalTransfer from "./pages/admissions/WithdrawalTransfer";
 
 // Loading component
-const Loading = () => <div className="text-center p-4">Loading...</div>;
+const Loading = () => <div className="p-4 text-center">Loading...</div>;
 
 const MainPage: React.FC = () => {
-	return (
-		<>
-			<CarouselHero />
-			<ResourceButtons />
-			<FutureReadingSection />
-			<ApplicationSection />
-			<NewsAndEventsSection />
-			<VideoSection />
-		</>
-	);
+  return (
+    <>
+      <CarouselHero />
+      <ResourceButtons />
+      <FutureReadingSection />
+      <ApplicationSection />
+      <NewsAndEventsSection />
+      <VideoSection />
+    </>
+  );
 };
 
 const ScrollToTop: React.FC = () => {
-	const { pathname } = useLocation();
+  const { pathname } = useLocation();
 
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, [pathname]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
-	return null;
+  return null;
 };
 
 const MainContent: React.FC = () => {
-	const location = useLocation();
-	return (
-		<div className="font-geist min-h-svh lg:min-h-lvh overflow-x-hidden">
-			<Header />
-			<main className={`${location.pathname === "/" ? "mt-32" : "mt-16"} min-h-svh lg:min-h-lvh`}>
-				<Routes>
-					<Route path="/" element={<MainPage />} errorElement={<NotFound />} />
-					<Route
-						path="/news/:slug"
-						element={
-							<Suspense fallback={<Loading />}>
-								<NewsDetail />
-							</Suspense>
-						}
-					/>
-					{/* ABOUT */}
-					<Route path="/about/history" element={<History />} />
-					<Route path="/about/philosophy-of-education" element={<PhilosophyOfEducation />} />
-					<Route path="/about/core-values" element={<CoreValues />} />
-					<Route path="/about/mission-vision" element={<VisionMission />} />
-					<Route path="/about/school-emblem" element={<SchoolEmblem />} />
-					<Route path="/about" element={<Navigate to="/about/history" />} />
+  const location = useLocation();
+  return (
+    <div className="min-h-svh overflow-x-hidden font-geist lg:min-h-lvh">
+      <Header />
+      <main
+        className={`${location.pathname === "/" ? "mt-32" : "mt-16"} min-h-svh lg:min-h-lvh`}
+      >
+        <Routes>
+          <Route path="/" element={<MainPage />} errorElement={<NotFound />} />
+          <Route
+            path="/news/:slug"
+            element={
+              <Suspense fallback={<Loading />}>
+                <NewsDetail />
+              </Suspense>
+            }
+          />
+          {/* ABOUT */}
+          <Route path="/about/history" element={<History />} />
+          <Route
+            path="/about/philosophy-of-education"
+            element={<PhilosophyOfEducation />}
+          />
+          <Route path="/about/core-values" element={<CoreValues />} />
+          <Route path="/about/mission-vision" element={<VisionMission />} />
+          <Route path="/about/school-emblem" element={<SchoolEmblem />} />
+          <Route path="/about" element={<Navigate to="/about/history" />} />
 
-					{/* ACADEMICS */}
-					<Route path="/academics/overview" element={<Academics />} />
-					<Route path="/academics/junior-high" element={<JuniorHigh />} />
-					<Route path="/academics/senior-high" element={<SeniorHigh />} />
-					<Route path="/academics/college" element={<College />} />
+          {/* ACADEMICS */}
+          <Route path="/academics/overview" element={<Academics />} />
+          <Route path="/academics/junior-high" element={<JuniorHigh />} />
+          <Route path="/academics/senior-high" element={<SeniorHigh />} />
+          <Route path="/academics/college" element={<College />} />
 
-					{/* ADMISSION */}
-					<Route path="/admissions/overview" element={<Admission />} />
-					<Route path="/admissions/requirements" element={<Requirements />} />
-					<Route path="/admissions/enrollment" element={<EnrollmentProcedures />} />
-					<Route path="/admissions/fees-payments-discounts" element={<FeesPaymentsDiscounts />} />
-					<Route path="/admissions/withdrawal-transfer" element={<WithdrawalTransfer />} />
-					<Route path="/admissions/scholarships" element={<Scholarships />} />
+          {/* ADMISSION */}
+          <Route path="/admissions/overview" element={<Admission />} />
+          <Route path="/admissions/requirements" element={<Requirements />} />
+          <Route
+            path="/admissions/enrollment"
+            element={<EnrollmentProcedures />}
+          />
+          <Route
+            path="/admissions/fees-payments-discounts"
+            element={<FeesPaymentsDiscounts />}
+          />
+          <Route
+            path="/admissions/withdrawal-transfer"
+            element={<WithdrawalTransfer />}
+          />
+          <Route path="/admissions/scholarships" element={<Scholarships />} />
 
-					{/* NOT FOUND */}
-					<Route path="*" element={<NotFound />} />
-				</Routes>
-			</main>
-			<Footer />
-		</div>
-	);
+          {/* NOT FOUND */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
+  );
 };
 
 const App: React.FC = () => {
-	return (
-		<Router>
-			<ScrollToTop />
-			<MainContent />
-		</Router>
-	);
+  return (
+    <Router>
+      <ScrollToTop />
+      <MainContent />
+    </Router>
+  );
 };
 
 export default App;

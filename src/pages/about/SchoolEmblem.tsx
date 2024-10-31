@@ -2,22 +2,34 @@ import React from "react";
 import AboutUs from "./components/AboutUs";
 
 const SchoolEmblem: React.FC = () => {
-	return (
-		<div className="w-full bg-white min-h-svh lg:min-h-lvh">
-			<main className="container mx-auto lg:flex lg:gap-12 py-5 px-4 lg:py-10" id="school-emblem">
-				<div className="flex-1 lg:border-r lg:border-dotted lg:border-gray-200 lg:pr-8">
-					<h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-clarc-blue">School Emblem</h2>
-					<div className="flex justify-center items-center w-full">
-						<img src="../school-emblem.jpg" alt="School Emblem" className="max-w-4xl min-w-full" />
-					</div>
-				</div>
-
-				<aside className="w-64 hidden lg:block">
-					<AboutUs />
-				</aside>
-			</main>
-		</div>
-	);
+  return (
+    <section className="container relative mx-auto w-full">
+      <div className="relative flex min-h-svh lg:min-h-lvh">
+        {/* Child Element */}
+        <div
+          className="no-scrollbar flex-grow overflow-y-auto pb-72 lg:px-16"
+          style={{ height: "calc(100vh - 2rem)" }}
+        >
+          <div className="py-5">
+            <h2 className="text-lg font-semibold text-clarc-blue sm:text-xl md:text-2xl lg:text-3xl">
+              School Emblem
+            </h2>
+            <div className="flex w-full items-center justify-center">
+              <img src="../school-emblem.jpg" alt="School Emblem" />
+            </div>
+          </div>
+        </div>
+        {/* Child Element */}
+        <aside className="sticky top-0 hidden border-l border-dotted border-gray-200 p-5 lg:block lg:w-60 lg:flex-shrink-0">
+          <div className="h-full overflow-y-auto">
+            {/* Child Element */}
+            <AboutUs />
+            {/* Child Element */}
+          </div>
+        </aside>
+      </div>
+    </section>
+  );
 };
 
 export default SchoolEmblem;

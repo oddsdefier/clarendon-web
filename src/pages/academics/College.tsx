@@ -1,33 +1,48 @@
-import React from "react";
-import AcademicsBody from "./components/AcademicsBody";
+import React, { useRef } from "react";
 import AcademicsSide from "./components/AcademicsSide";
-import { Separator } from "@radix-ui/react-separator";
-const College: React.FC = () => {
-	const navItems = [{ href: "#timeline", label: "Timeline" }];
-	const pageSpecificNav = (
-		<div className="mb-5">
-			<h2 className="text-base font-semibold text-clarc-blue">On This Page</h2>
-			<Separator className="bg-clarc-gold/50 w-1/4 my-3 h-1" />
-			<h3 className="text-clarc-blue font-medium mb-2">History</h3>
-			<nav aria-label="Table of contents">
-				<ul className="space-y-2">
-					{navItems.map((item, index) => (
-						<li key={index} className="mb-3">
-							<a href={item.href} className="flex items-center text-sm transition-colors text-muted-foreground/80 hover:text-clarc-blue">
-								{item.label}
-							</a>
-						</li>
-					))}
-				</ul>
-			</nav>
-		</div>
-	);
+import OnThisPage from "@/components/OnThisPage";
 
-	return (
-		<AcademicsBody pageSpecificNav={pageSpecificNav} Academics={AcademicsSide}>
-			<p>College</p>
-		</AcademicsBody>
-	);
+const College: React.FC = () => {
+  const navItems = [{ href: "#sample", label: "Sample" }];
+  const mainContentRef = useRef<HTMLDivElement>(null);
+
+  const pageContent = (
+    <div className="parent min-h-svh lg:min-h-lvh" id="sample">
+      <div>Page Content will be rendered here.</div>
+      <div className="children">Children1</div>
+    </div>
+  );
+
+  const observerOptions = {
+    rootMargin: "-5% 0px -60% 0px",
+    threshold: 0.5,
+  };
+  return (
+    <section className="container relative mx-auto w-full">
+      <div className="relative flex min-h-svh lg:min-h-lvh">
+        {/* Child Element */}
+        <div
+          className="no-scrollbar flex-grow overflow-y-auto lg:px-16"
+          style={{ height: "calc(100vh - 2rem)" }}
+        >
+          {pageContent}
+        </div>
+        {/* Child Element */}
+        <aside className="sticky top-0 hidden border-l border-dotted border-gray-200 p-5 lg:block lg:w-60 lg:flex-shrink-0">
+          <div className="h-full overflow-y-auto">
+            {/* Child Element */}
+            <OnThisPage
+              mainContentRef={mainContentRef}
+              navItems={navItems}
+              observerOptions={observerOptions}
+            />
+            <AcademicsSide />
+            {/* Child Element */}
+          </div>
+        </aside>
+      </div>
+    </section>
+  );
 };
 
 export default College;

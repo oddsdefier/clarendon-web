@@ -34,10 +34,10 @@
 		}
 	</style> -->
   <!-- <style>
-		* {
-			outline: solid rgba(255, 0, 0, 0.239) 1px;
-		}
-	</style> -->
+    * {
+      outline: solid rgba(255, 0, 0, 0.239) 1px;
+    }
+  </style> -->
   <!-- <style>
 		* {
 			background-color: rgba(255, 0, 0, 0.239) !important;
@@ -72,5 +72,186 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- <script type="module">
+      // Canvas overlay logic with toggle button, opacity slider, and root margin/threshold visualization
+      class CanvasOverlay {
+        constructor(linePercentage) {
+          this.linePercentage = linePercentage;
+          this.isVisible = true;
+          this.opacity = 0.5;
+          this.canvas = document.createElement("canvas");
+          this.controlContainer = document.createElement("div");
+          this.toggleButton = document.createElement("button");
+          this.opacitySlider = document.createElement("input");
+          this.rootMarginInput = document.createElement("input");
+          this.thresholdInput = document.createElement("input");
+
+          this.rootMargin = { top: -5, bottom: -60 }; // Default rootMargin values (%)
+          this.threshold = 0.5; // Default threshold
+
+          // Initialize elements and append to body
+          this.initCanvas();
+          this.initControlContainer();
+          this.initToggleButton();
+          this.initOpacitySlider();
+          this.initRootMarginInput();
+          this.initThresholdInput();
+
+          document.body.appendChild(this.canvas);
+          document.body.appendChild(this.controlContainer);
+
+          this.updateCanvasSize();
+          this.drawOverlay();
+          window.addEventListener("resize", () => {
+            this.updateCanvasSize();
+            this.drawOverlay();
+          });
+        }
+
+        initCanvas() {
+          this.ctx = this.canvas.getContext("2d");
+          this.canvas.style.position = "fixed";
+          this.canvas.style.top = "0";
+          this.canvas.style.left = "0";
+          this.canvas.style.width = "100%";
+          this.canvas.style.height = "100%";
+          this.canvas.style.zIndex = "99999999999";
+          this.canvas.style.pointerEvents = "none";
+          this.canvas.style.opacity = this.opacity;
+        }
+
+        initControlContainer() {
+          this.controlContainer.style.position = "fixed";
+          this.controlContainer.style.bottom = "20px";
+          this.controlContainer.style.right = "20px";
+          this.controlContainer.style.zIndex = "100000000000";
+          this.controlContainer.style.display = "flex";
+          this.controlContainer.style.flexDirection = "column";
+          this.controlContainer.style.gap = "5px";
+        }
+
+        initToggleButton() {
+          this.toggleButton.innerText = "Toggle Canvas";
+          this.toggleButton.style.padding = "10px 15px";
+          this.toggleButton.style.border = "none";
+          this.toggleButton.style.borderRadius = "5px";
+          this.toggleButton.style.backgroundColor = "#333";
+          this.toggleButton.style.color = "#fff";
+          this.toggleButton.style.cursor = "pointer";
+          this.toggleButton.addEventListener("click", () =>
+            this.toggleCanvas(),
+          );
+          this.controlContainer.appendChild(this.toggleButton);
+        }
+
+        initOpacitySlider() {
+          this.opacitySlider.type = "range";
+          this.opacitySlider.min = "0";
+          this.opacitySlider.max = "1";
+          this.opacitySlider.step = "0.01";
+          this.opacitySlider.value = this.opacity;
+          this.opacitySlider.style.width = "100px";
+          this.opacitySlider.addEventListener("input", (event) => {
+            this.setOpacity(event.target.value);
+          });
+          this.controlContainer.appendChild(this.opacitySlider);
+        }
+
+        initRootMarginInput() {
+          // Root Margin input with label
+          const rootMarginLabel = document.createElement("label");
+          rootMarginLabel.innerText = "Root Margin (e.g., -5% -60%)";
+          rootMarginLabel.style.color = "#fff";
+
+          this.rootMarginInput.type = "text";
+          this.rootMarginInput.placeholder = "-5% -60%";
+          this.rootMarginInput.style.width = "150px";
+          this.rootMarginInput.addEventListener("change", () => {
+            this.setRootMargin(this.rootMarginInput.value);
+          });
+
+          this.controlContainer.appendChild(rootMarginLabel);
+          this.controlContainer.appendChild(this.rootMarginInput);
+        }
+
+        initThresholdInput() {
+          // Threshold input with label
+          const thresholdLabel = document.createElement("label");
+          thresholdLabel.innerText = "Threshold (0 to 1)";
+          thresholdLabel.style.color = "#fff";
+
+          this.thresholdInput.type = "number";
+          this.thresholdInput.min = "0";
+          this.thresholdInput.max = "1";
+          this.thresholdInput.step = "0.1";
+          this.thresholdInput.value = this.threshold;
+          this.thresholdInput.style.width = "100px";
+          this.thresholdInput.addEventListener("change", () => {
+            this.setThreshold(this.thresholdInput.value);
+          });
+
+          this.controlContainer.appendChild(thresholdLabel);
+          this.controlContainer.appendChild(this.thresholdInput);
+        }
+
+        updateCanvasSize() {
+          this.canvas.width = window.innerWidth;
+          this.canvas.height = window.innerHeight;
+        }
+
+        drawOverlay() {
+          const { width, height } = this.canvas;
+          const lineSpacing = (this.linePercentage / 100) * height;
+          const rootMarginTop = (this.rootMargin.top / 100) * height;
+          const rootMarginBottom = (this.rootMargin.bottom / 100) * height;
+
+          this.ctx.clearRect(0, 0, width, height);
+
+          // Draw grid lines
+          this.ctx.strokeStyle = "red";
+          this.ctx.lineWidth = 1;
+          for (let y = lineSpacing; y < height; y += lineSpacing) {
+            this.ctx.beginPath();
+            this.ctx.moveTo(0, y);
+            this.ctx.lineTo(width, y);
+            this.ctx.stroke();
+          }
+
+          // Visualize root margin areas
+          this.ctx.fillStyle = "red";
+          this.ctx.fillRect(0, rootMarginTop, width, height * this.threshold);
+          this.ctx.fillStyle = "yellow";
+          this.ctx.fillRect(
+            0,
+            height + rootMarginBottom,
+            width,
+            -height * this.threshold,
+          );
+        }
+
+        toggleCanvas() {
+          this.isVisible = !this.isVisible;
+          this.canvas.style.display = this.isVisible ? "block" : "none";
+        }
+
+        setOpacity(value) {
+          this.opacity = value;
+          this.canvas.style.opacity = this.opacity;
+        }
+
+        setRootMargin(value) {
+          const [top, bottom] = value.split(" ").map((v) => parseFloat(v) || 0);
+          this.rootMargin = { top, bottom };
+          this.drawOverlay();
+        }
+
+        setThreshold(value) {
+          this.threshold = parseFloat(value);
+          this.drawOverlay();
+        }
+      }
+      new CanvasOverlay(10);
+    </script> -->
   </body>
 </html>

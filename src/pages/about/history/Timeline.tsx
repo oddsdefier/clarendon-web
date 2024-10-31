@@ -116,19 +116,17 @@ const Timeline: React.FC = () => {
     </div>
   );
   return (
-    <main>
-      <div className="flex-1 pb-10 lg:border-r lg:border-dotted lg:border-gray-200 lg:px-16">
-        {Header}
-        <section ref={containerRef} className="relative mx-auto max-w-4xl">
-          <div className="absolute bottom-0 top-0 hidden w-0.5 bg-clarc-gold md:left-1/2 md:flex md:-translate-x-1/2 md:transform" />
-          <div className="py-8 md:py-16">
-            {timelineEvents.map((event, index) => (
-              <TimelineEvent key={index} event={event} index={index} />
-            ))}
-          </div>
-        </section>
-      </div>
-    </main>
+    <div className="flex-1 pb-10">
+      {Header}
+      <section ref={containerRef} className="relative mx-auto max-w-4xl">
+        <div className="absolute bottom-0 top-0 hidden w-0.5 bg-clarc-gold md:left-1/2 md:flex md:-translate-x-1/2 md:transform" />
+        <div className="py-8 md:py-16">
+          {timelineEvents.map((event, index) => (
+            <TimelineEvent key={index} event={event} index={index} />
+          ))}
+        </div>
+      </section>
+    </div>
   );
 };
 
