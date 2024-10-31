@@ -13,7 +13,7 @@ const JuniorHigh: React.FC = () => {
       className="no-scrollbar flex-grow overflow-y-auto pb-72 lg:px-16"
       style={{ height: "calc(100vh - 2rem)" }}
     >
-      <div>
+      <div className="px-6 md:px-2">
         <h2>Junior High</h2>
         <p>
           Welcome to the College section. Here you will find information about

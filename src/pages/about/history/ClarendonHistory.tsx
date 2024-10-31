@@ -6,14 +6,14 @@ export default function ClarendonHistory() {
     "flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-3";
   const iconStyle =
     "w-4 h-4 aspect-square flex-shrink-0 text-clarc-blue hidden lg:flex opacity-90";
-  const titleStyle = "text-lg font-semibold mb-2 text-clarc-blue leading-[1]";
+  const titleStyle = "text-xl font-semibold mb-3 text-clarc-blue leading-[1]";
   const contentStyle =
-    "text-sm sm:text-base text-muted-foreground leading-relaxed";
+    "text-base lg:text-lg text-muted-foreground leading-relaxed";
 
   const Header = (
     <div id="history-clarendon">
       <header className="mb-4 bg-clarc-gold/100 p-5 text-center md:mb-8 md:rounded-sm lg:mb-10 lg:p-10">
-        <h1 className="mb-2 text-2xl font-bold text-clarc-blue sm:text-3xl md:text-4xl">
+        <h1 className="mb-2 text-2xl font-extrabold uppercase text-clarc-blue sm:text-3xl">
           The History of Clarendon College
         </h1>
         <p className="text-sm text-clarc-blue sm:text-base md:text-lg">
@@ -23,7 +23,7 @@ export default function ClarendonHistory() {
     </div>
   );
   return (
-    <div className="mt-5 flex-1 py-5">
+    <div className="flex-1 py-5">
       {Header}
       <section className="space-y-8 bg-background px-6 text-foreground lg:px-2">
         <div className={divStyle}>
@@ -71,7 +71,7 @@ export default function ClarendonHistory() {
           <ChartSpline className={iconStyle} />
           <div id="growth-and-evolution">
             <h2 className={titleStyle}>Growth and Evolution</h2>
-            <p className="text-sm text-muted-foreground sm:text-base">
+            <p className="text-base text-muted-foreground lg:text-lg">
               By 2002, Clarendon Montessori would rename itself to Clarendon
               College opening both a high school and college department. At this
               stage of development Clarendon College was equipped to offer
@@ -82,7 +82,7 @@ export default function ClarendonHistory() {
               and the High School Department qualified to be an ESC scholarship
               fund recipient from the government.
             </p>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground lg:text-lg">
               By 2015, Clarendon College would be offering degrees in Elementary
               and Secondary Education with majors in English, Filipino and
               Mathematics. It's college of Business Administration offered

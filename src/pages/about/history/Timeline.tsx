@@ -34,10 +34,10 @@ const TimelineEvent: React.FC<{
           className={`absolute top-1/2 -mt-px hidden h-px bg-gray-300 md:block ${index % 2 === 0 ? "left-full" : "right-full"}`}
           style={{ width: "15%" }}
         ></div>
-        <h3 className="mb-2 text-lg font-bold text-clarc-blue">
+        <h3 className="mb-3 text-lg font-bold text-clarc-blue">
           {event.title}
         </h3>
-        <p className="text-sm text-gray-600/80">{event.description}</p>
+        <p className="text-base text-gray-600/80">{event.description}</p>
       </div>
     </motion.div>
   );
@@ -106,7 +106,7 @@ const Timeline: React.FC = () => {
   const Header = (
     <div id="timeline">
       <header className="mb-4 bg-clarc-blue/100 p-5 text-center md:rounded-sm lg:mb-8 lg:p-8">
-        <h1 className="mb-2 text-2xl font-bold text-clarc-gold sm:text-3xl md:text-4xl">
+        <h1 className="mb-2 text-2xl font-extrabold uppercase text-clarc-gold sm:text-3xl">
           The Timeline of Clarendon College
         </h1>
         <p className="text-sm text-clarc-gold/70 sm:text-base md:text-lg">
@@ -116,7 +116,7 @@ const Timeline: React.FC = () => {
     </div>
   );
   return (
-    <div className="flex-1 pb-10">
+    <div className="flex-1 pb-10 pt-10">
       {Header}
       <section
         ref={containerRef}
