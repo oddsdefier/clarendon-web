@@ -26,7 +26,7 @@ export default function Header({ img, title, headerConfig = {} }: HeaderProps) {
   return (
     <div
       className={twMerge(
-        "relative mb-5 mt-5 flex h-48 items-center justify-center overflow-hidden bg-clarc-blue py-2 md:rounded-sm",
+        "relative lg:mb-5 lg:mt-5 flex h-48 items-center justify-center overflow-hidden bg-clarc-blue py-2 md:rounded-sm",
         containerClassName,
       )}
     >
