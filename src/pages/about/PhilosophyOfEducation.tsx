@@ -1,18 +1,18 @@
-import { clarcAssets } from "@/utils/link_images";
+import Header from "@/components/Header";
+import PageLayout from "@/components/PageLayout";
 import { staticContent } from "@/utils/data_static_content";
+import { clarcAssets } from "@/utils/link_images";
 import { Separator } from "@radix-ui/react-separator";
 import React from "react";
 import AboutUs from "./components/AboutUsSide";
-import Header from "../../components/Header";
-import PageLayout from "@/components/PageLayout";
 
 const philosophyOfEducation: React.FC = () => {
   const sections = [staticContent.philosophyOfEducation];
-  const img = clarcAssets.images.tourism;
+  const img = clarcAssets.colored_logo.gold;
   const title = "Philosophy of Education"; //made this empty so i can avoid redundancy
   const headerConfig = {
-    imageWrapperClassName: "inset-0",
-    bgImageClassName: "bg-cover",
+    imageWrapperClassName: "absolute inset-4",
+    bgImageClassName: "bg-contain",
     containerClassName: "bg-clarc-blue",
     backdropClassName: "absolute inset-0",
     titleClassName: "text-clarc-white",

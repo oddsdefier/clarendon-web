@@ -28,7 +28,7 @@ const College: React.FC = () => {
     containerClassName: "bg-clarc-blue",
     backdropClassName: "absolute inset-0",
     titleClassName:
-      "lg:text-5xl uppercase not-italic text-white tracking-wider font-universal_serif",
+      "lg:text-5xl uppercase italic text-white tracking-wider font-universal_serif",
   };
   const pageContent = (
     <div
@@ -38,6 +38,9 @@ const College: React.FC = () => {
       <div id="college">
         <Header title={title} img={headerImg} headerConfig={headerConfig} />
       </div>
+      {/* <div className="px-0 py-5 text-lg md:px-2 lg:px-4" id="intro">
+        Clarendon College offers a variety of courses.
+      </div> */}
       <div className="px-0 md:px-2 lg:px-4">
         <div className="py-5 pb-10 lg:pb-72">
           {coursesData.map((course) => (
@@ -46,7 +49,7 @@ const College: React.FC = () => {
               id={course.code.toLocaleLowerCase()}
             >
               <h1 className="relative inline-flex text-lg font-bold text-clarc-gold lg:text-xl">
-                <span className="z-10 bg-clarc-blue py-2 pr-4">
+                <span className="z-10 bg-clarc-blue py-2 pr-6">
                   {course.title}
                   <span className="ml-2 font-medium italic">{`(${course.code})`}</span>
                 </span>

@@ -3,19 +3,20 @@ import { ChartSpline, Flame, Trophy, University, User } from "lucide-react";
 // import { clarcAssets } from "@/utils/img_links";
 export default function ClarendonHistory() {
   const divStyle =
-    "flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-3";
+    "flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-3 lg:mb-12";
   const iconStyle =
     "w-4 h-4 aspect-square flex-shrink-0 text-clarc-blue hidden lg:flex opacity-90";
   const titleStyle = "text-xl font-semibold mb-3 text-clarc-blue leading-[1]";
   const contentStyle =
-    "text-base lg:text-lg text-muted-foreground leading-relaxed";
+    "text-base lg:text-lg text-muted-foreground leading-relaxed max-w-4xl text-pretty";
 
   const Header = (
     <div id="history-clarendon">
-      <header className="mb-4 flex h-48 items-center justify-center bg-clarc-gold/100 text-center md:mb-8 md:rounded-sm lg:mb-10">
+      <header className="mb-4 flex h-40 items-center justify-center bg-clarc-gold/100 text-center md:mb-8 md:rounded-sm lg:mb-10 lg:h-48">
         <div>
-          <h1 className="mb-2 text-2xl font-extrabold uppercase text-clarc-blue sm:text-4xl">
-            The History of Clarendon College
+          <h1 className="mb-2 text-3xl font-extrabold uppercase text-clarc-blue sm:text-4xl">
+            The{" "}
+            <span className="bg-clarc-blue px-4 text-clarc-gold">History</span>
           </h1>
           <p className="text-sm text-clarc-blue sm:text-base md:text-lg">
             A Legacy of Excellence in Education Since 1996
@@ -25,7 +26,7 @@ export default function ClarendonHistory() {
     </div>
   );
   return (
-    <div className="flex-1 py-5">
+    <div className="flex-1 lg:py-5">
       {Header}
       <section className="space-y-8 bg-background px-6 text-foreground lg:px-2">
         <div className={divStyle}>

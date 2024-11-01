@@ -15,7 +15,7 @@ const SeniorHigh: React.FC = () => {
   const headerConfig = {
     containerClassName: "bg-clarc-blue",
     backdropClassName: "absolute inset-0",
-    titleClassName: "text-clarc-white",
+    titleClassName: "text-clarc-white font-universal_serif",
   };
   const pageContent = (
     <div
@@ -26,16 +26,17 @@ const SeniorHigh: React.FC = () => {
         <Header title={title} img={headerImg} headerConfig={headerConfig} />
       </div>
       <div className="px-6 md:px-2">
-        <div className="py-5">
+        <div className="py-5 pb-52">
           {hsOfferingData.senior.map((track) => (
-            <div className="pb-5">
-              <p className="mt-3 text-base text-foreground/70">
-                {track.trackCode}
+            <div className="overflow-hidden bg-clarc-gold px-6 py-8 pb-5 text-clarc-blue lg:mb-12 lg:rounded-sm">
+              <p className="relative z-10 inline-flex text-base text-clarc-gold">
+                <span className="z-10 bg-clarc-blue py-2 pr-6 text-xl font-bold leading-[1]">
+                  {track.title}
+                  <span className="ml-2 font-medium italic">{`(${track.trackCode})`}</span>
+                </span>
+                <span className="absolute left-0 top-0 z-0 h-full w-full -translate-x-8 bg-clarc-blue"></span>
               </p>
-              <h1 className="text-xl font-bold leading-[1] text-clarc-blue">
-                {track.title}
-              </h1>
-              <p className="mt-3 text-base text-foreground/70">
+              <p className="mt-3 max-w-3xl text-pretty py-3 text-lg leading-7">
                 {track.description}
               </p>
             </div>

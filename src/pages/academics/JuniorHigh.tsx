@@ -15,7 +15,7 @@ const JuniorHigh: React.FC = () => {
   const headerConfig = {
     containerClassName: "bg-clarc-blue",
     backdropClassName: "absolute inset-0",
-    titleClassName: "text-clarc-white",
+    titleClassName: "text-clarc-white font-universal_serif ",
   };
   const pageContent = (
     <div

@@ -16,7 +16,7 @@ const CoreValues: React.FC = () => {
     staticContent.integrity,
   ];
   const title = "Core Values, Inclusivity, Adaptability and Integrity";
-  const img = clarcAssets.images.foundation;
+  const img = clarcAssets.colored_logo.gold;
   const navItems = [
     { href: "#core-values", label: "Core Values" },
     { href: "#inclusivity", label: "Inclusivity" },
@@ -28,8 +28,8 @@ const CoreValues: React.FC = () => {
     threshold: 0.2,
   };
   const headerConfig = {
-    imageWrapperClassName: "inset-0",
-    bgImageClassName: "bg-cover",
+    imageWrapperClassName: "absolute inset-4",
+    bgImageClassName: "bg-contain",
     containerClassName: "bg-clarc-blue",
     backdropClassName: "absolute inset-0",
     titleClassName: "text-clarc-white",

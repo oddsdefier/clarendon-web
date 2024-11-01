@@ -4,16 +4,16 @@ import { staticContent } from "@/utils/data_static_content";
 import { Separator } from "@radix-ui/react-separator";
 import React from "react";
 import AboutUs from "./components/AboutUsSide";
-import Header from "../../components/Header";
+import Header from "@/components/Header";
 
 const VisionMission: React.FC = () => {
   const sections = [staticContent.mission, staticContent.vision];
   const title = "Mission and Vision";
-  const img = clarcAssets.images.new_building;
+  const img = clarcAssets.colored_logo.gold;
 
   const headerConfig = {
-    imageWrapperClassName: "inset-0",
-    bgImageClassName: "bg-cover",
+    imageWrapperClassName: "absolute inset-4",
+    bgImageClassName: "bg-contain",
     containerClassName: "bg-clarc-blue",
     backdropClassName: "absolute inset-0",
     titleClassName: "text-clarc-white",
