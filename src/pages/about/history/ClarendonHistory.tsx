@@ -12,13 +12,15 @@ export default function ClarendonHistory() {
 
   const Header = (
     <div id="history-clarendon">
-      <header className="mb-4 bg-clarc-gold/100 p-5 text-center md:mb-8 md:rounded-sm lg:mb-10 lg:p-10">
-        <h1 className="mb-2 text-2xl font-extrabold uppercase text-clarc-blue sm:text-3xl">
-          The History of Clarendon College
-        </h1>
-        <p className="text-sm text-clarc-blue sm:text-base md:text-lg">
-          A Legacy of Excellence in Education Since 1996
-        </p>
+      <header className="mb-4 flex h-48 items-center justify-center bg-clarc-gold/100 text-center md:mb-8 md:rounded-sm lg:mb-10">
+        <div>
+          <h1 className="mb-2 text-2xl font-extrabold uppercase text-clarc-blue sm:text-4xl">
+            The History of Clarendon College
+          </h1>
+          <p className="text-sm text-clarc-blue sm:text-base md:text-lg">
+            A Legacy of Excellence in Education Since 1996
+          </p>
+        </div>
       </header>
     </div>
   );

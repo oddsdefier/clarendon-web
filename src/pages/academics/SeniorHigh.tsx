@@ -3,26 +3,42 @@ import AcademicsSide from "./components/AcademicsSide";
 import OnThisPage from "@/components/OnThisPage";
 import PageLayout from "@/components/PageLayout";
 import { hsOfferingData } from "@/utils/data_hs_offering";
+import Header from "@/components/Header";
+import { clarcAssets } from "@/utils/link_images";
 
 const SeniorHigh: React.FC = () => {
   const navItems = [{ href: "#sample", label: "Sample" }];
   const mainContentRef = useRef<HTMLDivElement>(null);
 
+  const title = "Senior High School";
+  const headerImg = clarcAssets.colored_logo.gold;
+  const headerConfig = {
+    containerClassName: "bg-clarc-blue",
+    backdropClassName: "absolute inset-0",
+    titleClassName: "text-clarc-white",
+  };
   const pageContent = (
     <div
       ref={mainContentRef}
       className="no-scrollbar flex-grow lg:h-[calc(100vh-2rem)] lg:overflow-y-auto lg:px-16"
     >
+      <div id="senior-high">
+        <Header title={title} img={headerImg} headerConfig={headerConfig} />
+      </div>
       <div className="px-6 md:px-2">
-        <h2>Senior High</h2>
-        <p>
-          Welcome to the College section. Here you will find information about
-          our college programs, courses, and academic resources.
-        </p>
-
-        <div className="content">
-          {hsOfferingData.senior.map((tracks, index) => (
-            <div key={index}>{JSON.stringify(tracks)}</div>
+        <div className="py-5">
+          {hsOfferingData.senior.map((track) => (
+            <div className="pb-5">
+              <p className="mt-3 text-base text-foreground/70">
+                {track.trackCode}
+              </p>
+              <h1 className="text-xl font-bold leading-[1] text-clarc-blue">
+                {track.title}
+              </h1>
+              <p className="mt-3 text-base text-foreground/70">
+                {track.description}
+              </p>
+            </div>
           ))}
         </div>
       </div>

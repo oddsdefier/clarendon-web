@@ -4,16 +4,23 @@ import { staticContent } from "@/utils/data_static_content";
 import { Separator } from "@radix-ui/react-separator";
 import React from "react";
 import AboutUs from "./components/AboutUsSide";
-import Header from "./components/Header";
+import Header from "../../components/Header";
 
 const VisionMission: React.FC = () => {
   const sections = [staticContent.mission, staticContent.vision];
   const title = "Mission and Vision";
   const img = clarcAssets.images.new_building;
 
+  const headerConfig = {
+    imageWrapperClassName: "inset-0",
+    bgImageClassName: "bg-cover",
+    containerClassName: "bg-clarc-blue",
+    backdropClassName: "absolute inset-0",
+    titleClassName: "text-clarc-white",
+  };
   const pageContent = (
     <div className="no-scrollbar flex-grow lg:h-[calc(100vh-2rem)] lg:overflow-y-auto lg:px-16">
-      <Header img={img} title={title} />
+      <Header img={img} title={title} headerConfig={headerConfig} />
       <div className="px-6 md:px-2">
         {sections.map((section) => (
           <div

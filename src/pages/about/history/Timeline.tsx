@@ -105,13 +105,15 @@ const Timeline: React.FC = () => {
 
   const Header = (
     <div id="timeline">
-      <header className="mb-4 bg-clarc-blue/100 p-5 text-center md:rounded-sm lg:mb-8 lg:p-8">
-        <h1 className="mb-2 text-2xl font-extrabold uppercase text-clarc-gold sm:text-3xl">
-          The Timeline of Clarendon College
-        </h1>
-        <p className="text-sm text-clarc-gold/70 sm:text-base md:text-lg">
-          A Legacy of Excellence in Education Since 1996
-        </p>
+      <header className="mb-4 flex h-48 items-center justify-center bg-clarc-blue/100 text-center md:mb-8 md:rounded-sm lg:mb-10">
+        <div>
+          <h1 className="mb-2 text-2xl font-extrabold uppercase text-clarc-gold sm:text-4xl">
+            The Timeline of Clarendon College
+          </h1>
+          <p className="text-sm text-clarc-gold/70 sm:text-base md:text-lg">
+            A Legacy of Excellence in Education Since 1996
+          </p>
+        </div>
       </header>
     </div>
   );

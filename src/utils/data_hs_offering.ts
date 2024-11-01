@@ -1,5 +1,5 @@
 export const hsOfferingData = {
-  junior: [
+  senior: [
     {
       trackCode: "ABM",
       title: "Accountancy, Business and Management",
@@ -19,7 +19,7 @@ export const hsOfferingData = {
         "Prepares students for careers in scientific and technical fields through a strong foundation in mathematics, sciences, and technology.",
     },
   ],
-  senior: [
+  junior: [
     {
       classType: "Special Science Classes",
       description:

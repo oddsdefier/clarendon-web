@@ -4,7 +4,7 @@ import { clarcAssets } from "@/utils/link_images";
 import { staticContent } from "@/utils/data_static_content";
 import React, { useRef } from "react";
 import AboutUs from "./components/AboutUsSide";
-import Header from "./components/Header";
+import Header from "../../components/Header";
 import PageLayout from "@/components/PageLayout";
 
 const CoreValues: React.FC = () => {
@@ -27,13 +27,19 @@ const CoreValues: React.FC = () => {
     rootMargin: "-10% 0px -60% 0px",
     threshold: 0.2,
   };
-
+  const headerConfig = {
+    imageWrapperClassName: "inset-0",
+    bgImageClassName: "bg-cover",
+    containerClassName: "bg-clarc-blue",
+    backdropClassName: "absolute inset-0",
+    titleClassName: "text-clarc-white",
+  };
   const pageContent = (
     <div
       ref={mainContentRef}
       className="no-scrollbar flex-grow lg:h-[calc(100vh-2rem)] lg:overflow-y-auto lg:px-16 lg:pb-72"
     >
-      <Header img={img} title={title} />
+      <Header img={img} title={title} headerConfig={headerConfig} />
       <div className="px-6 md:px-2">
         {sections.map((section) => (
           <div
