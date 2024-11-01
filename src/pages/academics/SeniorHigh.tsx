@@ -15,18 +15,18 @@ const SeniorHigh: React.FC = () => {
   const headerConfig = {
     containerClassName: "bg-clarc-blue",
     backdropClassName: "absolute inset-0",
-    titleClassName: "text-clarc-white font-universal_serif",
+    titleClassName: "text-clarc-white tracking-wider font-universal_serif",
   };
   const pageContent = (
     <div
       ref={mainContentRef}
-      className="no-scrollbar flex-grow lg:h-[calc(100vh-2rem)] lg:overflow-y-auto lg:px-16"
+      className="no-scrollbar flex-grow bg-clarc-gold lg:h-[calc(100vh-2rem)] lg:overflow-y-auto lg:bg-transparent lg:px-16"
     >
       <div id="senior-high">
         <Header title={title} img={headerImg} headerConfig={headerConfig} />
       </div>
-      <div className="px-6 md:px-2">
-        <div className="py-5 pb-52">
+      <div className="md:px-2 lg:px-6">
+        <div className="pb-52 lg:py-5">
           {hsOfferingData.senior.map((track) => (
             <div className="overflow-hidden bg-clarc-gold px-6 py-8 pb-5 text-clarc-blue lg:mb-12 lg:rounded-sm">
               <p className="relative z-10 inline-flex text-base text-clarc-gold">

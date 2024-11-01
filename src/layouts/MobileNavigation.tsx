@@ -12,7 +12,7 @@ import {
   Linkedin,
   Youtube,
   Twitter,
-  MoveUpRight,
+  ArrowUpRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { navigationData } from "@/utils/data_navigation";
@@ -29,7 +29,7 @@ const MobileNavigation: React.FC = () => {
             key={category.title}
             value={category.title.toLowerCase().replace(/\s+/g, "-")}
           >
-            <AccordionTrigger className="px-2 text-base font-bold uppercase text-clarc-blue outline-none outline focus:outline-none">
+            <AccordionTrigger className="px-2 text-lg font-bold uppercase italic outline-none outline focus:outline-none">
               {category.title}
             </AccordionTrigger>
             <AccordionContent>
@@ -43,7 +43,7 @@ const MobileNavigation: React.FC = () => {
                       <span className="font-normal text-gray-700/80">
                         {item.title}
                       </span>
-                      <MoveUpRight className="aspect-square h-3 w-3 text-clarc-blue/80" />
+                      <ArrowUpRight className="aspect-square h-4 w-4 text-clarc-blue/80" />
                     </Link>
                   </li>
                 ))}

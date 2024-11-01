@@ -5,6 +5,7 @@ export default {
 		"./index.html",
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
+		"./components/ui/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{js,ts,jsx,tsx}",
 	],
