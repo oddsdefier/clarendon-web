@@ -43,6 +43,7 @@ import EnrollmentProcedures from "./pages/admissions/EnrollmentProcedures";
 import FeesPaymentsDiscounts from "./pages/admissions/FeesPaymentsDiscounts";
 import Scholarships from "./pages/admissions/Scholarships";
 import WithdrawalTransfer from "./pages/admissions/WithdrawalTransfer";
+import { Flower } from "lucide-react";
 
 // Loading component
 const Loading = () => <div className="p-4 text-center">Loading...</div>;
@@ -69,7 +70,16 @@ const ScrollToTop: React.FC = () => {
 
   return null;
 };
-
+const ILoveU = (
+  <div className="">
+    <div className="flex h-full min-h-svh items-center justify-center lg:min-h-lvh">
+      <h1 className="text-xl font-bold lowercase text-pink-500 lg:text-2xl">
+        I lob u
+      </h1>
+      <Flower className="ml-2 text-pink-500" />
+    </div>
+  </div>
+);
 const MainContent: React.FC = () => {
   const location = useLocation();
   return (
@@ -120,6 +130,8 @@ const MainContent: React.FC = () => {
           />
           <Route path="/admissions/scholarships" element={<Scholarships />} />
 
+          {/* I LOVE U */}
+          <Route path="/i-love-u" element={ILoveU} />
           {/* NOT FOUND */}
           <Route path="*" element={<NotFound />} />
         </Routes>
