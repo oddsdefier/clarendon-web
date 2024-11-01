@@ -72,11 +72,12 @@ const ScrollToTop: React.FC = () => {
 };
 const ILoveU = (
   <div className="">
-    <div className="flex h-full min-h-svh items-center justify-center lg:min-h-lvh">
-      <h1 className="text-xl font-bold lowercase text-pink-500 lg:text-2xl">
+    <div className="flex h-full min-h-svh flex-col items-center justify-center bg-pink-500 lg:min-h-lvh">
+      <Flower className="white ml-2 h-10 w-10 text-white" />
+      <h1 className="text-3xl font-bold lowercase text-white lg:text-2xl">
         I lob u
       </h1>
-      <Flower className="ml-2 text-pink-500" />
+      <p className="text-base text-white/80">Sana ol paga ang paa.</p>
     </div>
   </div>
 );
