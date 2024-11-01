@@ -15,7 +15,7 @@ const SeniorHigh: React.FC = () => {
   const headerConfig = {
     containerClassName: "bg-clarc-blue",
     backdropClassName: "absolute inset-0",
-    titleClassName: "text-clarc-white tracking-wider font-universal_serif",
+    titleClassName: "text-white tracking-wider font-universal_serif",
   };
   const pageContent = (
     <div
