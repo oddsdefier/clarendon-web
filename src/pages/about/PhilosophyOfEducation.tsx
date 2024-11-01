@@ -20,7 +20,7 @@ const philosophyOfEducation: React.FC = () => {
   const pageContent = (
     <div className="no-scrollbar min-h-svh flex-grow lg:h-[calc(100vh-2rem)] lg:overflow-y-auto lg:px-16">
       <Header img={img} title={title} headerConfig={headerConfig} />
-      <div className="px-6 md:px-2">
+      <div className="px-6 py-5 md:px-2">
         {sections.map((section) => (
           <div
             key={section.id}
