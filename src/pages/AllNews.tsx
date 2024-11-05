@@ -14,14 +14,24 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { NewsItem } from "@/utils/data_news_and_events";
-import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { useEffect, useMemo, useState } from "react";
 
-export default function AllNews({ news }: { news: NewsItem[] }) {
+interface NewsItem {
+  id: string;
+  slug: string;
+  title: string;
+  category: string;
+  date: string;
+  image: string;
+  author?: string;
+  authorImage?: string;
+}
+
+export default function Component({ news }: { news: NewsItem[] }) {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5;
+  const [itemsPerPage, setItemsPerPage] = useState(3);
 
   const categories = useMemo(() => {
     const cats = new Set(news.map((item) => item.category));
@@ -33,11 +43,22 @@ export default function AllNews({ news }: { news: NewsItem[] }) {
     return news.filter((item) => item.category === selectedCategory);
   }, [news, selectedCategory]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerPage(window.innerWidth >= 1024 ? 10 : 3);
+    };
+
+    handleResize(); // Set initial value
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const totalPages = Math.ceil(filteredNews.length / itemsPerPage);
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [selectedCategory]);
+  }, [selectedCategory, itemsPerPage]);
 
   const currentNews = filteredNews.slice(
     (currentPage - 1) * itemsPerPage,
@@ -62,14 +83,14 @@ export default function AllNews({ news }: { news: NewsItem[] }) {
       </div>
       <div className="flex flex-col gap-4">
         {currentNews.map((item) => (
-          <Link to={`/news/${item.slug}`}>
-            <Card key={item.id} className="overflow-hidden">
+          <Link to={`/news/${item.slug}`} key={item.id}>
+            <Card className="overflow-hidden">
               <div className="flex flex-col md:flex-row">
-                <CardHeader className="aspect-square w-32 p-0">
+                <CardHeader className="aspect-square w-full p-0 lg:w-32">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="h-32 w-full object-cover"
+                    className="h-full w-full object-cover lg:h-32"
                   />
                 </CardHeader>
                 <CardContent className="flex-1 p-4">

@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/carousel";
 import { Skeleton } from "@/components/ui/skeleton";
 import { NewsItem, newsItems } from "@/utils/data_news_and_events";
-import { ArrowLeft, Calendar, Share2, Tag } from "lucide-react";
+import { Calendar, Tag, Share2 } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
@@ -108,7 +108,6 @@ export default function NewsDetail() {
   return (
     <div className="min-h-screen bg-background font-geist">
       <main className="container mx-auto px-4 py-8 lg:px-6 lg:pb-16">
-        <BackToNewsLink />
         <article className="mx-auto max-w-4xl">
           <NewsHeader newsItem={newsItem} />
           <NewsImage src={newsItem.image} alt={newsItem.title} />
@@ -123,6 +122,7 @@ export default function NewsDetail() {
           current={current}
           totalPages={totalPages}
         />
+        <BackToNewsLink />
       </main>
     </div>
   );
@@ -153,13 +153,15 @@ const NotFound = () => (
 );
 
 const BackToNewsLink = () => (
-  <Link
-    to="/all-news/"
-    className="hover:primary mb-8 inline-flex items-center text-sm text-primary/60"
-  >
-    <ArrowLeft className="mr-1 h-4 w-4 lg:mr-2" />
-    Back to News List
-  </Link>
+  <div className="flex w-full items-center justify-center">
+    {" "}
+    <Link
+      to="/all-news/"
+      className="rounded-full bg-clarc-blue px-4 py-3 text-clarc-gold transition-colors duration-200 hover:bg-clarc-gold hover:text-clarc-blue"
+    >
+      View All News
+    </Link>
+  </div>
 );
 
 const NewsHeader = ({ newsItem }: { newsItem: NewsItem }) => (
