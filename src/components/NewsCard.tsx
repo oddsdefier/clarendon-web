@@ -30,11 +30,11 @@ const NewsCard = React.memo(({ item }: { item: NewsItem }) => (
           </div>
         </Link>
         <CardContent className="space-y-2 p-4 pt-8">
-          <h4 className="mb-6 text-sm font-medium uppercase tracking-wider text-clarc-gold">
+          <h4 className="mb-3 text-sm font-medium uppercase tracking-wider text-clarc-gold">
             {"— "}
             {item.category}
           </h4>
-          <h2 className="line-clamp-2 text-lg font-semibold leading-[0.1] text-clarc-blue lg:text-xl">
+          <h2 className="mb-3 line-clamp-2 text-xl font-semibold leading-[1.1] text-clarc-blue lg:text-2xl">
             {item.title}
           </h2>
           <div className="flex items-center justify-start gap-1">
