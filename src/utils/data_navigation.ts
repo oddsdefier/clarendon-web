@@ -130,9 +130,8 @@ export const navigationData: NavCategory[] = [
       },
       {
         title: "News and Events",
-        href: "/campus-life/enrichment",
-        description:
-          "Explore learning enrichment opportunities at Clarendon College.",
+        href: "/all-news/",
+        description: "Discover what's happening at Clarendon College.",
       },
     ],
   },

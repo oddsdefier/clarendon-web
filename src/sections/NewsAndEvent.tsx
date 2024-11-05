@@ -1,4 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -8,11 +7,10 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import ViewAllBtn from "@/components/ViewAllBtn";
-import { NewsItem, newsItems } from "@/utils/data_news_and_events";
-import { Calendar, CircleChevronRight } from "lucide-react";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
 
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import NewsCard from "@/components/NewsCard";
+import { newsItems } from "@/utils/data_news_and_events";
 const headingTitle =
   "text-[1.7rem] md:text-4xl font-astralaga font-semibold text-clarc-blue";
 
@@ -65,56 +63,56 @@ const NewsAndEventsSection: React.FC = () => {
     };
   }, [api, slidesPerView]);
 
-  const NewsCard = React.memo(({ item }: { item: NewsItem }) => (
-    <Card className="transform overflow-hidden rounded-none bg-clarc-gold/10 pb-3 shadow-sm outline-none transition duration-300 hover:bg-clarc-gold/20">
-      <div>
-        <Link to={`/news/${item.slug}`} className="group relative block">
-          <div className="relative overflow-hidden">
-            <img
-              src={item.image}
-              alt={item.title}
-              className="h-52 w-full rounded-sm object-contain transition-transform duration-300 group-hover:scale-110"
-              loading="lazy"
-            />
-            <img
-              src={item.image}
-              alt=""
-              className="absolute left-0 top-0 -z-10 h-52 w-full rounded-sm object-cover opacity-10"
-              loading="lazy"
-            />
-            <div className="duration-400 absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 opacity-0 transition-opacity group-hover:opacity-100">
-              <span className="text-base font-semibold text-white">
-                Read More
-              </span>
-            </div>
-          </div>
-        </Link>
-        <CardContent className="space-y-2 p-4 pt-8">
-          <h4 className="mb-6 text-sm font-medium uppercase tracking-wider text-clarc-gold">
-            {"— "}
-            {item.category}
-          </h4>
-          <h2 className="line-clamp-2 font-astralaga text-lg font-bold text-clarc-blue lg:text-lg">
-            {item.title}
-          </h2>
-          <div className="flex items-center justify-start gap-1">
-            <Calendar className="h-4 w-4 text-gray-800/60" />
-            <p className="text-sm font-medium text-gray-800/60">{item.date}</p>
-          </div>
+  // const NewsCard = React.memo(({ item }: { item: NewsItem }) => (
+  //   <Card className="transform overflow-hidden rounded-none bg-clarc-gold/10 pb-3 shadow-sm outline-none transition duration-300 hover:bg-clarc-gold/20">
+  //     <div>
+  //       <Link to={`/news/${item.slug}`} className="group relative block">
+  //         <div className="relative overflow-hidden">
+  //           <img
+  //             src={item.image}
+  //             alt={item.title}
+  //             className="h-52 w-full rounded-sm object-contain transition-transform duration-300 group-hover:scale-110"
+  //             loading="lazy"
+  //           />
+  //           <img
+  //             src={item.image}
+  //             alt=""
+  //             className="absolute left-0 top-0 -z-10 h-52 w-full rounded-sm object-cover opacity-10"
+  //             loading="lazy"
+  //           />
+  //           <div className="duration-400 absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 opacity-0 transition-opacity group-hover:opacity-100">
+  //             <span className="text-base font-semibold text-white">
+  //               Read More
+  //             </span>
+  //           </div>
+  //         </div>
+  //       </Link>
+  //       <CardContent className="space-y-2 p-4 pt-8">
+  //         <h4 className="mb-6 text-sm font-medium uppercase tracking-wider text-clarc-gold">
+  //           {"— "}
+  //           {item.category}
+  //         </h4>
+  //         <h2 className="line-clamp-2 font-astralaga text-lg font-bold text-clarc-blue lg:text-lg">
+  //           {item.title}
+  //         </h2>
+  //         <div className="flex items-center justify-start gap-1">
+  //           <Calendar className="h-4 w-4 text-gray-800/60" />
+  //           <p className="text-sm font-medium text-gray-800/60">{item.date}</p>
+  //         </div>
 
-          <div className="pt-5">
-            <Link
-              to={`/news/${item.slug}`}
-              className="flex w-full items-center justify-start gap-1 text-primary/80 hover:text-primary"
-            >
-              <CircleChevronRight className="h-4 w-4" />
-              <p className="text-sm">Read More</p>
-            </Link>
-          </div>
-        </CardContent>
-      </div>
-    </Card>
-  ));
+  //         <div className="pt-5">
+  //           <Link
+  //             to={`/news/${item.slug}`}
+  //             className="flex w-full items-center justify-start gap-1 text-primary/80 hover:text-primary"
+  //           >
+  //             <CircleChevronRight className="h-4 w-4" />
+  //             <p className="text-sm">Read More</p>
+  //           </Link>
+  //         </div>
+  //       </CardContent>
+  //     </div>
+  //   </Card>
+  // ));
 
   return (
     <section
