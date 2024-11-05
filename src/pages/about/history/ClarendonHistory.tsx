@@ -15,8 +15,7 @@ export default function ClarendonHistory() {
       <header className="mb-4 flex h-40 items-center justify-center bg-clarc-gold/100 text-center md:mb-8 md:rounded-sm lg:mb-10 lg:h-48">
         <div>
           <h1 className="mb-2 text-3xl font-extrabold uppercase text-clarc-blue sm:text-4xl">
-            The{" "}
-            <span className="bg-clarc-blue px-4 text-clarc-gold">History</span>
+            The History
           </h1>
           <p className="text-sm text-clarc-blue sm:text-base md:text-lg">
             A Legacy of Excellence in Education Since 1996

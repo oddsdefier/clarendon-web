@@ -1,10 +1,11 @@
-import React, { useRef } from "react";
-import AcademicsSide from "./components/AcademicsSide";
+import Header from "@/components/Header";
 import OnThisPage from "@/components/OnThisPage";
 import PageLayout from "@/components/PageLayout";
 import { coursesData } from "@/utils/data_courses";
-import Header from "@/components/Header";
 import { clarcAssets } from "@/utils/link_images";
+import React, { useRef } from "react";
+import AcademicsSide from "./components/AcademicsSide";
+
 const College: React.FC = () => {
   const mainContentRef = useRef<HTMLDivElement>(null);
 
@@ -45,39 +46,44 @@ const College: React.FC = () => {
         <div className="py-5 pb-10 lg:pb-72">
           {coursesData.map((course) => (
             <div
-              className="space-y-4 overflow-hidden bg-clarc-gold px-6 py-8 text-clarc-blue lg:mb-12 lg:rounded-sm"
+              className="relative space-y-4 overflow-hidden bg-clarc-gold px-6 py-8 text-clarc-blue lg:mb-12 lg:rounded-sm"
               id={course.code.toLocaleLowerCase()}
             >
-              <h1 className="relative inline-flex text-lg font-bold text-clarc-gold lg:text-xl">
-                <span className="z-10 bg-clarc-blue py-2 pr-6">
-                  {course.title}
-                  <span className="ml-2 font-medium italic">{`(${course.code})`}</span>
-                </span>
-                <span className="absolute left-0 top-0 z-0 h-full w-1/2 -translate-x-8 bg-clarc-blue"></span>
-              </h1>
-              <p className="mt-3 max-w-3xl text-pretty py-3 text-lg leading-7">
-                {course.summary}
-              </p>
-              <ul className="my-4 space-y-2">
-                <h1 className="text-lg font-bold">
-                  {course.programHighlights ? "Program Highlights" : ""}
+              {/* <div className="absolute right-0 top-0 z-10 aspect-square h-1/2 -translate-y-1/4 translate-x-1/4 rounded-full bg-clarc-blue/10">
+                Logo
+              </div> */}
+              <div className="z-20">
+                <h1 className="relative inline-flex text-lg font-bold text-clarc-gold lg:text-xl">
+                  <span className="z-10 bg-clarc-blue py-2 pr-6">
+                    {course.title}
+                    <span className="ml-2 font-medium italic">{`(${course.code})`}</span>
+                  </span>
+                  <span className="absolute left-0 top-0 z-0 h-full w-1/2 -translate-x-8 bg-clarc-blue"></span>
                 </h1>
-                {course.programHighlights?.map((programHighlight) => (
-                  <li className="ml-2 text-base font-medium italic">
-                    — {programHighlight}
-                  </li>
-                ))}
-              </ul>
-              <ul className="my-4 space-y-2">
-                <h1 className="text-lg font-bold">
-                  {course.specializations ? "Specialization" : ""}
-                </h1>
-                {course.specializations?.map((specialization) => (
-                  <li className="ml-2 text-base font-medium">
-                    — {`Major in ${specialization}`}
-                  </li>
-                ))}
-              </ul>
+                <p className="mt-3 max-w-3xl text-pretty py-3 text-lg leading-7">
+                  {course.summary}
+                </p>
+                <ul className="my-4 space-y-2">
+                  <h1 className="text-lg font-bold">
+                    {course.programHighlights ? "Program Highlights" : ""}
+                  </h1>
+                  {course.programHighlights?.map((programHighlight) => (
+                    <li className="ml-2 text-base font-medium italic">
+                      — {programHighlight}
+                    </li>
+                  ))}
+                </ul>
+                <ul className="my-4 space-y-2">
+                  <h1 className="text-lg font-bold">
+                    {course.specializations ? "Specialization" : ""}
+                  </h1>
+                  {course.specializations?.map((specialization) => (
+                    <li className="ml-2 text-base font-medium">
+                      — {`Major in ${specialization}`}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>

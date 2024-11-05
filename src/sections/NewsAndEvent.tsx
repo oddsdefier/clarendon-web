@@ -131,7 +131,7 @@ const NewsAndEventsSection: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="mb-10 flex flex-col items-start justify-between gap-5 sm:flex-row lg:items-center">
           <h1 className={headingTitle}>News and Events</h1>
-          <ViewAllBtn children={"View All News"} link={"/"} />
+          <ViewAllBtn children={"View All News"} link={"/all-news/"} />
         </div>
         <Carousel
           setApi={setApi}

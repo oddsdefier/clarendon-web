@@ -1,21 +1,21 @@
-import React from "react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { navigationData } from "@/utils/data_navigation";
 import { InstagramLogoIcon } from "@radix-ui/react-icons";
 import { motion } from "framer-motion";
 import {
+  ArrowUpRight,
   Facebook,
   Linkedin,
-  Youtube,
   Twitter,
-  ArrowUpRight,
+  Youtube,
 } from "lucide-react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { navigationData } from "@/utils/data_navigation";
 
 const MobileNavigation: React.FC = () => {
   const socialsLogo =

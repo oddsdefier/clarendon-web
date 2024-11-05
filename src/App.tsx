@@ -43,7 +43,10 @@ import EnrollmentProcedures from "./pages/admissions/EnrollmentProcedures";
 import FeesPaymentsDiscounts from "./pages/admissions/FeesPaymentsDiscounts";
 import Scholarships from "./pages/admissions/Scholarships";
 import WithdrawalTransfer from "./pages/admissions/WithdrawalTransfer";
-import { Flower } from "lucide-react";
+
+//AllNews
+import AllNews from "@/pages/AllNews";
+import { newsItems } from "@/utils/data_news_and_events";
 
 // Loading component
 const Loading = () => <div className="p-4 text-center">Loading...</div>;
@@ -70,17 +73,7 @@ const ScrollToTop: React.FC = () => {
 
   return null;
 };
-const ILoveU = (
-  <div className="">
-    <div className="flex h-full min-h-svh flex-col items-center justify-center bg-pink-500 lg:min-h-lvh">
-      <Flower className="white ml-2 h-10 w-10 text-white" />
-      <h1 className="text-3xl font-bold lowercase text-white lg:text-2xl">
-        I lob u
-      </h1>
-      <p className="text-base text-white/80">Sana ol paga ang paa.</p>
-    </div>
-  </div>
-);
+
 const MainContent: React.FC = () => {
   const location = useLocation();
   return (
@@ -129,10 +122,9 @@ const MainContent: React.FC = () => {
             path="/admissions/withdrawal-transfer"
             element={<WithdrawalTransfer />}
           />
-          <Route path="/admissions/scholarships" element={<Scholarships />} />
 
-          {/* I LOVE U */}
-          <Route path="/i-love-u" element={ILoveU} />
+          <Route path="/all-news" element={<AllNews news={newsItems} />} />
+          <Route path="/admissions/scholarships" element={<Scholarships />} />
           {/* NOT FOUND */}
           <Route path="*" element={<NotFound />} />
         </Routes>

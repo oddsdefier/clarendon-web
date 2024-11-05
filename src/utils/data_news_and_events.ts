@@ -1,11 +1,13 @@
 export interface NewsItem {
   id: string;
-  // type: "news" | "event";
   category: string;
   title: string;
   date: string;
   image: string;
   slug: string;
+  author?: string;
+  authorImage?: string;
+  content?: string;
 }
 
 export const newsItems: NewsItem[] = [

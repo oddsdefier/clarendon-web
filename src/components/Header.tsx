@@ -1,5 +1,4 @@
-import { twMerge } from "tailwind-merge";
-
+import { cn } from "@/lib/utils";
 interface HeaderConfig {
   containerClassName?: string;
   imageWrapperClassName?: string;
@@ -25,14 +24,14 @@ export default function Header({ img, title, headerConfig = {} }: HeaderProps) {
 
   return (
     <div
-      className={twMerge(
-        "relative lg:mb-5 lg:mt-5 flex h-48 items-center justify-center overflow-hidden bg-clarc-blue py-2 md:rounded-sm",
+      className={cn(
+        "relative flex h-48 items-center justify-center overflow-hidden bg-clarc-blue py-2 md:rounded-sm lg:mb-5 lg:mt-5",
         containerClassName,
       )}
     >
       <div className={imageWrapperClassName}>
         <div
-          className={twMerge(
+          className={cn(
             "absolute inset-0 bg-contain bg-center bg-no-repeat opacity-90",
             bgImageClassName,
           )}
@@ -45,7 +44,7 @@ export default function Header({ img, title, headerConfig = {} }: HeaderProps) {
 
       <div className="container relative z-10 mx-auto px-12 text-center">
         <h1
-          className={twMerge(
+          className={cn(
             "font-astralaga text-3xl font-semibold italic text-white/90 lg:text-4xl",
             titleClassName,
           )}

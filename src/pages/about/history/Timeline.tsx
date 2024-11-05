@@ -105,11 +105,10 @@ const Timeline: React.FC = () => {
 
   const Header = (
     <div id="timeline">
-      <header className="mb-4 flex h-40 lg:h-48 items-center justify-center bg-clarc-blue/100 text-center md:mb-8 md:rounded-sm lg:mb-10">
+      <header className="mb-4 flex h-40 items-center justify-center bg-clarc-blue/100 text-center md:mb-8 md:rounded-sm lg:mb-10 lg:h-48">
         <div>
           <h1 className="mb-2 text-3xl font-extrabold uppercase text-clarc-gold sm:text-4xl">
-            The{" "}
-            <span className="bg-clarc-gold px-4 text-clarc-blue">Timeline</span>
+            The Timeline
           </h1>
           <p className="text-sm text-clarc-gold/70 sm:text-base md:text-lg">
             A Legacy of Excellence in Education Since 1996
