@@ -16,48 +16,50 @@ const Academics: React.FC = () => {
   const listItemStyle = "text-base text-muted-foreground lg:text-lg";
   const h3Style = "mb-3 text-lg font-semibold text-clarc-blue/90 px-3";
   const mainContent = (
-    <div className="mx-auto max-w-lg space-y-4 pb-48">
+    <>
       <CustomBreadcrumb
         currentPage="Overview"
         secondLink="/academics"
         secondTitle="Academics"
       />
-      <section>
-        <h2 className={titleStyle}>College Programs</h2>
-        <ul className="list-disc space-y-2 pl-6">
-          {coursesData.map((course, index) => (
-            <li key={index} className={listItemStyle}>
-              {course.title}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section>
-        <h2 className={titleStyle}>High School Programs</h2>
-        <div className="mb-6">
-          <h3 className={h3Style}>Senior High School</h3>
+      <div className="mx-auto max-w-lg space-y-4 px-6 pb-48 md:px-2">
+        <section>
+          <h2 className={titleStyle}>College Programs</h2>
           <ul className="list-disc space-y-2 pl-6">
-            {hsOfferingData.senior.map((track, index) => (
+            {coursesData.map((course, index) => (
               <li key={index} className={listItemStyle}>
-                {track.title}
+                {course.title}
               </li>
             ))}
           </ul>
-        </div>
+        </section>
 
-        <div>
-          <h3 className={h3Style}>Junior High School</h3>
-          <ul className="list-disc space-y-2 pl-6">
-            {hsOfferingData.junior.map((classes, index) => (
-              <li key={index} className={listItemStyle}>
-                {classes.classType}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-    </div>
+        <section>
+          <h2 className={titleStyle}>High School Programs</h2>
+          <div className="mb-6">
+            <h3 className={h3Style}>Senior High School</h3>
+            <ul className="list-disc space-y-2 pl-6">
+              {hsOfferingData.senior.map((track, index) => (
+                <li key={index} className={listItemStyle}>
+                  {track.title}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className={h3Style}>Junior High School</h3>
+            <ul className="list-disc space-y-2 pl-6">
+              {hsOfferingData.junior.map((classes, index) => (
+                <li key={index} className={listItemStyle}>
+                  {classes.classType}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </div>
+    </>
   );
   const pageContent = (
     <div
@@ -71,7 +73,7 @@ const Academics: React.FC = () => {
           className="animate-spin-slow-1 bg-cover bg-center"
         />
       </div>
-      <div className="px-6 md:px-2">{mainContent}</div>
+      <div>{mainContent}</div>
     </div>
   );
 

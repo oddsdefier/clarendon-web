@@ -19,7 +19,7 @@ export default function CustomBreadcrumb({
   secondLink = "",
 }: CustomBreadcrumbProps) {
   return (
-    <Breadcrumb className="py-5">
+    <Breadcrumb className="bg-white px-6 py-5 lg:px-0">
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink href="/">Home</BreadcrumbLink>
