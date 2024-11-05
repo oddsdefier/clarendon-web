@@ -157,19 +157,21 @@ const BackToNewsLink = () => (
     {" "}
     <Link
       to="/all-news/"
-      className="rounded-full bg-clarc-blue px-4 py-3 text-clarc-gold transition-colors duration-200 hover:bg-clarc-gold hover:text-clarc-blue"
+      className="rounded-full bg-clarc-blue px-5 py-4 text-clarc-gold transition-colors duration-200 hover:bg-clarc-gold hover:text-clarc-blue lg:px-6"
     >
-      View All News
+      <span className="text-sm text-clarc-gold group-hover:text-clarc-blue lg:text-base">
+        {"View All News"}
+      </span>
     </Link>
   </div>
 );
 
 const NewsHeader = ({ newsItem }: { newsItem: NewsItem }) => (
   <header className="mb-8">
-    <p className="mb-2 text-sm font-medium uppercase tracking-wider text-clarc-blue/70">
-      {newsItem.category}
+    <p className="mb-3 text-sm font-medium uppercase tracking-wider text-clarc-blue/70">
+      {"— "} {newsItem.category}
     </p>
-    <h1 className="mb-3 text-3xl font-bold text-clarc-blue lg:text-4xl">
+    <h1 className="mb-3 text-3xl font-bold leading-[1] text-clarc-blue lg:text-4xl">
       {newsItem.title}
     </h1>
     <div className="flex items-center space-x-2 text-sm text-muted-foreground outline-none lg:space-x-4">
