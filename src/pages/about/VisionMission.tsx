@@ -5,6 +5,7 @@ import { Separator } from "@radix-ui/react-separator";
 import React from "react";
 import AboutUs from "./components/AboutUsSide";
 import Header from "@/components/Header";
+import CustomBreadcrumb from "@/components/BreadCrumb";
 
 const VisionMission: React.FC = () => {
   const sections = [staticContent.mission, staticContent.vision];
@@ -20,6 +21,11 @@ const VisionMission: React.FC = () => {
   };
   const pageContent = (
     <div className="no-scrollbar flex-grow lg:h-[calc(100vh-2rem)] lg:overflow-y-auto lg:px-16">
+      <CustomBreadcrumb
+        currentPage="Mission and Vision"
+        secondLink="/about"
+        secondTitle="About"
+      />
       <Header img={img} title={title} headerConfig={headerConfig} />
       <div className="px-6 py-5 md:px-2">
         {sections.map((section) => (

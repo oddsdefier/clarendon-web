@@ -153,14 +153,13 @@ const NotFound = () => (
 );
 
 const BackToNewsLink = () => (
-  <div className="flex w-full items-center justify-center">
-    {" "}
+  <div className="flex w-full items-center justify-center py-4">
     <Link
       to="/all-news/"
-      className="rounded-full bg-clarc-blue px-5 py-4 text-clarc-gold transition-colors duration-200 hover:bg-clarc-gold hover:text-clarc-blue lg:px-6"
+      className="group rounded-full bg-clarc-blue px-5 py-4 text-clarc-gold transition-colors duration-300 hover:bg-clarc-gold hover:text-clarc-blue lg:px-6"
     >
       <span className="text-sm text-clarc-gold group-hover:text-clarc-blue lg:text-base">
-        {"View All News"}
+        {"Read More"}
       </span>
     </Link>
   </div>

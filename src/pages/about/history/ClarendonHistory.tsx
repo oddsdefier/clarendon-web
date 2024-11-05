@@ -25,7 +25,7 @@ export default function ClarendonHistory() {
     </div>
   );
   return (
-    <div className="flex-1 lg:py-5">
+    <div className="flex-1">
       {Header}
       <section className="space-y-8 bg-background px-6 text-foreground lg:px-2">
         <div className={divStyle}>

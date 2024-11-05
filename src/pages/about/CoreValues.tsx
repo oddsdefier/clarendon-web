@@ -6,6 +6,7 @@ import React, { useRef } from "react";
 import AboutUs from "./components/AboutUsSide";
 import Header from "../../components/Header";
 import PageLayout from "@/components/PageLayout";
+import CustomBreadcrumb from "@/components/BreadCrumb";
 
 const CoreValues: React.FC = () => {
   const mainContentRef = useRef<HTMLDivElement>(null);
@@ -39,6 +40,11 @@ const CoreValues: React.FC = () => {
       ref={mainContentRef}
       className="no-scrollbar flex-grow lg:h-[calc(100vh-2rem)] lg:overflow-y-auto lg:px-16 lg:pb-72"
     >
+      <CustomBreadcrumb
+        currentPage="Core Values"
+        secondLink="/about"
+        secondTitle="About"
+      />
       <Header img={img} title={title} headerConfig={headerConfig} />
       <div className="px-6 py-5 md:px-2">
         {sections.map((section) => (

@@ -34,7 +34,7 @@ const NewsCard = React.memo(({ item }: { item: NewsItem }) => (
             {"— "}
             {item.category}
           </h4>
-          <h2 className="mb-3 line-clamp-2 text-xl font-semibold leading-[1.1] text-clarc-blue lg:text-2xl">
+          <h2 className="mb-3 line-clamp-2 text-xl font-semibold leading-[1.1] text-clarc-blue">
             {item.title}
           </h2>
           <div className="flex items-center justify-start gap-1">

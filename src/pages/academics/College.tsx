@@ -31,6 +31,7 @@ const College: React.FC = () => {
     titleClassName:
       "lg:text-5xl uppercase italic text-white tracking-wider font-universal_serif",
   };
+
   const pageContent = (
     <div
       ref={mainContentRef}
@@ -53,7 +54,7 @@ const College: React.FC = () => {
                 Logo
               </div> */}
               <div className="z-20">
-                <h1 className="relative inline-flex text-lg font-bold text-clarc-gold lg:text-xl">
+                <h1 className="relative inline-flex text-lg font-bold text-clarc-white lg:text-xl">
                   <span className="z-10 bg-clarc-blue py-2 pr-6">
                     {course.title}
                     <span className="ml-2 font-medium italic">{`(${course.code})`}</span>

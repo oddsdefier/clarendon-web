@@ -25,7 +25,7 @@ export default function Header({ img, title, headerConfig = {} }: HeaderProps) {
   return (
     <div
       className={cn(
-        "relative flex h-48 items-center justify-center overflow-hidden bg-clarc-blue py-2 md:rounded-sm lg:mb-5 lg:mt-5",
+        "relative flex h-48 items-center justify-center overflow-hidden bg-clarc-blue py-2 md:rounded-sm lg:mb-5",
         containerClassName,
       )}
     >

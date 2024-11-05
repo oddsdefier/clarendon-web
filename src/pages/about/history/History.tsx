@@ -4,7 +4,7 @@ import Timeline from "./Timeline";
 import AboutUs from "../components/AboutUsSide";
 import OnThisPage from "@/components/OnThisPage";
 import PageLayout from "@/components/PageLayout";
-
+import CustomBreadcrumb from "@/components/BreadCrumb";
 export default function History() {
   const mainContentRef = useRef<HTMLDivElement>(null);
   const navItems = [
@@ -39,6 +39,11 @@ export default function History() {
       className="no-scrollbar flex-grow lg:h-[calc(100vh-2rem)] lg:overflow-y-auto lg:px-16"
     >
       <div>
+        <CustomBreadcrumb
+          currentPage="History"
+          secondLink="/about"
+          secondTitle="About"
+        />
         <ClarendonHistory />
         <Timeline />
       </div>

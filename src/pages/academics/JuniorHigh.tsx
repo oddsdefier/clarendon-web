@@ -29,7 +29,7 @@ const JuniorHigh: React.FC = () => {
         <div className="lg:py-5">
           {hsOfferingData.junior.map((item) => (
             <div className="overflow-hidden bg-clarc-gold px-6 py-8 pb-5 text-clarc-blue lg:mb-12 lg:rounded-sm">
-              <p className="relative z-10 inline-flex text-base text-clarc-gold">
+              <p className="relative z-10 inline-flex text-base text-clarc-white">
                 <span className="z-10 bg-clarc-blue py-2 pr-6 text-xl font-bold leading-[1]">
                   {item.classType}
                 </span>

@@ -73,26 +73,26 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' },
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
-				}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' },
+				},
+				spin: {
+					to: { transform: 'rotate(360deg)' },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'spin-slow-1': 'spin 60s linear infinite',
+				'spin-slow-2': 'spin 120s linear infinite',
+				'spin-slow-3': 'spin 180s linear infinite',
+				'spin-slow-4': 'spin 240s linear infinite',
+				'spin-slow-5': 'spin 300s linear infinite',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
