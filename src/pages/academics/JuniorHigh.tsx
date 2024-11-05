@@ -5,6 +5,7 @@ import PageLayout from "@/components/PageLayout";
 import { hsOfferingData } from "@/utils/data_hs_offering";
 import { clarcAssets } from "@/utils/link_images";
 import Header from "@/components/Header";
+import CustomBreadcrumb from "@/components/BreadCrumb";
 
 const JuniorHigh: React.FC = () => {
   const navItems = [{ href: "#sample", label: "Sample" }];
@@ -22,6 +23,11 @@ const JuniorHigh: React.FC = () => {
       ref={mainContentRef}
       className="no-scrollbar flex-grow bg-clarc-gold lg:h-[calc(100vh-2rem)] lg:overflow-y-auto lg:bg-transparent lg:px-16"
     >
+      <CustomBreadcrumb
+        currentPage="Junior High"
+        secondLink="/academics"
+        secondTitle="Academics"
+      />
       <div id="junior-high">
         <Header title={title} img={headerImg} headerConfig={headerConfig} />
       </div>

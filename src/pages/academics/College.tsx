@@ -5,6 +5,7 @@ import { coursesData } from "@/utils/data_courses";
 import { clarcAssets } from "@/utils/link_images";
 import React, { useRef } from "react";
 import AcademicsSide from "./components/AcademicsSide";
+import CustomBreadcrumb from "@/components/BreadCrumb";
 
 const College: React.FC = () => {
   const mainContentRef = useRef<HTMLDivElement>(null);
@@ -37,6 +38,11 @@ const College: React.FC = () => {
       ref={mainContentRef}
       className="no-scrollbar flex-grow bg-clarc-gold lg:h-[calc(100vh-2rem)] lg:overflow-y-auto lg:bg-transparent lg:px-16"
     >
+      <CustomBreadcrumb
+        currentPage="College"
+        secondLink="/academics"
+        secondTitle="Academics"
+      />
       <div id="college">
         <Header title={title} img={headerImg} headerConfig={headerConfig} />
       </div>

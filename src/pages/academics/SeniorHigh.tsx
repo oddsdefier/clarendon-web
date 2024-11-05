@@ -1,13 +1,14 @@
 import React, { useRef } from "react";
 import AcademicsSide from "./components/AcademicsSide";
-import OnThisPage from "@/components/OnThisPage";
+// import OnThisPage from "@/components/OnThisPage";
 import PageLayout from "@/components/PageLayout";
 import { hsOfferingData } from "@/utils/data_hs_offering";
 import Header from "@/components/Header";
 import { clarcAssets } from "@/utils/link_images";
+import CustomBreadcrumb from "@/components/BreadCrumb";
 
 const SeniorHigh: React.FC = () => {
-  const navItems = [{ href: "#sample", label: "Sample" }];
+  // const navItems = [{ href: "#sample", label: "Sample" }];
   const mainContentRef = useRef<HTMLDivElement>(null);
 
   const title = "Senior High School";
@@ -22,6 +23,11 @@ const SeniorHigh: React.FC = () => {
       ref={mainContentRef}
       className="no-scrollbar flex-grow bg-clarc-gold lg:h-[calc(100vh-2rem)] lg:overflow-y-auto lg:bg-transparent lg:px-16"
     >
+      <CustomBreadcrumb
+        currentPage="Senior High"
+        secondLink="/academics"
+        secondTitle="Academics"
+      />
       <div id="senior-high">
         <Header title={title} img={headerImg} headerConfig={headerConfig} />
       </div>
@@ -46,21 +52,21 @@ const SeniorHigh: React.FC = () => {
     </div>
   );
 
-  const observerOptions = {
-    rootMargin: "-5% 0px -60% 0px",
-    threshold: 0.5,
-  };
+  // const observerOptions = {
+  //   rootMargin: "-5% 0px -60% 0px",
+  //   threshold: 0.5,
+  // };
 
   return (
     <PageLayout
       mainContent={pageContent}
       sidebarContent={
         <>
-          <OnThisPage
+          {/* <OnThisPage
             mainContentRef={mainContentRef}
             navItems={navItems}
             observerOptions={observerOptions}
-          />
+          /> */}
           <AcademicsSide />
         </>
       }

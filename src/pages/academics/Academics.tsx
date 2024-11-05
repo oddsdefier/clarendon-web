@@ -6,6 +6,7 @@ import PageLayout from "@/components/PageLayout";
 import { coursesData } from "@/utils/data_courses";
 import { hsOfferingData } from "@/utils/data_hs_offering";
 import { clarcAssets } from "@/utils/link_images";
+import CustomBreadcrumb from "@/components/BreadCrumb";
 const Academics: React.FC = () => {
   // const navItems = [{ href: "#sample", label: "Sample" }];
   const mainContentRef = useRef<HTMLDivElement>(null);
@@ -15,7 +16,12 @@ const Academics: React.FC = () => {
   const listItemStyle = "text-base text-muted-foreground lg:text-lg";
   const h3Style = "mb-3 text-lg font-semibold text-clarc-blue/90 px-3";
   const mainContent = (
-    <div className="mx-auto max-w-lg space-y-10 py-5 pb-48">
+    <div className="mx-auto max-w-lg space-y-4 pb-48">
+      <CustomBreadcrumb
+        currentPage="Overview"
+        secondLink="/academics"
+        secondTitle="Academics"
+      />
       <section>
         <h2 className={titleStyle}>College Programs</h2>
         <ul className="list-disc space-y-2 pl-6">
