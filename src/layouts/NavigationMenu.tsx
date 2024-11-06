@@ -1,6 +1,3 @@
-import * as React from "react";
-import { Link } from "react-router-dom";
-import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -9,7 +6,10 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
 import { navigationData } from "@/utils/data_navigation";
+import * as React from "react";
+import { Link } from "react-router-dom";
 
 const navTriggerStyle = "text-clarc-blue hover:text-clarc-blue/90";
 

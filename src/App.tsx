@@ -29,6 +29,7 @@ import PhilosophyOfEducation from "@/pages/about/PhilosophyOfEducation";
 import VisionMission from "@/pages/about/VisionMission";
 import CoreValues from "@/pages/about/CoreValues";
 import SchoolEmblem from "@/pages/about/SchoolEmblem";
+import Hymn from "@/pages/about/Hymn";
 
 //Academics Page
 import College from "@/pages/academics/College";
@@ -97,6 +98,7 @@ const MainContent: React.FC = () => {
             element={<PhilosophyOfEducation />}
           />
           <Route path="/about/core-values" element={<CoreValues />} />
+          <Route path="/about/hymn" element={<Hymn />} />
           <Route path="/about/mission-vision" element={<VisionMission />} />
           <Route path="/about/school-emblem" element={<SchoolEmblem />} />
           <Route path="/about" element={<Navigate to="/about/history" />} />

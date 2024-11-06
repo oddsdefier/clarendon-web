@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import AdmissionSide from "./components/AdmissionSide";
 import OnThisPage from "@/components/OnThisPage";
 import PageLayout from "@/components/PageLayout";
-import { Construction } from "lucide-react";
+// import { Construction } from "lucide-react";
 
 const Overview: React.FC = () => {
   const navItems = [{ href: "#sample", label: "Sample" }];
@@ -13,28 +13,89 @@ const Overview: React.FC = () => {
     threshold: 0.5,
   };
 
-  const idk = (
-    <div className="flex min-h-svh items-center justify-center lg:min-h-lvh">
-      <div className="gap-2">
-        <div className="mb-3 h-6 w-6 rounded-md">
-          <Construction className="h-8 w-8 text-clarc-blue/60" />
+  
+  const h1Style = "mb-3 border-b pb-2 text-2xl font-bold text-clarc-blue";
+  const h2Style = "mb-3 text-xl font-semibold text-clarc-blue/90";
+
+  const mainContent = (
+    <div className="mx-auto max-w-4xl py-5 pb-24 lg:pb-48">
+      <h1 className={h1Style}>Guidelines</h1>
+      <p className="mb-2 leading-relaxed text-gray-600">
+        In order to be an enrolled student at Clarendon, the following
+        documentary requirements must be met:
+      </p>
+      <p className="mb-4 leading-relaxed text-gray-600">
+        Candidates must submit a PSA copy of their birth certificate along with
+        form 137, form 138 and a Good Moral certificate with the Registrar's
+        office from where you will be directed to make the necessary payments
+        for enrolment.
+      </p>
+      <h1 className={h1Style}>College Enrollment Process:</h1>
+      <div className="space-y-6">
+        <div>
+          <h2 className={h2Style}>Step 1: Application</h2>
+          <ul className="list-disc space-y-2 pl-5 text-gray-600">
+            <li>
+              Application Form: Obtain an application form from the college's
+              admissions office.
+            </li>
+            <li>
+              Complete Application: Fill out the application form accurately and
+              completely.
+            </li>
+            <li>
+              Submit Documents: Gather required documents such as academic
+              transcripts, identification, and any other specified materials.
+            </li>
+            <li>Application Fee: Pay the application fee, if applicable.</li>
+          </ul>
         </div>
         <div>
-          <h1 className="mb-1 text-2xl font-bold lowercase text-clarc-blue">
-            Under Construction...
-          </h1>
-          <p className="text-base font-medium text-clarc-blue/80 lg:text-lg">
-            Sir/Ma'am, I don't <span className="font-bold">yet</span> have any
-            idea what to put here.
+          <h2 className={h2Style}>Step 2: Admission</h2>
+          <ul className="list-disc space-y-2 pl-5 text-gray-600">
+            <li>
+              Review Process: The college reviews your application and
+              documents.
+            </li>
+            <li>
+              Notification: Your application for admission will be reviewed and
+              determined at the Registrar's Office.
+            </li>
+          </ul>
+          <p className="mt-3 text-gray-600">
+            If accepted, confirm your intention to enroll by the specified
+            deadline.
           </p>
         </div>
-        <a href="/academics/"></a>
-        <button
-          onClick={() => window.history.back()}
-          className="mt-4 rounded bg-clarc-blue px-4 py-2 font-semibold text-clarc-gold hover:bg-clarc-blue/90"
-        >
-          Go Back
-        </button>
+        <div>
+          <h2 className={h2Style}>Step 3: Enrollment</h2>
+          <ul className="list-disc space-y-2 pl-5 text-gray-600">
+            <li>
+              Orientation: Attend any orientation sessions scheduled by the
+              college.
+            </li>
+            <li>
+              Course Selection: Choose your courses for the upcoming semester,
+              considering prerequisites and your academic plan.
+            </li>
+            <li>
+              Registration: Register for courses online or in-person, following
+              the college's instructions.
+            </li>
+            <li>
+              Payment: Pay tuition and fees by the deadline using the specified
+              payment methods.
+            </li>
+            <li>
+              ID Card: Obtain your student ID card from the college's student
+              affairs office.
+            </li>
+            <li>
+              Finalize Enrollment: Ensure all enrollment steps are completed
+              before the start of classes.
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
@@ -43,7 +104,7 @@ const Overview: React.FC = () => {
       ref={mainContentRef}
       className="no-scrollbar flex-grow lg:h-[calc(100vh-2rem)] lg:overflow-y-auto lg:px-16"
     >
-      <div className="px-6 md:px-2">{idk}</div>
+      <div className="px-6 md:px-2">{mainContent}</div>
     </div>
   );
   return (

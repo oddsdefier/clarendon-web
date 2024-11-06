@@ -3,7 +3,7 @@ import { navigationData } from "@/utils/data_navigation";
 import React from "react";
 
 const admissionsData = navigationData.find(
-  (category) => category.title === "Admissions",
+  (category) => category.title === "Admission",
 );
 
 if (!admissionsData) {

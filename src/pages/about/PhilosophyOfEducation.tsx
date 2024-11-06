@@ -14,7 +14,7 @@ const philosophyOfEducation: React.FC = () => {
   const headerConfig = {
     imageWrapperClassName: "absolute inset-4",
     bgImageClassName: "bg-contain",
-    containerClassName: "bg-clarc-blue",
+    containerClassName: "bg-clarc-blue",  
     backdropClassName: "absolute inset-0",
     titleClassName: "text-clarc-white",
   };

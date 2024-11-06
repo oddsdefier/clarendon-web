@@ -39,6 +39,11 @@ export const navigationData: NavCategory[] = [
         href: "/about/core-values",
         description: "Learn about the core values of Clarendon College.",
       },
+      {
+        title: "Hymn",
+        href: "/about/hymn",
+        description: "Learn about the core values of Clarendon College.",
+      },
     ],
   },
 
@@ -72,7 +77,7 @@ export const navigationData: NavCategory[] = [
     ],
   },
   {
-    title: "Admissions",
+    title: "Admission",
     items: [
       {
         title: "Overview",
