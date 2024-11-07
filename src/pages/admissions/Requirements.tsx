@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import AdmissionSide from "./components/AdmissionSide";
 import OnThisPage from "@/components/OnThisPage";
 import PageLayout from "@/components/PageLayout";
-import { Construction } from "lucide-react";
 
 const Requirements: React.FC = () => {
   const navItems = [{ href: "#sample", label: "Sample" }];
@@ -13,28 +12,38 @@ const Requirements: React.FC = () => {
     threshold: 0.5,
   };
 
-  const idk = (
-    <div className="flex min-h-svh items-center justify-center lg:min-h-lvh">
-      <div className="gap-2">
-        <div className="mb-3 h-6 w-6 rounded-md">
-          <Construction className="h-8 w-8 text-clarc-blue/60" />
-        </div>
-        <div>
-          <h1 className="mb-1 text-2xl font-bold lowercase text-clarc-blue">
-            Under Construction...
+  const mainContent = (
+    <div>
+      <div className="mx-auto max-w-2xl space-y-8 p-6">
+        <div className="rounded-lg bg-white p-6 shadow-md">
+          <h1 className="mb-4 text-2xl font-bold text-gray-800">
+            College Requirements
           </h1>
-          <p className="text-base font-medium text-clarc-blue/80 lg:text-lg">
-            Sir/Ma'am, I don't <span className="font-bold">yet</span> have any
-            idea what to put here.
+          <p className="mb-4 text-gray-600">
+            In order to be an enrolled student at Clarendon, the following
+            documentary requirements must be met:
           </p>
+          <ul className="list-disc space-y-2 pl-6 text-gray-700">
+            <li>PSA copy of birth certificate</li>
+            <li>Form 137</li>
+            <li>Form 138</li>
+            <li>Good Moral Certificate</li>
+          </ul>
         </div>
-        <a href="/academics/"></a>
-        <button
-          onClick={() => window.history.back()}
-          className="mt-4 rounded bg-clarc-blue px-4 py-2 font-semibold text-clarc-gold hover:bg-clarc-blue/90"
-        >
-          Go Back
-        </button>
+        <div className="rounded-lg bg-white p-6 shadow-md">
+          <h1 className="mb-4 text-2xl font-bold text-gray-800">
+            Special Science Class
+          </h1>
+          <p className="mb-4 text-gray-600">
+            First and second quarter grades in Grade 6:
+          </p>
+          <ul className="list-disc space-y-2 pl-6 text-gray-700">
+            <li>85% and above in Science, Math, and English</li>
+            <li>85% in other subjects</li>
+            <li>No grades lower than 80%</li>
+            <li>General average of 85% and above</li>
+          </ul>
+        </div>
       </div>
     </div>
   );
@@ -43,7 +52,7 @@ const Requirements: React.FC = () => {
       ref={mainContentRef}
       className="no-scrollbar flex-grow lg:h-[calc(100vh-2rem)] lg:overflow-y-auto lg:px-16"
     >
-      <div className="px-6 md:px-2">{idk}</div>
+      <div className="px-6 md:px-2">{mainContent}</div>
     </div>
   );
   return (
