@@ -19,38 +19,38 @@ export function ClarendonNavigationMenu() {
     <NavigationMenu className="z-50">
       <NavigationMenuList>
         <>
-          {navigationData.map((section) => (
-            <NavigationMenuItem key={section.title}>
-              {/* Nav Item with Children */}
-              <NavigationMenuTrigger className={navTriggerStyle}>
-                {section.title}
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[600px] lg:grid-cols-[.75fr_1fr]">
-                  {section.items.map((item) => (
-                    <ListItem
-                      key={item.title}
-                      title={item.title}
-                      to={item.href}
-                    >
-                      {item.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-              {/* Nav Item with Children */}
-            </NavigationMenuItem>
-          ))}
-
-          {/* Nav Item as Link or Have no Children */}
-          <NavigationMenuItem>
-            <Link to="/about">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Documentation
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          {/* Nav Item as Link or Have no Children */}
+          {navigationData.map((section) =>
+            section.type === "link" ? (
+              // Nav Item as Link or No Children (Render Documentation here)
+              <NavigationMenuItem key="documentation">
+                <Link to="/admission">
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Admission
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            ) : (
+              <NavigationMenuItem key={section.title}>
+                {/* Nav Item with Children */}
+                <NavigationMenuTrigger className={navTriggerStyle}>
+                  {section.title}
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[600px] lg:grid-cols-[.75fr_1fr]">
+                    {section.items.map((item) => (
+                      <ListItem
+                        key={item.title}
+                        title={item.title}
+                        to={item.href}
+                      >
+                        {item.description}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            ),
+          )}
         </>
       </NavigationMenuList>
     </NavigationMenu>

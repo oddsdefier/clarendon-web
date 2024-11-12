@@ -38,7 +38,7 @@ import JuniorHigh from "@/pages/academics/JuniorHigh";
 import Academics from "./pages/academics/Academics";
 
 //Admission Page
-import Admission from "@/pages/admissions/Overview";
+import Admission from "@/pages/admissions/Admission";
 import Requirements from "./pages/admissions/Requirements";
 import EnrollmentProcedures from "./pages/admissions/EnrollmentProcedures";
 import FeesPaymentsDiscounts from "./pages/admissions/FeesPaymentsDiscounts";
@@ -114,7 +114,7 @@ const MainContent: React.FC = () => {
           <Route path="/academics/college" element={<College />} />
 
           {/* ADMISSION */}
-          <Route path="/admissions/overview" element={<Admission />} />
+          <Route path="/admission" element={<Admission />} />
           <Route path="/admissions/requirements" element={<Requirements />} />
           <Route
             path="/admissions/enrollment"

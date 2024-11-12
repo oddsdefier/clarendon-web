@@ -6,6 +6,7 @@ export interface NavItem {
 
 export interface NavCategory {
   title: string;
+  type?: string;
   items: NavItem[];
 }
 
@@ -78,10 +79,11 @@ export const navigationData: NavCategory[] = [
   },
   {
     title: "Admission",
+    type: "link",
     items: [
       {
         title: "Overview",
-        href: "/admissions/overview",
+        href: "/admission",
         description:
           "Get an overview of the admission process at Clarendon College.",
       },
