@@ -20,43 +20,41 @@ const Admission: React.FC = () => {
     threshold: 0.1,
   };
 
-  console.log(admissionRequirements.college.scholarships[0]);
-
   const h2Style = "text-lg font-semibold text-clarc-blue/90";
   const mainContent = (
-    <>
+    <div>
       <CustomBreadcrumb
-        currentPage="Procedure, Requirements, and Scholarship"
+        currentPage="Admission"
         secondLink="/admission"
         secondTitle="Admission"
       />
-      <div id="college" className="mb-10">
-        <h1 className="block bg-gradient-to-r from-clarc-blue to-clarc-gold p-1 px-2 text-xl font-bold uppercase text-clarc-white">
+      <div id="college" className="mb-10 px-6 lg:px-0">
+        <h1 className="bg-gradient-to-r from-clarc-blue to-clarc-gold p-1 px-2 text-xl font-bold uppercase text-clarc-white">
           College Department
         </h1>
-        <div className="mb-5 flex gap-10">
-          <div className="flex-1 py-5 pr-3">
-            <h1 className="mb-3 block font-universal_serif text-xl font-bold tracking-wider text-clarc-blue">
+        <div className="mb-5 w-full lg:flex lg:flex-row lg:gap-10">
+          <div className="flex-1 py-5 lg:pr-3">
+            <h1 className="mb-3 font-universal_serif text-xl font-bold tracking-wider text-clarc-blue">
               Enrollment Procedures
             </h1>
             <div className="space-y-8">
               <div id="step-application">
                 <h2 className={h2Style}>Application</h2>
                 <ul className="list-disc space-y-2 pl-5 text-gray-600">
-                  <li>
+                  <li className="break-words">
                     <span className="font-bold">Application Form: </span>Obtain
                     an application form from the college's admissions office.
                   </li>
-                  <li>
+                  <li className="break-words">
                     <span className="font-bold">Complete Application:</span>{" "}
                     Fill out the application form accurately and completely.
                   </li>
-                  <li>
+                  <li className="break-words">
                     <span className="font-bold">Submit Documents:</span> Gather
                     required documents such as academic transcripts,
                     identification, and any other specified materials.
                   </li>
-                  <li>
+                  <li className="break-words">
                     <span className="font-bold">Application Fee:</span> Pay the
                     application fee, if applicable.
                   </li>
@@ -65,11 +63,11 @@ const Admission: React.FC = () => {
               <div id="step-admission">
                 <h2 className={h2Style}>Admission</h2>
                 <ul className="list-disc space-y-2 pl-5 text-gray-600">
-                  <li>
+                  <li className="break-words">
                     <span className="font-bold">Review Process:</span> The
                     college reviews your application and documents.
                   </li>
-                  <li>
+                  <li className="break-words">
                     <span className="font-bold">Notification:</span> Your
                     application for admission will be reviewed and determined at
                     the Registrar's Office.
@@ -83,29 +81,29 @@ const Admission: React.FC = () => {
               <div className="step-enrollment">
                 <h2 className={h2Style}>Enrollment</h2>
                 <ul className="list-disc space-y-2 pl-5 text-gray-600">
-                  <li>
+                  <li className="break-words">
                     <span className="font-bold">Orientation:</span> Attend any
                     orientation sessions scheduled by the college.
                   </li>
-                  <li>
+                  <li className="break-words">
                     <span className="font-bold">Course Selection:</span> Choose
                     your courses for the upcoming semester, considering
                     prerequisites and your academic plan.
                   </li>
-                  <li>
+                  <li className="break-words">
                     <span className="font-bold">Registration:</span> Register
                     for courses online or in-person, following the college's
                     instructions.
                   </li>
-                  <li>
+                  <li className="break-words">
                     <span className="font-bold">Payment:</span> Pay tuition and
                     fees by the deadline using the specified payment methods.
                   </li>
-                  <li>
+                  <li className="break-words">
                     <span className="font-bold">ID Card:</span> Obtain your
                     student ID card from the college's student affairs office.
                   </li>
-                  <li>
+                  <li className="break-words">
                     <span className="font-bold">Finalize Enrollment:</span>{" "}
                     Ensure all enrollment steps are completed before the start
                     of classes.
@@ -114,7 +112,7 @@ const Admission: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="flex-1 py-5 lg:pb-48" id="college-requirements">
+          <div className="flex-1 py-5" id="college-requirements">
             <h1 className="mb-3 block font-universal_serif text-xl font-bold tracking-wider text-clarc-blue">
               Requirements
             </h1>
@@ -175,32 +173,32 @@ const Admission: React.FC = () => {
           </div>
         </div>
       </div>
-      <div id="high-school" className="pb-28">
-        <h1 className="block bg-gradient-to-r from-clarc-blue to-clarc-gold p-1 px-2 text-xl font-bold uppercase text-clarc-white">
+      <div id="high-school" className="px-6 pb-28 lg:px-0">
+        <h1 className="bg-gradient-to-r from-clarc-blue to-clarc-gold p-1 px-2 text-xl font-bold uppercase text-clarc-white">
           High School Department
         </h1>
-        <div className="mb-5 flex gap-10">
-          <div className="flex-1 space-y-8 py-5 pr-3">
+        <div className="mb-5 w-full lg:flex lg:flex-row lg:gap-10">
+          <div className="flex-1 space-y-8 py-5 lg:pr-3">
             <div>
-              <h1 className="mb-3 block font-universal_serif text-xl font-bold tracking-wider text-clarc-blue">
+              <h1 className="mb-3 font-universal_serif text-xl font-bold tracking-wider text-clarc-blue">
                 Enrollment Procedures
               </h1>
               <h2 className={h2Style}>Application</h2>
               <ul className="list-disc space-y-2 pl-5 text-gray-600">
-                <li>
+                <li className="break-words">
                   <span className="font-bold">Application Form: </span>Obtain an
                   application form from the college's admissions office.
                 </li>
-                <li>
+                <li className="break-words">
                   <span className="font-bold">Complete Application:</span> Fill
                   out the application form accurately and completely.
                 </li>
-                <li>
+                <li className="break-words">
                   <span className="font-bold">Submit Documents:</span> Gather
                   required documents such as academic transcripts,
                   identification, and any other specified materials.
                 </li>
-                <li>
+                <li className="break-words">
                   <span className="font-bold">Application Fee:</span> Pay the
                   application fee, if applicable.
                 </li>
@@ -209,11 +207,11 @@ const Admission: React.FC = () => {
             <div>
               <h2 className={h2Style}>Admission</h2>
               <ul className="list-disc space-y-2 pl-5 text-gray-600">
-                <li>
+                <li className="break-words">
                   <span className="font-bold">Review Process:</span> The college
                   reviews your application and documents.
                 </li>
-                <li>
+                <li className="break-words">
                   <span className="font-bold">Notification:</span> Your
                   application for admission will be reviewed and determined at
                   the Registrar's Office.
@@ -295,14 +293,14 @@ const Admission: React.FC = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
   const pageContent = (
     <div
       ref={mainContentRef}
       className="no-scrollbar flex-grow lg:h-[calc(100vh-2rem)] lg:overflow-y-auto lg:px-6"
     >
-      <div className="px-6 md:px-2">{mainContent}</div>
+      <div>{mainContent}</div>
     </div>
   );
   return (
@@ -315,7 +313,6 @@ const Admission: React.FC = () => {
             navItems={navItems}
             observerOptions={observerOptions}
           />
-          
         </>
       }
     />
