@@ -16,8 +16,8 @@ const Admission: React.FC = () => {
   const mainContentRef = useRef<HTMLDivElement>(null);
 
   const observerOptions = {
-    rootMargin: "-5% 0px -90% 0px",
-    threshold: 0.1,
+    rootMargin: "0% 0px -40% 0px",
+    threshold: 1,
   };
 
   const h2Style = "text-lg font-semibold text-clarc-blue/90";
@@ -28,10 +28,13 @@ const Admission: React.FC = () => {
         secondLink="/admission"
         secondTitle="Admission"
       />
-      <div id="college" className="mb-10 px-6 lg:px-0">
-        <h1 className="bg-gradient-to-r from-clarc-blue to-clarc-gold p-1 px-2 text-xl font-bold uppercase text-clarc-white">
-          College Department
-        </h1>
+      <div className="mb-10 px-6 lg:px-0">
+        <div id="college">
+          <h1 className="bg-gradient-to-r from-clarc-blue to-clarc-gold p-1 px-2 text-xl font-bold uppercase text-clarc-white">
+            College Department
+          </h1>
+        </div>
+
         <div className="mb-5 w-full lg:flex lg:flex-row lg:gap-10">
           <div className="flex-1 py-5 lg:pr-3">
             <h1 className="mb-3 font-universal_serif text-xl font-bold tracking-wider text-clarc-blue">
@@ -173,10 +176,12 @@ const Admission: React.FC = () => {
           </div>
         </div>
       </div>
-      <div id="high-school" className="px-6 pb-28 lg:px-0">
-        <h1 className="bg-gradient-to-r from-clarc-blue to-clarc-gold p-1 px-2 text-xl font-bold uppercase text-clarc-white">
-          High School Department
-        </h1>
+      <div className="px-6 pb-28 lg:px-0">
+        <div id="high-school">
+          <h1 className="bg-gradient-to-r from-clarc-blue to-clarc-gold p-1 px-2 text-xl font-bold uppercase text-clarc-white">
+            High School Department
+          </h1>
+        </div>
         <div className="mb-5 w-full lg:flex lg:flex-row lg:gap-10">
           <div className="flex-1 space-y-8 py-5 lg:pr-3">
             <div>
