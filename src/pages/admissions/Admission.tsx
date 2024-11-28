@@ -24,7 +24,7 @@ const Admission: React.FC = () => {
   const mainContent = (
     <div>
       <CustomBreadcrumb
-        currentPage="Admission"
+        currentPage=""
         secondLink="/admission"
         secondTitle="Admission"
       />

@@ -66,12 +66,6 @@ export default function NewsDetail() {
     if (item) {
       setNewsItem({
         ...item,
-        author: "Jaylord Goleña",
-        authorImage: "/placeholder.svg?height=50&width=50",
-        content: `
-          <p style="font-size: 1rem">Chess Players Shine in Roxas District Meet Tournament</p>
-          <p>On October 11, 2024, at Roxas Central School, a thrilling chess competition happened that showcased some real potential among talented individuals. Aira Charis Fradejas won the girls' division and advanced to the unit meet, while Lyka Jane Sapupo achieved a respectable fourth-place performance. Joel Torino III finished ninth in the boys' category, while Zentgeilner Ali Mortel took first place and qualified for the unit meet. For the students, it was an excellent day full of strategy and friendly competition.</p>
-        `,
       });
     }
     const related = newsItems.filter((item) => item.slug !== slug).slice(0, 3);

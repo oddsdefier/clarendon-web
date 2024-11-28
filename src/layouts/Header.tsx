@@ -45,7 +45,7 @@ const Header: React.FC = () => {
         ) : (
           ""
         )}
-        <div className="container relative mx-auto flex h-16 items-center justify-between border-b border-clarc-blue/10 bg-white p-4 px-4 lg:p-3">
+        <div className="container relative mx-auto flex h-16 items-center justify-between border-b border-clarc-blue/10 p-4 lg:p-0">
           <Link
             to={"/"}
             className="z-10 flex items-center justify-center gap-1"
@@ -62,11 +62,11 @@ const Header: React.FC = () => {
               CLARENDON <br></br> COLLEGE
             </h1>
           </Link>
-          <div className="absolute hidden w-full items-center justify-center gap-10 lg:flex">
+          <div className="absolute hidden w-full items-center justify-center lg:flex">
             <ClarendonNavigationMenu />
           </div>
-          <div className="flex items-center justify-center gap-3">
-            <Search className="h-5 w-5 text-clarc-blue lg:h-6 lg:w-6" />
+          <div className="flex items-center justify-center">
+            <Search className="h-4 w-4 text-clarc-blue lg:h-5 lg:w-5" />
             <button onClick={toggleMenu} className="focus:outline-none">
               <motion.div
                 initial={false}

@@ -49,6 +49,9 @@ import WithdrawalTransfer from "./pages/admissions/WithdrawalTransfer";
 import AllNews from "@/pages/AllNews";
 import { newsItems } from "@/utils/data_news_and_events";
 
+//SDGs
+import ClarendonSDGs from "@/pages/sdg/ClarendonSDGs";
+
 // Loading component
 const Loading = () => <div className="p-4 text-center">Loading...</div>;
 
@@ -131,6 +134,10 @@ const MainContent: React.FC = () => {
 
           <Route path="/all-news" element={<AllNews news={newsItems} />} />
           <Route path="/admissions/scholarships" element={<Scholarships />} />
+
+          {/* SDG */}
+          <Route path="/sdg" element={<ClarendonSDGs />} />
+
           {/* NOT FOUND */}
           <Route path="*" element={<NotFound />} />
         </Routes>

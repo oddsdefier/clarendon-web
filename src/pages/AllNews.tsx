@@ -1,4 +1,3 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Pagination,
   PaginationContent,
@@ -81,41 +80,26 @@ export default function Component({ news }: { news: NewsItem[] }) {
           </SelectContent>
         </Select>
       </div>
-      <div className="flex flex-col gap-4">
+
+      <div className="grid grid-cols-1 gap-[0.05rem] md:grid-cols-2 lg:grid-cols-3">
         {currentNews.map((item) => (
-          <Link to={`/news/${item.slug}`} key={item.id}>
-            <Card className="overflow-hidden">
-              <div className="flex flex-col md:flex-row">
-                <CardHeader className="aspect-square w-full p-0 lg:w-32">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="h-full w-full object-cover lg:h-32"
-                  />
-                </CardHeader>
-                <CardContent className="flex-1 p-4">
-                  <div className="mb-2 text-sm text-muted-foreground">
-                    {item.category}
-                  </div>
-                  <CardTitle className="mb-2">{item.title}</CardTitle>
+          <Link to={`/news/${item.slug}`} key={item.id} className="w-full">
+            <div className="overflow-hidden border border-clarc-blue/20">
+              <div className="flex aspect-square h-64 w-full flex-col md:flex-row">
+                <div className="relative flex-1 p-5 py-8">
                   <div className="mb-4 text-sm text-muted-foreground">
                     {item.date}
                   </div>
-                  {item.author && (
-                    <div className="flex items-center">
-                      {item.authorImage && (
-                        <img
-                          src={item.authorImage}
-                          alt={item.author}
-                          className="mr-2 h-8 w-8 rounded-full"
-                        />
-                      )}
-                      <span className="text-sm">{item.author}</span>
-                    </div>
-                  )}
-                </CardContent>
+                  <div className="mb-2 text-pretty text-2xl font-bold leading-[1.1] text-clarc-blue">
+                    {item.title}
+                  </div>
+                  <div className="mt-10">
+                    <p className="py-2 text-sm text-sky-500">...</p>
+                    <p className="text-sm text-clarc-gold">Read More</p>
+                  </div>
+                </div>
               </div>
-            </Card>
+            </div>
           </Link>
         ))}
       </div>

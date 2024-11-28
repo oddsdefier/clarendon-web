@@ -1,3 +1,8 @@
+/**
+ * TODO: Revise the desktop navigation menu to match the design system
+ * - The navigation menu's content should be same for desktop and mobile
+ */
+
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -23,9 +28,9 @@ export function ClarendonNavigationMenu() {
             section.type === "link" ? (
               // Nav Item as Link or No Children (Render Documentation here)
               <NavigationMenuItem key="documentation">
-                <Link to="/admission">
+                <Link to={section.link || ""}>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Admission
+                    {section.title}
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
@@ -37,7 +42,7 @@ export function ClarendonNavigationMenu() {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[600px] lg:grid-cols-[.75fr_1fr]">
-                    {section.items.map((item) => (
+                    {section?.items?.map((item) => (
                       <ListItem
                         key={item.title}
                         title={item.title}

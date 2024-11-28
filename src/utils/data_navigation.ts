@@ -1,3 +1,9 @@
+/**
+ * Types here are messy and need to be cleaned up.
+ * The structure of objects in this file is not consistent.
+ * TODO: Refactor the types and structure of objects in this file.
+ */
+
 export interface NavItem {
   title: string;
   href: string;
@@ -7,7 +13,8 @@ export interface NavItem {
 export interface NavCategory {
   title: string;
   type?: string;
-  items: NavItem[];
+  link?: string;
+  items?: NavItem[];
 }
 
 export const navigationData: NavCategory[] = [
@@ -80,41 +87,8 @@ export const navigationData: NavCategory[] = [
   {
     title: "Admission",
     type: "link",
-    items: [
-      {
-        title: "Overview",
-        href: "/admission",
-        description:
-          "Get an overview of the admission process at Clarendon College.",
-      },
-      {
-        title: "Requirements",
-        href: "/admissions/requirements",
-        description:
-          "Review the requirements for admission to Clarendon College.",
-      },
-      {
-        title: "Enrollment Procedures",
-        href: "/admissions/enrollment",
-        description:
-          "Understand the enrollment procedures at Clarendon College.",
-      },
-      // {
-      // 	title: "Fees, Payments, and Discounts",
-      // 	href: "/admissions/fees-payments-discounts",
-      // 	description: "Find information on fees, payments, and discounts.",
-      // },
-      // {
-      // 	title: "Withdrawal or Transfer",
-      // 	href: "/admissions/withdrawal-transfer",
-      // 	description: "Learn about the process for student withdrawal or transfer.",
-      // },
-      {
-        title: "Scholarships",
-        href: "/admissions/scholarships",
-        description: "Explore scholarship opportunities at Clarendon College.",
-      },
-    ],
+    link: "admission",
+    items: [],
   },
   {
     title: "Campus Life",
@@ -141,5 +115,11 @@ export const navigationData: NavCategory[] = [
         description: "Discover what's happening at Clarendon College.",
       },
     ],
+  },
+  {
+    title: "SDGs",
+    type: "link",
+    link: "sdg",
+    items: [],
   },
 ];
