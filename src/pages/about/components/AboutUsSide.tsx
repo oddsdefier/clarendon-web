@@ -10,12 +10,13 @@ if (!aboutUsData) {
   console.error("About Us Data not found.");
 }
 
-const navItems = aboutUsData
-  ? aboutUsData.items.map((link) => ({
-      to: link.href,
-      label: link.title,
-    }))
-  : [];
+const navItems =
+  aboutUsData && aboutUsData.items
+    ? aboutUsData.items.map((link) => ({
+        to: link.href,
+        label: link.title,
+      }))
+    : [];
 
 const AboutUs: React.FC = () => {
   return <SideNavigation title="About Us" navItems={navItems} />;
