@@ -58,7 +58,7 @@ export const newsItems: NewsItem[] = [
     <p style="font-size: 1rem">Chess Players Shine in Roxas District Meet Tournament</p>
     <p>On October 11, 2024, at Roxas Central School, a thrilling chess competition happened that showcased some real potential among talented individuals. Aira Charis Fradejas won the girls' division and advanced to the unit meet, while Lyka Jane Sapupo achieved a respectable fourth-place performance. Joel Torino III finished ninth in the boys' category, while Zentgeilner Ali Mortel took first place and qualified for the unit meet. For the students, it was an excellent day full of strategy and friendly competition.</p>
   `,
-    sdg: [7, 11, 13, 14],
+    sdg: [17, 9, 13],
   },
   {
     id: "4",
@@ -74,6 +74,6 @@ export const newsItems: NewsItem[] = [
     <p style="font-size: 1rem">Chess Players Shine in Roxas District Meet Tournament</p>
     <p>On October 11, 2024, at Roxas Central School, a thrilling chess competition happened that showcased some real potential among talented individuals. Aira Charis Fradejas won the girls' division and advanced to the unit meet, while Lyka Jane Sapupo achieved a respectable fourth-place performance. Joel Torino III finished ninth in the boys' category, while Zentgeilner Ali Mortel took first place and qualified for the unit meet. For the students, it was an excellent day full of strategy and friendly competition.</p>
   `,
-    sdg: [4, 7, 9],
+    sdg: [4, 6, 1],
   },
 ];

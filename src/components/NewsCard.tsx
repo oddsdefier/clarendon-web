@@ -1,9 +1,8 @@
 import { NewsItem } from "@/utils/data_news_and_events";
-// import { Calendar } from "lucide-react";
+import { clarendonSDGs, sdgColorMap } from "@/utils/data_sdgs";
 import React from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "./ui/card";
-import { clarendonSDGs } from "@/utils/data_sdgs";
 
 import {
   Tooltip,
@@ -12,28 +11,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-const sdgColorMap = [
-  "#15335f",
-  "#c9b163",
-  "#fcfaee",
-  "#E5243B",
-  "#DDA83A",
-  "#4C9F38",
-  "#C5192D",
-  "#FF3A21",
-  "#26BDE2",
-  "#FCC30B",
-  "#A21942",
-  "#FD6925",
-  "#DD1367",
-  "#FD9D24",
-  "#BF8B2E",
-  "#3F7E44",
-  "#0A97D9",
-  "#56C02B",
-  "#00689D",
-  "#19486A",
-];
 const NewsCard = React.memo(({ item }: { item: NewsItem }) => (
   <Link to={`/news/${item.slug}`}>
     <Card className="h-96 transform overflow-hidden rounded-none bg-white shadow-none outline outline-1 outline-gray-200 transition duration-300 hover:bg-clarc-gold/20">
@@ -85,6 +62,7 @@ const NewsCard = React.memo(({ item }: { item: NewsItem }) => (
                     </a>
                   </TooltipTrigger>
                   <TooltipContent
+                    className="rounded-md p-2 text-sm text-white"
                     style={{ backgroundColor: `${sdgColorMap[sdg - 1]}` }}
                   >
                     {clarendonSDGs[sdg - 1].title}
