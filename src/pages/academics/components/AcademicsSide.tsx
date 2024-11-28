@@ -10,12 +10,13 @@ if (!academicsData) {
   console.error("Academics data not found");
 }
 
-const navItems = academicsData
-  ? academicsData.items.map((link) => ({
-      to: link.href,
-      label: link.title,
-    }))
-  : [];
+const navItems =
+  academicsData && academicsData.items
+    ? academicsData.items.map((link) => ({
+        to: link.href,
+        label: link.title,
+      }))
+    : [];
 const AcademicsSide: React.FC = () => {
   return <SideNavigation title="Academics" navItems={navItems} />;
 };

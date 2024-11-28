@@ -34,7 +34,7 @@ const MobileNavigation: React.FC = () => {
             </AccordionTrigger>
             <AccordionContent>
               <ul className="space-y-1">
-                {category.items.map((item) => (
+                {category.items?.map((item) => (
                   <li key={item.title}>
                     <Link
                       to={item.href}
