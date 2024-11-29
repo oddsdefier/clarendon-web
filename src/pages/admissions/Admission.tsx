@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-// import AdmissionSide from "./components/AdmissionSide";
 import OnThisPage from "@/components/OnThisPage";
 import PageLayout from "@/components/PageLayout";
 import { admissionRequirements } from "@/utils/data_admission_requirements";
@@ -40,7 +39,7 @@ const Admission: React.FC = () => {
             <h1 className="mb-3 font-universal_serif text-xl font-bold tracking-wider text-clarc-blue">
               Enrollment Procedures
             </h1>
-            <div className="space-y-8">
+            <div className="space-y-10">
               <div id="step-application">
                 <h2 className={h2Style}>Application</h2>
                 <ul className="list-disc space-y-2 pl-5 text-gray-600">
@@ -119,7 +118,7 @@ const Admission: React.FC = () => {
             <h1 className="mb-3 block font-universal_serif text-xl font-bold tracking-wider text-clarc-blue">
               Requirements
             </h1>
-            <div className="space-y-8">
+            <div className="space-y-10">
               <div>
                 <h1 className={cn(h2Style, "mt-0")}>Freshman</h1>
                 <p className="mb-3 italic text-gray-500">
@@ -228,7 +227,7 @@ const Admission: React.FC = () => {
               </p>
             </div>
           </div>
-          <div className="flex-1 space-y-6 py-5 pr-5">
+          <div className="flex-1 space-y-8 py-5 pr-5">
             <div>
               <h1 className="mb-3 block font-universal_serif text-xl font-bold tracking-wider text-clarc-blue">
                 Requirements
