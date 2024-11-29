@@ -49,8 +49,13 @@ const FlipCard: React.FC = () => {
                   {/* Front Face */}
                   {/* Back Face */}
                   <div className="absolute inset-0 h-full w-full bg-clarc-blue text-center text-slate-200 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                    <div className="flex min-h-full flex-col items-center justify-center">
-                      <h2 className="text-base font-bold">{sdg.news.length}</h2>
+                    <div className="flex min-h-full flex-col items-center justify-center p-4">
+                      <div className="flex flex-col items-start justify-center">
+                        <h2 className="text-2xl font-bold">
+                          {sdg.news.length}
+                        </h2>
+                        <p className="text-sm">Events</p>
+                      </div>
                     </div>
                   </div>
                   {/* Back Face */}
