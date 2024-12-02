@@ -66,7 +66,7 @@ const Header: React.FC = () => {
             <ClarendonNavigationMenu />
           </div>
           <div className="flex items-center justify-center">
-            <Search className="h-4 w-4 text-clarc-blue lg:h-5 lg:w-5" />
+            <Search className="mr-2 h-4 w-4 text-clarc-blue lg:mr-0 lg:h-5 lg:w-5" />
             <button onClick={toggleMenu} className="focus:outline-none">
               <motion.div
                 initial={false}

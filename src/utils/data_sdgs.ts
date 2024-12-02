@@ -11,9 +11,6 @@ export type SDG = {
   news: NewsItem[];
 };
 export const sdgColorMap: sdgColorMapType = [
-  "#15335f",
-  "#c9b163",
-  "#4C9F38",
   "#E5243B",
   "#DDA83A",
   "#4C9F38",

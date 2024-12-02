@@ -81,19 +81,21 @@ const ClarendonSDGs: React.FC = () => {
 
   return (
     <>
-      <section className="container relative mx-auto w-full py-5 pb-16">
-        <div className="mx-auto w-1/2 pb-5">
+      <section className="container relative mx-auto w-full py-5">
+        <div className="mx-auto mb-4 px-4 lg:w-1/2">
           <img
             src="https://res.cloudinary.com/dfntpqzza/image/upload/v1732689060/E_SDG_logo_UN_emblem_horizontal_WEB_yuc6lk.jpg"
             alt="SDG Logo"
           />
         </div>
-        <main className="mx-auto w-4/5 space-y-16">
-          {/* GRIDs */}
-          <FlipCard />
-          {/* GRIDs */}
+        <main className="container mx-auto space-y-0 px-4 lg:w-4/5 lg:space-y-16">
+          <div className="hidden lg:flex">
+            {/* GRIDs */}
+            <FlipCard />
+            {/* GRIDs */}
+          </div>
 
-          <div className="space-y-0">
+          <div className="space-y-9">
             {filteredSDGs.map((sdg) => {
               const relatedNews = newsItems.filter((news) =>
                 news.sdg.includes(sdg.code),
@@ -101,28 +103,30 @@ const ClarendonSDGs: React.FC = () => {
               return (
                 <div
                   key={sdg.code}
-                  className="flex gap-2 space-x-4 border-y border-gray-200"
+                  className="flex flex-col md:flex-row md:gap-8 lg:bg-transparent"
                   id={`SDG${sdg.code}`}
+                  style={{ background: `${sdg.color}50` }}
                 >
-                  <div className="flex items-center justify-center py-3">
+                  <div className="flex justify-center">
                     <img
                       src={sdg.img}
                       alt={sdg.title}
-                      className="aspect-square h-52 w-52"
+                      className="object-contain lg:h-52 lg:w-52"
                     />
                   </div>
-                  <div className="py-3">
-                    {/* <h2 className="text-xl font-bold leading-[1] text-clarc-blue">
-                      {"Clarendon on "}
+                  <div className="p-4 md:mt-0 md:w-2/3 lg:w-3/4">
+                    <h2 className="mb-2 text-xl font-semibold leading-[1] text-gray-800">
                       {sdg.title}
-                    </h2> */}
-                    <ul className="list-disc pl-5">
+                    </h2>
+                    <ul className="space-y-2">
                       {relatedNews.map((news) => (
-                        <li key={news.id}>
+                        <li key={news.id} className="flex items-start">
+                          <span className="mr-2 font-bold text-clarc-blue">
+                            •
+                          </span>
                           <a
                             href={`/news/${news.slug}`}
-                            target="_blank"
-                            className="text-clarc-blue hover:text-clarc-gold"
+                            className="text-clarc-blue transition-colors duration-200 ease-in-out hover:text-clarc-gold"
                           >
                             {news.title}
                           </a>
@@ -136,7 +140,7 @@ const ClarendonSDGs: React.FC = () => {
           </div>
         </main>
       </section>
-      <section className="container relative mx-auto w-4/5 space-y-4 pb-28"></section>
+      {/* <section className="container relative mx-auto w-4/5 space-y-4 pb-28"></section> */}
     </>
   );
 };
