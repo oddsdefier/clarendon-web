@@ -76,4 +76,25 @@ export const newsItems: NewsItem[] = [
   `,
     sdg: [4, 6, 1],
   },
+  {
+    id: "4",
+    category: "Campus News",
+    title:
+      "COMELEC Boosts Awareness with Voter Education and ACM Demo in Clarendon College",
+    date: "02 Dec 2024",
+    author: "Jeffry James Paner",
+    authorImage: "/placeholder.sg?height=50&width=50",
+    image:
+      "https://res.cloudinary.com/dfntpqzza/image/upload/v1733122179/IMG_5917_d177mq.jpg",
+    slug: "comelec-voter-education-acm-demo-clarendon-college",
+    content: `
+    <p style="font-size: 1rem">To enhance the awareness of young voters about the new Automatic Counting Machine, the Commission on Elections (COMELEC) conducted a Voter Education and ACM Demonstration in Clarendon College, December 2.</p>
+    <p>TThe Commission on Elections (COMELEC), in collaboration with College Department President Mr. Nestor Salvacion, held a Voter Education and Automated Counting Machine (ACM) Demonstration at Clarendon to educate young voters on the new vote-counting technology. The initiative aimed to raise awareness among students from the Information Systems (IS) and Education departments about the significance of modernizing the electoral process. </p>
+    <p>COMELEC introduced the ACM as the next step in improving election transparency and efficiency. Unlike the previous manual counting machines, the new ACM boasts features like advanced sensors, touchscreen interfaces, and improved scanning and printing capabilities. These enhancements aim to reduce errors and expedite results, addressing long-standing concerns about vote accuracy and delays.</p>
+    <p>Salvacion highlighted the importance of educating first-time and young voters about the electoral process, emphasizing that understanding the ACM strengthens voter confidence. "An informed electorate is the foundation of a fair democracy," he noted during the event.
+
+The Voter Education program underscored the role of technology in shaping the future of Philippine elections, advocating for active participation and vigilance among the youth to ensure the integrity of the democratic process.</p>
+  `,
+    sdg: [4, 9],
+  },
 ];

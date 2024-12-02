@@ -38,14 +38,14 @@ const MobileNavigation: React.FC = () => {
                 <p className="text-lg font-bold uppercase italic outline-none outline focus:outline-none">
                   {category.title}
                 </p>
-                <ArrowUpRight className="aspect-square h-4 w-4 text-clarc-blue/50" />
+                <ArrowUpRight className="aspect-square h-4 w-4 text-gray-400" />
               </Link>
             </NavigationMenuItem>
           ) : (
             <AccordionItem
               key={category.title}
-                value={category.title.toLowerCase().replace(/\s+/g, "-")}
-                className="border-dashed border-b border-gray-300"
+              value={category.title.toLowerCase().replace(/\s+/g, "-")}
+              className="border-b border-dashed border-gray-300"
             >
               <AccordionTrigger className="px-2 text-lg font-bold uppercase italic outline-none outline focus:outline-none">
                 {category.title}
@@ -56,7 +56,7 @@ const MobileNavigation: React.FC = () => {
                     <li key={item.title}>
                       <Link
                         to={item.href}
-                        className="flex items-center justify-between p-2 border-none text-base outline-none hover:bg-accent"
+                        className="flex items-center justify-between border-none p-2 text-base outline-none hover:bg-accent"
                       >
                         <span className="font-normal text-gray-700/80">
                           {item.title}
