@@ -1,6 +1,6 @@
-import React from "react";
-import { SDG, clarendonSDGs } from "@/utils/data_sdgs";
 import { sdgProjectsData } from "@/utils/data_sdg_projects";
+import { SDG, clarendonSDGs } from "@/utils/data_sdgs";
+import React from "react";
 import SDGCarousel from "./SDGCarousel";
 
 const FlipCard: React.FC = () => {

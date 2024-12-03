@@ -11,13 +11,6 @@ import {
 } from "@/components/ui/carousel";
 import { Skeleton } from "@/components/ui/skeleton";
 import { NewsItem, newsItems } from "@/utils/data_news_and_events";
-import { sdgColorMap, clarendonSDGs } from "@/utils/data_sdgs";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@radix-ui/react-tooltip";
 import { Calendar, Share2, Tag } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
@@ -188,31 +181,6 @@ const NewsHeader = ({ newsItem }: { newsItem: NewsItem }) => (
         <Calendar className="mr-1 h-4 w-4 lg:mr-2" />
         <time dateTime={newsItem.date}>{newsItem.date}</time>
       </div>
-    </div>
-    <div className="mt-5 space-x-1">
-      <h1 className="mb-1 text-sm text-gray-500">Related Goals</h1>
-      {newsItem.sdg.map((sdg) => (
-        <TooltipProvider delayDuration={10} key={sdg}>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <a href="/">
-                <p
-                  className={`inline-flex rounded-sm px-2 text-sm font-bold text-white`}
-                  style={{ backgroundColor: `${sdgColorMap[sdg - 1]}` }}
-                >
-                  {sdg}
-                </p>
-              </a>
-            </TooltipTrigger>
-            <TooltipContent
-              className="rounded-md p-2 text-sm text-white"
-              style={{ backgroundColor: `${sdgColorMap[sdg - 1]}` }}
-            >
-              {clarendonSDGs[sdg - 1].title}
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-      ))}
     </div>
   </header>
 );
