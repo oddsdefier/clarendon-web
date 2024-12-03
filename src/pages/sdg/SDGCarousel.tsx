@@ -12,7 +12,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import SDGCard from "./components/SDGCard";
 
 const headingTitle =
-  "text-[1.7rem] md:text-4xl font-astralaga font-semibold text-clarc-blue";
+  "text-[1.7rem] md:text-3xl font-astralaga font-semibold text-clarc-blue italic";
 
 const NewsAndEventsSection: React.FC = () => {
   const [api, setApi] = useState<CarouselApi>();
@@ -20,10 +20,10 @@ const NewsAndEventsSection: React.FC = () => {
   const [slidesPerView, setSlidesPerView] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);
 
-//   const bgImgUrl = useMemo(
-//     () => sdgProjectsData[Math.floor(Math.random() * sdgProjectsData.length)].image,
-//     [],
-//   );
+  //   const bgImgUrl = useMemo(
+  //     () => sdgProjectsData[Math.floor(Math.random() * sdgProjectsData.length)].image,
+  //     [],
+  //   );
 
   const updateSlidesPerView = useCallback(() => {
     if (window.innerWidth >= 1024) {
@@ -65,15 +65,9 @@ const NewsAndEventsSection: React.FC = () => {
 
   return (
     <section className="relative bg-clarc-white/10" id="news-and-events">
-      {/* <div
-        className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-10"
-        style={{
-          backgroundImage: `url(${bgImgUrl})`,
-        }}
-      /> */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-white to-transparent opacity-100" />
       <div className="container mx-auto px-4">
-        <div className="mb-10 flex flex-col items-start justify-between gap-5 sm:flex-row lg:items-center">
+        <div className="mb-5 flex flex-col items-start justify-between gap-5 sm:flex-row lg:items-center">
           <h1 className={headingTitle}>Projects</h1>
           {/* <ViewAllBtn children={"View All News"} link={"/all-news/"} /> */}
         </div>
@@ -88,7 +82,7 @@ const NewsAndEventsSection: React.FC = () => {
           <CarouselContent>
             {sdgProjectsData.map((item, index) => (
               <CarouselItem key={index} className="sm:basis-1/2 lg:basis-1/3">
-                <div className="p-1">
+                <div>
                   <SDGCard item={item} />
                 </div>
               </CarouselItem>

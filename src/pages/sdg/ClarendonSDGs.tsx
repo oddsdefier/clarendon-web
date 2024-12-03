@@ -53,9 +53,9 @@ const FlipCard: React.FC = () => {
                     <div className="flex min-h-full flex-col items-center justify-center p-4">
                       <div className="flex flex-col items-start justify-center">
                         <h2 className="text-2xl font-bold">
-                          {sdg.project.length}
+                          {sdg.project.length > 0 ? sdg.project.length : "No"}
                         </h2>
-                        <p className="text-sm">Events</p>
+                        <p className="text-sm opacity-80">Projects</p>
                       </div>
                     </div>
                   </div>
