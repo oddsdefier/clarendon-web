@@ -55,7 +55,9 @@ const FlipCard: React.FC = () => {
                         <h2 className="text-2xl font-bold">
                           {sdg.project.length > 0 ? sdg.project.length : "No"}
                         </h2>
-                        <p className="text-sm opacity-80">Projects</p>
+                        <p className="text-sm opacity-80">
+                          {sdg.project.length > 1 ? "Projects" : "Project"}
+                        </p>
                       </div>
                     </div>
                   </div>
