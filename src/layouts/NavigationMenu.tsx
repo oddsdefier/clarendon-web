@@ -27,7 +27,7 @@ export function ClarendonNavigationMenu() {
           {navigationData.map((section) =>
             section.type === "link" ? (
               // Nav Item as Link or No Children (Render Documentation here)
-              <NavigationMenuItem key="documentation">
+              <NavigationMenuItem key={section.title}>
                 <Link to={section.link || ""}>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     {section.title}

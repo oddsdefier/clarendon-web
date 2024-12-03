@@ -1,4 +1,4 @@
-import { newsItems, NewsItem } from "./data_news_and_events";
+import { SdgProject, sdgProjectsData } from "./data_sdg_projects";
 
 type sdgColorMapType = string[];
 export type SDG = {
@@ -8,7 +8,7 @@ export type SDG = {
   link?: string;
   img: string;
   color: string;
-  news: NewsItem[];
+  project: SdgProject[];
 };
 export const sdgColorMap: sdgColorMapType = [
   "#E5243B",
@@ -38,7 +38,7 @@ export const clarendonSDGs: SDG[] = [
     link: "https://www.un.org/sustainabledevelopment/poverty/",
     img: "https://res.cloudinary.com/dfntpqzza/image/upload/v1732668728/E-WEB-Goal-01_ax4rid.png",
     color: sdgColorMap[0],
-    news: newsItems.filter((news) => news.sdg.includes(1)),
+    project: sdgProjectsData.filter((project) => project.sdg.includes(1)),
   },
   {
     code: 2,
@@ -48,7 +48,7 @@ export const clarendonSDGs: SDG[] = [
     link: "https://www.un.org/sustainabledevelopment/hunger/",
     img: "https://res.cloudinary.com/dfntpqzza/image/upload/v1732668729/E-WEB-Goal-02_j6s1j9.png",
     color: sdgColorMap[1],
-    news: newsItems.filter((news) => news.sdg.includes(2)),
+    project: sdgProjectsData.filter((project) => project.sdg.includes(2)),
   },
   {
     code: 3,
@@ -58,7 +58,7 @@ export const clarendonSDGs: SDG[] = [
     link: "https://www.un.org/sustainabledevelopment/health/",
     img: "https://res.cloudinary.com/dfntpqzza/image/upload/v1732668729/E-WEB-Goal-03_d15hzb.png",
     color: sdgColorMap[2],
-    news: newsItems.filter((news) => news.sdg.includes(3)),
+    project: sdgProjectsData.filter((project) => project.sdg.includes(3)),
   },
   {
     code: 4,
@@ -68,7 +68,7 @@ export const clarendonSDGs: SDG[] = [
     link: "https://www.un.org/sustainabledevelopment/education/",
     img: "https://res.cloudinary.com/dfntpqzza/image/upload/v1732668728/E-WEB-Goal-04_y4noqx.png",
     color: sdgColorMap[3],
-    news: newsItems.filter((news) => news.sdg.includes(4)),
+    project: sdgProjectsData.filter((project) => project.sdg.includes(4)),
   },
   {
     code: 5,
@@ -77,7 +77,7 @@ export const clarendonSDGs: SDG[] = [
     link: "https://www.un.org/sustainabledevelopment/gender-equality/",
     img: "https://res.cloudinary.com/dfntpqzza/image/upload/v1732668729/E-WEB-Goal-05_i1yhav.png",
     color: sdgColorMap[4],
-    news: newsItems.filter((news) => news.sdg.includes(5)),
+    project: sdgProjectsData.filter((project) => project.sdg.includes(5)),
   },
 
   {
@@ -88,7 +88,7 @@ export const clarendonSDGs: SDG[] = [
     link: "https://www.un.org/sustainabledevelopment/water-and-sanitation/",
     img: "https://res.cloudinary.com/dfntpqzza/image/upload/v1732668729/E-WEB-Goal-06_luplyo.png",
     color: sdgColorMap[5],
-    news: newsItems.filter((news) => news.sdg.includes(6)),
+    project: sdgProjectsData.filter((project) => project.sdg.includes(6)),
   },
   {
     code: 7,
@@ -98,7 +98,7 @@ export const clarendonSDGs: SDG[] = [
     link: "https://www.un.org/sustainabledevelopment/energy/",
     img: "https://res.cloudinary.com/dfntpqzza/image/upload/v1732668729/E-WEB-Goal-07_p4nile.png",
     color: sdgColorMap[6],
-    news: newsItems.filter((news) => news.sdg.includes(7)),
+    project: sdgProjectsData.filter((project) => project.sdg.includes(7)),
   },
   {
     code: 8,
@@ -108,7 +108,7 @@ export const clarendonSDGs: SDG[] = [
     link: "https://www.un.org/sustainabledevelopment/economic-growth/",
     img: "https://res.cloudinary.com/dfntpqzza/image/upload/v1732668728/E-WEB-Goal-08_q9ssgz.png",
     color: sdgColorMap[7],
-    news: newsItems.filter((news) => news.sdg.includes(8)),
+    project: sdgProjectsData.filter((project) => project.sdg.includes(8)),
   },
   {
     code: 9,
@@ -118,7 +118,7 @@ export const clarendonSDGs: SDG[] = [
     link: "https://www.un.org/sustainabledevelopment/infrastructure-industrialization/",
     img: "https://res.cloudinary.com/dfntpqzza/image/upload/v1732668729/E-WEB-Goal-09_ovzrvr.png",
     color: sdgColorMap[8],
-    news: newsItems.filter((news) => news.sdg.includes(9)),
+    project: sdgProjectsData.filter((project) => project.sdg.includes(9)),
   },
   {
     code: 10,
@@ -127,7 +127,7 @@ export const clarendonSDGs: SDG[] = [
     link: "https://www.un.org/sustainabledevelopment/inequality/",
     img: "https://res.cloudinary.com/dfntpqzza/image/upload/v1732668729/E-WEB-Goal-10_wfgw8a.png",
     color: sdgColorMap[9],
-    news: newsItems.filter((news) => news.sdg.includes(10)),
+    project: sdgProjectsData.filter((project) => project.sdg.includes(10)),
   },
   {
     code: 11,
@@ -137,7 +137,7 @@ export const clarendonSDGs: SDG[] = [
     link: "https://www.un.org/sustainabledevelopment/cities/",
     img: "https://res.cloudinary.com/dfntpqzza/image/upload/v1732668729/E-WEB-Goal-11_vdoixb.png",
     color: sdgColorMap[10],
-    news: newsItems.filter((news) => news.sdg.includes(11)),
+    project: sdgProjectsData.filter((project) => project.sdg.includes(11)),
   },
   {
     code: 12,
@@ -146,7 +146,7 @@ export const clarendonSDGs: SDG[] = [
     link: "https://www.un.org/sustainabledevelopment/sustainable-consumption-production/",
     img: "https://res.cloudinary.com/dfntpqzza/image/upload/v1732668729/E-WEB-Goal-12_fwqqdx.png",
     color: sdgColorMap[11],
-    news: newsItems.filter((news) => news.sdg.includes(12)),
+    project: sdgProjectsData.filter((project) => project.sdg.includes(12)),
   },
   {
     code: 13,
@@ -155,7 +155,7 @@ export const clarendonSDGs: SDG[] = [
     link: "https://www.un.org/sustainabledevelopment/climate-change-2/",
     img: "https://res.cloudinary.com/dfntpqzza/image/upload/v1732668730/E-WEB-Goal-13_qcqigt.png",
     color: sdgColorMap[12],
-    news: newsItems.filter((news) => news.sdg.includes(13)),
+    project: sdgProjectsData.filter((project) => project.sdg.includes(13)),
   },
   {
     code: 14,
@@ -165,7 +165,7 @@ export const clarendonSDGs: SDG[] = [
     link: "https://www.un.org/sustainabledevelopment/oceans/",
     img: "https://res.cloudinary.com/dfntpqzza/image/upload/v1732668730/E-WEB-Goal-14_k9j09m.png",
     color: sdgColorMap[13],
-    news: newsItems.filter((news) => news.sdg.includes(14)),
+    project: sdgProjectsData.filter((project) => project.sdg.includes(14)),
   },
   {
     code: 15,
@@ -174,7 +174,7 @@ export const clarendonSDGs: SDG[] = [
       "Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss.",
     img: "https://res.cloudinary.com/dfntpqzza/image/upload/v1732668730/E-WEB-Goal-15_cdoibs.png",
     color: sdgColorMap[14],
-    news: newsItems.filter((news) => news.sdg.includes(15)),
+    project: sdgProjectsData.filter((project) => project.sdg.includes(15)),
   },
   {
     code: 16,
@@ -184,7 +184,7 @@ export const clarendonSDGs: SDG[] = [
     link: "https://www.un.org/sustainabledevelopment/peace-justice/",
     img: "https://res.cloudinary.com/dfntpqzza/image/upload/v1732668730/E-WEB-Goal-16_ubgaka.png",
     color: sdgColorMap[15],
-    news: newsItems.filter((news) => news.sdg.includes(1)),
+    project: sdgProjectsData.filter((project) => project.sdg.includes(16)),
   },
   {
     code: 17,
@@ -194,6 +194,6 @@ export const clarendonSDGs: SDG[] = [
     link: "https://www.un.org/sustainabledevelopment/globalpartnerships/",
     img: "https://res.cloudinary.com/dfntpqzza/image/upload/v1732668730/E-WEB-Goal-17_ifnfbi.png",
     color: sdgColorMap[16],
-    news: newsItems.filter((news) => news.sdg.includes(17)),
+    project: sdgProjectsData.filter((project) => project.sdg.includes(17)),
   },
 ];

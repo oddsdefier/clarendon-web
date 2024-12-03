@@ -8,7 +8,6 @@ export interface NewsItem {
   author: string;
   authorImage: string;
   content: string;
-  sdg: number[];
 }
 
 export const newsItems: NewsItem[] = [
@@ -26,7 +25,6 @@ export const newsItems: NewsItem[] = [
     <p style="font-size: 1rem">Chess Players Shine in Roxas District Meet Tournament</p>
     <p>On October 11, 2024, at Roxas Central School, a thrilling chess competition happened that showcased some real potential among talented individuals. Aira Charis Fradejas won the girls' division and advanced to the unit meet, while Lyka Jane Sapupo achieved a respectable fourth-place performance. Joel Torino III finished ninth in the boys' category, while Zentgeilner Ali Mortel took first place and qualified for the unit meet. For the students, it was an excellent day full of strategy and friendly competition.</p>
   `,
-    sdg: [1, 2],
   },
   {
     id: "2",
@@ -42,7 +40,6 @@ export const newsItems: NewsItem[] = [
     <p style="font-size: 1rem">Chess Players Shine in Roxas District Meet Tournament</p>
     <p>On October 11, 2024, at Roxas Central School, a thrilling chess competition happened that showcased some real potential among talented individuals. Aira Charis Fradejas won the girls' division and advanced to the unit meet, while Lyka Jane Sapupo achieved a respectable fourth-place performance. Joel Torino III finished ninth in the boys' category, while Zentgeilner Ali Mortel took first place and qualified for the unit meet. For the students, it was an excellent day full of strategy and friendly competition.</p>
   `,
-    sdg: [6],
   },
   {
     id: "3",
@@ -58,7 +55,6 @@ export const newsItems: NewsItem[] = [
     <p style="font-size: 1rem">Chess Players Shine in Roxas District Meet Tournament</p>
     <p>On October 11, 2024, at Roxas Central School, a thrilling chess competition happened that showcased some real potential among talented individuals. Aira Charis Fradejas won the girls' division and advanced to the unit meet, while Lyka Jane Sapupo achieved a respectable fourth-place performance. Joel Torino III finished ninth in the boys' category, while Zentgeilner Ali Mortel took first place and qualified for the unit meet. For the students, it was an excellent day full of strategy and friendly competition.</p>
   `,
-    sdg: [17, 9, 13],
   },
   {
     id: "4",
@@ -74,10 +70,9 @@ export const newsItems: NewsItem[] = [
     <p style="font-size: 1rem">Chess Players Shine in Roxas District Meet Tournament</p>
     <p>On October 11, 2024, at Roxas Central School, a thrilling chess competition happened that showcased some real potential among talented individuals. Aira Charis Fradejas won the girls' division and advanced to the unit meet, while Lyka Jane Sapupo achieved a respectable fourth-place performance. Joel Torino III finished ninth in the boys' category, while Zentgeilner Ali Mortel took first place and qualified for the unit meet. For the students, it was an excellent day full of strategy and friendly competition.</p>
   `,
-    sdg: [4, 6, 1],
   },
   {
-    id: "4",
+    id: "5",
     category: "Campus News",
     title:
       "COMELEC Boosts Awareness with Voter Education and ACM Demo in Clarendon College",
@@ -92,9 +87,7 @@ export const newsItems: NewsItem[] = [
     <p>TThe Commission on Elections (COMELEC), in collaboration with College Department President Mr. Nestor Salvacion, held a Voter Education and Automated Counting Machine (ACM) Demonstration at Clarendon to educate young voters on the new vote-counting technology. The initiative aimed to raise awareness among students from the Information Systems (IS) and Education departments about the significance of modernizing the electoral process. </p>
     <p>COMELEC introduced the ACM as the next step in improving election transparency and efficiency. Unlike the previous manual counting machines, the new ACM boasts features like advanced sensors, touchscreen interfaces, and improved scanning and printing capabilities. These enhancements aim to reduce errors and expedite results, addressing long-standing concerns about vote accuracy and delays.</p>
     <p>Salvacion highlighted the importance of educating first-time and young voters about the electoral process, emphasizing that understanding the ACM strengthens voter confidence. "An informed electorate is the foundation of a fair democracy," he noted during the event.
-
-The Voter Education program underscored the role of technology in shaping the future of Philippine elections, advocating for active participation and vigilance among the youth to ensure the integrity of the democratic process.</p>
+    The Voter Education program underscored the role of technology in shaping the future of Philippine elections, advocating for active participation and vigilance among the youth to ensure the integrity of the democratic process.</p>
   `,
-    sdg: [4, 9],
   },
 ];

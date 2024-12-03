@@ -1,15 +1,15 @@
 import { NewsItem } from "@/utils/data_news_and_events";
-import { clarendonSDGs, sdgColorMap } from "@/utils/data_sdgs";
+// import { clarendonSDGs, sdgColorMap } from "@/utils/data_sdgs";
 import React from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "./ui/card";
 
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+// import {
+//   Tooltip,
+//   TooltipContent,
+//   TooltipProvider,
+//   TooltipTrigger,
+// } from "@/components/ui/tooltip";
 
 const NewsCard = React.memo(({ item }: { item: NewsItem }) => (
   <Link to={`/news/${item.slug}`}>
@@ -40,37 +40,40 @@ const NewsCard = React.memo(({ item }: { item: NewsItem }) => (
           <p className="text-sm font-medium uppercase text-gray-800/70">
             {item.date}
           </p>
-          <h2 className="line-clamp-2 text-xl font-bold leading-[1.1] text-gray-800">
+          <h2 className="text-xl font-bold leading-[1.1] text-gray-800">
             {item.title}
           </h2>
-          <p className="pt-3 text-xs font-medium text-gray-800/60">
-            Related Goals
-          </p>
 
-          <div className="space-x-1">
-            {item.sdg.map((sdg) => (
-              <TooltipProvider delayDuration={10}>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <a href="/">
-                      <p
-                        className={`inline-flex rounded-sm px-2 text-sm font-bold text-white`}
-                        style={{ backgroundColor: `${sdgColorMap[sdg - 1]}` }}
-                      >
-                        {sdg}
-                      </p>
-                    </a>
-                  </TooltipTrigger>
-                  <TooltipContent
-                    className="rounded-md p-2 text-sm text-white"
-                    style={{ backgroundColor: `${sdgColorMap[sdg - 1]}` }}
-                  >
-                    {clarendonSDGs[sdg - 1].title}
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            ))}
-          </div>
+          {/* <div>
+            <p className="pt-3 text-xs font-medium text-gray-800/60">
+              Related Goals
+            </p>
+
+            <div className="space-x-1">
+              {item.sdg.map((sdg) => (
+                <TooltipProvider delayDuration={10}>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <a href="/">
+                        <p
+                          className={`inline-flex rounded-sm px-2 text-sm font-bold text-white`}
+                          style={{ backgroundColor: `${sdgColorMap[sdg - 1]}` }}
+                        >
+                          {sdg}
+                        </p>
+                      </a>
+                    </TooltipTrigger>
+                    <TooltipContent
+                      className="rounded-md p-2 text-sm text-white"
+                      style={{ backgroundColor: `${sdgColorMap[sdg - 1]}` }}
+                    >
+                      {clarendonSDGs[sdg - 1].title}
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              ))}
+            </div>
+          </div> */}
         </CardContent>
       </div>
     </Card>

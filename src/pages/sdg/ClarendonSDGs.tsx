@@ -1,6 +1,7 @@
 import React from "react";
 import { SDG, clarendonSDGs } from "@/utils/data_sdgs";
-import { newsItems } from "@/utils/data_news_and_events";
+import { sdgProjectsData } from "@/utils/data_sdg_projects";
+import SDGCarousel from "./SDGCarousel";
 
 const FlipCard: React.FC = () => {
   const SDGLogo =
@@ -52,7 +53,7 @@ const FlipCard: React.FC = () => {
                     <div className="flex min-h-full flex-col items-center justify-center p-4">
                       <div className="flex flex-col items-start justify-center">
                         <h2 className="text-2xl font-bold">
-                          {sdg.news.length}
+                          {sdg.project.length}
                         </h2>
                         <p className="text-sm">Events</p>
                       </div>
@@ -73,7 +74,7 @@ const FlipCard: React.FC = () => {
 };
 
 const ClarendonSDGs: React.FC = () => {
-  const presentSDGs = newsItems.map((news) => news.sdg);
+  const presentSDGs = sdgProjectsData.map((sdgData) => sdgData.sdg);
   const uniqueSDGs = [...new Set(presentSDGs.flat())].sort((a, b) => a - b);
   const filteredSDGs: SDG[] = clarendonSDGs.filter((sdg) =>
     uniqueSDGs.includes(sdg.code),
@@ -95,17 +96,17 @@ const ClarendonSDGs: React.FC = () => {
             {/* GRIDs */}
           </div>
 
-          <div className="space-y-9">
+          <div className="space-y-5 lg:space-y-0">
             {filteredSDGs.map((sdg) => {
-              const relatedNews = newsItems.filter((news) =>
+              const relatedNews = sdgProjectsData.filter((news) =>
                 news.sdg.includes(sdg.code),
               );
               return (
                 <div
                   key={sdg.code}
-                  className="flex flex-col md:flex-row md:gap-8 lg:bg-transparent"
+                  className="flex flex-col md:flex-row lg:bg-transparent"
                   id={`SDG${sdg.code}`}
-                  style={{ background: `${sdg.color}50` }}
+                  style={{ background: `${sdg.color}20` }}
                 >
                   <div className="flex justify-center">
                     <img
@@ -125,7 +126,7 @@ const ClarendonSDGs: React.FC = () => {
                             •
                           </span>
                           <a
-                            href={`/news/${news.slug}`}
+                            href={``}
                             className="text-clarc-blue transition-colors duration-200 ease-in-out hover:text-clarc-gold"
                           >
                             {news.title}
@@ -137,6 +138,9 @@ const ClarendonSDGs: React.FC = () => {
                 </div>
               );
             })}
+          </div>
+          <div className="py-10">
+            <SDGCarousel />
           </div>
         </main>
       </section>
