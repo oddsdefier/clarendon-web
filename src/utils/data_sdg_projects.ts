@@ -12,7 +12,7 @@ export const sdgProjectsData: SdgProject[] = [
   {
     id: 1,
     title: "No Poverty Project",
-    date: "2021-10-10",
+    date: "10 OCT 2024",
     image:
       "https://sdg.neda.gov.ph/wp-content/uploads/2019/01/Banner1_UNICEF.jpg",
     sdg: [7],
@@ -23,7 +23,7 @@ export const sdgProjectsData: SdgProject[] = [
   {
     id: 2,
     title: "Zero Hunger Initiative",
-    date: "2022-01-15",
+    date: "15 JAN 2024",
     image:
       "https://www.borgenmagazine.com/wp-content/uploads/2024/05/Zero-Hunger-Strategy-768x510.jpg",
     sdg: [2, 13],
@@ -34,7 +34,7 @@ export const sdgProjectsData: SdgProject[] = [
   {
     id: 3,
     title: "Quality Education for All",
-    date: "2022-03-20",
+    date: "20 MAR 2024",
     image: "https://www.ei-ie.org/image/Quality-education.jpg/lead.jpg",
     sdg: [4],
     description:

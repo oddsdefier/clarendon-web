@@ -20,11 +20,6 @@ const NewsAndEventsSection: React.FC = () => {
   const [slidesPerView, setSlidesPerView] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);
 
-  //   const bgImgUrl = useMemo(
-  //     () => sdgProjectsData[Math.floor(Math.random() * sdgProjectsData.length)].image,
-  //     [],
-  //   );
-
   const updateSlidesPerView = useCallback(() => {
     if (window.innerWidth >= 1024) {
       setSlidesPerView(3);
@@ -66,7 +61,7 @@ const NewsAndEventsSection: React.FC = () => {
   return (
     <section className="relative bg-clarc-white/10" id="news-and-events">
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-white to-transparent opacity-100" />
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="mb-5 flex flex-col items-start justify-between gap-5 sm:flex-row lg:items-center">
           <h1 className={headingTitle}>Projects</h1>
           {/* <ViewAllBtn children={"View All News"} link={"/all-news/"} /> */}

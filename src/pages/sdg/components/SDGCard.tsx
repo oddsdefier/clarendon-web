@@ -1,8 +1,8 @@
+import { Card, CardContent } from "@/components/ui/card";
 import { SdgProject } from "@/utils/data_sdg_projects";
-import { clarendonSDGs, sdgColorMap } from "@/utils/data_sdgs";
+import { SDGs, sdgColorMap } from "@/utils/data_sdgs";
 import React from "react";
 import { Link } from "react-router-dom";
-import { Card, CardContent } from "@/components/ui/card";
 
 import {
   Tooltip,
@@ -23,12 +23,6 @@ const SDGCard = React.memo(({ item }: { item: SdgProject }) => (
               className="h-52 w-full object-cover transition-transform duration-300 group-hover:scale-110"
               loading="lazy"
             />
-            {/* <img
-                src={item.image}
-                alt=""
-                className="absolute left-0 top-0 -z-10 h-52 w-full rounded-sm object-cover opacity-100"
-                loading="lazy"
-              /> */}
             <div className="duration-400 absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 opacity-0 transition-opacity group-hover:opacity-100">
               <span className="text-base font-semibold text-white">
                 Read More
@@ -65,7 +59,7 @@ const SDGCard = React.memo(({ item }: { item: SdgProject }) => (
                     className="rounded-md p-2 text-sm text-white"
                     style={{ backgroundColor: `${sdgColorMap[sdg - 1]}` }}
                   >
-                    {clarendonSDGs[sdg - 1].title}
+                    {SDGs[sdg - 1].title}
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>

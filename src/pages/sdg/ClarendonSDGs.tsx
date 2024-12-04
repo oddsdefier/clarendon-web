@@ -1,5 +1,5 @@
 import { sdgProjectsData } from "@/utils/data_sdg_projects";
-import { SDG, clarendonSDGs } from "@/utils/data_sdgs";
+import { SDGType, SDGs } from "@/utils/data_sdgs";
 import React from "react";
 import SDGCarousel from "./SDGCarousel";
 
@@ -24,7 +24,7 @@ const FlipCard: React.FC = () => {
     <section className="mx-auto">
       <div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
-          {clarendonSDGs.map((sdg) => (
+          {SDGs.map((sdg) => (
             <a
               href={`#SDG${sdg.code}`}
               onClick={(e) => {
@@ -78,27 +78,30 @@ const FlipCard: React.FC = () => {
 const ClarendonSDGs: React.FC = () => {
   const presentSDGs = sdgProjectsData.map((sdgData) => sdgData.sdg);
   const uniqueSDGs = [...new Set(presentSDGs.flat())].sort((a, b) => a - b);
-  const filteredSDGs: SDG[] = clarendonSDGs.filter((sdg) =>
+  const filteredSDGs: SDGType[] = SDGs.filter((sdg) =>
     uniqueSDGs.includes(sdg.code),
   );
 
   return (
     <>
       <section className="container relative mx-auto w-full py-5">
-        <div className="mx-auto mb-4 px-4 lg:w-1/2">
+        <div className="mx-auto mb-10 flex flex-col items-center justify-center px-4 lg:w-1/2">
+          <h1 className="inline-flex rounded-md bg-[#009EDB10] px-4 py-1 text-center font-semibold text-[#009EDB] lg:text-lg">
+            Clarendon College's
+          </h1>
           <img
             src="https://res.cloudinary.com/dfntpqzza/image/upload/v1732689060/E_SDG_logo_UN_emblem_horizontal_WEB_yuc6lk.jpg"
             alt="SDG Logo"
           />
         </div>
-        <main className="container mx-auto space-y-0 px-4 lg:w-4/5 lg:space-y-16">
+        <main className="container mx-auto space-y-0 px-4 lg:w-4/5 lg:space-y-10">
           <div className="hidden lg:flex">
-            {/* GRIDs */}
             <FlipCard />
-            {/* GRIDs */}
           </div>
-
-          <div className="space-y-5 lg:space-y-0">
+          <div>
+            <SDGCarousel />
+          </div>
+          <div className="space-y-5 px-4 pb-36 lg:space-y-0">
             {filteredSDGs.map((sdg) => {
               const relatedNews = sdgProjectsData.filter((news) =>
                 news.sdg.includes(sdg.code),
@@ -141,12 +144,8 @@ const ClarendonSDGs: React.FC = () => {
               );
             })}
           </div>
-          <div className="py-10">
-            <SDGCarousel />
-          </div>
         </main>
       </section>
-      {/* <section className="container relative mx-auto w-4/5 space-y-4 pb-28"></section> */}
     </>
   );
 };

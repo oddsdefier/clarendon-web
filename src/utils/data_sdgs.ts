@@ -1,15 +1,7 @@
 import { SdgProject, sdgProjectsData } from "./data_sdg_projects";
 
 type sdgColorMapType = string[];
-export type SDG = {
-  code: number;
-  title: string;
-  description: string;
-  link?: string;
-  img: string;
-  color: string;
-  project: SdgProject[];
-};
+
 export const sdgColorMap: sdgColorMapType = [
   "#E5243B",
   "#DDA83A",
@@ -29,8 +21,16 @@ export const sdgColorMap: sdgColorMapType = [
   "#00689D",
   "#19486A",
 ];
-
-export const clarendonSDGs: SDG[] = [
+export type SDGType = {
+  code: number;
+  title: string;
+  description: string;
+  link?: string;
+  img: string;
+  color: string;
+  project: SdgProject[];
+};
+export const SDGs: SDGType[] = [
   {
     code: 1,
     title: "No Poverty",
