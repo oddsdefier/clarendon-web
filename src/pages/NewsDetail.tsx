@@ -68,11 +68,11 @@ export default function NewsDetail() {
         ...item,
       });
     }
-    const related = newsItems.filter((item) => item.slug !== slug).slice(0, 3);
+    const related = newsItems.filter((item) => item.slug !== slug).slice(0, 10);
     setRelatedArticles(related);
     setLoading(false);
   }, [slug]);
-
+  /* Share function */
   const handleShare = async () => {
     if (navigator.share && newsItem) {
       try {
@@ -90,7 +90,7 @@ export default function NewsDetail() {
       );
     }
   };
-
+  /* Share function */
   if (loading) {
     return <LoadingSkeleton />;
   }

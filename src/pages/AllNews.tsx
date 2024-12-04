@@ -47,7 +47,7 @@ export default function Component({ news }: { news: NewsItem[] }) {
       setItemsPerPage(window.innerWidth >= 1024 ? 10 : 3);
     };
 
-    handleResize(); // Set initial value
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
@@ -84,18 +84,22 @@ export default function Component({ news }: { news: NewsItem[] }) {
       <div className="grid grid-cols-1 gap-[0.05rem] md:grid-cols-2 lg:grid-cols-3">
         {currentNews.map((item) => (
           <Link to={`/news/${item.slug}`} key={item.id} className="w-full">
-            <div className="overflow-hidden border border-clarc-blue/20">
+            <div className="group overflow-hidden border border-clarc-blue/20 transition-colors duration-300 hover:bg-clarc-blue">
               <div className="flex aspect-square h-64 w-full flex-col md:flex-row">
                 <div className="relative flex-1 p-5 py-8">
-                  <div className="mb-4 text-sm text-muted-foreground">
+                  <div className="mb-4 text-sm text-muted-foreground group-hover:text-clarc-gold">
                     {item.date}
                   </div>
-                  <div className="mb-2 text-pretty text-2xl font-bold leading-[1.1] text-clarc-blue">
+                  <div className="mb-2 line-clamp-3 text-pretty text-2xl font-bold leading-[1.1] text-clarc-blue group-hover:text-clarc-gold">
                     {item.title}
                   </div>
-                  <div className="mt-10">
-                    <p className="py-2 text-sm text-sky-500">...</p>
-                    <p className="text-sm text-clarc-gold">Read More</p>
+                  <div className="mt-5 lg:mt-8">
+                    <p className="py-2 text-sm text-sky-500 group-hover:text-clarc-gold">
+                      ...
+                    </p>
+                    <p className="text-sm text-clarc-gold group-hover:text-clarc-gold">
+                      Read More
+                    </p>
                   </div>
                 </div>
               </div>

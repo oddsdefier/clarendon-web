@@ -3,6 +3,7 @@ export interface NewsItem {
   category: string;
   title: string;
   date: string;
+  timestamp: number;
   image: string;
   slug: string;
   author: string;
@@ -16,6 +17,7 @@ export const newsItems: NewsItem[] = [
     category: "Campus Life",
     title: "New Building",
     date: "15 Sept 2024",
+    timestamp: 1726425600000, // Sept 15, 2024
     author: "Jaylord Goleña",
     authorImage: "/placeholder.svg?height=50&width=50",
     image:
@@ -31,6 +33,7 @@ export const newsItems: NewsItem[] = [
     category: "Academic Achievement",
     title: "Students Bag Medals on National Competition",
     date: "10 Aug 2024",
+    timestamp: 1726425600000,
     author: "Jaylord Goleña",
     authorImage: "/placeholder.svg?height=50&width=50",
     image:
@@ -46,6 +49,7 @@ export const newsItems: NewsItem[] = [
     category: "Culture",
     title: "Clarendon Cultural Center",
     date: "30 Mar 2024",
+    timestamp: 1726425600000,
     author: "Jaylord Goleña",
     authorImage: "/placeholder.svg?height=50&width=50",
     image:
@@ -61,6 +65,7 @@ export const newsItems: NewsItem[] = [
     category: "International News",
     title: "CLARC goes global",
     date: "05 Oct 2024",
+    timestamp: 1733009461000,
     author: "Jaylord Goleña",
     authorImage: "/placeholder.svg?height=50&width=50",
     image:
@@ -77,6 +82,7 @@ export const newsItems: NewsItem[] = [
     title:
       "COMELEC Boosts Awareness with Voter Education and ACM Demo in Clarendon College",
     date: "02 Dec 2024",
+    timestamp: 1733282555534,
     author: "Jeffry James Paner",
     authorImage: "/placeholder.sg?height=50&width=50",
     image:
