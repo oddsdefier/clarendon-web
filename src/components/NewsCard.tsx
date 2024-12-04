@@ -1,5 +1,5 @@
 import { NewsItem } from "@/utils/data_news_and_events";
-import { formatDistanceToNow } from 'date-fns';
+import { formatDistanceToNow } from "date-fns";
 // import { clarendonSDGs, sdgColorMap } from "@/utils/data_sdgs";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -36,7 +36,7 @@ const NewsCard = React.memo(({ item }: { item: NewsItem }) => (
           </div>
         </div>
       </Link>
-      <CardContent className="h-44 py-4">
+      <CardContent className="h-44 p-4 py-6">
         <div className="flex h-full flex-col justify-between">
           <div>
             <p className="text-sm font-medium uppercase text-gray-800/70">
@@ -56,7 +56,9 @@ const NewsCard = React.memo(({ item }: { item: NewsItem }) => (
               {item.title}
             </h2>
           </div>
-          <p className="text-xs font-medium text-gray-800/60">{formatDistanceToNow(item.timestamp, { addSuffix: true })}</p>
+          <p className="text-xs font-medium text-gray-800/60">
+            {formatDistanceToNow(item.timestamp, { addSuffix: true })}
+          </p>
         </div>
       </CardContent>
     </Card>
