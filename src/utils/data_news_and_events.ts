@@ -17,7 +17,7 @@ export const newsItems: NewsItem[] = [
     category: "Campus Life",
     title: "New Building",
     date: "15 Sept 2024",
-    timestamp: 1726425600000, // Sept 15, 2024
+    timestamp: 1725161461000, // Sept 15, 2024
     author: "Jaylord Goleña",
     authorImage: "/placeholder.svg?height=50&width=50",
     image:
@@ -33,7 +33,7 @@ export const newsItems: NewsItem[] = [
     category: "Academic Achievement",
     title: "Students Bag Medals on National Competition",
     date: "10 Aug 2024",
-    timestamp: 1726425600000,
+    timestamp: 1710729061000,
     author: "Jaylord Goleña",
     authorImage: "/placeholder.svg?height=50&width=50",
     image:

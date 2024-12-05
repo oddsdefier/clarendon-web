@@ -85,19 +85,21 @@ export default function Component({ news }: { news: NewsItem[] }) {
         {currentNews.map((item) => (
           <Link to={`/news/${item.slug}`} key={item.id} className="w-full">
             <div className="group overflow-hidden border border-clarc-blue/20 transition-colors duration-300 hover:bg-clarc-blue">
-              <div className="flex aspect-square h-64 w-full flex-col md:flex-row">
-                <div className="relative flex-1 p-5 py-8">
-                  <div className="mb-4 text-sm text-muted-foreground group-hover:text-clarc-gold">
-                    {item.date}
+                <div className="flex aspect-square h-48 w-full flex-col md:h-64 md:flex-row">
+                <div className="relative flex h-full flex-1 flex-col justify-between p-5 py-8">
+                  <div>
+                    <p className="mb-4 text-xs text-muted-foreground group-hover:text-clarc-gold md:text-sm">
+                      {item.date}
+                    </p>
+                    <h1 className="mb-2 line-clamp-3 text-lg font-bold leading-[1.1] text-clarc-blue group-hover:text-clarc-gold md:text-2xl">
+                      {item.title}
+                    </h1>
                   </div>
-                  <div className="mb-2 line-clamp-3 text-pretty text-2xl font-bold leading-[1.1] text-clarc-blue group-hover:text-clarc-gold">
-                    {item.title}
-                  </div>
-                  <div className="mt-5 lg:mt-8">
-                    <p className="py-2 text-sm text-sky-500 group-hover:text-clarc-gold">
+                  <div>
+                    <p className="py-2 text-xs text-sky-500 group-hover:text-clarc-gold md:text-sm">
                       ...
                     </p>
-                    <p className="text-sm text-clarc-gold group-hover:text-clarc-gold">
+                    <p className="text-xs text-clarc-gold group-hover:text-clarc-gold md:text-sm">
                       Read More
                     </p>
                   </div>

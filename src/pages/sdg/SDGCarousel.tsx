@@ -12,7 +12,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import SDGCard from "./components/SDGCard";
 
 const headingTitle =
-  "text-[1.7rem] md:text-3xl font-astralaga font-semibold text-clarc-blue italic";
+  "text-xl md:text-2xl font-astralaga font-semibold text-clarc-blue italic";
 
 const NewsAndEventsSection: React.FC = () => {
   const [api, setApi] = useState<CarouselApi>();
@@ -78,7 +78,7 @@ const NewsAndEventsSection: React.FC = () => {
             {sdgProjectsData.map((item, index) => (
               <CarouselItem key={index} className="sm:basis-1/2 lg:basis-1/3">
                 <div>
-                  <SDGCard item={item} />
+                  <SDGCard key={item.id} item={item} />
                 </div>
               </CarouselItem>
             ))}

@@ -72,7 +72,7 @@ const Header: React.FC = () => {
                 initial={false}
                 animate={{ rotate: isMenuOpen ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
-                className="flex md:hidden"
+                className="flex lg:hidden"
               >
                 {isMenuOpen ? (
                   <X className="h-5 w-5 text-clarc-blue lg:h-6 lg:w-6" />

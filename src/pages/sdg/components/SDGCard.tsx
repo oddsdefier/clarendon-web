@@ -32,10 +32,10 @@ const SDGCard = React.memo(({ item }: { item: SdgProject }) => (
         </Link>
         <CardContent className="flex h-44 flex-col justify-between space-y-2 p-4 py-6">
           <div>
-            <p className="text-sm font-medium uppercase text-gray-800/70">
+            <p className="mb-1 text-xs font-medium uppercase text-gray-800/70 md:text-sm">
               {item.date}
             </p>
-            <h2 className="line-clamp-2 text-xl font-bold leading-[1.1] text-clarc-blue">
+            <h2 className="line-clamp-2 text-lg font-bold leading-[1.1] text-clarc-blue sm:text-xl">
               {item.title}
             </h2>
           </div>

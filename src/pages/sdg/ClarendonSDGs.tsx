@@ -31,6 +31,7 @@ const FlipCard: React.FC = () => {
                 e.preventDefault();
                 handleScroll(`SDG${sdg.code}`);
               }}
+              key={sdg.code}
             >
               <div
                 key={sdg.code}
@@ -51,14 +52,14 @@ const FlipCard: React.FC = () => {
                   {/* Back Face */}
                   <div className="absolute inset-0 h-full w-full bg-clarc-blue text-center text-slate-200 [backface-visibility:hidden] [transform:rotateY(180deg)]">
                     <div className="flex min-h-full flex-col items-center justify-center p-4">
-                      <div className="flex flex-col items-start justify-center">
-                        <h2 className="text-2xl font-bold">
+                        <div className="flex flex-col items-start justify-center">
+                        <h2 className="text-lg font-bold sm:text-2xl">
                           {sdg.project.length > 0 ? sdg.project.length : "No"}
                         </h2>
-                        <p className="text-sm opacity-80">
+                        <p className="text-xs opacity-80 sm:text-sm">
                           {sdg.project.length > 1 ? "Projects" : "Project"}
                         </p>
-                      </div>
+                        </div>
                     </div>
                   </div>
                   {/* Back Face */}
@@ -113,33 +114,36 @@ const ClarendonSDGs: React.FC = () => {
                   id={`SDG${sdg.code}`}
                   style={{ background: `${sdg.color}20` }}
                 >
-                  <div className="flex justify-center">
+                  <div
+                    className="flex justify-center p-4"
+                    style={{ background: `${sdg.color}` }}
+                  >
                     <img
                       src={sdg.img}
                       alt={sdg.title}
-                      className="object-contain lg:h-52 lg:w-52"
+                      className="h-32 w-32 object-contain sm:h-40 sm:w-40 md:h-48 md:w-48 lg:h-52 lg:w-52"
                     />
                   </div>
-                  <div className="p-4 md:mt-0 md:w-2/3 lg:w-3/4">
-                    <h2 className="mb-2 text-xl font-semibold leading-[1] text-gray-800">
+                    <div className="p-4 py-6 md:mt-0 md:w-2/3 lg:w-3/4">
+                    <h2 className="mb-2 text-lg font-semibold leading-[1] text-gray-800 sm:text-xl">
                       {sdg.title}
                     </h2>
                     <ul className="space-y-2">
                       {relatedNews.map((news) => (
-                        <li key={news.id} className="flex items-start">
-                          <span className="mr-2 font-bold text-clarc-blue">
-                            •
-                          </span>
-                          <a
-                            href={``}
-                            className="text-clarc-blue transition-colors duration-200 ease-in-out hover:text-clarc-gold"
-                          >
-                            {news.title}
-                          </a>
-                        </li>
+                      <li key={news.id} className="flex items-start">
+                        <span className="mr-2 font-bold text-clarc-blue">
+                        •
+                        </span>
+                        <a
+                        href={``}
+                        className="text-clarc-blue transition-colors duration-200 ease-in-out hover:text-clarc-gold text-sm sm:text-base"
+                        >
+                        {news.title}
+                        </a>
+                      </li>
                       ))}
                     </ul>
-                  </div>
+                    </div>
                 </div>
               );
             })}
