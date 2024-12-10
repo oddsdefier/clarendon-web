@@ -104,6 +104,9 @@ const ClarendonSDGs: React.FC = () => {
           </div>
           <div className="space-y-5 px-4 pb-36 lg:space-y-0">
             {filteredSDGs.map((sdg) => {
+              // const relatedNews = sdgProjectsData.filter((news) =>
+              //   news.sdg.includes(sdg.code),
+              // );
               return (
                 <div
                   key={sdg.code}
@@ -120,6 +123,27 @@ const ClarendonSDGs: React.FC = () => {
                       alt={sdg.title}
                       className="h-32 w-32 object-contain sm:h-40 sm:w-40 md:h-48 md:w-48 lg:h-52 lg:w-52"
                     />
+                  </div>
+                  <div className="p-4">
+                    <ul
+                      className="list-disc text-lg"
+                      style={{ color: sdg.color }}
+                    >
+                      {sdg.title}
+                    </ul>
+                    {sdgProjectsData
+                      .filter((sdgData) => sdgData.sdg.includes(sdg.code))
+                      .map((project) => (
+                        <li key={project.id} className="hover:text-clarc-gold">
+                          <a
+                            href="http://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {project.title}
+                          </a>
+                        </li>
+                      ))}
                   </div>
                 </div>
               );

@@ -11,8 +11,7 @@ import { sdgProjectsData } from "@/utils/data_sdg_projects";
 import React, { useCallback, useEffect, useState } from "react";
 import SDGCard from "./components/SDGCard";
 
-const headingTitle =
-  "text-xl md:text-2xl font-astralaga font-semibold text-clarc-blue italic";
+// const headingTitle = "text-2xl md:text-3xl font-semibold text-clarc-blue";
 
 const NewsAndEventsSection: React.FC = () => {
   const [api, setApi] = useState<CarouselApi>();
@@ -62,10 +61,6 @@ const NewsAndEventsSection: React.FC = () => {
     <section className="relative bg-clarc-white/10" id="news-and-events">
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-white to-transparent opacity-100" />
       <div className="container mx-auto">
-        <div className="mb-5 flex flex-col items-start justify-between gap-5 sm:flex-row lg:items-center">
-          <h1 className={headingTitle}>Projects</h1>
-          {/* <ViewAllBtn children={"View All News"} link={"/all-news/"} /> */}
-        </div>
         <Carousel
           setApi={setApi}
           opts={{
