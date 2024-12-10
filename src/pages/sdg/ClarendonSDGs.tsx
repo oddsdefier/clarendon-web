@@ -13,7 +13,7 @@ const FlipCard: React.FC = () => {
       const elementPosition =
         element.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - headerOffset;
-
+ 
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",
@@ -124,26 +124,7 @@ const ClarendonSDGs: React.FC = () => {
                       className="h-32 w-32 object-contain sm:h-40 sm:w-40 md:h-48 md:w-48 lg:h-52 lg:w-52"
                     />
                   </div>
-                    <div className="p-4 py-6 md:mt-0 md:w-2/3 lg:w-3/4">
-                    <h2 className="mb-2 text-lg font-semibold leading-[1] text-gray-800 sm:text-xl">
-                      {sdg.title}
-                    </h2>
-                    <ul className="space-y-2">
-                      {relatedNews.map((news) => (
-                      <li key={news.id} className="flex items-start">
-                        <span className="mr-2 font-bold text-clarc-blue">
-                        •
-                        </span>
-                        <a
-                        href={``}
-                        className="text-clarc-blue transition-colors duration-200 ease-in-out hover:text-clarc-gold text-sm sm:text-base"
-                        >
-                        {news.title}
-                        </a>
-                      </li>
-                      ))}
-                    </ul>
-                    </div>
+               
                 </div>
               );
             })}

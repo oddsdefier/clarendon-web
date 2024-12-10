@@ -29,64 +29,61 @@ const Header: React.FC = () => {
   }, [location]);
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-[9999]">
-      <nav className="flex flex-col bg-white">
-        {location.pathname === "/" ? (
-          <div className="hidden h-16 items-center bg-clarc-blue p-3 text-indigo-50 md:flex">
-            <div className="container mx-auto flex h-8 justify-between px-2 text-sm sm:px-4 sm:text-base md:px-6">
-              <div className="flex w-full items-center justify-end gap-1 text-clarc-gold">
-                <MapPin className="h-5 w-5" />
-                <h1 className="text-sm lg:text-[0.95rem]">
-                  Bayanihan, Odiong, Roxas Oriental Mindoro
-                </h1>
-              </div>
+    <header className="fixed left-0 right-0 top-0 z-[9999] bg-white">
+      {location.pathname === "/" ? (
+        <div className="hidden h-16 items-center bg-clarc-blue p-3 text-indigo-50 md:flex">
+          <div className="container mx-auto flex h-8 justify-between px-2 text-sm sm:px-4 sm:text-base md:px-6">
+            <div className="flex w-full items-center justify-end gap-1 text-clarc-gold">
+              <MapPin className="h-5 w-5" />
+              <h1 className="text-sm lg:text-[0.95rem]">
+                Bayanihan, Odiong, Roxas Oriental Mindoro
+              </h1>
             </div>
           </div>
-        ) : (
-          ""
-        )}
-        <div className="container relative mx-auto flex h-16 items-center justify-between border-b border-clarc-blue/10 p-4 lg:p-0">
-          <Link
-            to={"/"}
-            className="z-10 flex items-center justify-center gap-1"
-          >
-            <img
-              src={logoLink}
-              alt="Clarendon College Logo"
-              className="square h-10 w-10"
-            />
-            <h1
-              className="md:text-md font-universal_serif text-base font-semibold tracking-wider text-clarc-blue"
-              style={{ lineHeight: 1.05 }}
-            >
-              CLARENDON <br></br> COLLEGE
-            </h1>
-          </Link>
-          <div className="absolute hidden w-full items-center justify-center lg:flex">
-            <ClarendonNavigationMenu />
-          </div>
-          <div className="flex items-center justify-center">
-            <Search className="mr-2 h-4 w-4 text-clarc-blue lg:mr-0 lg:h-5 lg:w-5" />
-            <button onClick={toggleMenu} className="focus:outline-none">
-              <motion.div
-                initial={false}
-                animate={{ rotate: isMenuOpen ? 180 : 0 }}
-                transition={{ duration: 0.3 }}
-                className="flex lg:hidden"
-              >
-                {isMenuOpen ? (
-                  <X className="h-5 w-5 text-clarc-blue lg:h-6 lg:w-6" />
-                ) : (
-                  <Menu className="h-5 w-5 text-clarc-blue lg:h-6 lg:w-6" />
-                )}
-              </motion.div>
-            </button>
-          </div>
         </div>
-      </nav>
+      ) : (
+        ""
+      )}
+      <div className="container relative mx-auto flex h-16 items-center justify-between border-b border-clarc-blue/10 p-4 lg:p-0">
+        <Link to={"/"} className="z-10 flex items-center justify-center gap-1">
+          <img
+            src={logoLink}
+            alt="Clarendon College Logo"
+            className="square h-10 w-10"
+          />
+          <h1
+            className="md:text-md font-universal_serif text-base font-semibold tracking-wider text-clarc-blue"
+            style={{ lineHeight: 1.05 }}
+          >
+            CLARENDON <br></br> COLLEGE
+          </h1>
+        </Link>
+        <div className="absolute hidden w-full items-center justify-center lg:flex">
+          <ClarendonNavigationMenu />
+        </div>
+        <div className="flex items-center justify-center">
+          <Search className="mr-2 h-4 w-4 text-clarc-blue lg:mr-0 lg:h-5 lg:w-5" />
+          <button onClick={toggleMenu} className="focus:outline-none">
+            <motion.div
+              initial={false}
+              animate={{ rotate: isMenuOpen ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
+              className="flex lg:hidden"
+            >
+              {isMenuOpen ? (
+                <X className="h-5 w-5 text-clarc-blue lg:h-6 lg:w-6" />
+              ) : (
+                <Menu className="h-5 w-5 text-clarc-blue lg:h-6 lg:w-6" />
+              )}
+            </motion.div>
+          </button>
+        </div>
+      </div>
       <AnimatePresence>
         {isMenuOpen && (
           <>
+            {" "}
+            b
             <motion.div
               animate={{ opacity: [0, 1] }}
               exit={{ opacity: 1 }}

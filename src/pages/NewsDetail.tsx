@@ -193,7 +193,7 @@ const NewsImage = ({ src, alt }: { src: string; alt: string }) => (
 
 const NewsContent = ({ content }: { content: string }) => (
   <div
-    className="prose prose-lg mb-8 max-w-none text-foreground"
+    className="prose prose-lg mb-8 max-w-none text-sm text-foreground lg:text-lg"
     dangerouslySetInnerHTML={{ __html: content }}
   />
 );
