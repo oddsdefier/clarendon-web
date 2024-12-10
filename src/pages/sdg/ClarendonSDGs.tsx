@@ -13,7 +13,7 @@ const FlipCard: React.FC = () => {
       const elementPosition =
         element.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - headerOffset;
- 
+
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",
@@ -52,14 +52,14 @@ const FlipCard: React.FC = () => {
                   {/* Back Face */}
                   <div className="absolute inset-0 h-full w-full bg-clarc-blue text-center text-slate-200 [backface-visibility:hidden] [transform:rotateY(180deg)]">
                     <div className="flex min-h-full flex-col items-center justify-center p-4">
-                        <div className="flex flex-col items-start justify-center">
+                      <div className="flex flex-col items-start justify-center">
                         <h2 className="text-lg font-bold sm:text-2xl">
                           {sdg.project.length > 0 ? sdg.project.length : "No"}
                         </h2>
                         <p className="text-xs opacity-80 sm:text-sm">
                           {sdg.project.length > 1 ? "Projects" : "Project"}
                         </p>
-                        </div>
+                      </div>
                     </div>
                   </div>
                   {/* Back Face */}
@@ -104,9 +104,6 @@ const ClarendonSDGs: React.FC = () => {
           </div>
           <div className="space-y-5 px-4 pb-36 lg:space-y-0">
             {filteredSDGs.map((sdg) => {
-              const relatedNews = sdgProjectsData.filter((news) =>
-                news.sdg.includes(sdg.code),
-              );
               return (
                 <div
                   key={sdg.code}
@@ -124,7 +121,6 @@ const ClarendonSDGs: React.FC = () => {
                       className="h-32 w-32 object-contain sm:h-40 sm:w-40 md:h-48 md:w-48 lg:h-52 lg:w-52"
                     />
                   </div>
-               
                 </div>
               );
             })}
